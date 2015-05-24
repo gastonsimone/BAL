@@ -1,0 +1,266 @@
+\indexentry{Referencia del Directorio cholesky/@{Referencia del Directorio cholesky/}|hyperpage}{8}
+\indexentry{Referencia del Directorio parser/@{Referencia del Directorio parser/}|hyperpage}{8}
+\indexentry{Referencia del Directorio sparse/@{Referencia del Directorio sparse/}|hyperpage}{8}
+\indexentry{sp\_\discretionary {-}{}{}cds@{sp\_\discretionary {-}{}{}cds}|hyperpage}{9}
+\indexentry{sp\_\discretionary {-}{}{}coord@{sp\_\discretionary {-}{}{}coord}|hyperpage}{11}
+\indexentry{sp\_\discretionary {-}{}{}packcol@{sp\_\discretionary {-}{}{}packcol}|hyperpage}{11}
+\indexentry{bal.c@{bal.c}|hyperpage}{12}
+\indexentry{bal.c@{bal.c}!bal\_\discretionary {-}{}{}cargar\_\discretionary {-}{}{}matriz@{bal\_\discretionary {-}{}{}cargar\_\discretionary {-}{}{}matriz}|hyperpage}{15}
+\indexentry{bal\_\discretionary {-}{}{}cargar\_\discretionary {-}{}{}matriz@{bal\_\discretionary {-}{}{}cargar\_\discretionary {-}{}{}matriz}!bal.c@{bal.c}|hyperpage}{15}
+\indexentry{bal.c@{bal.c}!bal\_\discretionary {-}{}{}cholesky\_\discretionary {-}{}{}Lsolver@{bal\_\discretionary {-}{}{}cholesky\_\discretionary {-}{}{}Lsolver}|hyperpage}{15}
+\indexentry{bal\_\discretionary {-}{}{}cholesky\_\discretionary {-}{}{}Lsolver@{bal\_\discretionary {-}{}{}cholesky\_\discretionary {-}{}{}Lsolver}!bal.c@{bal.c}|hyperpage}{15}
+\indexentry{bal.c@{bal.c}!bal\_\discretionary {-}{}{}cholesky\_\discretionary {-}{}{}LTsolver@{bal\_\discretionary {-}{}{}cholesky\_\discretionary {-}{}{}LTsolver}|hyperpage}{15}
+\indexentry{bal\_\discretionary {-}{}{}cholesky\_\discretionary {-}{}{}LTsolver@{bal\_\discretionary {-}{}{}cholesky\_\discretionary {-}{}{}LTsolver}!bal.c@{bal.c}|hyperpage}{15}
+\indexentry{bal.c@{bal.c}!bal\_\discretionary {-}{}{}cholesky\_\discretionary {-}{}{}solver@{bal\_\discretionary {-}{}{}cholesky\_\discretionary {-}{}{}solver}|hyperpage}{15}
+\indexentry{bal\_\discretionary {-}{}{}cholesky\_\discretionary {-}{}{}solver@{bal\_\discretionary {-}{}{}cholesky\_\discretionary {-}{}{}solver}!bal.c@{bal.c}|hyperpage}{15}
+\indexentry{bal.c@{bal.c}!bal\_\discretionary {-}{}{}coord2cds@{bal\_\discretionary {-}{}{}coord2cds}|hyperpage}{16}
+\indexentry{bal\_\discretionary {-}{}{}coord2cds@{bal\_\discretionary {-}{}{}coord2cds}!bal.c@{bal.c}|hyperpage}{16}
+\indexentry{bal.c@{bal.c}!bal\_\discretionary {-}{}{}coord2packcol@{bal\_\discretionary {-}{}{}coord2packcol}|hyperpage}{16}
+\indexentry{bal\_\discretionary {-}{}{}coord2packcol@{bal\_\discretionary {-}{}{}coord2packcol}!bal.c@{bal.c}|hyperpage}{16}
+\indexentry{bal.c@{bal.c}!bal\_\discretionary {-}{}{}coord2packcol\_\discretionary {-}{}{}symmetric@{bal\_\discretionary {-}{}{}coord2packcol\_\discretionary {-}{}{}symmetric}|hyperpage}{16}
+\indexentry{bal\_\discretionary {-}{}{}coord2packcol\_\discretionary {-}{}{}symmetric@{bal\_\discretionary {-}{}{}coord2packcol\_\discretionary {-}{}{}symmetric}!bal.c@{bal.c}|hyperpage}{16}
+\indexentry{bal.c@{bal.c}!bal\_\discretionary {-}{}{}elimination\_\discretionary {-}{}{}tree@{bal\_\discretionary {-}{}{}elimination\_\discretionary {-}{}{}tree}|hyperpage}{16}
+\indexentry{bal\_\discretionary {-}{}{}elimination\_\discretionary {-}{}{}tree@{bal\_\discretionary {-}{}{}elimination\_\discretionary {-}{}{}tree}!bal.c@{bal.c}|hyperpage}{16}
+\indexentry{bal.c@{bal.c}!bal\_\discretionary {-}{}{}free\_\discretionary {-}{}{}cds@{bal\_\discretionary {-}{}{}free\_\discretionary {-}{}{}cds}|hyperpage}{17}
+\indexentry{bal\_\discretionary {-}{}{}free\_\discretionary {-}{}{}cds@{bal\_\discretionary {-}{}{}free\_\discretionary {-}{}{}cds}!bal.c@{bal.c}|hyperpage}{17}
+\indexentry{bal.c@{bal.c}!bal\_\discretionary {-}{}{}free\_\discretionary {-}{}{}coord@{bal\_\discretionary {-}{}{}free\_\discretionary {-}{}{}coord}|hyperpage}{17}
+\indexentry{bal\_\discretionary {-}{}{}free\_\discretionary {-}{}{}coord@{bal\_\discretionary {-}{}{}free\_\discretionary {-}{}{}coord}!bal.c@{bal.c}|hyperpage}{17}
+\indexentry{bal.c@{bal.c}!bal\_\discretionary {-}{}{}free\_\discretionary {-}{}{}packcol@{bal\_\discretionary {-}{}{}free\_\discretionary {-}{}{}packcol}|hyperpage}{17}
+\indexentry{bal\_\discretionary {-}{}{}free\_\discretionary {-}{}{}packcol@{bal\_\discretionary {-}{}{}free\_\discretionary {-}{}{}packcol}!bal.c@{bal.c}|hyperpage}{17}
+\indexentry{bal.c@{bal.c}!bal\_\discretionary {-}{}{}imprimir\_\discretionary {-}{}{}cds@{bal\_\discretionary {-}{}{}imprimir\_\discretionary {-}{}{}cds}|hyperpage}{17}
+\indexentry{bal\_\discretionary {-}{}{}imprimir\_\discretionary {-}{}{}cds@{bal\_\discretionary {-}{}{}imprimir\_\discretionary {-}{}{}cds}!bal.c@{bal.c}|hyperpage}{17}
+\indexentry{bal.c@{bal.c}!bal\_\discretionary {-}{}{}imprimir\_\discretionary {-}{}{}coord@{bal\_\discretionary {-}{}{}imprimir\_\discretionary {-}{}{}coord}|hyperpage}{18}
+\indexentry{bal\_\discretionary {-}{}{}imprimir\_\discretionary {-}{}{}coord@{bal\_\discretionary {-}{}{}imprimir\_\discretionary {-}{}{}coord}!bal.c@{bal.c}|hyperpage}{18}
+\indexentry{bal.c@{bal.c}!bal\_\discretionary {-}{}{}imprimir\_\discretionary {-}{}{}packcol@{bal\_\discretionary {-}{}{}imprimir\_\discretionary {-}{}{}packcol}|hyperpage}{18}
+\indexentry{bal\_\discretionary {-}{}{}imprimir\_\discretionary {-}{}{}packcol@{bal\_\discretionary {-}{}{}imprimir\_\discretionary {-}{}{}packcol}!bal.c@{bal.c}|hyperpage}{18}
+\indexentry{bal.c@{bal.c}!bal\_\discretionary {-}{}{}load\_\discretionary {-}{}{}coord@{bal\_\discretionary {-}{}{}load\_\discretionary {-}{}{}coord}|hyperpage}{18}
+\indexentry{bal\_\discretionary {-}{}{}load\_\discretionary {-}{}{}coord@{bal\_\discretionary {-}{}{}load\_\discretionary {-}{}{}coord}!bal.c@{bal.c}|hyperpage}{18}
+\indexentry{bal.c@{bal.c}!bal\_\discretionary {-}{}{}mat2coord@{bal\_\discretionary {-}{}{}mat2coord}|hyperpage}{18}
+\indexentry{bal\_\discretionary {-}{}{}mat2coord@{bal\_\discretionary {-}{}{}mat2coord}!bal.c@{bal.c}|hyperpage}{18}
+\indexentry{bal.c@{bal.c}!bal\_\discretionary {-}{}{}mult\_\discretionary {-}{}{}mat\_\discretionary {-}{}{}cds@{bal\_\discretionary {-}{}{}mult\_\discretionary {-}{}{}mat\_\discretionary {-}{}{}cds}|hyperpage}{19}
+\indexentry{bal\_\discretionary {-}{}{}mult\_\discretionary {-}{}{}mat\_\discretionary {-}{}{}cds@{bal\_\discretionary {-}{}{}mult\_\discretionary {-}{}{}mat\_\discretionary {-}{}{}cds}!bal.c@{bal.c}|hyperpage}{19}
+\indexentry{bal.c@{bal.c}!bal\_\discretionary {-}{}{}mult\_\discretionary {-}{}{}vec\_\discretionary {-}{}{}cds@{bal\_\discretionary {-}{}{}mult\_\discretionary {-}{}{}vec\_\discretionary {-}{}{}cds}|hyperpage}{19}
+\indexentry{bal\_\discretionary {-}{}{}mult\_\discretionary {-}{}{}vec\_\discretionary {-}{}{}cds@{bal\_\discretionary {-}{}{}mult\_\discretionary {-}{}{}vec\_\discretionary {-}{}{}cds}!bal.c@{bal.c}|hyperpage}{19}
+\indexentry{bal.c@{bal.c}!bal\_\discretionary {-}{}{}mult\_\discretionary {-}{}{}vec\_\discretionary {-}{}{}packcol@{bal\_\discretionary {-}{}{}mult\_\discretionary {-}{}{}vec\_\discretionary {-}{}{}packcol}|hyperpage}{19}
+\indexentry{bal\_\discretionary {-}{}{}mult\_\discretionary {-}{}{}vec\_\discretionary {-}{}{}packcol@{bal\_\discretionary {-}{}{}mult\_\discretionary {-}{}{}vec\_\discretionary {-}{}{}packcol}!bal.c@{bal.c}|hyperpage}{19}
+\indexentry{bal.c@{bal.c}!bal\_\discretionary {-}{}{}mult\_\discretionary {-}{}{}vec\_\discretionary {-}{}{}packcol\_\discretionary {-}{}{}symmetric@{bal\_\discretionary {-}{}{}mult\_\discretionary {-}{}{}vec\_\discretionary {-}{}{}packcol\_\discretionary {-}{}{}symmetric}|hyperpage}{19}
+\indexentry{bal\_\discretionary {-}{}{}mult\_\discretionary {-}{}{}vec\_\discretionary {-}{}{}packcol\_\discretionary {-}{}{}symmetric@{bal\_\discretionary {-}{}{}mult\_\discretionary {-}{}{}vec\_\discretionary {-}{}{}packcol\_\discretionary {-}{}{}symmetric}!bal.c@{bal.c}|hyperpage}{19}
+\indexentry{bal.c@{bal.c}!bal\_\discretionary {-}{}{}numerical\_\discretionary {-}{}{}factorization@{bal\_\discretionary {-}{}{}numerical\_\discretionary {-}{}{}factorization}|hyperpage}{20}
+\indexentry{bal\_\discretionary {-}{}{}numerical\_\discretionary {-}{}{}factorization@{bal\_\discretionary {-}{}{}numerical\_\discretionary {-}{}{}factorization}!bal.c@{bal.c}|hyperpage}{20}
+\indexentry{bal.c@{bal.c}!bal\_\discretionary {-}{}{}permutar\_\discretionary {-}{}{}packcol@{bal\_\discretionary {-}{}{}permutar\_\discretionary {-}{}{}packcol}|hyperpage}{20}
+\indexentry{bal\_\discretionary {-}{}{}permutar\_\discretionary {-}{}{}packcol@{bal\_\discretionary {-}{}{}permutar\_\discretionary {-}{}{}packcol}!bal.c@{bal.c}|hyperpage}{20}
+\indexentry{bal.c@{bal.c}!bal\_\discretionary {-}{}{}row\_\discretionary {-}{}{}traversal\_\discretionary {-}{}{}packcol@{bal\_\discretionary {-}{}{}row\_\discretionary {-}{}{}traversal\_\discretionary {-}{}{}packcol}|hyperpage}{20}
+\indexentry{bal\_\discretionary {-}{}{}row\_\discretionary {-}{}{}traversal\_\discretionary {-}{}{}packcol@{bal\_\discretionary {-}{}{}row\_\discretionary {-}{}{}traversal\_\discretionary {-}{}{}packcol}!bal.c@{bal.c}|hyperpage}{20}
+\indexentry{bal.c@{bal.c}!bal\_\discretionary {-}{}{}save\_\discretionary {-}{}{}cds@{bal\_\discretionary {-}{}{}save\_\discretionary {-}{}{}cds}|hyperpage}{20}
+\indexentry{bal\_\discretionary {-}{}{}save\_\discretionary {-}{}{}cds@{bal\_\discretionary {-}{}{}save\_\discretionary {-}{}{}cds}!bal.c@{bal.c}|hyperpage}{20}
+\indexentry{bal.c@{bal.c}!bal\_\discretionary {-}{}{}save\_\discretionary {-}{}{}coord@{bal\_\discretionary {-}{}{}save\_\discretionary {-}{}{}coord}|hyperpage}{21}
+\indexentry{bal\_\discretionary {-}{}{}save\_\discretionary {-}{}{}coord@{bal\_\discretionary {-}{}{}save\_\discretionary {-}{}{}coord}!bal.c@{bal.c}|hyperpage}{21}
+\indexentry{bal.c@{bal.c}!bal\_\discretionary {-}{}{}save\_\discretionary {-}{}{}packcol@{bal\_\discretionary {-}{}{}save\_\discretionary {-}{}{}packcol}|hyperpage}{21}
+\indexentry{bal\_\discretionary {-}{}{}save\_\discretionary {-}{}{}packcol@{bal\_\discretionary {-}{}{}save\_\discretionary {-}{}{}packcol}!bal.c@{bal.c}|hyperpage}{21}
+\indexentry{bal.c@{bal.c}!bal\_\discretionary {-}{}{}save\_\discretionary {-}{}{}packcol\_\discretionary {-}{}{}symmetric@{bal\_\discretionary {-}{}{}save\_\discretionary {-}{}{}packcol\_\discretionary {-}{}{}symmetric}|hyperpage}{21}
+\indexentry{bal\_\discretionary {-}{}{}save\_\discretionary {-}{}{}packcol\_\discretionary {-}{}{}symmetric@{bal\_\discretionary {-}{}{}save\_\discretionary {-}{}{}packcol\_\discretionary {-}{}{}symmetric}!bal.c@{bal.c}|hyperpage}{21}
+\indexentry{bal.c@{bal.c}!bal\_\discretionary {-}{}{}symbolic\_\discretionary {-}{}{}factorization@{bal\_\discretionary {-}{}{}symbolic\_\discretionary {-}{}{}factorization}|hyperpage}{21}
+\indexentry{bal\_\discretionary {-}{}{}symbolic\_\discretionary {-}{}{}factorization@{bal\_\discretionary {-}{}{}symbolic\_\discretionary {-}{}{}factorization}!bal.c@{bal.c}|hyperpage}{21}
+\indexentry{bal.c@{bal.c}!yyparse@{yyparse}|hyperpage}{22}
+\indexentry{yyparse@{yyparse}!bal.c@{bal.c}|hyperpage}{22}
+\indexentry{bal.h@{bal.h}|hyperpage}{22}
+\indexentry{bal.h@{bal.h}!bal\_\discretionary {-}{}{}cargar\_\discretionary {-}{}{}matriz@{bal\_\discretionary {-}{}{}cargar\_\discretionary {-}{}{}matriz}|hyperpage}{24}
+\indexentry{bal\_\discretionary {-}{}{}cargar\_\discretionary {-}{}{}matriz@{bal\_\discretionary {-}{}{}cargar\_\discretionary {-}{}{}matriz}!bal.h@{bal.h}|hyperpage}{24}
+\indexentry{bal.h@{bal.h}!bal\_\discretionary {-}{}{}cholesky\_\discretionary {-}{}{}Lsolver@{bal\_\discretionary {-}{}{}cholesky\_\discretionary {-}{}{}Lsolver}|hyperpage}{25}
+\indexentry{bal\_\discretionary {-}{}{}cholesky\_\discretionary {-}{}{}Lsolver@{bal\_\discretionary {-}{}{}cholesky\_\discretionary {-}{}{}Lsolver}!bal.h@{bal.h}|hyperpage}{25}
+\indexentry{bal.h@{bal.h}!bal\_\discretionary {-}{}{}cholesky\_\discretionary {-}{}{}LTsolver@{bal\_\discretionary {-}{}{}cholesky\_\discretionary {-}{}{}LTsolver}|hyperpage}{25}
+\indexentry{bal\_\discretionary {-}{}{}cholesky\_\discretionary {-}{}{}LTsolver@{bal\_\discretionary {-}{}{}cholesky\_\discretionary {-}{}{}LTsolver}!bal.h@{bal.h}|hyperpage}{25}
+\indexentry{bal.h@{bal.h}!bal\_\discretionary {-}{}{}cholesky\_\discretionary {-}{}{}solver@{bal\_\discretionary {-}{}{}cholesky\_\discretionary {-}{}{}solver}|hyperpage}{25}
+\indexentry{bal\_\discretionary {-}{}{}cholesky\_\discretionary {-}{}{}solver@{bal\_\discretionary {-}{}{}cholesky\_\discretionary {-}{}{}solver}!bal.h@{bal.h}|hyperpage}{25}
+\indexentry{bal.h@{bal.h}!bal\_\discretionary {-}{}{}coord2cds@{bal\_\discretionary {-}{}{}coord2cds}|hyperpage}{25}
+\indexentry{bal\_\discretionary {-}{}{}coord2cds@{bal\_\discretionary {-}{}{}coord2cds}!bal.h@{bal.h}|hyperpage}{25}
+\indexentry{bal.h@{bal.h}!bal\_\discretionary {-}{}{}coord2packcol@{bal\_\discretionary {-}{}{}coord2packcol}|hyperpage}{26}
+\indexentry{bal\_\discretionary {-}{}{}coord2packcol@{bal\_\discretionary {-}{}{}coord2packcol}!bal.h@{bal.h}|hyperpage}{26}
+\indexentry{bal.h@{bal.h}!bal\_\discretionary {-}{}{}coord2packcol\_\discretionary {-}{}{}symmetric@{bal\_\discretionary {-}{}{}coord2packcol\_\discretionary {-}{}{}symmetric}|hyperpage}{26}
+\indexentry{bal\_\discretionary {-}{}{}coord2packcol\_\discretionary {-}{}{}symmetric@{bal\_\discretionary {-}{}{}coord2packcol\_\discretionary {-}{}{}symmetric}!bal.h@{bal.h}|hyperpage}{26}
+\indexentry{bal.h@{bal.h}!bal\_\discretionary {-}{}{}elimination\_\discretionary {-}{}{}tree@{bal\_\discretionary {-}{}{}elimination\_\discretionary {-}{}{}tree}|hyperpage}{26}
+\indexentry{bal\_\discretionary {-}{}{}elimination\_\discretionary {-}{}{}tree@{bal\_\discretionary {-}{}{}elimination\_\discretionary {-}{}{}tree}!bal.h@{bal.h}|hyperpage}{26}
+\indexentry{bal.h@{bal.h}!bal\_\discretionary {-}{}{}free\_\discretionary {-}{}{}cds@{bal\_\discretionary {-}{}{}free\_\discretionary {-}{}{}cds}|hyperpage}{26}
+\indexentry{bal\_\discretionary {-}{}{}free\_\discretionary {-}{}{}cds@{bal\_\discretionary {-}{}{}free\_\discretionary {-}{}{}cds}!bal.h@{bal.h}|hyperpage}{26}
+\indexentry{bal.h@{bal.h}!bal\_\discretionary {-}{}{}free\_\discretionary {-}{}{}coord@{bal\_\discretionary {-}{}{}free\_\discretionary {-}{}{}coord}|hyperpage}{27}
+\indexentry{bal\_\discretionary {-}{}{}free\_\discretionary {-}{}{}coord@{bal\_\discretionary {-}{}{}free\_\discretionary {-}{}{}coord}!bal.h@{bal.h}|hyperpage}{27}
+\indexentry{bal.h@{bal.h}!bal\_\discretionary {-}{}{}free\_\discretionary {-}{}{}packcol@{bal\_\discretionary {-}{}{}free\_\discretionary {-}{}{}packcol}|hyperpage}{27}
+\indexentry{bal\_\discretionary {-}{}{}free\_\discretionary {-}{}{}packcol@{bal\_\discretionary {-}{}{}free\_\discretionary {-}{}{}packcol}!bal.h@{bal.h}|hyperpage}{27}
+\indexentry{bal.h@{bal.h}!bal\_\discretionary {-}{}{}imprimir\_\discretionary {-}{}{}cds@{bal\_\discretionary {-}{}{}imprimir\_\discretionary {-}{}{}cds}|hyperpage}{27}
+\indexentry{bal\_\discretionary {-}{}{}imprimir\_\discretionary {-}{}{}cds@{bal\_\discretionary {-}{}{}imprimir\_\discretionary {-}{}{}cds}!bal.h@{bal.h}|hyperpage}{27}
+\indexentry{bal.h@{bal.h}!bal\_\discretionary {-}{}{}imprimir\_\discretionary {-}{}{}coord@{bal\_\discretionary {-}{}{}imprimir\_\discretionary {-}{}{}coord}|hyperpage}{27}
+\indexentry{bal\_\discretionary {-}{}{}imprimir\_\discretionary {-}{}{}coord@{bal\_\discretionary {-}{}{}imprimir\_\discretionary {-}{}{}coord}!bal.h@{bal.h}|hyperpage}{27}
+\indexentry{bal.h@{bal.h}!bal\_\discretionary {-}{}{}imprimir\_\discretionary {-}{}{}packcol@{bal\_\discretionary {-}{}{}imprimir\_\discretionary {-}{}{}packcol}|hyperpage}{27}
+\indexentry{bal\_\discretionary {-}{}{}imprimir\_\discretionary {-}{}{}packcol@{bal\_\discretionary {-}{}{}imprimir\_\discretionary {-}{}{}packcol}!bal.h@{bal.h}|hyperpage}{27}
+\indexentry{bal.h@{bal.h}!bal\_\discretionary {-}{}{}load\_\discretionary {-}{}{}coord@{bal\_\discretionary {-}{}{}load\_\discretionary {-}{}{}coord}|hyperpage}{28}
+\indexentry{bal\_\discretionary {-}{}{}load\_\discretionary {-}{}{}coord@{bal\_\discretionary {-}{}{}load\_\discretionary {-}{}{}coord}!bal.h@{bal.h}|hyperpage}{28}
+\indexentry{bal.h@{bal.h}!bal\_\discretionary {-}{}{}mat2coord@{bal\_\discretionary {-}{}{}mat2coord}|hyperpage}{28}
+\indexentry{bal\_\discretionary {-}{}{}mat2coord@{bal\_\discretionary {-}{}{}mat2coord}!bal.h@{bal.h}|hyperpage}{28}
+\indexentry{bal.h@{bal.h}!bal\_\discretionary {-}{}{}mult\_\discretionary {-}{}{}mat\_\discretionary {-}{}{}cds@{bal\_\discretionary {-}{}{}mult\_\discretionary {-}{}{}mat\_\discretionary {-}{}{}cds}|hyperpage}{28}
+\indexentry{bal\_\discretionary {-}{}{}mult\_\discretionary {-}{}{}mat\_\discretionary {-}{}{}cds@{bal\_\discretionary {-}{}{}mult\_\discretionary {-}{}{}mat\_\discretionary {-}{}{}cds}!bal.h@{bal.h}|hyperpage}{28}
+\indexentry{bal.h@{bal.h}!bal\_\discretionary {-}{}{}mult\_\discretionary {-}{}{}vec\_\discretionary {-}{}{}cds@{bal\_\discretionary {-}{}{}mult\_\discretionary {-}{}{}vec\_\discretionary {-}{}{}cds}|hyperpage}{28}
+\indexentry{bal\_\discretionary {-}{}{}mult\_\discretionary {-}{}{}vec\_\discretionary {-}{}{}cds@{bal\_\discretionary {-}{}{}mult\_\discretionary {-}{}{}vec\_\discretionary {-}{}{}cds}!bal.h@{bal.h}|hyperpage}{28}
+\indexentry{bal.h@{bal.h}!bal\_\discretionary {-}{}{}mult\_\discretionary {-}{}{}vec\_\discretionary {-}{}{}packcol@{bal\_\discretionary {-}{}{}mult\_\discretionary {-}{}{}vec\_\discretionary {-}{}{}packcol}|hyperpage}{29}
+\indexentry{bal\_\discretionary {-}{}{}mult\_\discretionary {-}{}{}vec\_\discretionary {-}{}{}packcol@{bal\_\discretionary {-}{}{}mult\_\discretionary {-}{}{}vec\_\discretionary {-}{}{}packcol}!bal.h@{bal.h}|hyperpage}{29}
+\indexentry{bal.h@{bal.h}!bal\_\discretionary {-}{}{}mult\_\discretionary {-}{}{}vec\_\discretionary {-}{}{}packcol\_\discretionary {-}{}{}symmetric@{bal\_\discretionary {-}{}{}mult\_\discretionary {-}{}{}vec\_\discretionary {-}{}{}packcol\_\discretionary {-}{}{}symmetric}|hyperpage}{29}
+\indexentry{bal\_\discretionary {-}{}{}mult\_\discretionary {-}{}{}vec\_\discretionary {-}{}{}packcol\_\discretionary {-}{}{}symmetric@{bal\_\discretionary {-}{}{}mult\_\discretionary {-}{}{}vec\_\discretionary {-}{}{}packcol\_\discretionary {-}{}{}symmetric}!bal.h@{bal.h}|hyperpage}{29}
+\indexentry{bal.h@{bal.h}!bal\_\discretionary {-}{}{}numerical\_\discretionary {-}{}{}factorization@{bal\_\discretionary {-}{}{}numerical\_\discretionary {-}{}{}factorization}|hyperpage}{29}
+\indexentry{bal\_\discretionary {-}{}{}numerical\_\discretionary {-}{}{}factorization@{bal\_\discretionary {-}{}{}numerical\_\discretionary {-}{}{}factorization}!bal.h@{bal.h}|hyperpage}{29}
+\indexentry{bal.h@{bal.h}!bal\_\discretionary {-}{}{}permutar\_\discretionary {-}{}{}packcol@{bal\_\discretionary {-}{}{}permutar\_\discretionary {-}{}{}packcol}|hyperpage}{29}
+\indexentry{bal\_\discretionary {-}{}{}permutar\_\discretionary {-}{}{}packcol@{bal\_\discretionary {-}{}{}permutar\_\discretionary {-}{}{}packcol}!bal.h@{bal.h}|hyperpage}{29}
+\indexentry{bal.h@{bal.h}!bal\_\discretionary {-}{}{}row\_\discretionary {-}{}{}traversal\_\discretionary {-}{}{}packcol@{bal\_\discretionary {-}{}{}row\_\discretionary {-}{}{}traversal\_\discretionary {-}{}{}packcol}|hyperpage}{30}
+\indexentry{bal\_\discretionary {-}{}{}row\_\discretionary {-}{}{}traversal\_\discretionary {-}{}{}packcol@{bal\_\discretionary {-}{}{}row\_\discretionary {-}{}{}traversal\_\discretionary {-}{}{}packcol}!bal.h@{bal.h}|hyperpage}{30}
+\indexentry{bal.h@{bal.h}!bal\_\discretionary {-}{}{}save\_\discretionary {-}{}{}cds@{bal\_\discretionary {-}{}{}save\_\discretionary {-}{}{}cds}|hyperpage}{30}
+\indexentry{bal\_\discretionary {-}{}{}save\_\discretionary {-}{}{}cds@{bal\_\discretionary {-}{}{}save\_\discretionary {-}{}{}cds}!bal.h@{bal.h}|hyperpage}{30}
+\indexentry{bal.h@{bal.h}!bal\_\discretionary {-}{}{}save\_\discretionary {-}{}{}coord@{bal\_\discretionary {-}{}{}save\_\discretionary {-}{}{}coord}|hyperpage}{30}
+\indexentry{bal\_\discretionary {-}{}{}save\_\discretionary {-}{}{}coord@{bal\_\discretionary {-}{}{}save\_\discretionary {-}{}{}coord}!bal.h@{bal.h}|hyperpage}{30}
+\indexentry{bal.h@{bal.h}!bal\_\discretionary {-}{}{}save\_\discretionary {-}{}{}packcol@{bal\_\discretionary {-}{}{}save\_\discretionary {-}{}{}packcol}|hyperpage}{30}
+\indexentry{bal\_\discretionary {-}{}{}save\_\discretionary {-}{}{}packcol@{bal\_\discretionary {-}{}{}save\_\discretionary {-}{}{}packcol}!bal.h@{bal.h}|hyperpage}{30}
+\indexentry{bal.h@{bal.h}!bal\_\discretionary {-}{}{}save\_\discretionary {-}{}{}packcol\_\discretionary {-}{}{}symmetric@{bal\_\discretionary {-}{}{}save\_\discretionary {-}{}{}packcol\_\discretionary {-}{}{}symmetric}|hyperpage}{31}
+\indexentry{bal\_\discretionary {-}{}{}save\_\discretionary {-}{}{}packcol\_\discretionary {-}{}{}symmetric@{bal\_\discretionary {-}{}{}save\_\discretionary {-}{}{}packcol\_\discretionary {-}{}{}symmetric}!bal.h@{bal.h}|hyperpage}{31}
+\indexentry{bal.h@{bal.h}!bal\_\discretionary {-}{}{}symbolic\_\discretionary {-}{}{}factorization@{bal\_\discretionary {-}{}{}symbolic\_\discretionary {-}{}{}factorization}|hyperpage}{31}
+\indexentry{bal\_\discretionary {-}{}{}symbolic\_\discretionary {-}{}{}factorization@{bal\_\discretionary {-}{}{}symbolic\_\discretionary {-}{}{}factorization}!bal.h@{bal.h}|hyperpage}{31}
+\indexentry{cholesky/cholesky.c@{cholesky/cholesky.c}|hyperpage}{31}
+\indexentry{cholesky.c@{cholesky.c}!cholesky\_\discretionary {-}{}{}Lsolver@{cholesky\_\discretionary {-}{}{}Lsolver}|hyperpage}{32}
+\indexentry{cholesky\_\discretionary {-}{}{}Lsolver@{cholesky\_\discretionary {-}{}{}Lsolver}!cholesky.c@{cholesky.c}|hyperpage}{32}
+\indexentry{cholesky.c@{cholesky.c}!cholesky\_\discretionary {-}{}{}LTsolver@{cholesky\_\discretionary {-}{}{}LTsolver}|hyperpage}{33}
+\indexentry{cholesky\_\discretionary {-}{}{}LTsolver@{cholesky\_\discretionary {-}{}{}LTsolver}!cholesky.c@{cholesky.c}|hyperpage}{33}
+\indexentry{cholesky.c@{cholesky.c}!cholesky\_\discretionary {-}{}{}solver@{cholesky\_\discretionary {-}{}{}solver}|hyperpage}{33}
+\indexentry{cholesky\_\discretionary {-}{}{}solver@{cholesky\_\discretionary {-}{}{}solver}!cholesky.c@{cholesky.c}|hyperpage}{33}
+\indexentry{cholesky.c@{cholesky.c}!elimination\_\discretionary {-}{}{}tree@{elimination\_\discretionary {-}{}{}tree}|hyperpage}{34}
+\indexentry{elimination\_\discretionary {-}{}{}tree@{elimination\_\discretionary {-}{}{}tree}!cholesky.c@{cholesky.c}|hyperpage}{34}
+\indexentry{cholesky.c@{cholesky.c}!make\_\discretionary {-}{}{}column@{make\_\discretionary {-}{}{}column}|hyperpage}{35}
+\indexentry{make\_\discretionary {-}{}{}column@{make\_\discretionary {-}{}{}column}!cholesky.c@{cholesky.c}|hyperpage}{35}
+\indexentry{cholesky.c@{cholesky.c}!merge@{merge}|hyperpage}{36}
+\indexentry{merge@{merge}!cholesky.c@{cholesky.c}|hyperpage}{36}
+\indexentry{cholesky.c@{cholesky.c}!numerical\_\discretionary {-}{}{}factorization@{numerical\_\discretionary {-}{}{}factorization}|hyperpage}{37}
+\indexentry{numerical\_\discretionary {-}{}{}factorization@{numerical\_\discretionary {-}{}{}factorization}!cholesky.c@{cholesky.c}|hyperpage}{37}
+\indexentry{cholesky.c@{cholesky.c}!symbolic\_\discretionary {-}{}{}factorization@{symbolic\_\discretionary {-}{}{}factorization}|hyperpage}{38}
+\indexentry{symbolic\_\discretionary {-}{}{}factorization@{symbolic\_\discretionary {-}{}{}factorization}!cholesky.c@{cholesky.c}|hyperpage}{38}
+\indexentry{cholesky/cholesky.h@{cholesky/cholesky.h}|hyperpage}{40}
+\indexentry{cholesky.h@{cholesky.h}!cholesky\_\discretionary {-}{}{}Lsolver@{cholesky\_\discretionary {-}{}{}Lsolver}|hyperpage}{40}
+\indexentry{cholesky\_\discretionary {-}{}{}Lsolver@{cholesky\_\discretionary {-}{}{}Lsolver}!cholesky.h@{cholesky.h}|hyperpage}{40}
+\indexentry{cholesky.h@{cholesky.h}!cholesky\_\discretionary {-}{}{}LTsolver@{cholesky\_\discretionary {-}{}{}LTsolver}|hyperpage}{41}
+\indexentry{cholesky\_\discretionary {-}{}{}LTsolver@{cholesky\_\discretionary {-}{}{}LTsolver}!cholesky.h@{cholesky.h}|hyperpage}{41}
+\indexentry{cholesky.h@{cholesky.h}!cholesky\_\discretionary {-}{}{}solver@{cholesky\_\discretionary {-}{}{}solver}|hyperpage}{41}
+\indexentry{cholesky\_\discretionary {-}{}{}solver@{cholesky\_\discretionary {-}{}{}solver}!cholesky.h@{cholesky.h}|hyperpage}{41}
+\indexentry{cholesky.h@{cholesky.h}!elimination\_\discretionary {-}{}{}tree@{elimination\_\discretionary {-}{}{}tree}|hyperpage}{42}
+\indexentry{elimination\_\discretionary {-}{}{}tree@{elimination\_\discretionary {-}{}{}tree}!cholesky.h@{cholesky.h}|hyperpage}{42}
+\indexentry{cholesky.h@{cholesky.h}!numerical\_\discretionary {-}{}{}factorization@{numerical\_\discretionary {-}{}{}factorization}|hyperpage}{43}
+\indexentry{numerical\_\discretionary {-}{}{}factorization@{numerical\_\discretionary {-}{}{}factorization}!cholesky.h@{cholesky.h}|hyperpage}{43}
+\indexentry{cholesky.h@{cholesky.h}!symbolic\_\discretionary {-}{}{}factorization@{symbolic\_\discretionary {-}{}{}factorization}|hyperpage}{44}
+\indexentry{symbolic\_\discretionary {-}{}{}factorization@{symbolic\_\discretionary {-}{}{}factorization}!cholesky.h@{cholesky.h}|hyperpage}{44}
+\indexentry{cholesky/reordenamiento.c@{cholesky/reordenamiento.c}|hyperpage}{46}
+\indexentry{reordenamiento.c@{reordenamiento.c}!permutar\_\discretionary {-}{}{}packcol@{permutar\_\discretionary {-}{}{}packcol}|hyperpage}{47}
+\indexentry{permutar\_\discretionary {-}{}{}packcol@{permutar\_\discretionary {-}{}{}packcol}!reordenamiento.c@{reordenamiento.c}|hyperpage}{47}
+\indexentry{reordenamiento.c@{reordenamiento.c}!reordenar\_\discretionary {-}{}{}packcol@{reordenar\_\discretionary {-}{}{}packcol}|hyperpage}{48}
+\indexentry{reordenar\_\discretionary {-}{}{}packcol@{reordenar\_\discretionary {-}{}{}packcol}!reordenamiento.c@{reordenamiento.c}|hyperpage}{48}
+\indexentry{cholesky/reordenamiento.h@{cholesky/reordenamiento.h}|hyperpage}{48}
+\indexentry{reordenamiento.h@{reordenamiento.h}!permutar\_\discretionary {-}{}{}packcol@{permutar\_\discretionary {-}{}{}packcol}|hyperpage}{49}
+\indexentry{permutar\_\discretionary {-}{}{}packcol@{permutar\_\discretionary {-}{}{}packcol}!reordenamiento.h@{reordenamiento.h}|hyperpage}{49}
+\indexentry{reordenamiento.h@{reordenamiento.h}!reordenar\_\discretionary {-}{}{}packcol@{reordenar\_\discretionary {-}{}{}packcol}|hyperpage}{50}
+\indexentry{reordenar\_\discretionary {-}{}{}packcol@{reordenar\_\discretionary {-}{}{}packcol}!reordenamiento.h@{reordenamiento.h}|hyperpage}{50}
+\indexentry{oper.c@{oper.c}|hyperpage}{51}
+\indexentry{oper.c@{oper.c}!mult\_\discretionary {-}{}{}mat\_\discretionary {-}{}{}cds@{mult\_\discretionary {-}{}{}mat\_\discretionary {-}{}{}cds}|hyperpage}{51}
+\indexentry{mult\_\discretionary {-}{}{}mat\_\discretionary {-}{}{}cds@{mult\_\discretionary {-}{}{}mat\_\discretionary {-}{}{}cds}!oper.c@{oper.c}|hyperpage}{51}
+\indexentry{oper.c@{oper.c}!mult\_\discretionary {-}{}{}vec\_\discretionary {-}{}{}cds@{mult\_\discretionary {-}{}{}vec\_\discretionary {-}{}{}cds}|hyperpage}{54}
+\indexentry{mult\_\discretionary {-}{}{}vec\_\discretionary {-}{}{}cds@{mult\_\discretionary {-}{}{}vec\_\discretionary {-}{}{}cds}!oper.c@{oper.c}|hyperpage}{54}
+\indexentry{oper.c@{oper.c}!mult\_\discretionary {-}{}{}vec\_\discretionary {-}{}{}packcol@{mult\_\discretionary {-}{}{}vec\_\discretionary {-}{}{}packcol}|hyperpage}{55}
+\indexentry{mult\_\discretionary {-}{}{}vec\_\discretionary {-}{}{}packcol@{mult\_\discretionary {-}{}{}vec\_\discretionary {-}{}{}packcol}!oper.c@{oper.c}|hyperpage}{55}
+\indexentry{oper.c@{oper.c}!mult\_\discretionary {-}{}{}vec\_\discretionary {-}{}{}packcol\_\discretionary {-}{}{}symmetric@{mult\_\discretionary {-}{}{}vec\_\discretionary {-}{}{}packcol\_\discretionary {-}{}{}symmetric}|hyperpage}{55}
+\indexentry{mult\_\discretionary {-}{}{}vec\_\discretionary {-}{}{}packcol\_\discretionary {-}{}{}symmetric@{mult\_\discretionary {-}{}{}vec\_\discretionary {-}{}{}packcol\_\discretionary {-}{}{}symmetric}!oper.c@{oper.c}|hyperpage}{55}
+\indexentry{oper.h@{oper.h}|hyperpage}{57}
+\indexentry{oper.h@{oper.h}!mult\_\discretionary {-}{}{}mat\_\discretionary {-}{}{}cds@{mult\_\discretionary {-}{}{}mat\_\discretionary {-}{}{}cds}|hyperpage}{57}
+\indexentry{mult\_\discretionary {-}{}{}mat\_\discretionary {-}{}{}cds@{mult\_\discretionary {-}{}{}mat\_\discretionary {-}{}{}cds}!oper.h@{oper.h}|hyperpage}{57}
+\indexentry{oper.h@{oper.h}!mult\_\discretionary {-}{}{}vec\_\discretionary {-}{}{}cds@{mult\_\discretionary {-}{}{}vec\_\discretionary {-}{}{}cds}|hyperpage}{59}
+\indexentry{mult\_\discretionary {-}{}{}vec\_\discretionary {-}{}{}cds@{mult\_\discretionary {-}{}{}vec\_\discretionary {-}{}{}cds}!oper.h@{oper.h}|hyperpage}{59}
+\indexentry{oper.h@{oper.h}!mult\_\discretionary {-}{}{}vec\_\discretionary {-}{}{}packcol@{mult\_\discretionary {-}{}{}vec\_\discretionary {-}{}{}packcol}|hyperpage}{60}
+\indexentry{mult\_\discretionary {-}{}{}vec\_\discretionary {-}{}{}packcol@{mult\_\discretionary {-}{}{}vec\_\discretionary {-}{}{}packcol}!oper.h@{oper.h}|hyperpage}{60}
+\indexentry{oper.h@{oper.h}!mult\_\discretionary {-}{}{}vec\_\discretionary {-}{}{}packcol\_\discretionary {-}{}{}symmetric@{mult\_\discretionary {-}{}{}vec\_\discretionary {-}{}{}packcol\_\discretionary {-}{}{}symmetric}|hyperpage}{61}
+\indexentry{mult\_\discretionary {-}{}{}vec\_\discretionary {-}{}{}packcol\_\discretionary {-}{}{}symmetric@{mult\_\discretionary {-}{}{}vec\_\discretionary {-}{}{}packcol\_\discretionary {-}{}{}symmetric}!oper.h@{oper.h}|hyperpage}{61}
+\indexentry{parser/matriz\_\discretionary {-}{}{}parser.y@{parser/matriz\_\discretionary {-}{}{}parser.y}|hyperpage}{62}
+\indexentry{matriz\_\discretionary {-}{}{}parser.y@{matriz\_\discretionary {-}{}{}parser.y}!yyerror@{yyerror}|hyperpage}{63}
+\indexentry{yyerror@{yyerror}!matriz_parser.y@{matriz\_\discretionary {-}{}{}parser.y}|hyperpage}{63}
+\indexentry{parser/matriz\_\discretionary {-}{}{}scanner.lex@{parser/matriz\_\discretionary {-}{}{}scanner.lex}|hyperpage}{63}
+\indexentry{sparse/sp\_\discretionary {-}{}{}cds.c@{sparse/sp\_\discretionary {-}{}{}cds.c}|hyperpage}{64}
+\indexentry{sp\_\discretionary {-}{}{}cds.c@{sp\_\discretionary {-}{}{}cds.c}!coord2cds@{coord2cds}|hyperpage}{65}
+\indexentry{coord2cds@{coord2cds}!sp_cds.c@{sp\_\discretionary {-}{}{}cds.c}|hyperpage}{65}
+\indexentry{sp\_\discretionary {-}{}{}cds.c@{sp\_\discretionary {-}{}{}cds.c}!free\_\discretionary {-}{}{}cds@{free\_\discretionary {-}{}{}cds}|hyperpage}{66}
+\indexentry{free\_\discretionary {-}{}{}cds@{free\_\discretionary {-}{}{}cds}!sp_cds.c@{sp\_\discretionary {-}{}{}cds.c}|hyperpage}{66}
+\indexentry{sp\_\discretionary {-}{}{}cds.c@{sp\_\discretionary {-}{}{}cds.c}!save\_\discretionary {-}{}{}cds@{save\_\discretionary {-}{}{}cds}|hyperpage}{66}
+\indexentry{save\_\discretionary {-}{}{}cds@{save\_\discretionary {-}{}{}cds}!sp_cds.c@{sp\_\discretionary {-}{}{}cds.c}|hyperpage}{66}
+\indexentry{sp\_\discretionary {-}{}{}cds.c@{sp\_\discretionary {-}{}{}cds.c}!sp\_\discretionary {-}{}{}imprimir\_\discretionary {-}{}{}cds@{sp\_\discretionary {-}{}{}imprimir\_\discretionary {-}{}{}cds}|hyperpage}{67}
+\indexentry{sp\_\discretionary {-}{}{}imprimir\_\discretionary {-}{}{}cds@{sp\_\discretionary {-}{}{}imprimir\_\discretionary {-}{}{}cds}!sp_cds.c@{sp\_\discretionary {-}{}{}cds.c}|hyperpage}{67}
+\indexentry{sparse/sp\_\discretionary {-}{}{}cds.h@{sparse/sp\_\discretionary {-}{}{}cds.h}|hyperpage}{67}
+\indexentry{sp\_\discretionary {-}{}{}cds.h@{sp\_\discretionary {-}{}{}cds.h}!coord2cds@{coord2cds}|hyperpage}{68}
+\indexentry{coord2cds@{coord2cds}!sp_cds.h@{sp\_\discretionary {-}{}{}cds.h}|hyperpage}{68}
+\indexentry{sp\_\discretionary {-}{}{}cds.h@{sp\_\discretionary {-}{}{}cds.h}!free\_\discretionary {-}{}{}cds@{free\_\discretionary {-}{}{}cds}|hyperpage}{69}
+\indexentry{free\_\discretionary {-}{}{}cds@{free\_\discretionary {-}{}{}cds}!sp_cds.h@{sp\_\discretionary {-}{}{}cds.h}|hyperpage}{69}
+\indexentry{sp\_\discretionary {-}{}{}cds.h@{sp\_\discretionary {-}{}{}cds.h}!save\_\discretionary {-}{}{}cds@{save\_\discretionary {-}{}{}cds}|hyperpage}{69}
+\indexentry{save\_\discretionary {-}{}{}cds@{save\_\discretionary {-}{}{}cds}!sp_cds.h@{sp\_\discretionary {-}{}{}cds.h}|hyperpage}{69}
+\indexentry{sp\_\discretionary {-}{}{}cds.h@{sp\_\discretionary {-}{}{}cds.h}!sp\_\discretionary {-}{}{}imprimir\_\discretionary {-}{}{}cds@{sp\_\discretionary {-}{}{}imprimir\_\discretionary {-}{}{}cds}|hyperpage}{70}
+\indexentry{sp\_\discretionary {-}{}{}imprimir\_\discretionary {-}{}{}cds@{sp\_\discretionary {-}{}{}imprimir\_\discretionary {-}{}{}cds}!sp_cds.h@{sp\_\discretionary {-}{}{}cds.h}|hyperpage}{70}
+\indexentry{sparse/sp\_\discretionary {-}{}{}coord.c@{sparse/sp\_\discretionary {-}{}{}coord.c}|hyperpage}{71}
+\indexentry{sp\_\discretionary {-}{}{}coord.c@{sp\_\discretionary {-}{}{}coord.c}!free\_\discretionary {-}{}{}coord@{free\_\discretionary {-}{}{}coord}|hyperpage}{72}
+\indexentry{free\_\discretionary {-}{}{}coord@{free\_\discretionary {-}{}{}coord}!sp_coord.c@{sp\_\discretionary {-}{}{}coord.c}|hyperpage}{72}
+\indexentry{sp\_\discretionary {-}{}{}coord.c@{sp\_\discretionary {-}{}{}coord.c}!load\_\discretionary {-}{}{}coord@{load\_\discretionary {-}{}{}coord}|hyperpage}{72}
+\indexentry{load\_\discretionary {-}{}{}coord@{load\_\discretionary {-}{}{}coord}!sp_coord.c@{sp\_\discretionary {-}{}{}coord.c}|hyperpage}{72}
+\indexentry{sp\_\discretionary {-}{}{}coord.c@{sp\_\discretionary {-}{}{}coord.c}!mat2coord@{mat2coord}|hyperpage}{74}
+\indexentry{mat2coord@{mat2coord}!sp_coord.c@{sp\_\discretionary {-}{}{}coord.c}|hyperpage}{74}
+\indexentry{sp\_\discretionary {-}{}{}coord.c@{sp\_\discretionary {-}{}{}coord.c}!save\_\discretionary {-}{}{}coord@{save\_\discretionary {-}{}{}coord}|hyperpage}{74}
+\indexentry{save\_\discretionary {-}{}{}coord@{save\_\discretionary {-}{}{}coord}!sp_coord.c@{sp\_\discretionary {-}{}{}coord.c}|hyperpage}{74}
+\indexentry{sp\_\discretionary {-}{}{}coord.c@{sp\_\discretionary {-}{}{}coord.c}!sp\_\discretionary {-}{}{}imprimir\_\discretionary {-}{}{}coord@{sp\_\discretionary {-}{}{}imprimir\_\discretionary {-}{}{}coord}|hyperpage}{75}
+\indexentry{sp\_\discretionary {-}{}{}imprimir\_\discretionary {-}{}{}coord@{sp\_\discretionary {-}{}{}imprimir\_\discretionary {-}{}{}coord}!sp_coord.c@{sp\_\discretionary {-}{}{}coord.c}|hyperpage}{75}
+\indexentry{sparse/sp\_\discretionary {-}{}{}coord.h@{sparse/sp\_\discretionary {-}{}{}coord.h}|hyperpage}{76}
+\indexentry{sp\_\discretionary {-}{}{}coord.h@{sp\_\discretionary {-}{}{}coord.h}!free\_\discretionary {-}{}{}coord@{free\_\discretionary {-}{}{}coord}|hyperpage}{76}
+\indexentry{free\_\discretionary {-}{}{}coord@{free\_\discretionary {-}{}{}coord}!sp_coord.h@{sp\_\discretionary {-}{}{}coord.h}|hyperpage}{76}
+\indexentry{sp\_\discretionary {-}{}{}coord.h@{sp\_\discretionary {-}{}{}coord.h}!load\_\discretionary {-}{}{}coord@{load\_\discretionary {-}{}{}coord}|hyperpage}{77}
+\indexentry{load\_\discretionary {-}{}{}coord@{load\_\discretionary {-}{}{}coord}!sp_coord.h@{sp\_\discretionary {-}{}{}coord.h}|hyperpage}{77}
+\indexentry{sp\_\discretionary {-}{}{}coord.h@{sp\_\discretionary {-}{}{}coord.h}!mat2coord@{mat2coord}|hyperpage}{78}
+\indexentry{mat2coord@{mat2coord}!sp_coord.h@{sp\_\discretionary {-}{}{}coord.h}|hyperpage}{78}
+\indexentry{sp\_\discretionary {-}{}{}coord.h@{sp\_\discretionary {-}{}{}coord.h}!save\_\discretionary {-}{}{}coord@{save\_\discretionary {-}{}{}coord}|hyperpage}{79}
+\indexentry{save\_\discretionary {-}{}{}coord@{save\_\discretionary {-}{}{}coord}!sp_coord.h@{sp\_\discretionary {-}{}{}coord.h}|hyperpage}{79}
+\indexentry{sp\_\discretionary {-}{}{}coord.h@{sp\_\discretionary {-}{}{}coord.h}!sp\_\discretionary {-}{}{}imprimir\_\discretionary {-}{}{}coord@{sp\_\discretionary {-}{}{}imprimir\_\discretionary {-}{}{}coord}|hyperpage}{80}
+\indexentry{sp\_\discretionary {-}{}{}imprimir\_\discretionary {-}{}{}coord@{sp\_\discretionary {-}{}{}imprimir\_\discretionary {-}{}{}coord}!sp_coord.h@{sp\_\discretionary {-}{}{}coord.h}|hyperpage}{80}
+\indexentry{sparse/sp\_\discretionary {-}{}{}packcol.c@{sparse/sp\_\discretionary {-}{}{}packcol.c}|hyperpage}{81}
+\indexentry{sp\_\discretionary {-}{}{}packcol.c@{sp\_\discretionary {-}{}{}packcol.c}!coord2packcol@{coord2packcol}|hyperpage}{81}
+\indexentry{coord2packcol@{coord2packcol}!sp_packcol.c@{sp\_\discretionary {-}{}{}packcol.c}|hyperpage}{81}
+\indexentry{sp\_\discretionary {-}{}{}packcol.c@{sp\_\discretionary {-}{}{}packcol.c}!coord2packcol\_\discretionary {-}{}{}symmetric@{coord2packcol\_\discretionary {-}{}{}symmetric}|hyperpage}{82}
+\indexentry{coord2packcol\_\discretionary {-}{}{}symmetric@{coord2packcol\_\discretionary {-}{}{}symmetric}!sp_packcol.c@{sp\_\discretionary {-}{}{}packcol.c}|hyperpage}{82}
+\indexentry{sp\_\discretionary {-}{}{}packcol.c@{sp\_\discretionary {-}{}{}packcol.c}!free\_\discretionary {-}{}{}packcol@{free\_\discretionary {-}{}{}packcol}|hyperpage}{83}
+\indexentry{free\_\discretionary {-}{}{}packcol@{free\_\discretionary {-}{}{}packcol}!sp_packcol.c@{sp\_\discretionary {-}{}{}packcol.c}|hyperpage}{83}
+\indexentry{sp\_\discretionary {-}{}{}packcol.c@{sp\_\discretionary {-}{}{}packcol.c}!row\_\discretionary {-}{}{}traversal\_\discretionary {-}{}{}packcol@{row\_\discretionary {-}{}{}traversal\_\discretionary {-}{}{}packcol}|hyperpage}{84}
+\indexentry{row\_\discretionary {-}{}{}traversal\_\discretionary {-}{}{}packcol@{row\_\discretionary {-}{}{}traversal\_\discretionary {-}{}{}packcol}!sp_packcol.c@{sp\_\discretionary {-}{}{}packcol.c}|hyperpage}{84}
+\indexentry{sp\_\discretionary {-}{}{}packcol.c@{sp\_\discretionary {-}{}{}packcol.c}!save\_\discretionary {-}{}{}packcol@{save\_\discretionary {-}{}{}packcol}|hyperpage}{85}
+\indexentry{save\_\discretionary {-}{}{}packcol@{save\_\discretionary {-}{}{}packcol}!sp_packcol.c@{sp\_\discretionary {-}{}{}packcol.c}|hyperpage}{85}
+\indexentry{sp\_\discretionary {-}{}{}packcol.c@{sp\_\discretionary {-}{}{}packcol.c}!save\_\discretionary {-}{}{}packcol\_\discretionary {-}{}{}symmetric@{save\_\discretionary {-}{}{}packcol\_\discretionary {-}{}{}symmetric}|hyperpage}{86}
+\indexentry{save\_\discretionary {-}{}{}packcol\_\discretionary {-}{}{}symmetric@{save\_\discretionary {-}{}{}packcol\_\discretionary {-}{}{}symmetric}!sp_packcol.c@{sp\_\discretionary {-}{}{}packcol.c}|hyperpage}{86}
+\indexentry{sp\_\discretionary {-}{}{}packcol.c@{sp\_\discretionary {-}{}{}packcol.c}!sp\_\discretionary {-}{}{}imprimir\_\discretionary {-}{}{}packcol@{sp\_\discretionary {-}{}{}imprimir\_\discretionary {-}{}{}packcol}|hyperpage}{87}
+\indexentry{sp\_\discretionary {-}{}{}imprimir\_\discretionary {-}{}{}packcol@{sp\_\discretionary {-}{}{}imprimir\_\discretionary {-}{}{}packcol}!sp_packcol.c@{sp\_\discretionary {-}{}{}packcol.c}|hyperpage}{87}
+\indexentry{sparse/sp\_\discretionary {-}{}{}packcol.h@{sparse/sp\_\discretionary {-}{}{}packcol.h}|hyperpage}{88}
+\indexentry{sp\_\discretionary {-}{}{}packcol.h@{sp\_\discretionary {-}{}{}packcol.h}!coord2packcol@{coord2packcol}|hyperpage}{89}
+\indexentry{coord2packcol@{coord2packcol}!sp_packcol.h@{sp\_\discretionary {-}{}{}packcol.h}|hyperpage}{89}
+\indexentry{sp\_\discretionary {-}{}{}packcol.h@{sp\_\discretionary {-}{}{}packcol.h}!coord2packcol\_\discretionary {-}{}{}symmetric@{coord2packcol\_\discretionary {-}{}{}symmetric}|hyperpage}{90}
+\indexentry{coord2packcol\_\discretionary {-}{}{}symmetric@{coord2packcol\_\discretionary {-}{}{}symmetric}!sp_packcol.h@{sp\_\discretionary {-}{}{}packcol.h}|hyperpage}{90}
+\indexentry{sp\_\discretionary {-}{}{}packcol.h@{sp\_\discretionary {-}{}{}packcol.h}!free\_\discretionary {-}{}{}packcol@{free\_\discretionary {-}{}{}packcol}|hyperpage}{91}
+\indexentry{free\_\discretionary {-}{}{}packcol@{free\_\discretionary {-}{}{}packcol}!sp_packcol.h@{sp\_\discretionary {-}{}{}packcol.h}|hyperpage}{91}
+\indexentry{sp\_\discretionary {-}{}{}packcol.h@{sp\_\discretionary {-}{}{}packcol.h}!row\_\discretionary {-}{}{}traversal\_\discretionary {-}{}{}packcol@{row\_\discretionary {-}{}{}traversal\_\discretionary {-}{}{}packcol}|hyperpage}{91}
+\indexentry{row\_\discretionary {-}{}{}traversal\_\discretionary {-}{}{}packcol@{row\_\discretionary {-}{}{}traversal\_\discretionary {-}{}{}packcol}!sp_packcol.h@{sp\_\discretionary {-}{}{}packcol.h}|hyperpage}{91}
+\indexentry{sp\_\discretionary {-}{}{}packcol.h@{sp\_\discretionary {-}{}{}packcol.h}!save\_\discretionary {-}{}{}packcol@{save\_\discretionary {-}{}{}packcol}|hyperpage}{93}
+\indexentry{save\_\discretionary {-}{}{}packcol@{save\_\discretionary {-}{}{}packcol}!sp_packcol.h@{sp\_\discretionary {-}{}{}packcol.h}|hyperpage}{93}
+\indexentry{sp\_\discretionary {-}{}{}packcol.h@{sp\_\discretionary {-}{}{}packcol.h}!save\_\discretionary {-}{}{}packcol\_\discretionary {-}{}{}symmetric@{save\_\discretionary {-}{}{}packcol\_\discretionary {-}{}{}symmetric}|hyperpage}{94}
+\indexentry{save\_\discretionary {-}{}{}packcol\_\discretionary {-}{}{}symmetric@{save\_\discretionary {-}{}{}packcol\_\discretionary {-}{}{}symmetric}!sp_packcol.h@{sp\_\discretionary {-}{}{}packcol.h}|hyperpage}{94}
+\indexentry{sp\_\discretionary {-}{}{}packcol.h@{sp\_\discretionary {-}{}{}packcol.h}!sp\_\discretionary {-}{}{}imprimir\_\discretionary {-}{}{}packcol@{sp\_\discretionary {-}{}{}imprimir\_\discretionary {-}{}{}packcol}|hyperpage}{95}
+\indexentry{sp\_\discretionary {-}{}{}imprimir\_\discretionary {-}{}{}packcol@{sp\_\discretionary {-}{}{}imprimir\_\discretionary {-}{}{}packcol}!sp_packcol.h@{sp\_\discretionary {-}{}{}packcol.h}|hyperpage}{95}
+\indexentry{utils.c@{utils.c}|hyperpage}{96}
+\indexentry{utils.c@{utils.c}!binary\_\discretionary {-}{}{}search@{binary\_\discretionary {-}{}{}search}|hyperpage}{96}
+\indexentry{binary\_\discretionary {-}{}{}search@{binary\_\discretionary {-}{}{}search}!utils.c@{utils.c}|hyperpage}{96}
+\indexentry{utils.c@{utils.c}!insert\_\discretionary {-}{}{}sorted@{insert\_\discretionary {-}{}{}sorted}|hyperpage}{97}
+\indexentry{insert\_\discretionary {-}{}{}sorted@{insert\_\discretionary {-}{}{}sorted}!utils.c@{utils.c}|hyperpage}{97}
+\indexentry{utils.h@{utils.h}|hyperpage}{97}
+\indexentry{utils.h@{utils.h}!BAL\_\discretionary {-}{}{}ERROR@{BAL\_\discretionary {-}{}{}ERROR}|hyperpage}{98}
+\indexentry{BAL\_\discretionary {-}{}{}ERROR@{BAL\_\discretionary {-}{}{}ERROR}!utils.h@{utils.h}|hyperpage}{98}
+\indexentry{utils.h@{utils.h}!binary\_\discretionary {-}{}{}search@{binary\_\discretionary {-}{}{}search}|hyperpage}{98}
+\indexentry{binary\_\discretionary {-}{}{}search@{binary\_\discretionary {-}{}{}search}!utils.h@{utils.h}|hyperpage}{98}
+\indexentry{utils.h@{utils.h}!insert\_\discretionary {-}{}{}sorted@{insert\_\discretionary {-}{}{}sorted}|hyperpage}{99}
+\indexentry{insert\_\discretionary {-}{}{}sorted@{insert\_\discretionary {-}{}{}sorted}!utils.h@{utils.h}|hyperpage}{99}

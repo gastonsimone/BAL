@@ -1,0 +1,173 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>BAL: Fichero Fuente parser/matriz_parser.y</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Generado por Doxygen 1.5.5 -->
+<script type="text/javascript">
+<!--
+function changeDisplayState (e){
+  var num=this.id.replace(/[^[0-9]/g,'');
+  var button=this.firstChild;
+  var sectionDiv=document.getElementById('dynsection'+num);
+  if (sectionDiv.style.display=='none'||sectionDiv.style.display==''){
+    sectionDiv.style.display='block';
+    button.src='open.gif';
+  }else{
+    sectionDiv.style.display='none';
+    button.src='closed.gif';
+  }
+}
+function initDynSections(){
+  var divs=document.getElementsByTagName('div');
+  var sectionCounter=1;
+  for(var i=0;i<divs.length-1;i++){
+    if(divs[i].className=='dynheader'&&divs[i+1].className=='dynsection'){
+      var header=divs[i];
+      var section=divs[i+1];
+      var button=header.firstChild;
+      if (button!='IMG'){
+        divs[i].insertBefore(document.createTextNode(' '),divs[i].firstChild);
+        button=document.createElement('img');
+        divs[i].insertBefore(button,divs[i].firstChild);
+      }
+      header.style.cursor='pointer';
+      header.onclick=changeDisplayState;
+      header.id='dynheader'+sectionCounter;
+      button.src='closed.gif';
+      section.id='dynsection'+sectionCounter;
+      section.style.display='none';
+      section.style.marginLeft='14px';
+      sectionCounter++;
+    }
+  }
+}
+window.onload = initDynSections;
+-->
+</script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Página&nbsp;principal</span></a></li>
+      <li><a href="pages.html"><span>Páginas&nbsp;relacionadas</span></a></li>
+      <li><a href="annotated.html"><span>Estructuras&nbsp;de&nbsp;Datos</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+      <li><a href="dirs.html"><span>Directorios</span></a></li>
+    </ul>
+  </div>
+  <div class="navpath"><a class="el" href="dir_3bd78b1cf2ba11d1b29359e945e12a42.html">parser</a>
+  </div>
+</div>
+</div>
+<h1>matriz_parser.y</h1><a href="matriz__parser_8y.html">Ir a la documentación de este archivo.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 
+<a name="l00021"></a>00021 %{
+<a name="l00022"></a>00022 <span class="preprocessor">#include &lt;stdio.h&gt;</span>
+<a name="l00023"></a>00023 <span class="preprocessor">#include &lt;stdlib.h&gt;</span>
+<a name="l00024"></a>00024 <span class="preprocessor">#include &lt;glib.h&gt;</span>
+<a name="l00025"></a>00025 <span class="preprocessor">#include &lt;errno.h&gt;</span>
+<a name="l00026"></a>00026 <span class="preprocessor">#include &lt;string.h&gt;</span>
+<a name="l00027"></a>00027 
+<a name="l00031"></a>00031 <span class="keywordtype">int</span> yylex (<span class="keywordtype">void</span>);
+<a name="l00032"></a>00032 
+<a name="l00033"></a>00033 <span class="keywordtype">void</span> <a class="code" href="matriz__parser_8y.html#6bbce3a09233d68cbfb268cd87cdc360" title="Función de manejo de errores para el parser generado por bison.">yyerror</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *archivo, <span class="keywordtype">double</span> ***matriz, <span class="keywordtype">int</span> *n, <span class="keywordtype">int</span> *m, <span class="keyword">const</span> <span class="keywordtype">char</span> *msg);
+<a name="l00034"></a>00034 
+<a name="l00040"></a>00040 <span class="keywordtype">void</span> yyrestart (FILE *fp);
+<a name="l00041"></a>00041 %}
+<a name="l00042"></a>00042 
+<a name="l00043"></a>00043 %<span class="keyword">union </span>{
+<a name="l00044"></a>00044     <span class="keywordtype">char</span> car;
+<a name="l00045"></a>00045     <span class="keywordtype">double</span> valor;
+<a name="l00046"></a>00046     GSList *lista;
+<a name="l00047"></a>00047 }
+<a name="l00048"></a>00048 
+<a name="l00049"></a>00049 %parse-param {<span class="keyword">const</span> <span class="keywordtype">char</span> *archivo};
+<a name="l00050"></a>00050 %parse-param {<span class="keywordtype">double</span> ***matriz};
+<a name="l00051"></a>00051 %parse-param {<span class="keywordtype">int</span> *n};
+<a name="l00052"></a>00052 %parse-param {<span class="keywordtype">int</span> *m};
+<a name="l00053"></a>00053 %initial-action{
+<a name="l00054"></a>00054     FILE* fp;
+<a name="l00055"></a>00055 
+<a name="l00056"></a>00056     <span class="keywordflow">if</span> (NULL == (fp = fopen(archivo, <span class="stringliteral">"r"</span>))) {
+<a name="l00057"></a>00057         fprintf(stderr, <span class="stringliteral">"[%d] %s\n"</span>, errno, strerror(errno));
+<a name="l00058"></a>00058         YYABORT;
+<a name="l00059"></a>00059     }
+<a name="l00060"></a>00060 
+<a name="l00061"></a>00061     yyrestart(fp);
+<a name="l00062"></a>00062 };
+<a name="l00063"></a>00063 
+<a name="l00064"></a>00064 %token &lt;car&gt; APERTURA CERRADO SEMICOLON
+<a name="l00065"></a>00065 %token &lt;valor&gt; NUMERO       <span class="comment">/* Una entrada de la matriz*/</span>
+<a name="l00066"></a>00066 %type &lt;lista&gt; matriz    <span class="comment">/* La matriz como lista de filas */</span>
+<a name="l00067"></a>00067 %type &lt;lista&gt; filas     <span class="comment">/* Lista de filas */</span>
+<a name="l00068"></a>00068 %type &lt;lista&gt; fila      <span class="comment">/* Una fila como lista de valores */</span>
+<a name="l00069"></a>00069 %destructor { g_slist_free($$); } matriz filas fila
+<a name="l00070"></a>00070 
+<a name="l00071"></a>00071 %%
+<a name="l00072"></a>00072 
+<a name="l00073"></a>00073 matriz : APERTURA filas CERRADO 
+<a name="l00074"></a>00074     {
+<a name="l00075"></a>00075         GSList *aux, *fila;
+<a name="l00076"></a>00076         <span class="keywordtype">double</span> *val;
+<a name="l00077"></a>00077         <span class="keywordtype">int</span> i, j;
+<a name="l00078"></a>00078 
+<a name="l00079"></a>00079         $$ = $2;
+<a name="l00080"></a>00080 
+<a name="l00081"></a>00081         *matriz = NULL;
+<a name="l00082"></a>00082         *n = (int)g_slist_length($2);
+<a name="l00083"></a>00083         aux = (GSList*)$2-&gt;data;
+<a name="l00084"></a>00084         *m = (int)g_slist_length(aux);
+<a name="l00085"></a>00085 
+<a name="l00086"></a>00086         <span class="comment">/* Antes verificar que todas las filas tienen la misma cantidad de valores */</span>
+<a name="l00087"></a>00087         <span class="keywordflow">for</span>(aux=$2-&gt;next; aux; aux=aux-&gt;next) {
+<a name="l00088"></a>00088             fila = (GSList*)aux-&gt;data;
+<a name="l00089"></a>00089 
+<a name="l00090"></a>00090             if (*m != (<span class="keywordtype">int</span>)g_slist_length(fila))
+<a name="l00091"></a>00091                 YYABORT;
+<a name="l00092"></a>00092         }
+<a name="l00093"></a>00093 
+<a name="l00094"></a>00094         <span class="comment">/* Armar estructura en memoria */</span>
+<a name="l00095"></a>00095         *matriz = (<span class="keywordtype">double</span>**)malloc(<span class="keyword">sizeof</span>(<span class="keywordtype">double</span>*) * (*n));
+<a name="l00096"></a>00096         <span class="keywordflow">for</span>(aux=$2, i=0; aux; aux=aux-&gt;next, ++i) {
+<a name="l00097"></a>00097             (*matriz)[i] = (<span class="keywordtype">double</span>*)malloc(<span class="keyword">sizeof</span>(<span class="keywordtype">double</span>) * (*m));
+<a name="l00098"></a>00098             <span class="keywordflow">for</span>(fila = (GSList*)aux-&gt;data, j=0; fila; fila=fila-&gt;next, ++j) {
+<a name="l00099"></a>00099                 val = (<span class="keywordtype">double</span>*)fila-&gt;data;
+<a name="l00100"></a>00100                 (*matriz)[i][j] = *val;
+<a name="l00101"></a>00101                 free(fila-&gt;data);
+<a name="l00102"></a>00102             }
+<a name="l00103"></a>00103         }
+<a name="l00104"></a>00104     }
+<a name="l00105"></a>00105     ;
+<a name="l00106"></a>00106 
+<a name="l00107"></a>00107 filas : fila                { $$ = g_slist_append(NULL, (gpointer)$1); }
+<a name="l00108"></a>00108     | filas SEMICOLON fila  { $$ = g_slist_append($1, (gpointer)$3); }
+<a name="l00109"></a>00109     ;
+<a name="l00110"></a>00110 
+<a name="l00111"></a>00111 fila : NUMERO   
+<a name="l00112"></a>00112      {
+<a name="l00113"></a>00113         <span class="keywordtype">double</span> *val = (<span class="keywordtype">double</span> *)malloc(<span class="keyword">sizeof</span>(<span class="keywordtype">double</span>));
+<a name="l00114"></a>00114         *val = $1;
+<a name="l00115"></a>00115         $$ = g_slist_append(NULL, (gpointer)val);
+<a name="l00116"></a>00116     }
+<a name="l00117"></a>00117     | fila NUMERO   
+<a name="l00118"></a>00118     {
+<a name="l00119"></a>00119         <span class="keywordtype">double</span> *val = (<span class="keywordtype">double</span> *)malloc(<span class="keyword">sizeof</span>(<span class="keywordtype">double</span>));
+<a name="l00120"></a>00120         *val = $2;
+<a name="l00121"></a>00121         $$ = g_slist_append($1, (gpointer)val);
+<a name="l00122"></a>00122     }
+<a name="l00123"></a>00123     ;
+<a name="l00124"></a>00124 
+<a name="l00125"></a>00125 %%
+<a name="l00126"></a>00126 
+<a name="l00127"></a><a class="code" href="matriz__parser_8y.html#6bbce3a09233d68cbfb268cd87cdc360">00127</a> <span class="keywordtype">void</span> <a class="code" href="matriz__parser_8y.html#6bbce3a09233d68cbfb268cd87cdc360" title="Función de manejo de errores para el parser generado por bison.">yyerror</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *archivo, <span class="keywordtype">double</span> ***matriz, <span class="keywordtype">int</span> *n, <span class="keywordtype">int</span> *m, <span class="keyword">const</span> <span class="keywordtype">char</span> *msg)
+<a name="l00128"></a>00128 {
+<a name="l00129"></a>00129     fprintf(stderr, <span class="stringliteral">"%s\n"</span>, msg);
+<a name="l00130"></a>00130 }
+<a name="l00131"></a>00131 
+</pre></div></div>
+<hr size="1">
+<address style="text-align: right;">
+<small>BAL&nbsp;1.0.0<br>Generado el Wed Aug 27 19:54:18 2008.</small>
+</address>
+</body>
+</html>

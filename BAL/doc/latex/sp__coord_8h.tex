@@ -1,0 +1,310 @@
+\hypertarget{sp__coord_8h}{
+\subsection{Referencia del Archivo sparse/sp\_\-coord.h}
+\label{sp__coord_8h}\index{sparse/sp\_\-coord.h@{sparse/sp\_\-coord.h}}
+}
+Archivo de cabecera para matriz dispersa, formato simple. 
+
+{\tt \#include $<$stdio.h$>$}\par
+\subsubsection*{Estructuras de datos}
+\begin{CompactItemize}
+\item 
+struct \hyperlink{structsp__coord}{sp\_\-coord}
+\begin{CompactList}\small\item\em Estructura de matriz dispersa simple por coordenadas. \item\end{CompactList}\end{CompactItemize}
+\subsubsection*{Funciones}
+\begin{CompactItemize}
+\item 
+\hyperlink{structsp__coord}{sp\_\-coord} $\ast$ \hyperlink{sp__coord_8h_39456c57f92a0782a466d9bbe39e20cd}{mat2coord} (int n, int m, double $\ast$$\ast$mat)
+\begin{CompactList}\small\item\em Genera la matriz dispersa equivalente a la matriz completa mat nxm. \item\end{CompactList}\item 
+\hyperlink{structsp__coord}{sp\_\-coord} $\ast$ \hyperlink{sp__coord_8h_36f946a8c68e1161e9a8955177f69820}{load\_\-coord} (FILE $\ast$fp)
+\begin{CompactList}\small\item\em Lee una matriz en formato simple por coordenadas desde archivo. \item\end{CompactList}\item 
+void \hyperlink{sp__coord_8h_65d8ffec5eb8263159ca9e6310c6e762}{save\_\-coord} (FILE $\ast$fp, \hyperlink{structsp__coord}{sp\_\-coord} $\ast$A)
+\begin{CompactList}\small\item\em Escribe en {\tt fp} la matriz {\tt A} en un formato entendible por \hyperlink{sp__coord_8c_d6a1042d41ff43da1f26396f5803daac}{load\_\-coord()}. \item\end{CompactList}\item 
+void \hyperlink{sp__coord_8h_ff646304bb38349c4620069c73a35760}{sp\_\-imprimir\_\-coord} (FILE $\ast$fp, \hyperlink{structsp__coord}{sp\_\-coord} $\ast$mat)
+\begin{CompactList}\small\item\em Imprime la matriz guardada en formato simple por coordenadas en fp. \item\end{CompactList}\item 
+void \hyperlink{sp__coord_8h_33dd472b98444c5d08c9099556226816}{free\_\-coord} (\hyperlink{structsp__coord}{sp\_\-coord} $\ast$A)
+\begin{CompactList}\small\item\em Borra toda la memoria reservada por la matriz A. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsubsection{Descripción detallada}
+Archivo de cabecera para matriz dispersa, formato simple. 
+
+Este archivo contiene la definición de la estructura de datos mediante la cual se almacena una matriz dispersa según el formato simple, representación por coordenadas. 
+
+Definición en el archivo \hyperlink{sp__coord_8h-source}{sp\_\-coord.h}.
+
+\subsubsection{Documentación de las funciones}
+\hypertarget{sp__coord_8h_33dd472b98444c5d08c9099556226816}{
+\index{sp\_\-coord.h@{sp\_\-coord.h}!free\_\-coord@{free\_\-coord}}
+\index{free\_\-coord@{free\_\-coord}!sp_coord.h@{sp\_\-coord.h}}
+\paragraph{\setlength{\rightskip}{0pt plus 5cm}void free\_\-coord ({\bf sp\_\-coord} $\ast$ {\em A})}\hfill}
+\label{sp__coord_8h_33dd472b98444c5d08c9099556226816}
+
+
+Borra toda la memoria reservada por la matriz A. 
+
+Esta función libera toda la memoria reservada por la estructura de datos \hyperlink{structsp__coord}{sp\_\-coord}. 
+
+Definición en la línea 206 del archivo sp\_\-coord.c.
+
+Hace referencia a sp\_\-coord::cx, sp\_\-coord::rx, y sp\_\-coord::val.
+
+Referenciado por bal\_\-free\_\-coord(), y load\_\-coord().
+
+\begin{Code}\begin{verbatim}207 {
+208     free(A->rx);
+209     free(A->cx);
+210     free(A->val);
+211     free(A);
+212 }
+\end{verbatim}
+\end{Code}
+
+
+\hypertarget{sp__coord_8h_36f946a8c68e1161e9a8955177f69820}{
+\index{sp\_\-coord.h@{sp\_\-coord.h}!load\_\-coord@{load\_\-coord}}
+\index{load\_\-coord@{load\_\-coord}!sp_coord.h@{sp\_\-coord.h}}
+\paragraph{\setlength{\rightskip}{0pt plus 5cm}{\bf sp\_\-coord}$\ast$ load\_\-coord (FILE $\ast$ {\em fp})}\hfill}
+\label{sp__coord_8h_36f946a8c68e1161e9a8955177f69820}
+
+
+Lee una matriz en formato simple por coordenadas desde archivo. 
+
+\begin{Desc}
+\item[Parámetros:]
+\begin{description}
+\item[{\em fp}]Archivo del cual leer la matriz \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Devuelve:]La matriz leída en formato simple por coordenadas\end{Desc}
+Lee el archivo {\tt fp} en busca de una definición de matriz en formato simple por coordenadas. En caso de encontrarlo, construye la estructura en memoria y la devuelve al finalizar.
+
+El formato buscado es el siguiente: \begin{enumerate}
+\item El primer número leído indica la cantidad de filas de la matriz ({\tt nrow}) \item El segundo número leído indica la cantidad de columnas de la matriz ({\tt ncol}) \item El tercer número leído indica la cantidad de entradas no cero de la matriz ({\tt nnz}) \item Luego trata de leer {\tt nnz} números enteros, que representan los índices de fila donde hay elementos no cero ({\tt rx}) \item Luego trata de leer {\tt nnz} números enteros, que representan los índices de columna donde hay elementos no cero ({\tt cx}) \item Luego trata de leer {\tt nnz} números reales, que representan los índices las entradas no cero de la matriz ({\tt val}) \end{enumerate}
+Todos los números pueden estar separados por cualquier cantidad de espacios, tabulaciones o fines de línea.
+
+\begin{Desc}
+\item[Nota:]La función \hyperlink{sp__coord_8c_65d8ffec5eb8263159ca9e6310c6e762}{save\_\-coord()} genera el formato esperado por esta función. \end{Desc}
+
+
+Definición en la línea 84 del archivo sp\_\-coord.c.
+
+Hace referencia a BAL\_\-ERROR, sp\_\-coord::cx, free\_\-coord(), sp\_\-coord::ncol, sp\_\-coord::nnz, sp\_\-coord::nrow, sp\_\-coord::rx, y sp\_\-coord::val.
+
+Referenciado por bal\_\-load\_\-coord().
+
+\begin{Code}\begin{verbatim}85 {
+86     int x, i;
+87     float y;
+88     sp_coord *m;
+89 
+90     m = (sp_coord*)malloc(sizeof(sp_coord));
+91 
+92     if (fscanf(fp, " %d", &x) != 1) {
+93         BAL_ERROR("No se pudo leer la cantidad de filas");
+94         free(m);
+95         return NULL;
+96     }
+97     m->nrow = x;
+98 
+99     if (fscanf(fp, " %d", &x) != 1) {
+100         BAL_ERROR("No se pudo leer la cantidad de columnas");
+101         free(m);
+102         return NULL;
+103     }
+104     m->ncol = x;
+105 
+106     if (fscanf(fp, " %d", &x) != 1) {
+107         BAL_ERROR("No se pudo leer la cantidad de elementos no cero");
+108         free(m);
+109         return NULL;
+110     }
+111     m->nnz = x;
+112 
+113     m->rx = (unsigned int*)malloc(sizeof(unsigned int) * x);
+114     m->cx = (unsigned int*)malloc(sizeof(unsigned int) * x);
+115     m->val = (double*)malloc(sizeof(double) * x);
+116 
+117     /* Lee los índices de fila */
+118     for (i=0; i < m->nnz; ++i) {
+119         if (fscanf(fp, " %d", &x) != 1) {
+120             BAL_ERROR("No se pudo leer uno de los índices de fila");
+121             free_coord(m);
+122             return NULL;
+123         }
+124         m->rx[i] = (unsigned int)x;
+125     }
+126 
+127     /* Lee los índices de columna */
+128     for (i=0; i < m->nnz; ++i) {
+129         if (fscanf(fp, " %d", &x) != 1) {
+130             BAL_ERROR("No se pudo leer uno de los índices de columna");
+131             free_coord(m);
+132             return NULL;
+133         }
+134         m->cx[i] = (unsigned int)x;
+135     }
+136 
+137     /* Lee las entradas de la matriz */
+138     for (i=0; i < m->nnz; ++i) {
+139         if (fscanf(fp, " %f", &y) != 1) {
+140             BAL_ERROR("No se pudo leer una de las entradas de la matriz");
+141             free_coord(m);
+142             return NULL;
+143         }
+144         m->val[i] = (double)y;
+145     }
+146 
+147     return m;
+148 }
+\end{verbatim}
+\end{Code}
+
+
+\hypertarget{sp__coord_8h_39456c57f92a0782a466d9bbe39e20cd}{
+\index{sp\_\-coord.h@{sp\_\-coord.h}!mat2coord@{mat2coord}}
+\index{mat2coord@{mat2coord}!sp_coord.h@{sp\_\-coord.h}}
+\paragraph{\setlength{\rightskip}{0pt plus 5cm}{\bf sp\_\-coord}$\ast$ mat2coord (int {\em n}, \/  int {\em m}, \/  double $\ast$$\ast$ {\em mat})}\hfill}
+\label{sp__coord_8h_39456c57f92a0782a466d9bbe39e20cd}
+
+
+Genera la matriz dispersa equivalente a la matriz completa mat nxm. 
+
+\begin{Desc}
+\item[Parámetros:]
+\begin{description}
+\item[{\em n}]Cantidad total de filas en mat \item[{\em m}]Cantidad total de columnas en mat \item[{\em mat}]Matriz completa en el formato clásico de C. \end{description}
+\end{Desc}
+
+
+Definición en la línea 19 del archivo sp\_\-coord.c.
+
+Hace referencia a sp\_\-coord::cx, sp\_\-coord::ncol, sp\_\-coord::nnz, sp\_\-coord::nrow, sp\_\-coord::rx, y sp\_\-coord::val.
+
+Referenciado por bal\_\-mat2coord().
+
+\begin{Code}\begin{verbatim}20 {
+21     unsigned int i, j, count;
+22     sp_coord *sp;
+23 
+24     count = 0;
+25     for(i=0; i < n; ++i) {
+26         for(j=0; j < m; ++j) {
+27             if (mat[i][j] != 0)
+28                 ++count;
+29         }
+30     }
+31 
+32     sp = (sp_coord*)malloc(sizeof(sp_coord));
+33     sp->nrow = n;
+34     sp->ncol = m;
+35     sp->nnz = count;
+36     sp->rx = NULL;
+37     sp->cx = NULL;
+38     sp->val = NULL;
+39 
+40     if (count > 0) {
+41         sp->rx = (unsigned int*)malloc(sizeof(unsigned int) * count);
+42         sp->cx = (unsigned int*)malloc(sizeof(unsigned int) * count);
+43         sp->val = (double*)malloc(sizeof(double) * count);
+44 
+45         count = 0;
+46         for(i=0; i < n; ++i) {
+47             for(j=0; j < m; ++j) {
+48                 if (mat[i][j] != 0) {
+49                     sp->rx[count] = i;
+50                     sp->cx[count] = j;
+51                     sp->val[count] = mat[i][j];
+52                     ++count;
+53                 }
+54             }
+55         }
+56     }
+57 
+58     return sp;
+59 }
+\end{verbatim}
+\end{Code}
+
+
+\hypertarget{sp__coord_8h_65d8ffec5eb8263159ca9e6310c6e762}{
+\index{sp\_\-coord.h@{sp\_\-coord.h}!save\_\-coord@{save\_\-coord}}
+\index{save\_\-coord@{save\_\-coord}!sp_coord.h@{sp\_\-coord.h}}
+\paragraph{\setlength{\rightskip}{0pt plus 5cm}void save\_\-coord (FILE $\ast$ {\em fp}, \/  {\bf sp\_\-coord} $\ast$ {\em A})}\hfill}
+\label{sp__coord_8h_65d8ffec5eb8263159ca9e6310c6e762}
+
+
+Escribe en {\tt fp} la matriz {\tt A} en un formato entendible por \hyperlink{sp__coord_8c_d6a1042d41ff43da1f26396f5803daac}{load\_\-coord()}. 
+
+Esta función es útil para respaldar matrices en formato simple por coordenadas. Una matriz guardada mediante esta función puede ser cargada nuevamente mediante \hyperlink{sp__coord_8c_d6a1042d41ff43da1f26396f5803daac}{load\_\-coord()}. 
+
+Definición en la línea 156 del archivo sp\_\-coord.c.
+
+Hace referencia a sp\_\-coord::cx, sp\_\-coord::ncol, sp\_\-coord::nnz, sp\_\-coord::nrow, sp\_\-coord::rx, y sp\_\-coord::val.
+
+Referenciado por bal\_\-save\_\-coord().
+
+\begin{Code}\begin{verbatim}157 {
+158     unsigned int i;
+159 
+160     fprintf(fp, "%d\n", A->nrow);
+161     fprintf(fp, "%d\n", A->ncol);
+162     fprintf(fp, "%d\n", A->nnz);
+163 
+164     for (i=0; i < A->nnz; ++i)
+165         fprintf(fp, " %d", A->rx[i]);
+166     fprintf(fp, "\n");
+167 
+168     for (i=0; i < A->nnz; ++i)
+169         fprintf(fp, " %d", A->cx[i]);
+170     fprintf(fp, "\n");
+171 
+172     for (i=0; i < A->nnz; ++i)
+173         fprintf(fp, " %g", A->val[i]);
+174     fprintf(fp, "\n");
+175 }
+\end{verbatim}
+\end{Code}
+
+
+\hypertarget{sp__coord_8h_ff646304bb38349c4620069c73a35760}{
+\index{sp\_\-coord.h@{sp\_\-coord.h}!sp\_\-imprimir\_\-coord@{sp\_\-imprimir\_\-coord}}
+\index{sp\_\-imprimir\_\-coord@{sp\_\-imprimir\_\-coord}!sp_coord.h@{sp\_\-coord.h}}
+\paragraph{\setlength{\rightskip}{0pt plus 5cm}void sp\_\-imprimir\_\-coord (FILE $\ast$ {\em fp}, \/  {\bf sp\_\-coord} $\ast$ {\em mat})}\hfill}
+\label{sp__coord_8h_ff646304bb38349c4620069c73a35760}
+
+
+Imprime la matriz guardada en formato simple por coordenadas en fp. 
+
+\begin{Desc}
+\item[Parámetros:]
+\begin{description}
+\item[{\em fp}]Archivo en el cual se imprimirá la matriz \item[{\em mat}]Matriz a imprimir en formato simple por coordenadas \end{description}
+\end{Desc}
+
+
+Definición en la línea 183 del archivo sp\_\-coord.c.
+
+Hace referencia a sp\_\-coord::cx, sp\_\-coord::ncol, sp\_\-coord::nnz, sp\_\-coord::nrow, sp\_\-coord::rx, y sp\_\-coord::val.
+
+Referenciado por bal\_\-imprimir\_\-coord().
+
+\begin{Code}\begin{verbatim}184 {
+185     int i;
+186 
+187     if (mat == NULL) {
+188         fprintf(fp, "Matriz nula\n");
+189         return;
+190     }
+191 
+192     fprintf(fp, "Cantidad de filas: %d\n", mat->nrow);
+193     fprintf(fp, "Cantidad de columnas: %d\n", mat->ncol);
+194     fprintf(fp, "Cantidad de elementos no cero: %d\n", mat->nnz);
+195 
+196     for(i=0; i < mat->nnz; ++i) {
+197         fprintf(fp, "(%d) [%d,%d] = %g\n", i, mat->rx[i], mat->cx[i], mat->val[i]);
+198     }
+199 }
+\end{verbatim}
+\end{Code}
+
+

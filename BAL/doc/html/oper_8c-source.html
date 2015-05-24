@@ -1,0 +1,213 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>BAL: Fichero Fuente oper.c</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Generado por Doxygen 1.5.5 -->
+<script type="text/javascript">
+<!--
+function changeDisplayState (e){
+  var num=this.id.replace(/[^[0-9]/g,'');
+  var button=this.firstChild;
+  var sectionDiv=document.getElementById('dynsection'+num);
+  if (sectionDiv.style.display=='none'||sectionDiv.style.display==''){
+    sectionDiv.style.display='block';
+    button.src='open.gif';
+  }else{
+    sectionDiv.style.display='none';
+    button.src='closed.gif';
+  }
+}
+function initDynSections(){
+  var divs=document.getElementsByTagName('div');
+  var sectionCounter=1;
+  for(var i=0;i<divs.length-1;i++){
+    if(divs[i].className=='dynheader'&&divs[i+1].className=='dynsection'){
+      var header=divs[i];
+      var section=divs[i+1];
+      var button=header.firstChild;
+      if (button!='IMG'){
+        divs[i].insertBefore(document.createTextNode(' '),divs[i].firstChild);
+        button=document.createElement('img');
+        divs[i].insertBefore(button,divs[i].firstChild);
+      }
+      header.style.cursor='pointer';
+      header.onclick=changeDisplayState;
+      header.id='dynheader'+sectionCounter;
+      button.src='closed.gif';
+      section.id='dynsection'+sectionCounter;
+      section.style.display='none';
+      section.style.marginLeft='14px';
+      sectionCounter++;
+    }
+  }
+}
+window.onload = initDynSections;
+-->
+</script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Página&nbsp;principal</span></a></li>
+      <li><a href="pages.html"><span>Páginas&nbsp;relacionadas</span></a></li>
+      <li><a href="annotated.html"><span>Estructuras&nbsp;de&nbsp;Datos</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+      <li><a href="dirs.html"><span>Directorios</span></a></li>
+    </ul>
+  </div>
+<h1>oper.c</h1><a href="oper_8c.html">Ir a la documentación de este archivo.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#include &lt;stdlib.h&gt;</span>
+<a name="l00002"></a>00002 <span class="preprocessor">#include &lt;glib.h&gt;</span>
+<a name="l00003"></a>00003 <span class="preprocessor">#include "<a class="code" href="sp__packcol_8h.html" title="Archivo de cabecera para matriz dispersa, formato empaquetado por columna.">sparse/sp_packcol.h</a>"</span>
+<a name="l00004"></a>00004 <span class="preprocessor">#include "<a class="code" href="sp__cds_8h.html" title="Archivo de cabecera para matriz dispersa, formato CDS (comprimido por diagonal).">sparse/sp_cds.h</a>"</span>
+<a name="l00005"></a>00005 <span class="preprocessor">#include "<a class="code" href="utils_8h.html" title="Archivo con definiciones y funciones de utilidad general.">utils.h</a>"</span>
+<a name="l00006"></a>00006 <span class="preprocessor">#include "<a class="code" href="oper_8h.html" title="Operaciones básicas, archivo de cabecera.">oper.h</a>"</span>
+<a name="l00007"></a>00007 
+<a name="l00032"></a><a class="code" href="oper_8h.html#8bdc34ab9889aa1cad64fcc44dd7a2ec">00032</a> <span class="keywordtype">void</span> <a class="code" href="oper_8c.html#8bdc34ab9889aa1cad64fcc44dd7a2ec" title="Multiplica una matriz empaquetada por columna por un vector.">mult_vec_packcol</a>(<a class="code" href="structsp__packcol.html" title="Estructura de matriz dispersa empaquetada por columna.">sp_packcol</a> *A, <span class="keywordtype">double</span> *x, <span class="keywordtype">double</span> *y)
+<a name="l00033"></a>00033 {
+<a name="l00034"></a>00034     <span class="keywordtype">int</span> i, ii, j;
+<a name="l00035"></a>00035 
+<a name="l00036"></a>00036     <span class="comment">/* Inicializa vector y */</span>
+<a name="l00037"></a>00037     <span class="keywordflow">for</span> (j = 0; j &lt; A-&gt;<a class="code" href="structsp__packcol.html#2e12b2881843b0ff8191f0654570a748" title="Cantidad de filas de la matriz.">nrow</a>; ++j)
+<a name="l00038"></a>00038         y[j] = 0;
+<a name="l00039"></a>00039 
+<a name="l00040"></a>00040     <span class="keywordflow">for</span>(j = 0; j &lt; A-&gt;<a class="code" href="structsp__packcol.html#2cc24559101ca3783f1949c8eebacd7c" title="Cantidad de columnas de la matriz.">ncol</a>; ++j) {
+<a name="l00041"></a>00041         <span class="keywordflow">for</span>(ii = A-&gt;<a class="code" href="structsp__packcol.html#c9a9e31c6b9c1416fff29944568ea18f" title="Arreglo de punteros a los inicios de las columnas.">colp</a>[j]; ii &lt; A-&gt;colp[j+1]; ++ii) {
+<a name="l00042"></a>00042             i = A-&gt;<a class="code" href="structsp__packcol.html#536659b700c3b21fd5d6cf8538c82b6f" title="Arreglo de indices de fila.">rx</a>[ii];
+<a name="l00043"></a>00043             y[i] += ( x[j] * A-&gt;<a class="code" href="structsp__packcol.html#6315b3a8ee78ac66aaae5ba79bda252e" title="Arreglo de valores por debajo de la diagonal.">val</a>[ii] );
+<a name="l00044"></a>00044         }
+<a name="l00045"></a>00045     }
+<a name="l00046"></a>00046 }
+<a name="l00047"></a>00047 
+<a name="l00070"></a><a class="code" href="oper_8h.html#0f9cb665556ffdd8bdb5dfbe861e0d28">00070</a> <span class="keywordtype">void</span> <a class="code" href="oper_8c.html#0f9cb665556ffdd8bdb5dfbe861e0d28" title="Multiplica una matriz simétrica empaquetada por columna por un vector.">mult_vec_packcol_symmetric</a>(<a class="code" href="structsp__packcol.html" title="Estructura de matriz dispersa empaquetada por columna.">sp_packcol</a> *A, <span class="keywordtype">double</span> *x, <span class="keywordtype">double</span> *y)
+<a name="l00071"></a>00071 {
+<a name="l00072"></a>00072     <span class="keywordtype">int</span> i, ii, j, r;
+<a name="l00073"></a>00073 
+<a name="l00074"></a>00074     <span class="comment">/* Inicializa vector y */</span>
+<a name="l00075"></a>00075     <span class="keywordflow">for</span> (j = 0; j &lt; A-&gt;<a class="code" href="structsp__packcol.html#2e12b2881843b0ff8191f0654570a748" title="Cantidad de filas de la matriz.">nrow</a>; ++j)
+<a name="l00076"></a>00076         y[j] = 0;
+<a name="l00077"></a>00077 
+<a name="l00078"></a>00078     <span class="keywordflow">for</span> (j = 0; j &lt; A-&gt;<a class="code" href="structsp__packcol.html#2cc24559101ca3783f1949c8eebacd7c" title="Cantidad de columnas de la matriz.">ncol</a>; ++j) {
+<a name="l00079"></a>00079         i = A-&gt;<a class="code" href="structsp__packcol.html#536659b700c3b21fd5d6cf8538c82b6f" title="Arreglo de indices de fila.">rx</a>[A-&gt;<a class="code" href="structsp__packcol.html#c9a9e31c6b9c1416fff29944568ea18f" title="Arreglo de punteros a los inicios de las columnas.">colp</a>[j]];                      <span class="comment">/* Indice de fila del 1er elem no cero de la columna j */</span>
+<a name="l00080"></a>00080 
+<a name="l00081"></a>00081         <span class="keywordflow">if</span> (i == j) {                               <span class="comment">/* Si el 1er no cero es la diag */</span>
+<a name="l00082"></a>00082             y[j] += ( x[j] * A-&gt;<a class="code" href="structsp__packcol.html#6315b3a8ee78ac66aaae5ba79bda252e" title="Arreglo de valores por debajo de la diagonal.">val</a>[A-&gt;<a class="code" href="structsp__packcol.html#c9a9e31c6b9c1416fff29944568ea18f" title="Arreglo de punteros a los inicios de las columnas.">colp</a>[j]] );  <span class="comment">/* Procesar diagonal: y_j += x_j * A_jj */</span>
+<a name="l00083"></a>00083             r = 1;                                  <span class="comment">/* Ignorar la diagonal en el loop interno */</span>
+<a name="l00084"></a>00084         }
+<a name="l00085"></a>00085         <span class="keywordflow">else</span>
+<a name="l00086"></a>00086             r = 0;                                  <span class="comment">/* El 1er elem no cero no es la diagonal. No ignorarlo. */</span>
+<a name="l00087"></a>00087 
+<a name="l00088"></a>00088         <span class="comment">/* Procesa los elementos no en la diagonal utilizando la propiedad de simetria */</span>
+<a name="l00089"></a>00089         <span class="keywordflow">for</span> (ii = A-&gt;<a class="code" href="structsp__packcol.html#c9a9e31c6b9c1416fff29944568ea18f" title="Arreglo de punteros a los inicios de las columnas.">colp</a>[j] + r; ii &lt;= A-&gt;colp[j+1] - 1; ++ii) {
+<a name="l00090"></a>00090             i = A-&gt;<a class="code" href="structsp__packcol.html#536659b700c3b21fd5d6cf8538c82b6f" title="Arreglo de indices de fila.">rx</a>[ii];                          <span class="comment">/* Obtiene el indice de fila */</span>
+<a name="l00091"></a>00091             y[i] += ( x[j] * A-&gt;<a class="code" href="structsp__packcol.html#6315b3a8ee78ac66aaae5ba79bda252e" title="Arreglo de valores por debajo de la diagonal.">val</a>[ii] );          <span class="comment">/* y_i += x_j * A_ij */</span>
+<a name="l00092"></a>00092             y[j] += ( x[i] * A-&gt;<a class="code" href="structsp__packcol.html#6315b3a8ee78ac66aaae5ba79bda252e" title="Arreglo de valores por debajo de la diagonal.">val</a>[ii] );          <span class="comment">/* y_i += x_i * A_ji */</span>
+<a name="l00093"></a>00093         }
+<a name="l00094"></a>00094     }
+<a name="l00095"></a>00095 }
+<a name="l00096"></a>00096 
+<a name="l00130"></a><a class="code" href="oper_8h.html#695a940f46d1c589bfcf8758f7a87f15">00130</a> <span class="keywordtype">void</span> <a class="code" href="oper_8c.html#695a940f46d1c589bfcf8758f7a87f15" title="Multiplica una matriz en formato CDS por un vector.">mult_vec_cds</a>(<a class="code" href="structsp__cds.html" title="Estructura de matriz dispersa CDS.">sp_cds</a> *A, <span class="keywordtype">double</span> *x, <span class="keywordtype">double</span> *y)
+<a name="l00131"></a>00131 {
+<a name="l00132"></a>00132     <span class="keywordtype">int</span> i, j, k, diag, ini, fin;
+<a name="l00133"></a>00133 
+<a name="l00134"></a>00134     <span class="comment">/* Inicializa vector y */</span>
+<a name="l00135"></a>00135     <span class="keywordflow">for</span> (j = 0; j &lt; A-&gt;<a class="code" href="structsp__cds.html#742f0fa7433a0985c236c0df1811513a" title="Cantidad de filas.">nrow</a>; ++j)
+<a name="l00136"></a>00136         y[j] = 0;
+<a name="l00137"></a>00137 
+<a name="l00138"></a>00138     <span class="keywordflow">for</span> (k=0; k &lt; A-&gt;<a class="code" href="structsp__cds.html#f2a5117c4b15e96598d0a75a645cdb3f" title="Cantidad de diagonales con al menos una entrada no cero.">ndiag</a>; ++k) {      <span class="comment">/* Por cada diagonal no vacía en A */</span>
+<a name="l00139"></a>00139         diag = A-&gt;<a class="code" href="structsp__cds.html#cb3c554898b39c854cc3d26f657ce0fd" title="Arreglo de índices de diagonal.">dx</a>[k];
+<a name="l00140"></a>00140 
+<a name="l00141"></a>00141         <span class="comment">/* Calcula inicio y fin de la diagonal en la fila de val */</span>
+<a name="l00142"></a>00142         ini = MAX(0, -diag);
+<a name="l00143"></a>00143         fin = A-&gt;<a class="code" href="structsp__cds.html#86bfcae3996588048cb6c973cd223b39" title="El largo de la diagonal más larga.">maxdiaglength</a> - MAX(0, diag);
+<a name="l00144"></a>00144 
+<a name="l00145"></a>00145         <span class="keywordflow">for</span> (i=ini; i &lt; (A-&gt;<a class="code" href="structsp__cds.html#86bfcae3996588048cb6c973cd223b39" title="El largo de la diagonal más larga.">maxdiaglength</a>); ++i) {  <span class="comment">/* Por cada elemento de la diagonal */</span>
+<a name="l00146"></a>00146             j = diag + i;
+<a name="l00147"></a>00147             y[i] += ( A-&gt;<a class="code" href="structsp__cds.html#4a43be75b65bb01b343c8d3c144b7194" title="Matriz de valores. Cada fila es una diagonal.">val</a>[k][i] * x[j] );
+<a name="l00148"></a>00148         }
+<a name="l00149"></a>00149     }
+<a name="l00150"></a>00150 }
+<a name="l00151"></a>00151 
+<a name="l00205"></a><a class="code" href="oper_8h.html#0bcb0c04dd4183dbe4bab1a15ea5d5cd">00205</a> <a class="code" href="structsp__cds.html" title="Estructura de matriz dispersa CDS.">sp_cds</a>* <a class="code" href="oper_8c.html#6ea0383a6eb9a67301225f5f2fee87b4" title="Multiplica dos matrices en formato CDS.">mult_mat_cds</a>(<a class="code" href="structsp__cds.html" title="Estructura de matriz dispersa CDS.">sp_cds</a> *A, <a class="code" href="structsp__cds.html" title="Estructura de matriz dispersa CDS.">sp_cds</a> *B)
+<a name="l00206"></a>00206 {
+<a name="l00207"></a>00207     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> n, m, tope, dxl, ka, kb, i, j, k;
+<a name="l00208"></a>00208     <span class="keywordtype">int</span> mindiag, maxdiag, diaga, diagb, diag, inia, fina, inib, finb, ja, diff;
+<a name="l00209"></a>00209     <a class="code" href="structsp__cds.html" title="Estructura de matriz dispersa CDS.">sp_cds</a>* c;
+<a name="l00210"></a>00210 
+<a name="l00211"></a>00211     <span class="keywordflow">if</span> (A-&gt;<a class="code" href="structsp__cds.html#683cb5023edac60bd4c25a1c2261f6b0" title="Cantidad de columnas.">ncol</a> != B-&gt;<a class="code" href="structsp__cds.html#742f0fa7433a0985c236c0df1811513a" title="Cantidad de filas.">nrow</a>) {
+<a name="l00212"></a>00212         <a class="code" href="utils_8h.html#f9a64ef5874a8560a9067ac3191cced4" title="Función para reportar errores detectados por código de BAL.">BAL_ERROR</a>(<span class="stringliteral">"Las dimensiones de las matrices no permiten su multiplicación"</span>);
+<a name="l00213"></a>00213         <span class="keywordflow">return</span> NULL;
+<a name="l00214"></a>00214     }
+<a name="l00215"></a>00215 
+<a name="l00216"></a>00216     c = (<a class="code" href="structsp__cds.html" title="Estructura de matriz dispersa CDS.">sp_cds</a>*)malloc(<span class="keyword">sizeof</span>(<a class="code" href="structsp__cds.html" title="Estructura de matriz dispersa CDS.">sp_cds</a>));
+<a name="l00217"></a>00217     c-&gt;<a class="code" href="structsp__cds.html#742f0fa7433a0985c236c0df1811513a" title="Cantidad de filas.">nrow</a> = n = A-&gt;<a class="code" href="structsp__cds.html#742f0fa7433a0985c236c0df1811513a" title="Cantidad de filas.">nrow</a>;
+<a name="l00218"></a>00218     c-&gt;<a class="code" href="structsp__cds.html#683cb5023edac60bd4c25a1c2261f6b0" title="Cantidad de columnas.">ncol</a> = m = B-&gt;<a class="code" href="structsp__cds.html#683cb5023edac60bd4c25a1c2261f6b0" title="Cantidad de columnas.">ncol</a>;
+<a name="l00219"></a>00219     c-&gt;<a class="code" href="structsp__cds.html#86bfcae3996588048cb6c973cd223b39" title="El largo de la diagonal más larga.">maxdiaglength</a> = MIN(n, m);
+<a name="l00220"></a>00220     tope = m + n - 1; <span class="comment">/* Cantidad máxima de diagonales */</span>
+<a name="l00221"></a>00221     c-&gt;<a class="code" href="structsp__cds.html#cb3c554898b39c854cc3d26f657ce0fd" title="Arreglo de índices de diagonal.">dx</a> = (<span class="keywordtype">int</span>*)malloc(<span class="keyword">sizeof</span>(<span class="keywordtype">int</span>) * tope);
+<a name="l00222"></a>00222 
+<a name="l00223"></a>00223     <span class="comment">/* Calcula las diagonales que tendrán datos en el resultado */</span>
+<a name="l00224"></a>00224     mindiag = 1 - n;
+<a name="l00225"></a>00225     maxdiag = m - 1;
+<a name="l00226"></a>00226     dxl = 0;
+<a name="l00227"></a>00227     <span class="keywordflow">for</span> (ka=0; ka &lt; A-&gt;<a class="code" href="structsp__cds.html#f2a5117c4b15e96598d0a75a645cdb3f" title="Cantidad de diagonales con al menos una entrada no cero.">ndiag</a>; ++ka) {       <span class="comment">/* Por cada diagonal con datos en A */</span>
+<a name="l00228"></a>00228         diaga = A-&gt;<a class="code" href="structsp__cds.html#cb3c554898b39c854cc3d26f657ce0fd" title="Arreglo de índices de diagonal.">dx</a>[ka];
+<a name="l00229"></a>00229         <span class="keywordflow">for</span> (kb=0; kb &lt; B-&gt;<a class="code" href="structsp__cds.html#f2a5117c4b15e96598d0a75a645cdb3f" title="Cantidad de diagonales con al menos una entrada no cero.">ndiag</a>; ++kb) {   <span class="comment">/* Por cada diagonal con datos en B */</span>
+<a name="l00230"></a>00230             diagb = B-&gt;<a class="code" href="structsp__cds.html#cb3c554898b39c854cc3d26f657ce0fd" title="Arreglo de índices de diagonal.">dx</a>[kb];
+<a name="l00231"></a>00231 
+<a name="l00232"></a>00232             diag = diaga + diagb;           <span class="comment">/* Diagonal en C que tendrá datos */</span>
+<a name="l00233"></a>00233             <span class="keywordflow">if</span> (diag &gt;= mindiag &amp;&amp; diag &lt;= maxdiag) {
+<a name="l00234"></a>00234                 <span class="keywordflow">if</span> (<a class="code" href="utils_8c.html#68d639af59cdb0c547839cb44aa06854" title="Busca un elemento en el array mediante bipartición.">binary_search</a>(c-&gt;<a class="code" href="structsp__cds.html#cb3c554898b39c854cc3d26f657ce0fd" title="Arreglo de índices de diagonal.">dx</a>, dxl, diag) == -1) {
+<a name="l00235"></a>00235                     <a class="code" href="utils_8c.html#e92b7a18bc3552887809bbac1b732152" title="Inserta un elemento en un arreglo ordenado.">insert_sorted</a>(c-&gt;<a class="code" href="structsp__cds.html#cb3c554898b39c854cc3d26f657ce0fd" title="Arreglo de índices de diagonal.">dx</a>, dxl - 1, diag);
+<a name="l00236"></a>00236                     ++dxl;
+<a name="l00237"></a>00237                 }
+<a name="l00238"></a>00238             }
+<a name="l00239"></a>00239         }
+<a name="l00240"></a>00240     }
+<a name="l00241"></a>00241 
+<a name="l00242"></a>00242     <span class="comment">/* Inicializa c-&gt;val */</span>
+<a name="l00243"></a>00243     c-&gt;<a class="code" href="structsp__cds.html#f2a5117c4b15e96598d0a75a645cdb3f" title="Cantidad de diagonales con al menos una entrada no cero.">ndiag</a> = dxl;
+<a name="l00244"></a>00244     c-&gt;<a class="code" href="structsp__cds.html#4a43be75b65bb01b343c8d3c144b7194" title="Matriz de valores. Cada fila es una diagonal.">val</a> = (<span class="keywordtype">double</span>**)malloc(<span class="keyword">sizeof</span>(<span class="keywordtype">double</span>*) * dxl);
+<a name="l00245"></a>00245     <span class="keywordflow">for</span> (i=0; i &lt; dxl; ++i) {
+<a name="l00246"></a>00246         c-&gt;<a class="code" href="structsp__cds.html#4a43be75b65bb01b343c8d3c144b7194" title="Matriz de valores. Cada fila es una diagonal.">val</a>[i] = (<span class="keywordtype">double</span>*)malloc(<span class="keyword">sizeof</span>(<span class="keywordtype">double</span>) * c-&gt;<a class="code" href="structsp__cds.html#86bfcae3996588048cb6c973cd223b39" title="El largo de la diagonal más larga.">maxdiaglength</a>);
+<a name="l00247"></a>00247         <span class="keywordflow">for</span> (j=0; j &lt; c-&gt;<a class="code" href="structsp__cds.html#86bfcae3996588048cb6c973cd223b39" title="El largo de la diagonal más larga.">maxdiaglength</a>; ++j)
+<a name="l00248"></a>00248             c-&gt;<a class="code" href="structsp__cds.html#4a43be75b65bb01b343c8d3c144b7194" title="Matriz de valores. Cada fila es una diagonal.">val</a>[i][j] = 0;
+<a name="l00249"></a>00249     }
+<a name="l00250"></a>00250 
+<a name="l00251"></a>00251     <span class="comment">/* Calcula los valores de c */</span>
+<a name="l00252"></a>00252     <span class="keywordflow">for</span> (ka=0; ka &lt; A-&gt;<a class="code" href="structsp__cds.html#f2a5117c4b15e96598d0a75a645cdb3f" title="Cantidad de diagonales con al menos una entrada no cero.">ndiag</a>; ++ka) {       <span class="comment">/* Por cada diagonal con datos en A */</span>
+<a name="l00253"></a>00253         diaga = A-&gt;<a class="code" href="structsp__cds.html#cb3c554898b39c854cc3d26f657ce0fd" title="Arreglo de índices de diagonal.">dx</a>[ka];
+<a name="l00254"></a>00254         <span class="keywordflow">for</span> (kb=0; kb &lt; B-&gt;<a class="code" href="structsp__cds.html#f2a5117c4b15e96598d0a75a645cdb3f" title="Cantidad de diagonales con al menos una entrada no cero.">ndiag</a>; ++kb) {   <span class="comment">/* Por cada diagonal con datos en B */</span>
+<a name="l00255"></a>00255             diagb = B-&gt;<a class="code" href="structsp__cds.html#cb3c554898b39c854cc3d26f657ce0fd" title="Arreglo de índices de diagonal.">dx</a>[kb];
+<a name="l00256"></a>00256 
+<a name="l00257"></a>00257             diag = diaga + diagb;
+<a name="l00258"></a>00258             k = <a class="code" href="utils_8c.html#68d639af59cdb0c547839cb44aa06854" title="Busca un elemento en el array mediante bipartición.">binary_search</a>(c-&gt;<a class="code" href="structsp__cds.html#cb3c554898b39c854cc3d26f657ce0fd" title="Arreglo de índices de diagonal.">dx</a>, dxl, diag);
+<a name="l00259"></a>00259 
+<a name="l00260"></a>00260             inia = MAX(0, -diaga);
+<a name="l00261"></a>00261             fina = A-&gt;<a class="code" href="structsp__cds.html#86bfcae3996588048cb6c973cd223b39" title="El largo de la diagonal más larga.">maxdiaglength</a> - MAX(0, diaga);
+<a name="l00262"></a>00262             inib = MAX(0, -diagb);
+<a name="l00263"></a>00263             finb = B-&gt;<a class="code" href="structsp__cds.html#86bfcae3996588048cb6c973cd223b39" title="El largo de la diagonal más larga.">maxdiaglength</a> - MAX(0, diagb);
+<a name="l00264"></a>00264 
+<a name="l00265"></a>00265             <span class="comment">/* Alinea las diagonales para multiplicar */</span>
+<a name="l00266"></a>00266             ja = A-&gt;<a class="code" href="structsp__cds.html#cb3c554898b39c854cc3d26f657ce0fd" title="Arreglo de índices de diagonal.">dx</a>[ka] + inia;
+<a name="l00267"></a>00267             diff = ja - inib;
+<a name="l00268"></a>00268             <span class="keywordflow">if</span> (diff &gt; 0)
+<a name="l00269"></a>00269                 inib += diff;
+<a name="l00270"></a>00270             <span class="keywordflow">else</span>
+<a name="l00271"></a>00271                 inia -= diff;
+<a name="l00272"></a>00272 
+<a name="l00273"></a>00273             <span class="keywordflow">for</span> (i=inia,j=inib; i &lt; fina &amp;&amp; j &lt; finb; ++i, ++j)
+<a name="l00274"></a>00274                 c-&gt;<a class="code" href="structsp__cds.html#4a43be75b65bb01b343c8d3c144b7194" title="Matriz de valores. Cada fila es una diagonal.">val</a>[k][i] += ( A-&gt;<a class="code" href="structsp__cds.html#4a43be75b65bb01b343c8d3c144b7194" title="Matriz de valores. Cada fila es una diagonal.">val</a>[ka][i] * B-&gt;<a class="code" href="structsp__cds.html#4a43be75b65bb01b343c8d3c144b7194" title="Matriz de valores. Cada fila es una diagonal.">val</a>[kb][j] );
+<a name="l00275"></a>00275         }
+<a name="l00276"></a>00276     }
+<a name="l00277"></a>00277 
+<a name="l00278"></a>00278     <span class="keywordflow">return</span> c;
+<a name="l00279"></a>00279 }
+<a name="l00280"></a>00280 
+</pre></div></div>
+<hr size="1">
+<address style="text-align: right;">
+<small>BAL&nbsp;1.0.0<br>Generado el Wed Aug 27 19:54:18 2008.</small>
+</address>
+</body>
+</html>

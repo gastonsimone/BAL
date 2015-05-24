@@ -1,0 +1,708 @@
+\hypertarget{bal_8h}{
+\subsection{Referencia del Archivo bal.h}
+\label{bal_8h}\index{bal.h@{bal.h}}
+}
+Biblioteca de Algebra Lineal, archivo de cabecera. 
+
+{\tt \#include $<$stdio.h$>$}\par
+{\tt \#include \char`\"{}sparse/sp\_\-coord.h\char`\"{}}\par
+{\tt \#include \char`\"{}sparse/sp\_\-packcol.h\char`\"{}}\par
+{\tt \#include \char`\"{}sparse/sp\_\-cds.h\char`\"{}}\par
+\subsubsection*{Funciones}
+\begin{CompactItemize}
+\item 
+int \hyperlink{bal_8h_5fa9afcb6f46fadec6d601f11592ebc9}{bal\_\-cargar\_\-matriz} (const char $\ast$archivo, double $\ast$$\ast$$\ast$matriz, int $\ast$n, int $\ast$m)
+\begin{CompactList}\small\item\em Carga una matriz en memoria desde un archivo. \item\end{CompactList}\item 
+\hypertarget{bal_8h_001bc810dfe24d78c6ee465351471ca7}{
+void \hyperlink{bal_8h_001bc810dfe24d78c6ee465351471ca7}{bal\_\-imprimir\_\-matriz} (FILE $\ast$fp, double $\ast$$\ast$matriz, int n, int m)}
+\label{bal_8h_001bc810dfe24d78c6ee465351471ca7}
+
+\begin{CompactList}\small\item\em Imprime la matriz en el archivo {\tt fp}. \item\end{CompactList}\item 
+\hyperlink{structsp__coord}{sp\_\-coord} $\ast$ \hyperlink{bal_8h_889ccc022d954f0991322b3b558b44eb}{bal\_\-mat2coord} (int n, int m, double $\ast$$\ast$mat)
+\begin{CompactList}\small\item\em Genera la matriz dispersa equivalente a la matriz completa mat (n x m). \item\end{CompactList}\item 
+\hyperlink{structsp__packcol}{sp\_\-packcol} $\ast$ \hyperlink{bal_8h_dcf87dedd2eaf804f7aa48ad7c89e55b}{bal\_\-coord2packcol} (\hyperlink{structsp__coord}{sp\_\-coord} $\ast$mat)
+\begin{CompactList}\small\item\em Genera una instancia de la matriz mat en formato empaquetado por columna. \item\end{CompactList}\item 
+\hyperlink{structsp__packcol}{sp\_\-packcol} $\ast$ \hyperlink{bal_8h_e3bf5cc7d6bd2bd728d003ae79882e8e}{bal\_\-coord2packcol\_\-symmetric} (\hyperlink{structsp__coord}{sp\_\-coord} $\ast$mat)
+\begin{CompactList}\small\item\em Genera una instancia de la matriz mat en formato empaquetado por columna para matrices simétricas. \item\end{CompactList}\item 
+\hyperlink{structsp__cds}{sp\_\-cds} $\ast$ \hyperlink{bal_8h_ca64948964c3ae6bc70d37358d45dae6}{bal\_\-coord2cds} (\hyperlink{structsp__coord}{sp\_\-coord} $\ast$mat)
+\begin{CompactList}\small\item\em Genera la matriz en formato CDS equivalente a la matriz mat en formato simple. \item\end{CompactList}\item 
+void \hyperlink{bal_8h_fb2e0eb90b54ac0b083d42f1d38d45ac}{bal\_\-imprimir\_\-coord} (FILE $\ast$fp, \hyperlink{structsp__coord}{sp\_\-coord} $\ast$mat)
+\begin{CompactList}\small\item\em Imprime la matriz guardada en formato simple por coordenadas en fp. \item\end{CompactList}\item 
+void \hyperlink{bal_8h_5c7bdb5d92a964b7e4cc66d8058e6fed}{bal\_\-imprimir\_\-packcol} (FILE $\ast$fp, \hyperlink{structsp__packcol}{sp\_\-packcol} $\ast$mat)
+\begin{CompactList}\small\item\em Imprime la matriz guardada en formato empaquetado por columna en fp. \item\end{CompactList}\item 
+void \hyperlink{bal_8h_0098b5496a5f2131a34c197bbc9ba57a}{bal\_\-imprimir\_\-cds} (FILE $\ast$fp, \hyperlink{structsp__cds}{sp\_\-cds} $\ast$mat)
+\begin{CompactList}\small\item\em Imprime la matriz guardada en formato simple por coordenadas en fp. \item\end{CompactList}\item 
+void \hyperlink{bal_8h_413951b2a155feea5c67288a3ccb34bf}{bal\_\-mult\_\-vec\_\-packcol} (\hyperlink{structsp__packcol}{sp\_\-packcol} $\ast$A, double $\ast$x, double $\ast$y)
+\begin{CompactList}\small\item\em Multiplica una matriz empaquetada por columna por un vector. \item\end{CompactList}\item 
+void \hyperlink{bal_8h_dfee3769ca35f010759eddbf8e9cc476}{bal\_\-mult\_\-vec\_\-packcol\_\-symmetric} (\hyperlink{structsp__packcol}{sp\_\-packcol} $\ast$A, double $\ast$x, double $\ast$y)
+\begin{CompactList}\small\item\em Multiplica una matriz simétrica empaquetada por columna por un vector. \item\end{CompactList}\item 
+int \hyperlink{bal_8h_27f481dd5d13dfab5b06bb95d5c5aa1b}{bal\_\-row\_\-traversal\_\-packcol} (\hyperlink{structsp__packcol}{sp\_\-packcol} $\ast$A, int $\ast$i, int $\ast$j, int $\ast$posij)
+\begin{CompactList}\small\item\em Implementa un mecanismo eficiente para recorrer por filas una matriz dispersa empaquetada por columnas. \item\end{CompactList}\item 
+\hyperlink{structsp__coord}{sp\_\-coord} $\ast$ \hyperlink{bal_8h_3f75b8397429a72806592bd98007239c}{bal\_\-load\_\-coord} (FILE $\ast$fp)
+\begin{CompactList}\small\item\em Escribe en {\tt fp} la matriz {\tt A} en un formato entendible por \hyperlink{sp__coord_8c_d6a1042d41ff43da1f26396f5803daac}{load\_\-coord()}. \item\end{CompactList}\item 
+void \hyperlink{bal_8h_abba0c987c1cd21f99ae3ef4a5fca7ac}{bal\_\-save\_\-coord} (FILE $\ast$fp, \hyperlink{structsp__coord}{sp\_\-coord} $\ast$A)
+\begin{CompactList}\small\item\em Escribe en {\tt fp} la matriz {\tt A} en un formato entendible por \hyperlink{sp__coord_8c_d6a1042d41ff43da1f26396f5803daac}{load\_\-coord()}. \item\end{CompactList}\item 
+void \hyperlink{bal_8h_5ae3c23f89da32858f1420e32d35ccdc}{bal\_\-save\_\-packcol\_\-symmetric} (FILE $\ast$fp, \hyperlink{structsp__packcol}{sp\_\-packcol} $\ast$A)
+\begin{CompactList}\small\item\em Imprime la matriz simétrica empaquetada por columna en formato matlab en el archivo fp. \item\end{CompactList}\item 
+void \hyperlink{bal_8h_23df03ad23589aefe5103d463d55ff8c}{bal\_\-save\_\-packcol} (FILE $\ast$fp, \hyperlink{structsp__packcol}{sp\_\-packcol} $\ast$A)
+\begin{CompactList}\small\item\em Imprime la matriz {\tt A} en formato matlab en el archivo {\tt fp}. \item\end{CompactList}\item 
+void \hyperlink{bal_8h_5928b3ea635bf59c0a99e5c835c06668}{bal\_\-save\_\-cds} (FILE $\ast$fp, \hyperlink{structsp__cds}{sp\_\-cds} $\ast$A)
+\begin{CompactList}\small\item\em Imprime la matriz {\tt A} en formato matlab en el archivo {\tt fp}. \item\end{CompactList}\item 
+int $\ast$ \hyperlink{bal_8h_f66229abe0eb9df151118f623d2bd29e}{bal\_\-elimination\_\-tree} (\hyperlink{structsp__packcol}{sp\_\-packcol} $\ast$A, int $\ast$nnz)
+\begin{CompactList}\small\item\em Calcula el árbol de eliminación de la matriz simétrica A. \item\end{CompactList}\item 
+\hyperlink{structsp__packcol}{sp\_\-packcol} $\ast$ \hyperlink{bal_8h_35b286ef1c334c34a5657a058db40996}{bal\_\-symbolic\_\-factorization} (\hyperlink{structsp__packcol}{sp\_\-packcol} $\ast$A)
+\begin{CompactList}\small\item\em Factorización simbólica de la matriz A. \item\end{CompactList}\item 
+void \hyperlink{bal_8h_9bfee73c39b529b912b2f140e0ff1765}{bal\_\-numerical\_\-factorization} (\hyperlink{structsp__packcol}{sp\_\-packcol} $\ast$A, \hyperlink{structsp__packcol}{sp\_\-packcol} $\ast$L)
+\begin{CompactList}\small\item\em Sobreescribe {\tt L} con la factorización de Cholesky de A. \item\end{CompactList}\item 
+void \hyperlink{bal_8h_1bb603f980bf7cd3476b13a2f61e9a87}{bal\_\-cholesky\_\-Lsolver} (\hyperlink{structsp__packcol}{sp\_\-packcol} $\ast$L, double $\ast$b)
+\begin{CompactList}\small\item\em Sobrescribe {\tt b} con la solución del sistema $Ly=b$. \item\end{CompactList}\item 
+void \hyperlink{bal_8h_00c65a19e4490139c1abe23a72a19c04}{bal\_\-cholesky\_\-LTsolver} (\hyperlink{structsp__packcol}{sp\_\-packcol} $\ast$L, double $\ast$b)
+\begin{CompactList}\small\item\em Sobreescribe {\tt b} con la solución de $L^Tx=b$. \item\end{CompactList}\item 
+void \hyperlink{bal_8h_c27eba96470b3ac5a5019230bd380a1a}{bal\_\-cholesky\_\-solver} (\hyperlink{structsp__packcol}{sp\_\-packcol} $\ast$A, double $\ast$b)
+\begin{CompactList}\small\item\em Resuelve un sistema lineal mediante el algoritmo de Cholesky optimizado para matrices dispersas. \item\end{CompactList}\item 
+void \hyperlink{bal_8h_73ce65d5fd284423c38517d6370f449e}{bal\_\-mult\_\-vec\_\-cds} (\hyperlink{structsp__cds}{sp\_\-cds} $\ast$A, double $\ast$x, double $\ast$y)
+\begin{CompactList}\small\item\em Multiplica una matriz en formato CDS por un vector. \item\end{CompactList}\item 
+\hyperlink{structsp__cds}{sp\_\-cds} $\ast$ \hyperlink{bal_8h_9d1aec3c016d9ea30d79d40439333f7a}{bal\_\-mult\_\-mat\_\-cds} (\hyperlink{structsp__cds}{sp\_\-cds} $\ast$A, \hyperlink{structsp__cds}{sp\_\-cds} $\ast$B)
+\begin{CompactList}\small\item\em Multiplica dos matrices en formato CDS. \item\end{CompactList}\item 
+\hyperlink{structsp__packcol}{sp\_\-packcol} $\ast$ \hyperlink{bal_8h_90c182cadb814169fdc27cc179ccf1af}{bal\_\-permutar\_\-packcol} (unsigned int $\ast$p, \hyperlink{structsp__packcol}{sp\_\-packcol} $\ast$A)
+\begin{CompactList}\small\item\em Aplica una permutación de columnas sobre la matriz {\tt A}. \item\end{CompactList}\item 
+void \hyperlink{bal_8h_b3ce8c7df5d3d2a8eb9cd70534f628ed}{bal\_\-free\_\-coord} (\hyperlink{structsp__coord}{sp\_\-coord} $\ast$A)
+\begin{CompactList}\small\item\em Libera la memoria reservada por la matriz {\tt A}. \item\end{CompactList}\item 
+void \hyperlink{bal_8h_ecd6ad512d46f1825e79eda4647eaf60}{bal\_\-free\_\-packcol} (\hyperlink{structsp__packcol}{sp\_\-packcol} $\ast$A)
+\begin{CompactList}\small\item\em Libera la memoria reservada por la matriz {\tt A}. \item\end{CompactList}\item 
+void \hyperlink{bal_8h_7eae9c8721058a53a00d0c0dad2551f2}{bal\_\-free\_\-cds} (\hyperlink{structsp__cds}{sp\_\-cds} $\ast$A)
+\begin{CompactList}\small\item\em Libera la memoria reservada por la matriz {\tt A}. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsubsection{Descripción detallada}
+Biblioteca de Algebra Lineal, archivo de cabecera. 
+
+Este archivo define las funciones disponibles mediante BAL. 
+
+Definición en el archivo \hyperlink{bal_8h-source}{bal.h}.
+
+\subsubsection{Documentación de las funciones}
+\hypertarget{bal_8h_5fa9afcb6f46fadec6d601f11592ebc9}{
+\index{bal.h@{bal.h}!bal\_\-cargar\_\-matriz@{bal\_\-cargar\_\-matriz}}
+\index{bal\_\-cargar\_\-matriz@{bal\_\-cargar\_\-matriz}!bal.h@{bal.h}}
+\paragraph{\setlength{\rightskip}{0pt plus 5cm}int bal\_\-cargar\_\-matriz (const char $\ast$ {\em archivo}, \/  double $\ast$$\ast$$\ast$ {\em matriz}, \/  int $\ast$ {\em n}, \/  int $\ast$ {\em m})}\hfill}
+\label{bal_8h_5fa9afcb6f46fadec6d601f11592ebc9}
+
+
+Carga una matriz en memoria desde un archivo. 
+
+\begin{Desc}
+\item[Parámetros:]
+\begin{description}
+\item[{\em archivo}]ENTRADA: El camino al archivo en el que esta definida la matriz \item[{\em matriz}]SALIDA: Puntero a la estructura de memoria donde fue alocada la matriz \item[{\em n}]SALIDA: Cantidad de filas \item[{\em m}]SALIDA: Cantidad de columnas\end{description}
+\end{Desc}
+La matriz es cargada en memoria de forma \char`\"{}convencional\char`\"{}. El formato esperado es el mismo formato usado por matlab para definir matrices. El parser fue implementado utilizando las herramientas bison y flex de forma combinada. La función retorna 0 si todo funciono correctamente y otro valor en caso contrario. 
+
+Definición en la línea 43 del archivo bal.c.
+
+Hace referencia a yyparse().
+
+\begin{Code}\begin{verbatim}44 {
+45     if (yyparse(archivo, matriz, n, m) != 0)
+46         return -1;
+47 
+48     return 0;
+49 }
+\end{verbatim}
+\end{Code}
+
+
+\hypertarget{bal_8h_1bb603f980bf7cd3476b13a2f61e9a87}{
+\index{bal.h@{bal.h}!bal\_\-cholesky\_\-Lsolver@{bal\_\-cholesky\_\-Lsolver}}
+\index{bal\_\-cholesky\_\-Lsolver@{bal\_\-cholesky\_\-Lsolver}!bal.h@{bal.h}}
+\paragraph{\setlength{\rightskip}{0pt plus 5cm}void bal\_\-cholesky\_\-Lsolver ({\bf sp\_\-packcol} $\ast$ {\em L}, \/  double $\ast$ {\em b})}\hfill}
+\label{bal_8h_1bb603f980bf7cd3476b13a2f61e9a87}
+
+
+Sobrescribe {\tt b} con la solución del sistema $Ly=b$. 
+
+Por más información vea \hyperlink{cholesky_8c_700b53e08123405fc54742fb52098588}{cholesky\_\-Lsolver()}. 
+
+Definición en la línea 222 del archivo bal.c.
+
+Hace referencia a cholesky\_\-Lsolver().
+
+\begin{Code}\begin{verbatim}223 {
+224     cholesky_Lsolver(L, b);
+225 }
+\end{verbatim}
+\end{Code}
+
+
+\hypertarget{bal_8h_00c65a19e4490139c1abe23a72a19c04}{
+\index{bal.h@{bal.h}!bal\_\-cholesky\_\-LTsolver@{bal\_\-cholesky\_\-LTsolver}}
+\index{bal\_\-cholesky\_\-LTsolver@{bal\_\-cholesky\_\-LTsolver}!bal.h@{bal.h}}
+\paragraph{\setlength{\rightskip}{0pt plus 5cm}void bal\_\-cholesky\_\-LTsolver ({\bf sp\_\-packcol} $\ast$ {\em L}, \/  double $\ast$ {\em b})}\hfill}
+\label{bal_8h_00c65a19e4490139c1abe23a72a19c04}
+
+
+Sobreescribe {\tt b} con la solución de $L^Tx=b$. 
+
+Por más información vea \hyperlink{cholesky_8c_afba46e6cb519f5b021129cf06ece41e}{cholesky\_\-LTsolver()}. 
+
+Definición en la línea 232 del archivo bal.c.
+
+Hace referencia a cholesky\_\-LTsolver().
+
+\begin{Code}\begin{verbatim}233 {
+234     cholesky_LTsolver(L, b);
+235 }
+\end{verbatim}
+\end{Code}
+
+
+\hypertarget{bal_8h_c27eba96470b3ac5a5019230bd380a1a}{
+\index{bal.h@{bal.h}!bal\_\-cholesky\_\-solver@{bal\_\-cholesky\_\-solver}}
+\index{bal\_\-cholesky\_\-solver@{bal\_\-cholesky\_\-solver}!bal.h@{bal.h}}
+\paragraph{\setlength{\rightskip}{0pt plus 5cm}void bal\_\-cholesky\_\-solver ({\bf sp\_\-packcol} $\ast$ {\em A}, \/  double $\ast$ {\em b})}\hfill}
+\label{bal_8h_c27eba96470b3ac5a5019230bd380a1a}
+
+
+Resuelve un sistema lineal mediante el algoritmo de Cholesky optimizado para matrices dispersas. 
+
+Por más información vea \hyperlink{cholesky_8c_b61e2da86cddb63b2ef5d38b46a1d4ea}{cholesky\_\-solver()}. 
+
+Definición en la línea 242 del archivo bal.c.
+
+Hace referencia a cholesky\_\-solver().
+
+\begin{Code}\begin{verbatim}243 {
+244     cholesky_solver(A, b);
+245 }
+\end{verbatim}
+\end{Code}
+
+
+\hypertarget{bal_8h_ca64948964c3ae6bc70d37358d45dae6}{
+\index{bal.h@{bal.h}!bal\_\-coord2cds@{bal\_\-coord2cds}}
+\index{bal\_\-coord2cds@{bal\_\-coord2cds}!bal.h@{bal.h}}
+\paragraph{\setlength{\rightskip}{0pt plus 5cm}{\bf sp\_\-cds}$\ast$ bal\_\-coord2cds ({\bf sp\_\-coord} $\ast$ {\em mat})}\hfill}
+\label{bal_8h_ca64948964c3ae6bc70d37358d45dae6}
+
+
+Genera la matriz en formato CDS equivalente a la matriz mat en formato simple. 
+
+Por más información vea \hyperlink{sp__cds_8c_00ca63cd94cc53957997b1c6fe79b721}{coord2cds()}. 
+
+Definición en la línea 252 del archivo bal.c.
+
+Hace referencia a coord2cds().
+
+\begin{Code}\begin{verbatim}253 {
+254     return coord2cds(mat);
+255 }
+\end{verbatim}
+\end{Code}
+
+
+\hypertarget{bal_8h_dcf87dedd2eaf804f7aa48ad7c89e55b}{
+\index{bal.h@{bal.h}!bal\_\-coord2packcol@{bal\_\-coord2packcol}}
+\index{bal\_\-coord2packcol@{bal\_\-coord2packcol}!bal.h@{bal.h}}
+\paragraph{\setlength{\rightskip}{0pt plus 5cm}{\bf sp\_\-packcol}$\ast$ bal\_\-coord2packcol ({\bf sp\_\-coord} $\ast$ {\em mat})}\hfill}
+\label{bal_8h_dcf87dedd2eaf804f7aa48ad7c89e55b}
+
+
+Genera una instancia de la matriz mat en formato empaquetado por columna. 
+
+Por más información vea \hyperlink{sp__packcol_8c_729d10ec6867249f9b58ceb2683a3318}{coord2packcol()}. 
+
+Definición en la línea 82 del archivo bal.c.
+
+Hace referencia a coord2packcol().
+
+\begin{Code}\begin{verbatim}83 {
+84     return coord2packcol(mat);
+85 }
+\end{verbatim}
+\end{Code}
+
+
+\hypertarget{bal_8h_e3bf5cc7d6bd2bd728d003ae79882e8e}{
+\index{bal.h@{bal.h}!bal\_\-coord2packcol\_\-symmetric@{bal\_\-coord2packcol\_\-symmetric}}
+\index{bal\_\-coord2packcol\_\-symmetric@{bal\_\-coord2packcol\_\-symmetric}!bal.h@{bal.h}}
+\paragraph{\setlength{\rightskip}{0pt plus 5cm}{\bf sp\_\-packcol}$\ast$ bal\_\-coord2packcol\_\-symmetric ({\bf sp\_\-coord} $\ast$ {\em mat})}\hfill}
+\label{bal_8h_e3bf5cc7d6bd2bd728d003ae79882e8e}
+
+
+Genera una instancia de la matriz mat en formato empaquetado por columna para matrices simétricas. 
+
+Por más información vea \hyperlink{sp__packcol_8c_7d8ea564f906cc721e5de1c4a4f5844b}{coord2packcol\_\-symmetric()}. 
+
+Definición en la línea 92 del archivo bal.c.
+
+Hace referencia a coord2packcol\_\-symmetric().
+
+\begin{Code}\begin{verbatim}93 {
+94     return coord2packcol_symmetric(mat);
+95 }
+\end{verbatim}
+\end{Code}
+
+
+\hypertarget{bal_8h_f66229abe0eb9df151118f623d2bd29e}{
+\index{bal.h@{bal.h}!bal\_\-elimination\_\-tree@{bal\_\-elimination\_\-tree}}
+\index{bal\_\-elimination\_\-tree@{bal\_\-elimination\_\-tree}!bal.h@{bal.h}}
+\paragraph{\setlength{\rightskip}{0pt plus 5cm}int$\ast$ bal\_\-elimination\_\-tree ({\bf sp\_\-packcol} $\ast$ {\em A}, \/  int $\ast$ {\em nnz})}\hfill}
+\label{bal_8h_f66229abe0eb9df151118f623d2bd29e}
+
+
+Calcula el árbol de eliminación de la matriz simétrica A. 
+
+Por más información vea \hyperlink{cholesky_8c_c247ab532a0c89efa5fc80ccd1de6315}{elimination\_\-tree()}. 
+
+Definición en la línea 192 del archivo bal.c.
+
+Hace referencia a elimination\_\-tree().
+
+\begin{Code}\begin{verbatim}193 {
+194     return elimination_tree(A, nnz);
+195 }
+\end{verbatim}
+\end{Code}
+
+
+\hypertarget{bal_8h_7eae9c8721058a53a00d0c0dad2551f2}{
+\index{bal.h@{bal.h}!bal\_\-free\_\-cds@{bal\_\-free\_\-cds}}
+\index{bal\_\-free\_\-cds@{bal\_\-free\_\-cds}!bal.h@{bal.h}}
+\paragraph{\setlength{\rightskip}{0pt plus 5cm}void bal\_\-free\_\-cds ({\bf sp\_\-cds} $\ast$ {\em A})}\hfill}
+\label{bal_8h_7eae9c8721058a53a00d0c0dad2551f2}
+
+
+Libera la memoria reservada por la matriz {\tt A}. 
+
+Por más información ver \hyperlink{sp__cds_8c_6b5d5549f99d990b9a259d982e3e4485}{free\_\-cds()} 
+
+Definición en la línea 332 del archivo bal.c.
+
+Hace referencia a free\_\-cds().
+
+\begin{Code}\begin{verbatim}333 {
+334     free_cds(A);
+335 }
+\end{verbatim}
+\end{Code}
+
+
+\hypertarget{bal_8h_b3ce8c7df5d3d2a8eb9cd70534f628ed}{
+\index{bal.h@{bal.h}!bal\_\-free\_\-coord@{bal\_\-free\_\-coord}}
+\index{bal\_\-free\_\-coord@{bal\_\-free\_\-coord}!bal.h@{bal.h}}
+\paragraph{\setlength{\rightskip}{0pt plus 5cm}void bal\_\-free\_\-coord ({\bf sp\_\-coord} $\ast$ {\em A})}\hfill}
+\label{bal_8h_b3ce8c7df5d3d2a8eb9cd70534f628ed}
+
+
+Libera la memoria reservada por la matriz {\tt A}. 
+
+Por más información ver \hyperlink{sp__coord_8c_33dd472b98444c5d08c9099556226816}{free\_\-coord()} 
+
+Definición en la línea 312 del archivo bal.c.
+
+Hace referencia a free\_\-coord().
+
+\begin{Code}\begin{verbatim}313 {
+314     free_coord(A);
+315 }
+\end{verbatim}
+\end{Code}
+
+
+\hypertarget{bal_8h_ecd6ad512d46f1825e79eda4647eaf60}{
+\index{bal.h@{bal.h}!bal\_\-free\_\-packcol@{bal\_\-free\_\-packcol}}
+\index{bal\_\-free\_\-packcol@{bal\_\-free\_\-packcol}!bal.h@{bal.h}}
+\paragraph{\setlength{\rightskip}{0pt plus 5cm}void bal\_\-free\_\-packcol ({\bf sp\_\-packcol} $\ast$ {\em A})}\hfill}
+\label{bal_8h_ecd6ad512d46f1825e79eda4647eaf60}
+
+
+Libera la memoria reservada por la matriz {\tt A}. 
+
+Por más información ver \hyperlink{sp__packcol_8c_b9f6d408419504b0e7154b221bc0ca4b}{free\_\-packcol()} 
+
+Definición en la línea 322 del archivo bal.c.
+
+Hace referencia a free\_\-packcol().
+
+\begin{Code}\begin{verbatim}323 {
+324     free_packcol(A);
+325 }
+\end{verbatim}
+\end{Code}
+
+
+\hypertarget{bal_8h_0098b5496a5f2131a34c197bbc9ba57a}{
+\index{bal.h@{bal.h}!bal\_\-imprimir\_\-cds@{bal\_\-imprimir\_\-cds}}
+\index{bal\_\-imprimir\_\-cds@{bal\_\-imprimir\_\-cds}!bal.h@{bal.h}}
+\paragraph{\setlength{\rightskip}{0pt plus 5cm}void bal\_\-imprimir\_\-cds (FILE $\ast$ {\em fp}, \/  {\bf sp\_\-cds} $\ast$ {\em mat})}\hfill}
+\label{bal_8h_0098b5496a5f2131a34c197bbc9ba57a}
+
+
+Imprime la matriz guardada en formato simple por coordenadas en fp. 
+
+Por más información vea \hyperlink{sp__cds_8c_1f5bfb80b511e70892a29e07d4769e98}{sp\_\-imprimir\_\-cds()}. 
+
+Definición en la línea 262 del archivo bal.c.
+
+Hace referencia a sp\_\-imprimir\_\-cds().
+
+\begin{Code}\begin{verbatim}263 {
+264     sp_imprimir_cds(fp, mat);
+265 }
+\end{verbatim}
+\end{Code}
+
+
+\hypertarget{bal_8h_fb2e0eb90b54ac0b083d42f1d38d45ac}{
+\index{bal.h@{bal.h}!bal\_\-imprimir\_\-coord@{bal\_\-imprimir\_\-coord}}
+\index{bal\_\-imprimir\_\-coord@{bal\_\-imprimir\_\-coord}!bal.h@{bal.h}}
+\paragraph{\setlength{\rightskip}{0pt plus 5cm}void bal\_\-imprimir\_\-coord (FILE $\ast$ {\em fp}, \/  {\bf sp\_\-coord} $\ast$ {\em mat})}\hfill}
+\label{bal_8h_fb2e0eb90b54ac0b083d42f1d38d45ac}
+
+
+Imprime la matriz guardada en formato simple por coordenadas en fp. 
+
+Por más información vea \hyperlink{sp__coord_8c_ff646304bb38349c4620069c73a35760}{sp\_\-imprimir\_\-coord()}. 
+
+Definición en la línea 102 del archivo bal.c.
+
+Hace referencia a sp\_\-imprimir\_\-coord().
+
+\begin{Code}\begin{verbatim}103 {
+104     sp_imprimir_coord(fp, mat);
+105 }
+\end{verbatim}
+\end{Code}
+
+
+\hypertarget{bal_8h_5c7bdb5d92a964b7e4cc66d8058e6fed}{
+\index{bal.h@{bal.h}!bal\_\-imprimir\_\-packcol@{bal\_\-imprimir\_\-packcol}}
+\index{bal\_\-imprimir\_\-packcol@{bal\_\-imprimir\_\-packcol}!bal.h@{bal.h}}
+\paragraph{\setlength{\rightskip}{0pt plus 5cm}void bal\_\-imprimir\_\-packcol (FILE $\ast$ {\em fp}, \/  {\bf sp\_\-packcol} $\ast$ {\em mat})}\hfill}
+\label{bal_8h_5c7bdb5d92a964b7e4cc66d8058e6fed}
+
+
+Imprime la matriz guardada en formato empaquetado por columna en fp. 
+
+Por más información vea \hyperlink{sp__packcol_8c_b4d4d490381b43a9628f2001bb6c99d6}{sp\_\-imprimir\_\-packcol()}. 
+
+Definición en la línea 112 del archivo bal.c.
+
+Hace referencia a sp\_\-imprimir\_\-packcol().
+
+\begin{Code}\begin{verbatim}113 {
+114     sp_imprimir_packcol(fp, mat);
+115 }
+\end{verbatim}
+\end{Code}
+
+
+\hypertarget{bal_8h_3f75b8397429a72806592bd98007239c}{
+\index{bal.h@{bal.h}!bal\_\-load\_\-coord@{bal\_\-load\_\-coord}}
+\index{bal\_\-load\_\-coord@{bal\_\-load\_\-coord}!bal.h@{bal.h}}
+\paragraph{\setlength{\rightskip}{0pt plus 5cm}{\bf sp\_\-coord}$\ast$ bal\_\-load\_\-coord (FILE $\ast$ {\em fp})}\hfill}
+\label{bal_8h_3f75b8397429a72806592bd98007239c}
+
+
+Escribe en {\tt fp} la matriz {\tt A} en un formato entendible por \hyperlink{sp__coord_8c_d6a1042d41ff43da1f26396f5803daac}{load\_\-coord()}. 
+
+Por más información vea \hyperlink{sp__coord_8c_d6a1042d41ff43da1f26396f5803daac}{load\_\-coord()}. 
+
+Definición en la línea 152 del archivo bal.c.
+
+Hace referencia a load\_\-coord().
+
+\begin{Code}\begin{verbatim}153 {
+154     return load_coord(fp);
+155 }
+\end{verbatim}
+\end{Code}
+
+
+\hypertarget{bal_8h_889ccc022d954f0991322b3b558b44eb}{
+\index{bal.h@{bal.h}!bal\_\-mat2coord@{bal\_\-mat2coord}}
+\index{bal\_\-mat2coord@{bal\_\-mat2coord}!bal.h@{bal.h}}
+\paragraph{\setlength{\rightskip}{0pt plus 5cm}{\bf sp\_\-coord}$\ast$ bal\_\-mat2coord (int {\em n}, \/  int {\em m}, \/  double $\ast$$\ast$ {\em mat})}\hfill}
+\label{bal_8h_889ccc022d954f0991322b3b558b44eb}
+
+
+Genera la matriz dispersa equivalente a la matriz completa mat (n x m). 
+
+Por más información, vea \hyperlink{sp__coord_8c_627349c38a6e7dc3792abd416651fb83}{mat2coord()}. 
+
+Definición en la línea 72 del archivo bal.c.
+
+Hace referencia a mat2coord().
+
+\begin{Code}\begin{verbatim}73 {
+74     return mat2coord(n, m, mat);
+75 }
+\end{verbatim}
+\end{Code}
+
+
+\hypertarget{bal_8h_9d1aec3c016d9ea30d79d40439333f7a}{
+\index{bal.h@{bal.h}!bal\_\-mult\_\-mat\_\-cds@{bal\_\-mult\_\-mat\_\-cds}}
+\index{bal\_\-mult\_\-mat\_\-cds@{bal\_\-mult\_\-mat\_\-cds}!bal.h@{bal.h}}
+\paragraph{\setlength{\rightskip}{0pt plus 5cm}{\bf sp\_\-cds}$\ast$ bal\_\-mult\_\-mat\_\-cds ({\bf sp\_\-cds} $\ast$ {\em A}, \/  {\bf sp\_\-cds} $\ast$ {\em B})}\hfill}
+\label{bal_8h_9d1aec3c016d9ea30d79d40439333f7a}
+
+
+Multiplica dos matrices en formato CDS. 
+
+Por más información ver \hyperlink{oper_8c_6ea0383a6eb9a67301225f5f2fee87b4}{mult\_\-mat\_\-cds()}. 
+
+Definición en la línea 282 del archivo bal.c.
+
+Hace referencia a mult\_\-mat\_\-cds().
+
+\begin{Code}\begin{verbatim}283 {
+284     return mult_mat_cds(A, B);
+285 }
+\end{verbatim}
+\end{Code}
+
+
+\hypertarget{bal_8h_73ce65d5fd284423c38517d6370f449e}{
+\index{bal.h@{bal.h}!bal\_\-mult\_\-vec\_\-cds@{bal\_\-mult\_\-vec\_\-cds}}
+\index{bal\_\-mult\_\-vec\_\-cds@{bal\_\-mult\_\-vec\_\-cds}!bal.h@{bal.h}}
+\paragraph{\setlength{\rightskip}{0pt plus 5cm}void bal\_\-mult\_\-vec\_\-cds ({\bf sp\_\-cds} $\ast$ {\em A}, \/  double $\ast$ {\em x}, \/  double $\ast$ {\em y})}\hfill}
+\label{bal_8h_73ce65d5fd284423c38517d6370f449e}
+
+
+Multiplica una matriz en formato CDS por un vector. 
+
+Por más información ver \hyperlink{oper_8c_695a940f46d1c589bfcf8758f7a87f15}{mult\_\-vec\_\-cds()}. 
+
+Definición en la línea 272 del archivo bal.c.
+
+Hace referencia a mult\_\-vec\_\-cds().
+
+\begin{Code}\begin{verbatim}273 {
+274     mult_vec_cds(A, x, y);
+275 }
+\end{verbatim}
+\end{Code}
+
+
+\hypertarget{bal_8h_413951b2a155feea5c67288a3ccb34bf}{
+\index{bal.h@{bal.h}!bal\_\-mult\_\-vec\_\-packcol@{bal\_\-mult\_\-vec\_\-packcol}}
+\index{bal\_\-mult\_\-vec\_\-packcol@{bal\_\-mult\_\-vec\_\-packcol}!bal.h@{bal.h}}
+\paragraph{\setlength{\rightskip}{0pt plus 5cm}void bal\_\-mult\_\-vec\_\-packcol ({\bf sp\_\-packcol} $\ast$ {\em A}, \/  double $\ast$ {\em x}, \/  double $\ast$ {\em y})}\hfill}
+\label{bal_8h_413951b2a155feea5c67288a3ccb34bf}
+
+
+Multiplica una matriz empaquetada por columna por un vector. 
+
+Por más información vea \hyperlink{oper_8c_8bdc34ab9889aa1cad64fcc44dd7a2ec}{mult\_\-vec\_\-packcol()}. 
+
+Definición en la línea 132 del archivo bal.c.
+
+Hace referencia a mult\_\-vec\_\-packcol().
+
+\begin{Code}\begin{verbatim}133 {
+134     mult_vec_packcol(A, x, y);
+135 }
+\end{verbatim}
+\end{Code}
+
+
+\hypertarget{bal_8h_dfee3769ca35f010759eddbf8e9cc476}{
+\index{bal.h@{bal.h}!bal\_\-mult\_\-vec\_\-packcol\_\-symmetric@{bal\_\-mult\_\-vec\_\-packcol\_\-symmetric}}
+\index{bal\_\-mult\_\-vec\_\-packcol\_\-symmetric@{bal\_\-mult\_\-vec\_\-packcol\_\-symmetric}!bal.h@{bal.h}}
+\paragraph{\setlength{\rightskip}{0pt plus 5cm}void bal\_\-mult\_\-vec\_\-packcol\_\-symmetric ({\bf sp\_\-packcol} $\ast$ {\em A}, \/  double $\ast$ {\em x}, \/  double $\ast$ {\em y})}\hfill}
+\label{bal_8h_dfee3769ca35f010759eddbf8e9cc476}
+
+
+Multiplica una matriz simétrica empaquetada por columna por un vector. 
+
+Por más información vea \hyperlink{oper_8c_0f9cb665556ffdd8bdb5dfbe861e0d28}{mult\_\-vec\_\-packcol\_\-symmetric()}. 
+
+Definición en la línea 122 del archivo bal.c.
+
+Hace referencia a mult\_\-vec\_\-packcol\_\-symmetric().
+
+\begin{Code}\begin{verbatim}123 {
+124     mult_vec_packcol_symmetric(A, x, y);
+125 }
+\end{verbatim}
+\end{Code}
+
+
+\hypertarget{bal_8h_9bfee73c39b529b912b2f140e0ff1765}{
+\index{bal.h@{bal.h}!bal\_\-numerical\_\-factorization@{bal\_\-numerical\_\-factorization}}
+\index{bal\_\-numerical\_\-factorization@{bal\_\-numerical\_\-factorization}!bal.h@{bal.h}}
+\paragraph{\setlength{\rightskip}{0pt plus 5cm}void bal\_\-numerical\_\-factorization ({\bf sp\_\-packcol} $\ast$ {\em A}, \/  {\bf sp\_\-packcol} $\ast$ {\em L})}\hfill}
+\label{bal_8h_9bfee73c39b529b912b2f140e0ff1765}
+
+
+Sobreescribe {\tt L} con la factorización de Cholesky de A. 
+
+Por más información vea \hyperlink{cholesky_8c_2dd1cb8f4a30d7950399b658862a2180}{numerical\_\-factorization()}. 
+
+Definición en la línea 212 del archivo bal.c.
+
+Hace referencia a numerical\_\-factorization().
+
+\begin{Code}\begin{verbatim}213 {
+214     numerical_factorization(A, L);
+215 }
+\end{verbatim}
+\end{Code}
+
+
+\hypertarget{bal_8h_90c182cadb814169fdc27cc179ccf1af}{
+\index{bal.h@{bal.h}!bal\_\-permutar\_\-packcol@{bal\_\-permutar\_\-packcol}}
+\index{bal\_\-permutar\_\-packcol@{bal\_\-permutar\_\-packcol}!bal.h@{bal.h}}
+\paragraph{\setlength{\rightskip}{0pt plus 5cm}{\bf sp\_\-packcol}$\ast$ bal\_\-permutar\_\-packcol (unsigned int $\ast$ {\em p}, \/  {\bf sp\_\-packcol} $\ast$ {\em A})}\hfill}
+\label{bal_8h_90c182cadb814169fdc27cc179ccf1af}
+
+
+Aplica una permutación de columnas sobre la matriz {\tt A}. 
+
+Por más información vea \hyperlink{reordenamiento_8c_05f0067f3214ea7f66d4519c09b5c5c2}{permutar\_\-packcol()}. 
+
+Definición en la línea 302 del archivo bal.c.
+
+Hace referencia a permutar\_\-packcol().
+
+\begin{Code}\begin{verbatim}303 {
+304     return permutar_packcol(p, A);
+305 }
+\end{verbatim}
+\end{Code}
+
+
+\hypertarget{bal_8h_27f481dd5d13dfab5b06bb95d5c5aa1b}{
+\index{bal.h@{bal.h}!bal\_\-row\_\-traversal\_\-packcol@{bal\_\-row\_\-traversal\_\-packcol}}
+\index{bal\_\-row\_\-traversal\_\-packcol@{bal\_\-row\_\-traversal\_\-packcol}!bal.h@{bal.h}}
+\paragraph{\setlength{\rightskip}{0pt plus 5cm}int bal\_\-row\_\-traversal\_\-packcol ({\bf sp\_\-packcol} $\ast$ {\em A}, \/  int $\ast$ {\em i}, \/  int $\ast$ {\em j}, \/  int $\ast$ {\em posij})}\hfill}
+\label{bal_8h_27f481dd5d13dfab5b06bb95d5c5aa1b}
+
+
+Implementa un mecanismo eficiente para recorrer por filas una matriz dispersa empaquetada por columnas. 
+
+Por más información vea \hyperlink{sp__packcol_8c_49b361aae383b0fd323f5735f0ff01bc}{row\_\-traversal\_\-packcol()}. 
+
+Definición en la línea 142 del archivo bal.c.
+
+Hace referencia a row\_\-traversal\_\-packcol().
+
+\begin{Code}\begin{verbatim}143 {
+144     return row_traversal_packcol(A, i, j, posij);
+145 }
+\end{verbatim}
+\end{Code}
+
+
+\hypertarget{bal_8h_5928b3ea635bf59c0a99e5c835c06668}{
+\index{bal.h@{bal.h}!bal\_\-save\_\-cds@{bal\_\-save\_\-cds}}
+\index{bal\_\-save\_\-cds@{bal\_\-save\_\-cds}!bal.h@{bal.h}}
+\paragraph{\setlength{\rightskip}{0pt plus 5cm}void bal\_\-save\_\-cds (FILE $\ast$ {\em fp}, \/  {\bf sp\_\-cds} $\ast$ {\em A})}\hfill}
+\label{bal_8h_5928b3ea635bf59c0a99e5c835c06668}
+
+
+Imprime la matriz {\tt A} en formato matlab en el archivo {\tt fp}. 
+
+Por más información vea \hyperlink{sp__cds_8c_dbc8b3571c8ace5419d2e02318988388}{save\_\-cds()}. 
+
+Definición en la línea 292 del archivo bal.c.
+
+Hace referencia a save\_\-cds().
+
+\begin{Code}\begin{verbatim}293 {
+294     save_cds(fp, A);
+295 }
+\end{verbatim}
+\end{Code}
+
+
+\hypertarget{bal_8h_abba0c987c1cd21f99ae3ef4a5fca7ac}{
+\index{bal.h@{bal.h}!bal\_\-save\_\-coord@{bal\_\-save\_\-coord}}
+\index{bal\_\-save\_\-coord@{bal\_\-save\_\-coord}!bal.h@{bal.h}}
+\paragraph{\setlength{\rightskip}{0pt plus 5cm}void bal\_\-save\_\-coord (FILE $\ast$ {\em fp}, \/  {\bf sp\_\-coord} $\ast$ {\em A})}\hfill}
+\label{bal_8h_abba0c987c1cd21f99ae3ef4a5fca7ac}
+
+
+Escribe en {\tt fp} la matriz {\tt A} en un formato entendible por \hyperlink{sp__coord_8c_d6a1042d41ff43da1f26396f5803daac}{load\_\-coord()}. 
+
+Por más información vea \hyperlink{sp__coord_8c_65d8ffec5eb8263159ca9e6310c6e762}{save\_\-coord()}. 
+
+Definición en la línea 162 del archivo bal.c.
+
+Hace referencia a save\_\-coord().
+
+\begin{Code}\begin{verbatim}163 {
+164     save_coord(fp, A);
+165 }
+\end{verbatim}
+\end{Code}
+
+
+\hypertarget{bal_8h_23df03ad23589aefe5103d463d55ff8c}{
+\index{bal.h@{bal.h}!bal\_\-save\_\-packcol@{bal\_\-save\_\-packcol}}
+\index{bal\_\-save\_\-packcol@{bal\_\-save\_\-packcol}!bal.h@{bal.h}}
+\paragraph{\setlength{\rightskip}{0pt plus 5cm}void bal\_\-save\_\-packcol (FILE $\ast$ {\em fp}, \/  {\bf sp\_\-packcol} $\ast$ {\em A})}\hfill}
+\label{bal_8h_23df03ad23589aefe5103d463d55ff8c}
+
+
+Imprime la matriz {\tt A} en formato matlab en el archivo {\tt fp}. 
+
+Por más información vea \hyperlink{sp__packcol_8c_45eba0df395fde4b428c76d4e688ed62}{save\_\-packcol()}. 
+
+Definición en la línea 182 del archivo bal.c.
+
+Hace referencia a save\_\-packcol().
+
+\begin{Code}\begin{verbatim}183 {
+184     save_packcol(fp, A);
+185 }
+\end{verbatim}
+\end{Code}
+
+
+\hypertarget{bal_8h_5ae3c23f89da32858f1420e32d35ccdc}{
+\index{bal.h@{bal.h}!bal\_\-save\_\-packcol\_\-symmetric@{bal\_\-save\_\-packcol\_\-symmetric}}
+\index{bal\_\-save\_\-packcol\_\-symmetric@{bal\_\-save\_\-packcol\_\-symmetric}!bal.h@{bal.h}}
+\paragraph{\setlength{\rightskip}{0pt plus 5cm}void bal\_\-save\_\-packcol\_\-symmetric (FILE $\ast$ {\em fp}, \/  {\bf sp\_\-packcol} $\ast$ {\em A})}\hfill}
+\label{bal_8h_5ae3c23f89da32858f1420e32d35ccdc}
+
+
+Imprime la matriz simétrica empaquetada por columna en formato matlab en el archivo fp. 
+
+Por más información vea \hyperlink{sp__packcol_8c_25a252f919f868ce004aa25b45d44ff3}{save\_\-packcol\_\-symmetric()}. 
+
+Definición en la línea 172 del archivo bal.c.
+
+Hace referencia a save\_\-packcol\_\-symmetric().
+
+\begin{Code}\begin{verbatim}173 {
+174     save_packcol_symmetric(fp, A);
+175 }
+\end{verbatim}
+\end{Code}
+
+
+\hypertarget{bal_8h_35b286ef1c334c34a5657a058db40996}{
+\index{bal.h@{bal.h}!bal\_\-symbolic\_\-factorization@{bal\_\-symbolic\_\-factorization}}
+\index{bal\_\-symbolic\_\-factorization@{bal\_\-symbolic\_\-factorization}!bal.h@{bal.h}}
+\paragraph{\setlength{\rightskip}{0pt plus 5cm}{\bf sp\_\-packcol}$\ast$ bal\_\-symbolic\_\-factorization ({\bf sp\_\-packcol} $\ast$ {\em A})}\hfill}
+\label{bal_8h_35b286ef1c334c34a5657a058db40996}
+
+
+Factorización simbólica de la matriz A. 
+
+Por más información vea \hyperlink{cholesky_8c_372ebd05f16cc5771aacf2d9e2497119}{symbolic\_\-factorization()}. 
+
+Definición en la línea 202 del archivo bal.c.
+
+Hace referencia a symbolic\_\-factorization().
+
+\begin{Code}\begin{verbatim}203 {
+204     return symbolic_factorization(A);
+205 }
+\end{verbatim}
+\end{Code}
+
+

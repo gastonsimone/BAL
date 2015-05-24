@@ -1,0 +1,100 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>BAL: Fichero Fuente sparse/sp_packcol.h</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Generado por Doxygen 1.5.5 -->
+<script type="text/javascript">
+<!--
+function changeDisplayState (e){
+  var num=this.id.replace(/[^[0-9]/g,'');
+  var button=this.firstChild;
+  var sectionDiv=document.getElementById('dynsection'+num);
+  if (sectionDiv.style.display=='none'||sectionDiv.style.display==''){
+    sectionDiv.style.display='block';
+    button.src='open.gif';
+  }else{
+    sectionDiv.style.display='none';
+    button.src='closed.gif';
+  }
+}
+function initDynSections(){
+  var divs=document.getElementsByTagName('div');
+  var sectionCounter=1;
+  for(var i=0;i<divs.length-1;i++){
+    if(divs[i].className=='dynheader'&&divs[i+1].className=='dynsection'){
+      var header=divs[i];
+      var section=divs[i+1];
+      var button=header.firstChild;
+      if (button!='IMG'){
+        divs[i].insertBefore(document.createTextNode(' '),divs[i].firstChild);
+        button=document.createElement('img');
+        divs[i].insertBefore(button,divs[i].firstChild);
+      }
+      header.style.cursor='pointer';
+      header.onclick=changeDisplayState;
+      header.id='dynheader'+sectionCounter;
+      button.src='closed.gif';
+      section.id='dynsection'+sectionCounter;
+      section.style.display='none';
+      section.style.marginLeft='14px';
+      sectionCounter++;
+    }
+  }
+}
+window.onload = initDynSections;
+-->
+</script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Página&nbsp;principal</span></a></li>
+      <li><a href="pages.html"><span>Páginas&nbsp;relacionadas</span></a></li>
+      <li><a href="annotated.html"><span>Estructuras&nbsp;de&nbsp;Datos</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+      <li><a href="dirs.html"><span>Directorios</span></a></li>
+    </ul>
+  </div>
+  <div class="navpath"><a class="el" href="dir_3d91f720ca7eb54995d7d6d716b4ce42.html">sparse</a>
+  </div>
+</div>
+</div>
+<h1>sp_packcol.h</h1><a href="sp__packcol_8h.html">Ir a la documentación de este archivo.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef __SP_PACKCOL_H__</span>
+<a name="l00002"></a>00002 <span class="preprocessor"></span><span class="preprocessor">#define __SP_PACKCOL_H__</span>
+<a name="l00003"></a>00003 <span class="preprocessor"></span>
+<a name="l00004"></a>00004 <span class="preprocessor">#include &lt;stdio.h&gt;</span>
+<a name="l00005"></a>00005 <span class="preprocessor">#include "<a class="code" href="sp__coord_8h.html" title="Archivo de cabecera para matriz dispersa, formato simple.">sp_coord.h</a>"</span>
+<a name="l00006"></a>00006 
+<a name="l00022"></a><a class="code" href="structsp__packcol.html">00022</a> <span class="keyword">typedef</span> <span class="keyword">struct </span>{
+<a name="l00023"></a><a class="code" href="structsp__packcol.html#2e12b2881843b0ff8191f0654570a748">00023</a>     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> nrow;  
+<a name="l00024"></a><a class="code" href="structsp__packcol.html#2cc24559101ca3783f1949c8eebacd7c">00024</a>     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> ncol;  
+<a name="l00025"></a><a class="code" href="structsp__packcol.html#667202fa30dd3d49982e3b0c8148bde4">00025</a>     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> nnz;   
+<a name="l00026"></a><a class="code" href="structsp__packcol.html#c9a9e31c6b9c1416fff29944568ea18f">00026</a>     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> *colp; 
+<a name="l00027"></a><a class="code" href="structsp__packcol.html#536659b700c3b21fd5d6cf8538c82b6f">00027</a>     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> *rx;   
+<a name="l00028"></a><a class="code" href="structsp__packcol.html#6315b3a8ee78ac66aaae5ba79bda252e">00028</a>     <span class="keywordtype">double</span> *val;        
+<a name="l00029"></a>00029 } <a class="code" href="structsp__packcol.html" title="Estructura de matriz dispersa empaquetada por columna.">sp_packcol</a>;
+<a name="l00030"></a>00030 
+<a name="l00031"></a>00031 <a class="code" href="structsp__packcol.html" title="Estructura de matriz dispersa empaquetada por columna.">sp_packcol</a>* <a class="code" href="sp__packcol_8c.html#729d10ec6867249f9b58ceb2683a3318" title="Genera una instancia de la matriz mat en formato empaquetado por columna.">coord2packcol</a>(<a class="code" href="structsp__coord.html" title="Estructura de matriz dispersa simple por coordenadas.">sp_coord</a>* mat);
+<a name="l00032"></a>00032 
+<a name="l00033"></a>00033 <a class="code" href="structsp__packcol.html" title="Estructura de matriz dispersa empaquetada por columna.">sp_packcol</a>* <a class="code" href="sp__packcol_8c.html#7d8ea564f906cc721e5de1c4a4f5844b" title="Genera una instancia de la matriz mat en formato empaquetado por columna para matrices...">coord2packcol_symmetric</a>(<a class="code" href="structsp__coord.html" title="Estructura de matriz dispersa simple por coordenadas.">sp_coord</a>* mat);
+<a name="l00034"></a>00034 
+<a name="l00035"></a>00035 <span class="keywordtype">void</span> <a class="code" href="sp__packcol_8c.html#b4d4d490381b43a9628f2001bb6c99d6" title="Imprime la matriz guardada en formato empaquetado por columna en fp.">sp_imprimir_packcol</a>(FILE *fp, <a class="code" href="structsp__packcol.html" title="Estructura de matriz dispersa empaquetada por columna.">sp_packcol</a> *mat);
+<a name="l00036"></a>00036 
+<a name="l00037"></a>00037 <span class="keywordtype">int</span> <a class="code" href="sp__packcol_8c.html#49b361aae383b0fd323f5735f0ff01bc" title="Implementa un mecanismo eficiente para recorrer por filas una matriz dispersa empaquetada...">row_traversal_packcol</a>(<a class="code" href="structsp__packcol.html" title="Estructura de matriz dispersa empaquetada por columna.">sp_packcol</a> *A, <span class="keywordtype">int</span> *i, <span class="keywordtype">int</span> *j, <span class="keywordtype">int</span> *posij);
+<a name="l00038"></a>00038 
+<a name="l00039"></a>00039 <span class="keywordtype">void</span> <a class="code" href="sp__packcol_8c.html#25a252f919f868ce004aa25b45d44ff3" title="Imprime la matriz simétrica empaquetada por columna en formato matlab en el archivo...">save_packcol_symmetric</a>(FILE *fp, <a class="code" href="structsp__packcol.html" title="Estructura de matriz dispersa empaquetada por columna.">sp_packcol</a> *A);
+<a name="l00040"></a>00040 
+<a name="l00041"></a>00041 <span class="keywordtype">void</span> <a class="code" href="sp__packcol_8c.html#45eba0df395fde4b428c76d4e688ed62" title="Imprime la matriz A en formato matlab en el archivo fp.">save_packcol</a>(FILE *fp, <a class="code" href="structsp__packcol.html" title="Estructura de matriz dispersa empaquetada por columna.">sp_packcol</a> *A);
+<a name="l00042"></a>00042 
+<a name="l00043"></a>00043 <span class="keywordtype">void</span> <a class="code" href="sp__packcol_8c.html#b9f6d408419504b0e7154b221bc0ca4b" title="Borra toda la memoria reservada por la matriz A.">free_packcol</a>(<a class="code" href="structsp__packcol.html" title="Estructura de matriz dispersa empaquetada por columna.">sp_packcol</a> *A);
+<a name="l00044"></a>00044 
+<a name="l00045"></a>00045 <span class="preprocessor">#endif</span>
+<a name="l00046"></a>00046 <span class="preprocessor"></span>
+</pre></div></div>
+<hr size="1">
+<address style="text-align: right;">
+<small>BAL&nbsp;1.0.0<br>Generado el Wed Aug 27 19:54:18 2008.</small>
+</address>
+</body>
+</html>

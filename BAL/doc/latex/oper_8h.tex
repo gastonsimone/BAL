@@ -1,0 +1,313 @@
+\hypertarget{oper_8h}{
+\subsection{Referencia del Archivo oper.h}
+\label{oper_8h}\index{oper.h@{oper.h}}
+}
+Operaciones básicas, archivo de cabecera. 
+
+{\tt \#include \char`\"{}sparse/sp\_\-packcol.h\char`\"{}}\par
+\subsubsection*{Funciones}
+\begin{CompactItemize}
+\item 
+void \hyperlink{oper_8h_8bdc34ab9889aa1cad64fcc44dd7a2ec}{mult\_\-vec\_\-packcol} (\hyperlink{structsp__packcol}{sp\_\-packcol} $\ast$A, double $\ast$x, double $\ast$y)
+\begin{CompactList}\small\item\em Multiplica una matriz empaquetada por columna por un vector. \item\end{CompactList}\item 
+void \hyperlink{oper_8h_0f9cb665556ffdd8bdb5dfbe861e0d28}{mult\_\-vec\_\-packcol\_\-symmetric} (\hyperlink{structsp__packcol}{sp\_\-packcol} $\ast$A, double $\ast$x, double $\ast$y)
+\begin{CompactList}\small\item\em Multiplica una matriz simétrica empaquetada por columna por un vector. \item\end{CompactList}\item 
+void \hyperlink{oper_8h_695a940f46d1c589bfcf8758f7a87f15}{mult\_\-vec\_\-cds} (\hyperlink{structsp__cds}{sp\_\-cds} $\ast$A, double $\ast$x, double $\ast$y)
+\begin{CompactList}\small\item\em Multiplica una matriz en formato CDS por un vector. \item\end{CompactList}\item 
+\hyperlink{structsp__cds}{sp\_\-cds} $\ast$ \hyperlink{oper_8h_0bcb0c04dd4183dbe4bab1a15ea5d5cd}{mult\_\-mat\_\-cds} (\hyperlink{structsp__cds}{sp\_\-cds} $\ast$A, \hyperlink{structsp__cds}{sp\_\-cds} $\ast$B)
+\begin{CompactList}\small\item\em Multiplica dos matrices en formato CDS. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsubsection{Descripción detallada}
+Operaciones básicas, archivo de cabecera. 
+
+Este archivo contiene las definiciones de las funciones que implementan operaciones básicas entre matrices y vectores utilizando estructuras de datos para matrices dispersas. 
+
+Definición en el archivo \hyperlink{oper_8h-source}{oper.h}.
+
+\subsubsection{Documentación de las funciones}
+\hypertarget{oper_8h_0bcb0c04dd4183dbe4bab1a15ea5d5cd}{
+\index{oper.h@{oper.h}!mult\_\-mat\_\-cds@{mult\_\-mat\_\-cds}}
+\index{mult\_\-mat\_\-cds@{mult\_\-mat\_\-cds}!oper.h@{oper.h}}
+\paragraph{\setlength{\rightskip}{0pt plus 5cm}{\bf sp\_\-cds}$\ast$ mult\_\-mat\_\-cds ({\bf sp\_\-cds} $\ast$ {\em A}, \/  {\bf sp\_\-cds} $\ast$ {\em B})}\hfill}
+\label{oper_8h_0bcb0c04dd4183dbe4bab1a15ea5d5cd}
+
+
+Multiplica dos matrices en formato CDS. 
+
+\begin{Desc}
+\item[Parámetros:]
+\begin{description}
+\item[{\em A}]Matriz operando izquierdo de la multiplicación \item[{\em B}]Matriz operando derecho de la multiplicación\end{description}
+\end{Desc}
+Esta operación computa la operación $C = AB$ y devuelve un puntero a la matriz {\tt C}.
+
+La implementación de esta operación está dividida en dos etapas claramente diferenciadas: \begin{enumerate}
+\item Cálculo anticipado de la estructura de {\tt C} (cuyo objetivo es equivalente al de una factorización simbólica) \item Cálculo numérico de {\tt C} \end{enumerate}
+
+
+La lógica de ambas etapas está fundamentada en la misma observación que puede hacerse del algoritmo {\em \char`\"{}clásico\char`\"{}\/} de multiplicación de matrices. Recordando nuestra definición de diagonales (el elemento $a_{ij}$ pertenece a la diagonal $j-i$) y observando el algoritmo clásico \[ c_{ij} = \sum_{k=0}^n a_{ik}b_{kj} \] obtenemos las siguientes conclusiones:
+
+Primero, toda diagonal {\tt t} de {\tt C} se verá afectada únicamente por productos de entradas de todo par de diagonales {\tt r} y {\tt s} de {\tt A} y {\tt B} respectivamente, tales que {\tt t = r+s}. Para convencernos de esto, basta ver el algoritmo clásico. Vemos que el elemento $c_{ij}$ (perteneciente a la diagonal {\tt (j-i)}) se ve afectado por la multiplicación de $a_{ik}b_{kj}$ para todo {\tt k}. Es decir, un elemento de la diagonal {\tt (k-i)} de {\tt A} y un elemento de la diagonal {\tt (j-k)} de {\tt B}. Por lo tanto, como tenemos que {\tt (k-i)+(j-k) = j-i}, nuestro enunciado es correcto.
+
+Esta observación nos da una pauta de cómo realizar ambas etapas del algoritmo. En particular, para la etapa de cálculo de la estructura del resultado {\tt C}, podemos afirmar lo siguiente: Si la diagonales {\tt r} de {\tt A} y {\tt s} de {\tt B} son no vacías (entendiendo por diagonal vacía aquella con cero en todas sus entradas), entonces la diagonal {\tt (r+s)} de {\tt C} (si existe) es no vacía.
+
+La acotación \char`\"{}si existe\char`\"{} del enunciado anterior es porque van a haber diagonales que no se van a cruzar en el producto. Basta ver cómo el algoritmo calcula las diagonales máxima y mínima (variables {\tt mindiag} y {\tt maxdiag}) antes de comenzar con el cálculo de la estructura.
+
+Con esto tenemos resuelto el cálculo de la estructura de {\tt C}. Observamos que también será una matriz de banda, pero más diagonales tendrán valores no cero.
+
+Con respecto al cálculo de las entradas de {\tt C}, hace falta aclarar cómo se multiplican las entradas de las diagonales de {\tt A} y {\tt B}. Ya vimos que un elemento de la diagonal de {\tt A} se multiplicará con uno de {\tt B}. Pero, ¿cuál con cuál?
+
+Observamos, gracias al algoritmo \char`\"{}clásico\char`\"{}, que todo producto de entradas de {\tt A} y {\tt B} siempre cumple que la columna de {\tt A} se corresponde con la misma fila de {\tt B} (ambas tienen el mismo índice {\tt k} en el algoritmo). Por lo tanto, dadas dos diagonales {\tt r} y {\tt s} de {\tt A} y {\tt B} respectivamente, basta encontrar el primer par de elementos que cumplan con esta condición, para que los siguientes pares (avanzando un lugar en cada una de las diagonales) también lo cumpla. Esto es lo que hace el algoritmo en la etapa comentada como la \char`\"{}alineación\char`\"{} de las diagonales a multiplicar. Luego de esto, se hace el producto entrada por entrada.
+
+\begin{Desc}
+\item[Nota:]La etapa de cálculo de la estructura ejecuta en un tiempo que está en el orden {\em O(A.ndiag+B.ndiag)\/}, mientras que el cálculo numérico ejecuta en un tiempo que está en el orden {\em O(D(A)+D(B))\/}, siendo {\tt D(X)} la cantidad de entradas (con valor cero o no cero) que componen todas las diagonales no vacías de {\tt X}. \end{Desc}
+
+
+Definición en la línea 205 del archivo oper.c.
+
+Hace referencia a BAL\_\-ERROR, binary\_\-search(), sp\_\-cds::dx, insert\_\-sorted(), sp\_\-cds::maxdiaglength, sp\_\-cds::ncol, sp\_\-cds::ndiag, sp\_\-cds::nrow, y sp\_\-cds::val.
+
+Referenciado por bal\_\-mult\_\-mat\_\-cds().
+
+\begin{Code}\begin{verbatim}206 {
+207     unsigned int n, m, tope, dxl, ka, kb, i, j, k;
+208     int mindiag, maxdiag, diaga, diagb, diag, inia, fina, inib, finb, ja, diff;
+209     sp_cds* c;
+210 
+211     if (A->ncol != B->nrow) {
+212         BAL_ERROR("Las dimensiones de las matrices no permiten su multiplicación");
+213         return NULL;
+214     }
+215 
+216     c = (sp_cds*)malloc(sizeof(sp_cds));
+217     c->nrow = n = A->nrow;
+218     c->ncol = m = B->ncol;
+219     c->maxdiaglength = MIN(n, m);
+220     tope = m + n - 1; /* Cantidad máxima de diagonales */
+221     c->dx = (int*)malloc(sizeof(int) * tope);
+222 
+223     /* Calcula las diagonales que tendrán datos en el resultado */
+224     mindiag = 1 - n;
+225     maxdiag = m - 1;
+226     dxl = 0;
+227     for (ka=0; ka < A->ndiag; ++ka) {       /* Por cada diagonal con datos en A */
+228         diaga = A->dx[ka];
+229         for (kb=0; kb < B->ndiag; ++kb) {   /* Por cada diagonal con datos en B */
+230             diagb = B->dx[kb];
+231 
+232             diag = diaga + diagb;           /* Diagonal en C que tendrá datos */
+233             if (diag >= mindiag && diag <= maxdiag) {
+234                 if (binary_search(c->dx, dxl, diag) == -1) {
+235                     insert_sorted(c->dx, dxl - 1, diag);
+236                     ++dxl;
+237                 }
+238             }
+239         }
+240     }
+241 
+242     /* Inicializa c->val */
+243     c->ndiag = dxl;
+244     c->val = (double**)malloc(sizeof(double*) * dxl);
+245     for (i=0; i < dxl; ++i) {
+246         c->val[i] = (double*)malloc(sizeof(double) * c->maxdiaglength);
+247         for (j=0; j < c->maxdiaglength; ++j)
+248             c->val[i][j] = 0;
+249     }
+250 
+251     /* Calcula los valores de c */
+252     for (ka=0; ka < A->ndiag; ++ka) {       /* Por cada diagonal con datos en A */
+253         diaga = A->dx[ka];
+254         for (kb=0; kb < B->ndiag; ++kb) {   /* Por cada diagonal con datos en B */
+255             diagb = B->dx[kb];
+256 
+257             diag = diaga + diagb;
+258             k = binary_search(c->dx, dxl, diag);
+259 
+260             inia = MAX(0, -diaga);
+261             fina = A->maxdiaglength - MAX(0, diaga);
+262             inib = MAX(0, -diagb);
+263             finb = B->maxdiaglength - MAX(0, diagb);
+264 
+265             /* Alinea las diagonales para multiplicar */
+266             ja = A->dx[ka] + inia;
+267             diff = ja - inib;
+268             if (diff > 0)
+269                 inib += diff;
+270             else
+271                 inia -= diff;
+272 
+273             for (i=inia,j=inib; i < fina && j < finb; ++i, ++j)
+274                 c->val[k][i] += ( A->val[ka][i] * B->val[kb][j] );
+275         }
+276     }
+277 
+278     return c;
+279 }
+\end{verbatim}
+\end{Code}
+
+
+\hypertarget{oper_8h_695a940f46d1c589bfcf8758f7a87f15}{
+\index{oper.h@{oper.h}!mult\_\-vec\_\-cds@{mult\_\-vec\_\-cds}}
+\index{mult\_\-vec\_\-cds@{mult\_\-vec\_\-cds}!oper.h@{oper.h}}
+\paragraph{\setlength{\rightskip}{0pt plus 5cm}void mult\_\-vec\_\-cds ({\bf sp\_\-cds} $\ast$ {\em A}, \/  double $\ast$ {\em x}, \/  double $\ast$ {\em y})}\hfill}
+\label{oper_8h_695a940f46d1c589bfcf8758f7a87f15}
+
+
+Multiplica una matriz en formato CDS por un vector. 
+
+\begin{Desc}
+\item[Parámetros:]
+\begin{description}
+\item[{\em A}]ENTRADA: Matriz dispersa en formato CDS \item[{\em x}]ENTRADA: Vector a multiplicar \item[{\em y}]SALIDA: Resultado de la multiplicación\end{description}
+\end{Desc}
+Esta función realiza la operación $y = Ax$ siendo {\tt A} una matriz en formato CDS.
+
+Teniendo en cuenta que cada elemento de una diagonal de {\tt A} solo afecta una entrada del resultado {\tt y}, la estrategia es recorrer la matriz por diagonales (aprovechando la estructura CDS) y, para cada elemento de la diagonal, actualizar cada entrada de {\tt y} según cómo la afecta el elemento procesado. Luego de recorrer todas las diagonales, el vector {\tt y} contiene el resultado esperado.
+
+Dado que una fila de {\tt val} puede tener entradas que ni siquiera representan un elemento válido en {\tt A}, es importante ver desde dónde y hasta dónde se recorre cada fila en {\tt val}. Aprovechando la alineación que se le da a cada diagonal dentro de la estructura (a la izquierda si es superior y a la derecha si es inferior, ver la descripción de la estructura \hyperlink{structsp__cds}{sp\_\-cds}) el algoritmo precalcula el rango de entradas donde hay datos válidos antes de iterar en los elementos de la diagonal, es decir, antes de comenzar con el loop interior.
+
+\begin{Desc}
+\item[Nota:]Es importante notar que las entradas del vector {\tt y} se van construyendo a medida que se van recorriendo las diagonales de {\tt A}, y no son construidas en un único paso, como es el caso del algoritmo del producto de matriz-vector clásico.
+
+Este algoritmo ejecuta en un tiempo que está en el orden {\em O(D(A))\/}, siendo {\tt D(A)} la cantidad de entradas (con valor cero o no cero) que componen todas las diagonales no vacías de {\tt A}.\end{Desc}
+\begin{Desc}
+\item[Atención:]Esta función no reserva memoria. El vector {\tt y} ya debe estar inicializado en el tamaño correcto antes de llamar a esta función. \end{Desc}
+
+
+Definición en la línea 130 del archivo oper.c.
+
+Hace referencia a sp\_\-cds::dx, sp\_\-cds::maxdiaglength, sp\_\-cds::ndiag, sp\_\-cds::nrow, y sp\_\-cds::val.
+
+Referenciado por bal\_\-mult\_\-vec\_\-cds().
+
+\begin{Code}\begin{verbatim}131 {
+132     int i, j, k, diag, ini, fin;
+133 
+134     /* Inicializa vector y */
+135     for (j = 0; j < A->nrow; ++j)
+136         y[j] = 0;
+137 
+138     for (k=0; k < A->ndiag; ++k) {      /* Por cada diagonal no vacía en A */
+139         diag = A->dx[k];
+140 
+141         /* Calcula inicio y fin de la diagonal en la fila de val */
+142         ini = MAX(0, -diag);
+143         fin = A->maxdiaglength - MAX(0, diag);
+144 
+145         for (i=ini; i < (A->maxdiaglength); ++i) {  /* Por cada elemento de la diagonal */
+146             j = diag + i;
+147             y[i] += ( A->val[k][i] * x[j] );
+148         }
+149     }
+150 }
+\end{verbatim}
+\end{Code}
+
+
+\hypertarget{oper_8h_8bdc34ab9889aa1cad64fcc44dd7a2ec}{
+\index{oper.h@{oper.h}!mult\_\-vec\_\-packcol@{mult\_\-vec\_\-packcol}}
+\index{mult\_\-vec\_\-packcol@{mult\_\-vec\_\-packcol}!oper.h@{oper.h}}
+\paragraph{\setlength{\rightskip}{0pt plus 5cm}void mult\_\-vec\_\-packcol ({\bf sp\_\-packcol} $\ast$ {\em A}, \/  double $\ast$ {\em x}, \/  double $\ast$ {\em y})}\hfill}
+\label{oper_8h_8bdc34ab9889aa1cad64fcc44dd7a2ec}
+
+
+Multiplica una matriz empaquetada por columna por un vector. 
+
+\begin{Desc}
+\item[Parámetros:]
+\begin{description}
+\item[{\em A}]ENTRADA: Matriz dispersa empaquetada por columna simétrica \item[{\em x}]ENTRADA: Vector a multiplicar \item[{\em y}]SALIDA: Resultado de la multiplicación\end{description}
+\end{Desc}
+Esta función realiza la operación $y = Ax$ siendo {\tt A} una matriz empaquetada por columna.
+
+\begin{Desc}
+\item[Nota:]La estructura en memoria es tal como la generada por la función \hyperlink{sp__packcol_8c_729d10ec6867249f9b58ceb2683a3318}{coord2packcol()}\end{Desc}
+\begin{Desc}
+\item[Atención:]Esta función no reserva memoria. El vector {\tt y} ya debe estar inicializado en el tamaño correcto antes de llamar a esta función. \end{Desc}
+
+
+Definición en la línea 32 del archivo oper.c.
+
+Hace referencia a sp\_\-packcol::colp, sp\_\-packcol::ncol, sp\_\-packcol::nrow, sp\_\-packcol::rx, y sp\_\-packcol::val.
+
+Referenciado por bal\_\-mult\_\-vec\_\-packcol().
+
+\begin{Code}\begin{verbatim}33 {
+34     int i, ii, j;
+35 
+36     /* Inicializa vector y */
+37     for (j = 0; j < A->nrow; ++j)
+38         y[j] = 0;
+39 
+40     for(j = 0; j < A->ncol; ++j) {
+41         for(ii = A->colp[j]; ii < A->colp[j+1]; ++ii) {
+42             i = A->rx[ii];
+43             y[i] += ( x[j] * A->val[ii] );
+44         }
+45     }
+46 }
+\end{verbatim}
+\end{Code}
+
+
+\hypertarget{oper_8h_0f9cb665556ffdd8bdb5dfbe861e0d28}{
+\index{oper.h@{oper.h}!mult\_\-vec\_\-packcol\_\-symmetric@{mult\_\-vec\_\-packcol\_\-symmetric}}
+\index{mult\_\-vec\_\-packcol\_\-symmetric@{mult\_\-vec\_\-packcol\_\-symmetric}!oper.h@{oper.h}}
+\paragraph{\setlength{\rightskip}{0pt plus 5cm}void mult\_\-vec\_\-packcol\_\-symmetric ({\bf sp\_\-packcol} $\ast$ {\em A}, \/  double $\ast$ {\em x}, \/  double $\ast$ {\em y})}\hfill}
+\label{oper_8h_0f9cb665556ffdd8bdb5dfbe861e0d28}
+
+
+Multiplica una matriz simétrica empaquetada por columna por un vector. 
+
+\begin{Desc}
+\item[Parámetros:]
+\begin{description}
+\item[{\em A}]Matriz dispersa empaquetada por columna simétrica \item[{\em x}]Vector a multiplicar \item[{\em y}]Resultado de la multiplicación\end{description}
+\end{Desc}
+Esta función calcula la operación $y = Ax$ bajo las siguientes consideraciones: \begin{itemize}
+\item La matriz A está guardada con la mejora para matrices simétricas, tal cual lo hace la función \hyperlink{sp__packcol_8c_7d8ea564f906cc721e5de1c4a4f5844b}{coord2packcol\_\-symmetric()} \item Los vectores {\tt x} e {\tt y} tienen {\tt A.nrow} elementos (Ver definición de la estructura \hyperlink{structsp__packcol}{sp\_\-packcol}) y ya están inicializados \end{itemize}
+
+
+\begin{Desc}
+\item[Nota:]Ver el algoritmo 5.1 (sección 5.2 Matrix-vector multiplication) en el paper de Stewart (vea las \hyperlink{index_refsec}{referencias}).\end{Desc}
+\begin{Desc}
+\item[Atención:]La implementación sugerida por Stewart tiene un bug: el algoritmo no devuelve el resultado correcto si la diagonal mayor de {\tt A} contiene ceros. En esta implementación se corrigió esta falla. Se sugiere comparar las dos implementaciones para ver las diferencias. \end{Desc}
+
+
+Definición en la línea 70 del archivo oper.c.
+
+Hace referencia a sp\_\-packcol::colp, sp\_\-packcol::ncol, sp\_\-packcol::nrow, sp\_\-packcol::rx, y sp\_\-packcol::val.
+
+Referenciado por bal\_\-mult\_\-vec\_\-packcol\_\-symmetric().
+
+\begin{Code}\begin{verbatim}71 {
+72     int i, ii, j, r;
+73 
+74     /* Inicializa vector y */
+75     for (j = 0; j < A->nrow; ++j)
+76         y[j] = 0;
+77 
+78     for (j = 0; j < A->ncol; ++j) {
+79         i = A->rx[A->colp[j]];                      /* Indice de fila del 1er elem no cero de la columna j */
+80 
+81         if (i == j) {                               /* Si el 1er no cero es la diag */
+82             y[j] += ( x[j] * A->val[A->colp[j]] );  /* Procesar diagonal: y_j += x_j * A_jj */
+83             r = 1;                                  /* Ignorar la diagonal en el loop interno */
+84         }
+85         else
+86             r = 0;                                  /* El 1er elem no cero no es la diagonal. No ignorarlo. */
+87 
+88         /* Procesa los elementos no en la diagonal utilizando la propiedad de simetria */
+89         for (ii = A->colp[j] + r; ii <= A->colp[j+1] - 1; ++ii) {
+90             i = A->rx[ii];                          /* Obtiene el indice de fila */
+91             y[i] += ( x[j] * A->val[ii] );          /* y_i += x_j * A_ij */
+92             y[j] += ( x[i] * A->val[ii] );          /* y_i += x_i * A_ji */
+93         }
+94     }
+95 }
+\end{verbatim}
+\end{Code}
+
+

@@ -1,0 +1,54 @@
+\hypertarget{structsp__packcol}{
+\subsection{Referencia de la Estructura sp\_\-packcol}
+\label{structsp__packcol}\index{sp\_\-packcol@{sp\_\-packcol}}
+}
+Estructura de matriz dispersa empaquetada por columna.  
+
+
+{\tt \#include $<$sp\_\-packcol.h$>$}
+
+\subsubsection*{Campos de datos}
+\begin{CompactItemize}
+\item 
+\hypertarget{structsp__packcol_2e12b2881843b0ff8191f0654570a748}{
+unsigned int \hyperlink{structsp__packcol_2e12b2881843b0ff8191f0654570a748}{nrow}}
+\label{structsp__packcol_2e12b2881843b0ff8191f0654570a748}
+
+\begin{CompactList}\small\item\em Cantidad de filas de la matriz. \item\end{CompactList}\item 
+\hypertarget{structsp__packcol_2cc24559101ca3783f1949c8eebacd7c}{
+unsigned int \hyperlink{structsp__packcol_2cc24559101ca3783f1949c8eebacd7c}{ncol}}
+\label{structsp__packcol_2cc24559101ca3783f1949c8eebacd7c}
+
+\begin{CompactList}\small\item\em Cantidad de columnas de la matriz. \item\end{CompactList}\item 
+\hypertarget{structsp__packcol_667202fa30dd3d49982e3b0c8148bde4}{
+unsigned int \hyperlink{structsp__packcol_667202fa30dd3d49982e3b0c8148bde4}{nnz}}
+\label{structsp__packcol_667202fa30dd3d49982e3b0c8148bde4}
+
+\begin{CompactList}\small\item\em Cantidad de elementos no cero. \item\end{CompactList}\item 
+\hypertarget{structsp__packcol_c9a9e31c6b9c1416fff29944568ea18f}{
+unsigned int $\ast$ \hyperlink{structsp__packcol_c9a9e31c6b9c1416fff29944568ea18f}{colp}}
+\label{structsp__packcol_c9a9e31c6b9c1416fff29944568ea18f}
+
+\begin{CompactList}\small\item\em Arreglo de punteros a los inicios de las columnas. \item\end{CompactList}\item 
+\hypertarget{structsp__packcol_536659b700c3b21fd5d6cf8538c82b6f}{
+unsigned int $\ast$ \hyperlink{structsp__packcol_536659b700c3b21fd5d6cf8538c82b6f}{rx}}
+\label{structsp__packcol_536659b700c3b21fd5d6cf8538c82b6f}
+
+\begin{CompactList}\small\item\em Arreglo de indices de fila. \item\end{CompactList}\item 
+\hypertarget{structsp__packcol_6315b3a8ee78ac66aaae5ba79bda252e}{
+double $\ast$ \hyperlink{structsp__packcol_6315b3a8ee78ac66aaae5ba79bda252e}{val}}
+\label{structsp__packcol_6315b3a8ee78ac66aaae5ba79bda252e}
+
+\begin{CompactList}\small\item\em Arreglo de valores por debajo de la diagonal. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsubsection{Descripción detallada}
+Estructura de matriz dispersa empaquetada por columna. 
+
+Almacena una matriz dispersa en memoria utilizando el formato simple por coordenadas. Por más información acerca de este formato, vea la sección 5.1 del paper de Stewart (ver las \hyperlink{index_refsec}{referencias}). 
+
+Definición en la línea 22 del archivo sp\_\-packcol.h.
+
+La documentación para esta estructura fue generada a partir del siguiente fichero:\begin{CompactItemize}
+\item 
+sparse/\hyperlink{sp__packcol_8h}{sp\_\-packcol.h}\end{CompactItemize}

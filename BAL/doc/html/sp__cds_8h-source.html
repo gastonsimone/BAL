@@ -1,0 +1,94 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>BAL: Fichero Fuente sparse/sp_cds.h</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Generado por Doxygen 1.5.5 -->
+<script type="text/javascript">
+<!--
+function changeDisplayState (e){
+  var num=this.id.replace(/[^[0-9]/g,'');
+  var button=this.firstChild;
+  var sectionDiv=document.getElementById('dynsection'+num);
+  if (sectionDiv.style.display=='none'||sectionDiv.style.display==''){
+    sectionDiv.style.display='block';
+    button.src='open.gif';
+  }else{
+    sectionDiv.style.display='none';
+    button.src='closed.gif';
+  }
+}
+function initDynSections(){
+  var divs=document.getElementsByTagName('div');
+  var sectionCounter=1;
+  for(var i=0;i<divs.length-1;i++){
+    if(divs[i].className=='dynheader'&&divs[i+1].className=='dynsection'){
+      var header=divs[i];
+      var section=divs[i+1];
+      var button=header.firstChild;
+      if (button!='IMG'){
+        divs[i].insertBefore(document.createTextNode(' '),divs[i].firstChild);
+        button=document.createElement('img');
+        divs[i].insertBefore(button,divs[i].firstChild);
+      }
+      header.style.cursor='pointer';
+      header.onclick=changeDisplayState;
+      header.id='dynheader'+sectionCounter;
+      button.src='closed.gif';
+      section.id='dynsection'+sectionCounter;
+      section.style.display='none';
+      section.style.marginLeft='14px';
+      sectionCounter++;
+    }
+  }
+}
+window.onload = initDynSections;
+-->
+</script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Página&nbsp;principal</span></a></li>
+      <li><a href="pages.html"><span>Páginas&nbsp;relacionadas</span></a></li>
+      <li><a href="annotated.html"><span>Estructuras&nbsp;de&nbsp;Datos</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+      <li><a href="dirs.html"><span>Directorios</span></a></li>
+    </ul>
+  </div>
+  <div class="navpath"><a class="el" href="dir_3d91f720ca7eb54995d7d6d716b4ce42.html">sparse</a>
+  </div>
+</div>
+</div>
+<h1>sp_cds.h</h1><a href="sp__cds_8h.html">Ir a la documentación de este archivo.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef __SP_CDS_H__</span>
+<a name="l00002"></a>00002 <span class="preprocessor"></span><span class="preprocessor">#define __SP_CDS_H__</span>
+<a name="l00003"></a>00003 <span class="preprocessor"></span>
+<a name="l00004"></a>00004 <span class="preprocessor">#include &lt;stdio.h&gt;</span>
+<a name="l00005"></a>00005 <span class="preprocessor">#include "<a class="code" href="sp__coord_8h.html" title="Archivo de cabecera para matriz dispersa, formato simple.">sp_coord.h</a>"</span>
+<a name="l00006"></a>00006 
+<a name="l00068"></a><a class="code" href="structsp__cds.html">00068</a> <span class="keyword">typedef</span> <span class="keyword">struct </span>{
+<a name="l00069"></a><a class="code" href="structsp__cds.html#742f0fa7433a0985c236c0df1811513a">00069</a>     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> nrow;  
+<a name="l00070"></a><a class="code" href="structsp__cds.html#683cb5023edac60bd4c25a1c2261f6b0">00070</a>     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> ncol;  
+<a name="l00071"></a><a class="code" href="structsp__cds.html#f2a5117c4b15e96598d0a75a645cdb3f">00071</a>     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> ndiag; 
+<a name="l00072"></a><a class="code" href="structsp__cds.html#86bfcae3996588048cb6c973cd223b39">00072</a>     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> maxdiaglength; 
+<a name="l00073"></a><a class="code" href="structsp__cds.html#cb3c554898b39c854cc3d26f657ce0fd">00073</a>     <span class="keywordtype">int</span> *dx;            
+<a name="l00074"></a><a class="code" href="structsp__cds.html#4a43be75b65bb01b343c8d3c144b7194">00074</a>     <span class="keywordtype">double</span> **val;       
+<a name="l00075"></a>00075 } <a class="code" href="structsp__cds.html" title="Estructura de matriz dispersa CDS.">sp_cds</a>;
+<a name="l00076"></a>00076 
+<a name="l00077"></a>00077 <a class="code" href="structsp__cds.html" title="Estructura de matriz dispersa CDS.">sp_cds</a>* <a class="code" href="sp__cds_8c.html#00ca63cd94cc53957997b1c6fe79b721" title="Genera la matriz en formato CDS equivalente a la matriz mat en formato simple.">coord2cds</a>(<a class="code" href="structsp__coord.html" title="Estructura de matriz dispersa simple por coordenadas.">sp_coord</a> *mat);
+<a name="l00078"></a>00078 
+<a name="l00079"></a>00079 <span class="keywordtype">void</span> <a class="code" href="sp__cds_8c.html#1f5bfb80b511e70892a29e07d4769e98" title="Imprime la matriz guardada en formato simple por coordenadas en fp.">sp_imprimir_cds</a>(FILE *fp, <a class="code" href="structsp__cds.html" title="Estructura de matriz dispersa CDS.">sp_cds</a> *mat);
+<a name="l00080"></a>00080 
+<a name="l00081"></a>00081 <span class="keywordtype">void</span> <a class="code" href="sp__cds_8c.html#dbc8b3571c8ace5419d2e02318988388" title="Imprime la matriz A en formato matlab en el archivo fp.">save_cds</a>(FILE *fp, <a class="code" href="structsp__cds.html" title="Estructura de matriz dispersa CDS.">sp_cds</a> *A);
+<a name="l00082"></a>00082 
+<a name="l00083"></a>00083 <span class="keywordtype">void</span> <a class="code" href="sp__cds_8c.html#6b5d5549f99d990b9a259d982e3e4485" title="Borra toda la memoria reservada por la matriz A.">free_cds</a>(<a class="code" href="structsp__cds.html" title="Estructura de matriz dispersa CDS.">sp_cds</a> *A);
+<a name="l00084"></a>00084 
+<a name="l00085"></a>00085 <span class="preprocessor">#endif</span>
+<a name="l00086"></a>00086 <span class="preprocessor"></span>
+</pre></div></div>
+<hr size="1">
+<address style="text-align: right;">
+<small>BAL&nbsp;1.0.0<br>Generado el Wed Aug 27 19:54:18 2008.</small>
+</address>
+</body>
+</html>

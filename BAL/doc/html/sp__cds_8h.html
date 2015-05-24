@@ -1,0 +1,357 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>BAL: Referencia del Archivo sparse/sp_cds.h</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Generado por Doxygen 1.5.5 -->
+<script type="text/javascript">
+<!--
+function changeDisplayState (e){
+  var num=this.id.replace(/[^[0-9]/g,'');
+  var button=this.firstChild;
+  var sectionDiv=document.getElementById('dynsection'+num);
+  if (sectionDiv.style.display=='none'||sectionDiv.style.display==''){
+    sectionDiv.style.display='block';
+    button.src='open.gif';
+  }else{
+    sectionDiv.style.display='none';
+    button.src='closed.gif';
+  }
+}
+function initDynSections(){
+  var divs=document.getElementsByTagName('div');
+  var sectionCounter=1;
+  for(var i=0;i<divs.length-1;i++){
+    if(divs[i].className=='dynheader'&&divs[i+1].className=='dynsection'){
+      var header=divs[i];
+      var section=divs[i+1];
+      var button=header.firstChild;
+      if (button!='IMG'){
+        divs[i].insertBefore(document.createTextNode(' '),divs[i].firstChild);
+        button=document.createElement('img');
+        divs[i].insertBefore(button,divs[i].firstChild);
+      }
+      header.style.cursor='pointer';
+      header.onclick=changeDisplayState;
+      header.id='dynheader'+sectionCounter;
+      button.src='closed.gif';
+      section.id='dynsection'+sectionCounter;
+      section.style.display='none';
+      section.style.marginLeft='14px';
+      sectionCounter++;
+    }
+  }
+}
+window.onload = initDynSections;
+-->
+</script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Página&nbsp;principal</span></a></li>
+      <li><a href="pages.html"><span>Páginas&nbsp;relacionadas</span></a></li>
+      <li><a href="annotated.html"><span>Estructuras&nbsp;de&nbsp;Datos</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+      <li><a href="dirs.html"><span>Directorios</span></a></li>
+    </ul>
+  </div>
+  <div class="navpath"><a class="el" href="dir_3d91f720ca7eb54995d7d6d716b4ce42.html">sparse</a>
+  </div>
+</div>
+<div class="contents">
+<h1>Referencia del Archivo sp_cds.h</h1>Archivo de cabecera para matriz dispersa, formato CDS (comprimido por diagonal). <a href="#_details">Más...</a>
+<p>
+<code>#include &lt;stdio.h&gt;</code><br>
+<code>#include &quot;<a class="el" href="sp__coord_8h-source.html">sp_coord.h</a>&quot;</code><br>
+
+<p>
+<a href="sp__cds_8h-source.html">Ir al código fuente de este archivo.</a><table border="0" cellpadding="0" cellspacing="0">
+<tr><td></td></tr>
+<tr><td colspan="2"><br><h2>Estructuras de datos</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsp__cds.html">sp_cds</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Estructura de matriz dispersa CDS.  <a href="structsp__cds.html#_details">Más...</a><br></td></tr>
+<tr><td colspan="2"><br><h2>Funciones</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="structsp__cds.html">sp_cds</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="sp__cds_8h.html#26c8c43b23b62fd1c32a6b8c1459a405">coord2cds</a> (<a class="el" href="structsp__coord.html">sp_coord</a> *mat)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Genera la matriz en formato CDS equivalente a la matriz mat en formato simple.  <a href="#26c8c43b23b62fd1c32a6b8c1459a405"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="sp__cds_8h.html#1f5bfb80b511e70892a29e07d4769e98">sp_imprimir_cds</a> (FILE *fp, <a class="el" href="structsp__cds.html">sp_cds</a> *mat)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Imprime la matriz guardada en formato simple por coordenadas en fp.  <a href="#1f5bfb80b511e70892a29e07d4769e98"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="sp__cds_8h.html#dbc8b3571c8ace5419d2e02318988388">save_cds</a> (FILE *fp, <a class="el" href="structsp__cds.html">sp_cds</a> *A)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Imprime la matriz <code>A</code> en formato matlab en el archivo <code>fp</code>.  <a href="#dbc8b3571c8ace5419d2e02318988388"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="sp__cds_8h.html#6b5d5549f99d990b9a259d982e3e4485">free_cds</a> (<a class="el" href="structsp__cds.html">sp_cds</a> *A)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Borra toda la memoria reservada por la matriz A.  <a href="#6b5d5549f99d990b9a259d982e3e4485"></a><br></td></tr>
+</table>
+<hr><a name="_details"></a><h2>Descripción detallada</h2>
+Archivo de cabecera para matriz dispersa, formato CDS (comprimido por diagonal). 
+<p>
+Este archivo contiene la definición de la estructura de datos mediante la cual se almacena una matriz dispersa según el formato comprimido por diagonal, conocido como CDS (por sus siglas en inglés <em>Compressed Diagonal Storage</em>). 
+<p>Definición en el archivo <a class="el" href="sp__cds_8h-source.html">sp_cds.h</a>.</p>
+<hr><h2>Documentación de las funciones</h2>
+<a class="anchor" name="26c8c43b23b62fd1c32a6b8c1459a405"></a><!-- doxytag: member="sp_cds.h::coord2cds" ref="26c8c43b23b62fd1c32a6b8c1459a405" args="(sp_coord *mat)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structsp__cds.html">sp_cds</a>* coord2cds           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsp__coord.html">sp_coord</a> *&nbsp;</td>
+          <td class="paramname"> <em>mat</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Genera la matriz en formato CDS equivalente a la matriz mat en formato simple. 
+<p>
+<dl compact><dt><b>Parámetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>mat</em>&nbsp;</td><td>Matriz dispersa en formato simple. </td></tr>
+  </table>
+</dl>
+<dl class="return" compact><dt><b>Devuelve:</b></dt><dd>Matriz equivalente en formato CDS. </dd></dl>
+
+<p>Definición en la línea <a class="el" href="sp__cds_8c-source.html#l00019">19</a> del archivo <a class="el" href="sp__cds_8c-source.html">sp_cds.c</a>.</p>
+
+<p>Hace referencia a <a class="el" href="utils_8c-source.html#l00018">binary_search()</a>, <a class="el" href="sp__coord_8h-source.html#l00026">sp_coord::cx</a>, <a class="el" href="sp__cds_8h-source.html#l00073">sp_cds::dx</a>, <a class="el" href="utils_8c-source.html#l00055">insert_sorted()</a>, <a class="el" href="sp__cds_8h-source.html#l00072">sp_cds::maxdiaglength</a>, <a class="el" href="sp__coord_8h-source.html#l00023">sp_coord::ncol</a>, <a class="el" href="sp__cds_8h-source.html#l00070">sp_cds::ncol</a>, <a class="el" href="sp__cds_8h-source.html#l00071">sp_cds::ndiag</a>, <a class="el" href="sp__coord_8h-source.html#l00024">sp_coord::nnz</a>, <a class="el" href="sp__coord_8h-source.html#l00022">sp_coord::nrow</a>, <a class="el" href="sp__cds_8h-source.html#l00069">sp_cds::nrow</a>, <a class="el" href="sp__coord_8h-source.html#l00025">sp_coord::rx</a>, <a class="el" href="sp__coord_8h-source.html#l00027">sp_coord::val</a>, y <a class="el" href="sp__cds_8h-source.html#l00074">sp_cds::val</a>.</p>
+
+<p>Referenciado por <a class="el" href="bal_8c-source.html#l00252">bal_coord2cds()</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00020"></a>00020 {
+<a name="l00021"></a>00021     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> n, m, tope, ii, i, j, dxl;
+<a name="l00022"></a>00022     <span class="keywordtype">int</span> diag, k;
+<a name="l00023"></a>00023     <a class="code" href="structsp__cds.html" title="Estructura de matriz dispersa CDS.">sp_cds</a> *cds;
+<a name="l00024"></a>00024 
+<a name="l00025"></a>00025     cds = (<a class="code" href="structsp__cds.html" title="Estructura de matriz dispersa CDS.">sp_cds</a>*)malloc(<span class="keyword">sizeof</span>(<a class="code" href="structsp__cds.html" title="Estructura de matriz dispersa CDS.">sp_cds</a>));
+<a name="l00026"></a>00026 
+<a name="l00027"></a>00027     cds-&gt;<a class="code" href="structsp__cds.html#742f0fa7433a0985c236c0df1811513a" title="Cantidad de filas.">nrow</a> = n = mat-&gt;<a class="code" href="structsp__coord.html#adf22f93c8e3ce7303018ba9a01ea092" title="Cantidad de filas.">nrow</a>;
+<a name="l00028"></a>00028     cds-&gt;<a class="code" href="structsp__cds.html#683cb5023edac60bd4c25a1c2261f6b0" title="Cantidad de columnas.">ncol</a> = m = mat-&gt;<a class="code" href="structsp__coord.html#b962ad3a8f62df6906409d1392611c63" title="Cantidad de columnas.">ncol</a>;
+<a name="l00029"></a>00029     cds-&gt;<a class="code" href="structsp__cds.html#86bfcae3996588048cb6c973cd223b39" title="El largo de la diagonal más larga.">maxdiaglength</a> = MIN(n, m);
+<a name="l00030"></a>00030     tope = m + n - 1; <span class="comment">/* Cantidad máxima de diagonales */</span>
+<a name="l00031"></a>00031     cds-&gt;<a class="code" href="structsp__cds.html#cb3c554898b39c854cc3d26f657ce0fd" title="Arreglo de índices de diagonal.">dx</a> = (<span class="keywordtype">int</span>*)malloc(<span class="keyword">sizeof</span>(<span class="keywordtype">int</span>) * tope);
+<a name="l00032"></a>00032 
+<a name="l00033"></a>00033     <span class="comment">/* Busca diagonales con datos */</span>
+<a name="l00034"></a>00034     dxl = 0;
+<a name="l00035"></a>00035     <span class="keywordflow">for</span> (ii=0; ii &lt; mat-&gt;<a class="code" href="structsp__coord.html#f36cd76459da9943ba491ee4a3b1f467" title="Cantidad de elementos no cero.">nnz</a>; ++ii) {
+<a name="l00036"></a>00036         i = mat-&gt;<a class="code" href="structsp__coord.html#a50e5d65cdb79f9a0f2b7d7505ce7c67" title="Arreglo de indices de fila.">rx</a>[ii];
+<a name="l00037"></a>00037         j = mat-&gt;<a class="code" href="structsp__coord.html#cdb4f5d3b6a4a24dfaf7aa94894d3c52" title="Arreglo de indices de columna.">cx</a>[ii];
+<a name="l00038"></a>00038         diag = j - i;
+<a name="l00039"></a>00039 
+<a name="l00040"></a>00040         <span class="keywordflow">if</span> (<a class="code" href="utils_8c.html#68d639af59cdb0c547839cb44aa06854" title="Busca un elemento en el array mediante bipartición.">binary_search</a>(cds-&gt;<a class="code" href="structsp__cds.html#cb3c554898b39c854cc3d26f657ce0fd" title="Arreglo de índices de diagonal.">dx</a>, dxl, diag) == -1) {
+<a name="l00041"></a>00041             <a class="code" href="utils_8c.html#e92b7a18bc3552887809bbac1b732152" title="Inserta un elemento en un arreglo ordenado.">insert_sorted</a>(cds-&gt;<a class="code" href="structsp__cds.html#cb3c554898b39c854cc3d26f657ce0fd" title="Arreglo de índices de diagonal.">dx</a>, dxl - 1, diag);
+<a name="l00042"></a>00042             ++dxl;
+<a name="l00043"></a>00043         }
+<a name="l00044"></a>00044     }
+<a name="l00045"></a>00045 
+<a name="l00046"></a>00046     <span class="comment">/* Inicializa cds-&gt;val */</span>
+<a name="l00047"></a>00047     cds-&gt;<a class="code" href="structsp__cds.html#f2a5117c4b15e96598d0a75a645cdb3f" title="Cantidad de diagonales con al menos una entrada no cero.">ndiag</a> = dxl;
+<a name="l00048"></a>00048     cds-&gt;<a class="code" href="structsp__cds.html#4a43be75b65bb01b343c8d3c144b7194" title="Matriz de valores. Cada fila es una diagonal.">val</a> = (<span class="keywordtype">double</span>**)malloc(<span class="keyword">sizeof</span>(<span class="keywordtype">double</span>*) * dxl);
+<a name="l00049"></a>00049     <span class="keywordflow">for</span> (i=0; i &lt; dxl; ++i) {
+<a name="l00050"></a>00050         cds-&gt;<a class="code" href="structsp__cds.html#4a43be75b65bb01b343c8d3c144b7194" title="Matriz de valores. Cada fila es una diagonal.">val</a>[i] = (<span class="keywordtype">double</span>*)malloc(<span class="keyword">sizeof</span>(<span class="keywordtype">double</span>) * cds-&gt;<a class="code" href="structsp__cds.html#86bfcae3996588048cb6c973cd223b39" title="El largo de la diagonal más larga.">maxdiaglength</a>);
+<a name="l00051"></a>00051         <span class="keywordflow">for</span> (j=0; j &lt; cds-&gt;<a class="code" href="structsp__cds.html#86bfcae3996588048cb6c973cd223b39" title="El largo de la diagonal más larga.">maxdiaglength</a>; ++j)
+<a name="l00052"></a>00052             cds-&gt;<a class="code" href="structsp__cds.html#4a43be75b65bb01b343c8d3c144b7194" title="Matriz de valores. Cada fila es una diagonal.">val</a>[i][j] = 0;
+<a name="l00053"></a>00053     }
+<a name="l00054"></a>00054 
+<a name="l00055"></a>00055     <span class="comment">/* Carga los valores */</span>
+<a name="l00056"></a>00056     <span class="keywordflow">for</span> (ii=0; ii &lt; mat-&gt;<a class="code" href="structsp__coord.html#f36cd76459da9943ba491ee4a3b1f467" title="Cantidad de elementos no cero.">nnz</a>; ++ii) {
+<a name="l00057"></a>00057         i = mat-&gt;<a class="code" href="structsp__coord.html#a50e5d65cdb79f9a0f2b7d7505ce7c67" title="Arreglo de indices de fila.">rx</a>[ii];
+<a name="l00058"></a>00058         j = mat-&gt;<a class="code" href="structsp__coord.html#cdb4f5d3b6a4a24dfaf7aa94894d3c52" title="Arreglo de indices de columna.">cx</a>[ii];
+<a name="l00059"></a>00059         diag = j - i;
+<a name="l00060"></a>00060 
+<a name="l00061"></a>00061         k = <a class="code" href="utils_8c.html#68d639af59cdb0c547839cb44aa06854" title="Busca un elemento en el array mediante bipartición.">binary_search</a>(cds-&gt;<a class="code" href="structsp__cds.html#cb3c554898b39c854cc3d26f657ce0fd" title="Arreglo de índices de diagonal.">dx</a>, dxl, diag);
+<a name="l00062"></a>00062         cds-&gt;<a class="code" href="structsp__cds.html#4a43be75b65bb01b343c8d3c144b7194" title="Matriz de valores. Cada fila es una diagonal.">val</a>[k][i] = mat-&gt;<a class="code" href="structsp__coord.html#bf936aab79fa2aefba9c7d42e2ee401c" title="Arreglos de valores.">val</a>[ii];
+<a name="l00063"></a>00063     }
+<a name="l00064"></a>00064 
+<a name="l00065"></a>00065     <span class="keywordflow">return</span> cds;
+<a name="l00066"></a>00066 }
+</pre></div>
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="6b5d5549f99d990b9a259d982e3e4485"></a><!-- doxytag: member="sp_cds.h::free_cds" ref="6b5d5549f99d990b9a259d982e3e4485" args="(sp_cds *A)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void free_cds           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsp__cds.html">sp_cds</a> *&nbsp;</td>
+          <td class="paramname"> <em>A</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Borra toda la memoria reservada por la matriz A. 
+<p>
+Libera la memoria reservada por la estructura de datos <a class="el" href="structsp__cds.html" title="Estructura de matriz dispersa CDS.">sp_cds</a>. 
+<p>Definición en la línea <a class="el" href="sp__cds_8c-source.html#l00134">134</a> del archivo <a class="el" href="sp__cds_8c-source.html">sp_cds.c</a>.</p>
+
+<p>Hace referencia a <a class="el" href="sp__cds_8h-source.html#l00073">sp_cds::dx</a>, <a class="el" href="sp__cds_8h-source.html#l00071">sp_cds::ndiag</a>, y <a class="el" href="sp__cds_8h-source.html#l00074">sp_cds::val</a>.</p>
+
+<p>Referenciado por <a class="el" href="bal_8c-source.html#l00332">bal_free_cds()</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00135"></a>00135 {
+<a name="l00136"></a>00136     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> d;
+<a name="l00137"></a>00137 
+<a name="l00138"></a>00138     <span class="keywordflow">for</span> (d=0; d &lt; A-&gt;<a class="code" href="structsp__cds.html#f2a5117c4b15e96598d0a75a645cdb3f" title="Cantidad de diagonales con al menos una entrada no cero.">ndiag</a>; ++d)
+<a name="l00139"></a>00139         free(A-&gt;<a class="code" href="structsp__cds.html#4a43be75b65bb01b343c8d3c144b7194" title="Matriz de valores. Cada fila es una diagonal.">val</a>[d]);
+<a name="l00140"></a>00140 
+<a name="l00141"></a>00141     free(A-&gt;<a class="code" href="structsp__cds.html#4a43be75b65bb01b343c8d3c144b7194" title="Matriz de valores. Cada fila es una diagonal.">val</a>);
+<a name="l00142"></a>00142     free(A-&gt;<a class="code" href="structsp__cds.html#cb3c554898b39c854cc3d26f657ce0fd" title="Arreglo de índices de diagonal.">dx</a>);
+<a name="l00143"></a>00143     free(A);
+<a name="l00144"></a>00144 }
+</pre></div>
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="dbc8b3571c8ace5419d2e02318988388"></a><!-- doxytag: member="sp_cds.h::save_cds" ref="dbc8b3571c8ace5419d2e02318988388" args="(FILE *fp, sp_cds *A)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void save_cds           </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&nbsp;</td>
+          <td class="paramname"> <em>fp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structsp__cds.html">sp_cds</a> *&nbsp;</td>
+          <td class="paramname"> <em>A</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Imprime la matriz <code>A</code> en formato matlab en el archivo <code>fp</code>. 
+<p>
+<dl compact><dt><b>Parámetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>fp</em>&nbsp;</td><td>Archivo en donde imprimir </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>A</em>&nbsp;</td><td>Matriz a imprimir, en formato CDS</td></tr>
+  </table>
+</dl>
+Esta función es útil para respaldar matrices. 
+<p>Definición en la línea <a class="el" href="sp__cds_8c-source.html#l00104">104</a> del archivo <a class="el" href="sp__cds_8c-source.html">sp_cds.c</a>.</p>
+
+<p>Hace referencia a <a class="el" href="utils_8c-source.html#l00018">binary_search()</a>, <a class="el" href="sp__cds_8h-source.html#l00073">sp_cds::dx</a>, <a class="el" href="sp__cds_8h-source.html#l00070">sp_cds::ncol</a>, <a class="el" href="sp__cds_8h-source.html#l00071">sp_cds::ndiag</a>, <a class="el" href="sp__cds_8h-source.html#l00069">sp_cds::nrow</a>, y <a class="el" href="sp__cds_8h-source.html#l00074">sp_cds::val</a>.</p>
+
+<p>Referenciado por <a class="el" href="bal_8c-source.html#l00292">bal_save_cds()</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00105"></a>00105 {
+<a name="l00106"></a>00106     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i, j;
+<a name="l00107"></a>00107     <span class="keywordtype">int</span> diag, k;
+<a name="l00108"></a>00108 
+<a name="l00109"></a>00109     fprintf(fp, <span class="stringliteral">"[\n"</span>);
+<a name="l00110"></a>00110 
+<a name="l00111"></a>00111     <span class="keywordflow">for</span> (i=0; i &lt; A-&gt;<a class="code" href="structsp__cds.html#742f0fa7433a0985c236c0df1811513a" title="Cantidad de filas.">nrow</a>; ++i) {
+<a name="l00112"></a>00112         <span class="keywordflow">for</span> (j=0; j &lt; A-&gt;<a class="code" href="structsp__cds.html#683cb5023edac60bd4c25a1c2261f6b0" title="Cantidad de columnas.">ncol</a>; ++j) {
+<a name="l00113"></a>00113             diag = j - i;
+<a name="l00114"></a>00114             k = <a class="code" href="utils_8c.html#68d639af59cdb0c547839cb44aa06854" title="Busca un elemento en el array mediante bipartición.">binary_search</a>(A-&gt;<a class="code" href="structsp__cds.html#cb3c554898b39c854cc3d26f657ce0fd" title="Arreglo de índices de diagonal.">dx</a>, A-&gt;<a class="code" href="structsp__cds.html#f2a5117c4b15e96598d0a75a645cdb3f" title="Cantidad de diagonales con al menos una entrada no cero.">ndiag</a>, diag);
+<a name="l00115"></a>00115             <span class="keywordflow">if</span> (k != -1)
+<a name="l00116"></a>00116                 fprintf(fp, <span class="stringliteral">" %g"</span>, A-&gt;<a class="code" href="structsp__cds.html#4a43be75b65bb01b343c8d3c144b7194" title="Matriz de valores. Cada fila es una diagonal.">val</a>[k][i]);
+<a name="l00117"></a>00117             <span class="keywordflow">else</span>
+<a name="l00118"></a>00118                 fprintf(fp, <span class="stringliteral">" 0"</span>);
+<a name="l00119"></a>00119         }
+<a name="l00120"></a>00120         <span class="keywordflow">if</span> (i+1 &lt; A-&gt;<a class="code" href="structsp__cds.html#742f0fa7433a0985c236c0df1811513a" title="Cantidad de filas.">nrow</a>)
+<a name="l00121"></a>00121             fprintf(fp, <span class="stringliteral">";\n"</span>);
+<a name="l00122"></a>00122         <span class="keywordflow">else</span>
+<a name="l00123"></a>00123             fprintf(fp, <span class="stringliteral">"\n"</span>);
+<a name="l00124"></a>00124     }
+<a name="l00125"></a>00125 
+<a name="l00126"></a>00126     fprintf(fp, <span class="stringliteral">"]\n"</span>);
+<a name="l00127"></a>00127 }
+</pre></div>
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="1f5bfb80b511e70892a29e07d4769e98"></a><!-- doxytag: member="sp_cds.h::sp_imprimir_cds" ref="1f5bfb80b511e70892a29e07d4769e98" args="(FILE *fp, sp_cds *mat)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void sp_imprimir_cds           </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&nbsp;</td>
+          <td class="paramname"> <em>fp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structsp__cds.html">sp_cds</a> *&nbsp;</td>
+          <td class="paramname"> <em>mat</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Imprime la matriz guardada en formato simple por coordenadas en fp. 
+<p>
+<dl compact><dt><b>Parámetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>fp</em>&nbsp;</td><td>Archivo en el cual se imprimirá la matriz </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>mat</em>&nbsp;</td><td>Matriz a imprimir en formato CDS </td></tr>
+  </table>
+</dl>
+
+<p>Definición en la línea <a class="el" href="sp__cds_8c-source.html#l00074">74</a> del archivo <a class="el" href="sp__cds_8c-source.html">sp_cds.c</a>.</p>
+
+<p>Hace referencia a <a class="el" href="sp__cds_8h-source.html#l00073">sp_cds::dx</a>, <a class="el" href="sp__cds_8h-source.html#l00072">sp_cds::maxdiaglength</a>, <a class="el" href="sp__cds_8h-source.html#l00070">sp_cds::ncol</a>, <a class="el" href="sp__cds_8h-source.html#l00071">sp_cds::ndiag</a>, <a class="el" href="sp__cds_8h-source.html#l00069">sp_cds::nrow</a>, y <a class="el" href="sp__cds_8h-source.html#l00074">sp_cds::val</a>.</p>
+
+<p>Referenciado por <a class="el" href="bal_8c-source.html#l00262">bal_imprimir_cds()</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00075"></a>00075 {
+<a name="l00076"></a>00076     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i, j;
+<a name="l00077"></a>00077 
+<a name="l00078"></a>00078     fprintf(fp, <span class="stringliteral">"Cantidad de filas: %d\n"</span>, mat-&gt;<a class="code" href="structsp__cds.html#742f0fa7433a0985c236c0df1811513a" title="Cantidad de filas.">nrow</a>);
+<a name="l00079"></a>00079     fprintf(fp, <span class="stringliteral">"Cantidad de columnas: %d\n"</span>, mat-&gt;<a class="code" href="structsp__cds.html#683cb5023edac60bd4c25a1c2261f6b0" title="Cantidad de columnas.">ncol</a>);
+<a name="l00080"></a>00080     fprintf(fp, <span class="stringliteral">"Cantidad de diagonales no-cero: %d\n"</span>, mat-&gt;<a class="code" href="structsp__cds.html#f2a5117c4b15e96598d0a75a645cdb3f" title="Cantidad de diagonales con al menos una entrada no cero.">ndiag</a>);
+<a name="l00081"></a>00081     fprintf(fp, <span class="stringliteral">"Largo maximo de diagonal: %d\n"</span>, mat-&gt;<a class="code" href="structsp__cds.html#86bfcae3996588048cb6c973cd223b39" title="El largo de la diagonal más larga.">maxdiaglength</a>);
+<a name="l00082"></a>00082 
+<a name="l00083"></a>00083     fprintf(fp, <span class="stringliteral">"Mapeo de diagonales:"</span>);
+<a name="l00084"></a>00084     <span class="keywordflow">for</span> (i=0; i &lt; mat-&gt;<a class="code" href="structsp__cds.html#f2a5117c4b15e96598d0a75a645cdb3f" title="Cantidad de diagonales con al menos una entrada no cero.">ndiag</a>; ++i)
+<a name="l00085"></a>00085         fprintf(fp, <span class="stringliteral">" %d"</span>, mat-&gt;<a class="code" href="structsp__cds.html#cb3c554898b39c854cc3d26f657ce0fd" title="Arreglo de índices de diagonal.">dx</a>[i]);
+<a name="l00086"></a>00086 
+<a name="l00087"></a>00087     fprintf(fp, <span class="stringliteral">"\nValores:\n"</span>);
+<a name="l00088"></a>00088     <span class="keywordflow">for</span> (i=0; i &lt; mat-&gt;<a class="code" href="structsp__cds.html#f2a5117c4b15e96598d0a75a645cdb3f" title="Cantidad de diagonales con al menos una entrada no cero.">ndiag</a>; ++i) {
+<a name="l00089"></a>00089         fprintf(fp, <span class="stringliteral">"val[%d,0:%d] ="</span>, i, mat-&gt;<a class="code" href="structsp__cds.html#86bfcae3996588048cb6c973cd223b39" title="El largo de la diagonal más larga.">maxdiaglength</a>-1);
+<a name="l00090"></a>00090         <span class="keywordflow">for</span> (j=0; j &lt; mat-&gt;<a class="code" href="structsp__cds.html#86bfcae3996588048cb6c973cd223b39" title="El largo de la diagonal más larga.">maxdiaglength</a>; ++j)
+<a name="l00091"></a>00091             fprintf(fp, <span class="stringliteral">" %g"</span>, mat-&gt;<a class="code" href="structsp__cds.html#4a43be75b65bb01b343c8d3c144b7194" title="Matriz de valores. Cada fila es una diagonal.">val</a>[i][j]);
+<a name="l00092"></a>00092         fprintf(fp, <span class="stringliteral">"\n"</span>);
+<a name="l00093"></a>00093     }
+<a name="l00094"></a>00094 }
+</pre></div>
+<p>
+
+</div>
+</div><p>
+</div>
+<hr size="1">
+<address style="text-align: right;">
+<small>BAL&nbsp;1.0.0<br>Generado el Wed Aug 27 19:54:18 2008.</small>
+</address>
+</body>
+</html>

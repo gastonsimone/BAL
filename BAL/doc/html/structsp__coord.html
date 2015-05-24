@@ -1,0 +1,113 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>BAL: Referencia de la Estructura sp_coord</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Generado por Doxygen 1.5.5 -->
+<script type="text/javascript">
+<!--
+function changeDisplayState (e){
+  var num=this.id.replace(/[^[0-9]/g,'');
+  var button=this.firstChild;
+  var sectionDiv=document.getElementById('dynsection'+num);
+  if (sectionDiv.style.display=='none'||sectionDiv.style.display==''){
+    sectionDiv.style.display='block';
+    button.src='open.gif';
+  }else{
+    sectionDiv.style.display='none';
+    button.src='closed.gif';
+  }
+}
+function initDynSections(){
+  var divs=document.getElementsByTagName('div');
+  var sectionCounter=1;
+  for(var i=0;i<divs.length-1;i++){
+    if(divs[i].className=='dynheader'&&divs[i+1].className=='dynsection'){
+      var header=divs[i];
+      var section=divs[i+1];
+      var button=header.firstChild;
+      if (button!='IMG'){
+        divs[i].insertBefore(document.createTextNode(' '),divs[i].firstChild);
+        button=document.createElement('img');
+        divs[i].insertBefore(button,divs[i].firstChild);
+      }
+      header.style.cursor='pointer';
+      header.onclick=changeDisplayState;
+      header.id='dynheader'+sectionCounter;
+      button.src='closed.gif';
+      section.id='dynsection'+sectionCounter;
+      section.style.display='none';
+      section.style.marginLeft='14px';
+      sectionCounter++;
+    }
+  }
+}
+window.onload = initDynSections;
+-->
+</script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Página&nbsp;principal</span></a></li>
+      <li><a href="pages.html"><span>Páginas&nbsp;relacionadas</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Estructuras&nbsp;de&nbsp;Datos</span></a></li>
+      <li><a href="files.html"><span>Archivos</span></a></li>
+      <li><a href="dirs.html"><span>Directorios</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>Estructura&nbsp;de&nbsp;datos</span></a></li>
+      <li><a href="functions.html"><span>Campos&nbsp;de&nbsp;datos</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>Referencia de la Estructura sp_coord</h1><!-- doxytag: class="sp_coord" -->Estructura de matriz dispersa simple por coordenadas.  
+<a href="#_details">Más...</a>
+<p>
+<code>#include &lt;<a class="el" href="sp__coord_8h-source.html">sp_coord.h</a>&gt;</code>
+<p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td></td></tr>
+<tr><td colspan="2"><br><h2>Campos de datos</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="adf22f93c8e3ce7303018ba9a01ea092"></a><!-- doxytag: member="sp_coord::nrow" ref="adf22f93c8e3ce7303018ba9a01ea092" args="" -->
+unsigned int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsp__coord.html#adf22f93c8e3ce7303018ba9a01ea092">nrow</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Cantidad de filas. <br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="b962ad3a8f62df6906409d1392611c63"></a><!-- doxytag: member="sp_coord::ncol" ref="b962ad3a8f62df6906409d1392611c63" args="" -->
+unsigned int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsp__coord.html#b962ad3a8f62df6906409d1392611c63">ncol</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Cantidad de columnas. <br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="f36cd76459da9943ba491ee4a3b1f467"></a><!-- doxytag: member="sp_coord::nnz" ref="f36cd76459da9943ba491ee4a3b1f467" args="" -->
+unsigned int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsp__coord.html#f36cd76459da9943ba491ee4a3b1f467">nnz</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Cantidad de elementos no cero. <br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="a50e5d65cdb79f9a0f2b7d7505ce7c67"></a><!-- doxytag: member="sp_coord::rx" ref="a50e5d65cdb79f9a0f2b7d7505ce7c67" args="" -->
+unsigned int *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsp__coord.html#a50e5d65cdb79f9a0f2b7d7505ce7c67">rx</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Arreglo de indices de fila. <br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="cdb4f5d3b6a4a24dfaf7aa94894d3c52"></a><!-- doxytag: member="sp_coord::cx" ref="cdb4f5d3b6a4a24dfaf7aa94894d3c52" args="" -->
+unsigned int *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsp__coord.html#cdb4f5d3b6a4a24dfaf7aa94894d3c52">cx</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Arreglo de indices de columna. <br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="bf936aab79fa2aefba9c7d42e2ee401c"></a><!-- doxytag: member="sp_coord::val" ref="bf936aab79fa2aefba9c7d42e2ee401c" args="" -->
+double *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsp__coord.html#bf936aab79fa2aefba9c7d42e2ee401c">val</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Arreglos de valores. <br></td></tr>
+</table>
+<hr><a name="_details"></a><h2>Descripción detallada</h2>
+Estructura de matriz dispersa simple por coordenadas. 
+<p>
+Almacena una matriz dispersa en memoria utilizando el formato simple por coordenadas. Por más información acerca de este formato, vea la sección 5.1 del paper de Stewart (ver las <a class="el" href="index.html#refsec">referencias</a>). 
+<p>Definición en la línea <a class="el" href="sp__coord_8h-source.html#l00021">21</a> del archivo <a class="el" href="sp__coord_8h-source.html">sp_coord.h</a>.</p>
+<hr>La documentación para esta estructura fue generada a partir del siguiente fichero:<ul>
+<li>sparse/<a class="el" href="sp__coord_8h-source.html">sp_coord.h</a></ul>
+</div>
+<hr size="1">
+<address style="text-align: right;">
+<small>BAL&nbsp;1.0.0<br>Generado el Wed Aug 27 19:54:18 2008.</small>
+</address>
+</body>
+</html>

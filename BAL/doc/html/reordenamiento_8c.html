@@ -1,0 +1,222 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>BAL: Referencia del Archivo cholesky/reordenamiento.c</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Generado por Doxygen 1.5.5 -->
+<script type="text/javascript">
+<!--
+function changeDisplayState (e){
+  var num=this.id.replace(/[^[0-9]/g,'');
+  var button=this.firstChild;
+  var sectionDiv=document.getElementById('dynsection'+num);
+  if (sectionDiv.style.display=='none'||sectionDiv.style.display==''){
+    sectionDiv.style.display='block';
+    button.src='open.gif';
+  }else{
+    sectionDiv.style.display='none';
+    button.src='closed.gif';
+  }
+}
+function initDynSections(){
+  var divs=document.getElementsByTagName('div');
+  var sectionCounter=1;
+  for(var i=0;i<divs.length-1;i++){
+    if(divs[i].className=='dynheader'&&divs[i+1].className=='dynsection'){
+      var header=divs[i];
+      var section=divs[i+1];
+      var button=header.firstChild;
+      if (button!='IMG'){
+        divs[i].insertBefore(document.createTextNode(' '),divs[i].firstChild);
+        button=document.createElement('img');
+        divs[i].insertBefore(button,divs[i].firstChild);
+      }
+      header.style.cursor='pointer';
+      header.onclick=changeDisplayState;
+      header.id='dynheader'+sectionCounter;
+      button.src='closed.gif';
+      section.id='dynsection'+sectionCounter;
+      section.style.display='none';
+      section.style.marginLeft='14px';
+      sectionCounter++;
+    }
+  }
+}
+window.onload = initDynSections;
+-->
+</script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Página&nbsp;principal</span></a></li>
+      <li><a href="pages.html"><span>Páginas&nbsp;relacionadas</span></a></li>
+      <li><a href="annotated.html"><span>Estructuras&nbsp;de&nbsp;Datos</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+      <li><a href="dirs.html"><span>Directorios</span></a></li>
+    </ul>
+  </div>
+  <div class="navpath"><a class="el" href="dir_bb398cc77ed595ce1f1ecb5a9326a9c0.html">cholesky</a>
+  </div>
+</div>
+<div class="contents">
+<h1>Referencia del Archivo reordenamiento.c</h1>Implementación de algoritmos de reordenamiento. <a href="#_details">Más...</a>
+<p>
+<code>#include &lt;stdio.h&gt;</code><br>
+<code>#include &lt;stdlib.h&gt;</code><br>
+<code>#include &quot;<a class="el" href="reordenamiento_8h-source.html">reordenamiento.h</a>&quot;</code><br>
+<code>#include &quot;<a class="el" href="sp__packcol_8h-source.html">../sparse/sp_packcol.h</a>&quot;</code><br>
+
+<p>
+<a href="reordenamiento_8c-source.html">Ir al código fuente de este archivo.</a><table border="0" cellpadding="0" cellspacing="0">
+<tr><td></td></tr>
+<tr><td colspan="2"><br><h2>Funciones</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="structsp__packcol.html">sp_packcol</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="reordenamiento_8c.html#05f0067f3214ea7f66d4519c09b5c5c2">permutar_packcol</a> (unsigned int *p, <a class="el" href="structsp__packcol.html">sp_packcol</a> *A)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Aplica una permutación de columnas sobre la matriz <code>A</code>.  <a href="#05f0067f3214ea7f66d4519c09b5c5c2"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">unsigned int *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="reordenamiento_8c.html#a1a7373269a886624a8371feb7bf6066">reordenar_packcol</a> (<a class="el" href="structsp__packcol.html">sp_packcol</a> *A)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Reordena las columnas de A para minimizar el <em>fill-in</em> producido por una etapa posterior de factorización.  <a href="#a1a7373269a886624a8371feb7bf6066"></a><br></td></tr>
+</table>
+<hr><a name="_details"></a><h2>Descripción detallada</h2>
+Implementación de algoritmos de reordenamiento. 
+<p>
+
+<p>Definición en el archivo <a class="el" href="reordenamiento_8c-source.html">reordenamiento.c</a>.</p>
+<hr><h2>Documentación de las funciones</h2>
+<a class="anchor" name="05f0067f3214ea7f66d4519c09b5c5c2"></a><!-- doxytag: member="reordenamiento.c::permutar_packcol" ref="05f0067f3214ea7f66d4519c09b5c5c2" args="(unsigned int *p, sp_packcol *A)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structsp__packcol.html">sp_packcol</a> * permutar_packcol           </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int *&nbsp;</td>
+          <td class="paramname"> <em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structsp__packcol.html">sp_packcol</a> *&nbsp;</td>
+          <td class="paramname"> <em>A</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Aplica una permutación de columnas sobre la matriz <code>A</code>. 
+<p>
+<dl compact><dt><b>Parámetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>p</em>&nbsp;</td><td>Permutación. <code>p[i]</code> = La p[i]-ésima columna pasa a ser la columna i </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>A</em>&nbsp;</td><td>Matriz a permutarle las columnas </td></tr>
+  </table>
+</dl>
+<dl class="return" compact><dt><b>Devuelve:</b></dt><dd>La misma matriz <code>A</code> pero con las matrices permutadas según <code>p</code> </dd></dl>
+<dl class="note" compact><dt><b>Nota:</b></dt><dd>La matriz <code>A</code> y el resultado no comparten memoria. </dd></dl>
+
+<p>Definición en la línea <a class="el" href="reordenamiento_8c-source.html#l00021">21</a> del archivo <a class="el" href="reordenamiento_8c-source.html">reordenamiento.c</a>.</p>
+
+<p>Hace referencia a <a class="el" href="sp__packcol_8h-source.html#l00026">sp_packcol::colp</a>, <a class="el" href="sp__packcol_8h-source.html#l00024">sp_packcol::ncol</a>, <a class="el" href="sp__packcol_8h-source.html#l00025">sp_packcol::nnz</a>, <a class="el" href="sp__packcol_8h-source.html#l00023">sp_packcol::nrow</a>, <a class="el" href="sp__packcol_8h-source.html#l00027">sp_packcol::rx</a>, y <a class="el" href="sp__packcol_8h-source.html#l00028">sp_packcol::val</a>.</p>
+
+<p>Referenciado por <a class="el" href="bal_8c-source.html#l00302">bal_permutar_packcol()</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00022"></a>00022 {
+<a name="l00023"></a>00023     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i, j, col;
+<a name="l00024"></a>00024     <a class="code" href="structsp__packcol.html" title="Estructura de matriz dispersa empaquetada por columna.">sp_packcol</a>* B;
+<a name="l00025"></a>00025 
+<a name="l00026"></a>00026     B = (<a class="code" href="structsp__packcol.html" title="Estructura de matriz dispersa empaquetada por columna.">sp_packcol</a>*)malloc(<span class="keyword">sizeof</span>(<a class="code" href="structsp__packcol.html" title="Estructura de matriz dispersa empaquetada por columna.">sp_packcol</a>));
+<a name="l00027"></a>00027     B-&gt;<a class="code" href="structsp__packcol.html#2e12b2881843b0ff8191f0654570a748" title="Cantidad de filas de la matriz.">nrow</a> = A-&gt;<a class="code" href="structsp__packcol.html#2e12b2881843b0ff8191f0654570a748" title="Cantidad de filas de la matriz.">nrow</a>;
+<a name="l00028"></a>00028     B-&gt;<a class="code" href="structsp__packcol.html#2cc24559101ca3783f1949c8eebacd7c" title="Cantidad de columnas de la matriz.">ncol</a> = A-&gt;<a class="code" href="structsp__packcol.html#2cc24559101ca3783f1949c8eebacd7c" title="Cantidad de columnas de la matriz.">ncol</a>;
+<a name="l00029"></a>00029     B-&gt;<a class="code" href="structsp__packcol.html#667202fa30dd3d49982e3b0c8148bde4" title="Cantidad de elementos no cero.">nnz</a> = A-&gt;<a class="code" href="structsp__packcol.html#667202fa30dd3d49982e3b0c8148bde4" title="Cantidad de elementos no cero.">nnz</a>;
+<a name="l00030"></a>00030 
+<a name="l00031"></a>00031     <span class="keywordflow">if</span> (B-&gt;<a class="code" href="structsp__packcol.html#667202fa30dd3d49982e3b0c8148bde4" title="Cantidad de elementos no cero.">nnz</a> == 0) {
+<a name="l00032"></a>00032         B-&gt;<a class="code" href="structsp__packcol.html#c9a9e31c6b9c1416fff29944568ea18f" title="Arreglo de punteros a los inicios de las columnas.">colp</a> = NULL;
+<a name="l00033"></a>00033         B-&gt;<a class="code" href="structsp__packcol.html#536659b700c3b21fd5d6cf8538c82b6f" title="Arreglo de indices de fila.">rx</a> = NULL;
+<a name="l00034"></a>00034         B-&gt;<a class="code" href="structsp__packcol.html#6315b3a8ee78ac66aaae5ba79bda252e" title="Arreglo de valores por debajo de la diagonal.">val</a> = NULL;
+<a name="l00035"></a>00035     }
+<a name="l00036"></a>00036     <span class="keywordflow">else</span> {
+<a name="l00037"></a>00037         B-&gt;<a class="code" href="structsp__packcol.html#c9a9e31c6b9c1416fff29944568ea18f" title="Arreglo de punteros a los inicios de las columnas.">colp</a> = (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>*)malloc(<span class="keyword">sizeof</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>) * (B-&gt;<a class="code" href="structsp__packcol.html#2cc24559101ca3783f1949c8eebacd7c" title="Cantidad de columnas de la matriz.">ncol</a>+1));
+<a name="l00038"></a>00038         B-&gt;<a class="code" href="structsp__packcol.html#536659b700c3b21fd5d6cf8538c82b6f" title="Arreglo de indices de fila.">rx</a> = (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>*)malloc(<span class="keyword">sizeof</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>) * B-&gt;<a class="code" href="structsp__packcol.html#667202fa30dd3d49982e3b0c8148bde4" title="Cantidad de elementos no cero.">nnz</a>);
+<a name="l00039"></a>00039         B-&gt;<a class="code" href="structsp__packcol.html#6315b3a8ee78ac66aaae5ba79bda252e" title="Arreglo de valores por debajo de la diagonal.">val</a> = (<span class="keywordtype">double</span>*)malloc(<span class="keyword">sizeof</span>(<span class="keywordtype">double</span>) * B-&gt;<a class="code" href="structsp__packcol.html#667202fa30dd3d49982e3b0c8148bde4" title="Cantidad de elementos no cero.">nnz</a>);
+<a name="l00040"></a>00040 
+<a name="l00041"></a>00041         j = 0;
+<a name="l00042"></a>00042         <span class="keywordflow">for</span>(col=0; col &lt; B-&gt;<a class="code" href="structsp__packcol.html#2cc24559101ca3783f1949c8eebacd7c" title="Cantidad de columnas de la matriz.">ncol</a>; ++col) {  <span class="comment">/*&lt; Para cada columna col en B */</span>
+<a name="l00043"></a>00043             B-&gt;<a class="code" href="structsp__packcol.html#c9a9e31c6b9c1416fff29944568ea18f" title="Arreglo de punteros a los inicios de las columnas.">colp</a>[col] = j;                   <span class="comment">/*&lt; Los elementos de la columna col comenzarán en la entrada j */</span>
+<a name="l00044"></a>00044             <span class="keywordflow">for</span> (i=A-&gt;<a class="code" href="structsp__packcol.html#c9a9e31c6b9c1416fff29944568ea18f" title="Arreglo de punteros a los inicios de las columnas.">colp</a>[p[col]]; i &lt; A-&gt;colp[p[col]+1]; ++i) {   <span class="comment">/*&lt; Recorre la columna p[col]-ésima de A */</span>
+<a name="l00045"></a>00045                 B-&gt;<a class="code" href="structsp__packcol.html#536659b700c3b21fd5d6cf8538c82b6f" title="Arreglo de indices de fila.">rx</a>[j] = A-&gt;<a class="code" href="structsp__packcol.html#536659b700c3b21fd5d6cf8538c82b6f" title="Arreglo de indices de fila.">rx</a>[i];                                <span class="comment">/*&lt; y copia el contenido */</span>
+<a name="l00046"></a>00046                 B-&gt;<a class="code" href="structsp__packcol.html#6315b3a8ee78ac66aaae5ba79bda252e" title="Arreglo de valores por debajo de la diagonal.">val</a>[j] = A-&gt;<a class="code" href="structsp__packcol.html#6315b3a8ee78ac66aaae5ba79bda252e" title="Arreglo de valores por debajo de la diagonal.">val</a>[i];
+<a name="l00047"></a>00047                 ++j;
+<a name="l00048"></a>00048             }
+<a name="l00049"></a>00049         }
+<a name="l00050"></a>00050         B-&gt;<a class="code" href="structsp__packcol.html#c9a9e31c6b9c1416fff29944568ea18f" title="Arreglo de punteros a los inicios de las columnas.">colp</a>[col] = j;                   <span class="comment">/*&lt; Elemento extra para indicar el fin de la ultima columna */</span>
+<a name="l00051"></a>00051     }
+<a name="l00052"></a>00052 
+<a name="l00053"></a>00053     <span class="keywordflow">return</span> B;
+<a name="l00054"></a>00054 }
+</pre></div>
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="a1a7373269a886624a8371feb7bf6066"></a><!-- doxytag: member="reordenamiento.c::reordenar_packcol" ref="a1a7373269a886624a8371feb7bf6066" args="(sp_packcol *A)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int * reordenar_packcol           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsp__packcol.html">sp_packcol</a> *&nbsp;</td>
+          <td class="paramname"> <em>A</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Reordena las columnas de A para minimizar el <em>fill-in</em> producido por una etapa posterior de factorización. 
+<p>
+<dl compact><dt><b>Parámetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>A</em>&nbsp;</td><td>Matriz a reordenar</td></tr>
+  </table>
+</dl>
+<dl compact><dt><b><a class="el" href="todo.html#_todo000002">Tareas Pendientes:</a></b></dt><dd>Implementar un algoritmo de reordenamiento</dd></dl>
+Actualmente esta función no implementa ningún algoritmo de reordenamiento. Simplemente retorna la permutación trivial para la cantidad de columnas de <code>A</code>.<p>
+Un algoritmo de reordenamiento básicamente calcula una permutación a ser aplicada en las filas/columnas de la matriz.<p>
+Mientras que no se cuente con una implementación de un algoritmo de reordenamiento, se puede calcular una permutación mediante código externo y utilizar la función <a class="el" href="reordenamiento_8c.html#05f0067f3214ea7f66d4519c09b5c5c2" title="Aplica una permutación de columnas sobre la matriz A.">permutar_packcol()</a>, que recibe una permutación como parámetro y realiza la permutación sobre una matriz empaquetada por columna.<p>
+<dl class="note" compact><dt><b>Nota:</b></dt><dd>Para aquel que pretenda implementar un algoritmo de reordenamiento para BAL, una posibilidad es el algoritmo de Cuthill-McKee. Puede realizarse una implementación de cero, o tratar de reutilizar una existente, como la disponible en el siguiente sitio: <a href="http://www.math.temple.edu/~daffi/software/rcm/">http://www.math.temple.edu/~daffi/software/rcm/</a> </dd></dl>
+
+<p>Definición en la línea <a class="el" href="reordenamiento_8c-source.html#l00079">79</a> del archivo <a class="el" href="reordenamiento_8c-source.html">reordenamiento.c</a>.</p>
+
+<p>Hace referencia a <a class="el" href="sp__packcol_8h-source.html#l00024">sp_packcol::ncol</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00080"></a>00080 {
+<a name="l00081"></a>00081     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> *p;
+<a name="l00082"></a>00082     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i;
+<a name="l00083"></a>00083 
+<a name="l00084"></a>00084     p = (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>*)malloc(<span class="keyword">sizeof</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>) * A-&gt;<a class="code" href="structsp__packcol.html#2cc24559101ca3783f1949c8eebacd7c" title="Cantidad de columnas de la matriz.">ncol</a>);
+<a name="l00085"></a>00085 
+<a name="l00086"></a>00086     <span class="keywordflow">for</span> (i=0; i &lt; A-&gt; ncol; ++i)
+<a name="l00087"></a>00087         p[i] = i;
+<a name="l00088"></a>00088 
+<a name="l00089"></a>00089     <span class="keywordflow">return</span> p;
+<a name="l00090"></a>00090 }
+</pre></div>
+<p>
+
+</div>
+</div><p>
+</div>
+<hr size="1">
+<address style="text-align: right;">
+<small>BAL&nbsp;1.0.0<br>Generado el Wed Aug 27 19:54:18 2008.</small>
+</address>
+</body>
+</html>

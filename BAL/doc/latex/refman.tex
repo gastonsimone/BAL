@@ -1,0 +1,74 @@
+\documentclass[a4paper]{article}
+\usepackage{a4wide}
+\usepackage{makeidx}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{float}
+\usepackage{textcomp}
+\usepackage{alltt}
+\usepackage{times}
+\usepackage{ifpdf}
+\ifpdf
+\usepackage[pdftex,
+            pagebackref=true,
+            colorlinks=true,
+            linkcolor=blue,
+            unicode
+           ]{hyperref}
+\else
+\usepackage[ps2pdf,
+            pagebackref=true,
+            colorlinks=true,
+            linkcolor=blue,
+            unicode
+           ]{hyperref}
+\usepackage{pspicture}
+\fi
+\usepackage[utf8x]{inputenc}
+\usepackage[spanish]{babel}
+\input{../../misc/bal_settings.tex}
+\usepackage{doxygen}
+\makeindex
+\setcounter{tocdepth}{1}
+\renewcommand{\footrulewidth}{0.4pt}
+\begin{document}
+\input{../../misc/bal_titlepage.tex}
+\pagenumbering{roman}
+\tableofcontents
+\pagenumbering{arabic}
+\section{Biblioteca the Álgebra Lineal (BAL) }
+\label{index}\hypertarget{index}{}\input{index}
+\section{Listado de Tareas Pendientes}
+\input{todo}
+\section{Notas de las versiones de BAL}
+\input{notasver}
+\section{Documentación de Directorio}
+\input{dir_bb398cc77ed595ce1f1ecb5a9326a9c0}
+\input{dir_3bd78b1cf2ba11d1b29359e945e12a42}
+\input{dir_3d91f720ca7eb54995d7d6d716b4ce42}
+\section{Documentación de las estructuras de datos}
+\input{structsp__cds}
+\input{structsp__coord}
+\input{structsp__packcol}
+\section{Documentación de archivos}
+\input{bal_8c}
+\input{bal_8h}
+\input{cholesky_8c}
+\input{cholesky_8h}
+\input{reordenamiento_8c}
+\input{reordenamiento_8h}
+\input{oper_8c}
+\input{oper_8h}
+\input{matriz__parser_8y}
+\input{matriz__scanner_8lex}
+\input{sp__cds_8c}
+\input{sp__cds_8h}
+\input{sp__coord_8c}
+\input{sp__coord_8h}
+\input{sp__packcol_8c}
+\input{sp__packcol_8h}
+\input{utils_8c}
+\input{utils_8h}
+\printindex
+\end{document}

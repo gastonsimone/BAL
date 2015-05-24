@@ -1,0 +1,76 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>BAL: Notas de las versiones de BAL</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Generado por Doxygen 1.5.5 -->
+<script type="text/javascript">
+<!--
+function changeDisplayState (e){
+  var num=this.id.replace(/[^[0-9]/g,'');
+  var button=this.firstChild;
+  var sectionDiv=document.getElementById('dynsection'+num);
+  if (sectionDiv.style.display=='none'||sectionDiv.style.display==''){
+    sectionDiv.style.display='block';
+    button.src='open.gif';
+  }else{
+    sectionDiv.style.display='none';
+    button.src='closed.gif';
+  }
+}
+function initDynSections(){
+  var divs=document.getElementsByTagName('div');
+  var sectionCounter=1;
+  for(var i=0;i<divs.length-1;i++){
+    if(divs[i].className=='dynheader'&&divs[i+1].className=='dynsection'){
+      var header=divs[i];
+      var section=divs[i+1];
+      var button=header.firstChild;
+      if (button!='IMG'){
+        divs[i].insertBefore(document.createTextNode(' '),divs[i].firstChild);
+        button=document.createElement('img');
+        divs[i].insertBefore(button,divs[i].firstChild);
+      }
+      header.style.cursor='pointer';
+      header.onclick=changeDisplayState;
+      header.id='dynheader'+sectionCounter;
+      button.src='closed.gif';
+      section.id='dynsection'+sectionCounter;
+      section.style.display='none';
+      section.style.marginLeft='14px';
+      sectionCounter++;
+    }
+  }
+}
+window.onload = initDynSections;
+-->
+</script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Página&nbsp;principal</span></a></li>
+      <li><a href="pages.html"><span>Páginas&nbsp;relacionadas</span></a></li>
+      <li><a href="annotated.html"><span>Estructuras&nbsp;de&nbsp;Datos</span></a></li>
+      <li><a href="files.html"><span>Archivos</span></a></li>
+      <li><a href="dirs.html"><span>Directorios</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1><a class="anchor" name="notasver">Notas de las versiones de BAL </a></h1><h2><a class="anchor" name="notasver1_0_0">
+Notas a la versión 1.0.0 de BAL</a></h2>
+Al ser esta la primer versión de BAL, hubo un trabajo fuerte en armar la estructura básica de la biblioteca. Para ello se tuvo que estudiar la forma de armar bibliotecas en ambientes UNIX.<p>
+Por otra parte, se hizo hincapié en la documentación. Por ello se utilizó la herramienta Doxygen para generar documentación a partir del código. Esto facilitó mucho la tarea. Espero que se encuentre útil la documentación generada y que las próximas versiones también utilicen este mecanismo para documentar sus extensiones.<p>
+Al partir de cero, fue necesario implementar algunas funcionalidades básicas para comenzar con la biblioteca, por ejemplo el parser de matrices en formato matlab, las funciones de impresión, etc.<p>
+Por otra parte, junto con BAL se entregan en esta versión un conjunto de programas que sirven no solo como pruebas de correctitud de las funcionalidades de BAL, sino también como ejemplos de cómo utilizar BAL y las salidas que produce. Éstos se pueden encontrar en el directorio <code>bal_test</code>, el cual también viene con un <code>Makefile</code> para la fácil compilación.<p>
+Sin embargo, la implementación más importante de esta versión es sin duda el algoritmo de Cholesky. Por tanto podemos decir que la función más importante de esta versión es <a class="el" href="cholesky_8c.html#b61e2da86cddb63b2ef5d38b46a1d4ea" title="Resuelve un sistema lineal mediante el algoritmo de Cholesky optimizado para matrices...">cholesky_solver()</a>, la cual engloba los algoritmos más importantes y complejos implementados.<p>
+La gran mayoría de los algoritmos implementados en esta versión (sobre todo los más complejos) están basados en las descripciones del paper <em>Building an Old-Fashioned Sparse Solver</em>, por G. W. Stewart (ver las <a class="el" href="index.html#refsec">referencias</a>). Aunque el solver es <em>old-fashioned</em> esto no quiere decir que sea un mal solver. Citando al propio Stewart, <em>No es un juguete. Cerca de 1975, grandes investigadores estaban trabajando duro para perfeccionar un solver como el nuestro.</em> Esto es importante señalarlo. Porque si bien no es una implementación con lo último del estado del arte, es una excelente muestra para el aprendizaje de solvers profesionales (de hecho este solver lo fue en algún momento!).<p>
+Personalmente recomiendo mucho la lectura del paper de Stewart. Está muy bien detallado. Sin embargo, algunos de los pseudo-códigos del paper tienen errores (muy sutiles). Pero dichos errores fueron corregidos durante la implementación de BAL. Por tanto se recomienda comparar el pseudo-código de Stewart con la implementación en BAL para cada uno de los algoritmos. Creo que esto ayudará a entender mejor los algoritmos, que no son nada triviales.<p>
+Gastón Simone - Mayo 2008 </div>
+<hr size="1">
+<address style="text-align: right;">
+<small>BAL&nbsp;1.0.0<br>Generado el Wed Aug 27 19:54:18 2008.</small>
+</address>
+</body>
+</html>

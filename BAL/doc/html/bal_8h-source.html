@@ -1,0 +1,133 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>BAL: Fichero Fuente bal.h</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Generado por Doxygen 1.5.5 -->
+<script type="text/javascript">
+<!--
+function changeDisplayState (e){
+  var num=this.id.replace(/[^[0-9]/g,'');
+  var button=this.firstChild;
+  var sectionDiv=document.getElementById('dynsection'+num);
+  if (sectionDiv.style.display=='none'||sectionDiv.style.display==''){
+    sectionDiv.style.display='block';
+    button.src='open.gif';
+  }else{
+    sectionDiv.style.display='none';
+    button.src='closed.gif';
+  }
+}
+function initDynSections(){
+  var divs=document.getElementsByTagName('div');
+  var sectionCounter=1;
+  for(var i=0;i<divs.length-1;i++){
+    if(divs[i].className=='dynheader'&&divs[i+1].className=='dynsection'){
+      var header=divs[i];
+      var section=divs[i+1];
+      var button=header.firstChild;
+      if (button!='IMG'){
+        divs[i].insertBefore(document.createTextNode(' '),divs[i].firstChild);
+        button=document.createElement('img');
+        divs[i].insertBefore(button,divs[i].firstChild);
+      }
+      header.style.cursor='pointer';
+      header.onclick=changeDisplayState;
+      header.id='dynheader'+sectionCounter;
+      button.src='closed.gif';
+      section.id='dynsection'+sectionCounter;
+      section.style.display='none';
+      section.style.marginLeft='14px';
+      sectionCounter++;
+    }
+  }
+}
+window.onload = initDynSections;
+-->
+</script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Página&nbsp;principal</span></a></li>
+      <li><a href="pages.html"><span>Páginas&nbsp;relacionadas</span></a></li>
+      <li><a href="annotated.html"><span>Estructuras&nbsp;de&nbsp;Datos</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+      <li><a href="dirs.html"><span>Directorios</span></a></li>
+    </ul>
+  </div>
+<h1>bal.h</h1><a href="bal_8h.html">Ir a la documentación de este archivo.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef __BAL_H__</span>
+<a name="l00002"></a>00002 <span class="preprocessor"></span><span class="preprocessor">#define __BAL_H__</span>
+<a name="l00003"></a>00003 <span class="preprocessor"></span>
+<a name="l00004"></a>00004 <span class="preprocessor">#include &lt;stdio.h&gt;</span>
+<a name="l00005"></a>00005 <span class="preprocessor">#include "<a class="code" href="sp__coord_8h.html" title="Archivo de cabecera para matriz dispersa, formato simple.">sparse/sp_coord.h</a>"</span>
+<a name="l00006"></a>00006 <span class="preprocessor">#include "<a class="code" href="sp__packcol_8h.html" title="Archivo de cabecera para matriz dispersa, formato empaquetado por columna.">sparse/sp_packcol.h</a>"</span>
+<a name="l00007"></a>00007 <span class="preprocessor">#include "<a class="code" href="sp__cds_8h.html" title="Archivo de cabecera para matriz dispersa, formato CDS (comprimido por diagonal).">sparse/sp_cds.h</a>"</span>
+<a name="l00008"></a>00008 
+<a name="l00334"></a>00334 <span class="keywordtype">int</span> <a class="code" href="bal_8c.html#5fa9afcb6f46fadec6d601f11592ebc9" title="Carga una matriz en memoria desde un archivo.">bal_cargar_matriz</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *archivo, <span class="keywordtype">double</span> ***matriz, <span class="keywordtype">int</span> *n, <span class="keywordtype">int</span> *m);
+<a name="l00335"></a>00335 
+<a name="l00336"></a>00336 <span class="keywordtype">void</span> <a class="code" href="bal_8c.html#001bc810dfe24d78c6ee465351471ca7" title="Imprime la matriz en el archivo fp.">bal_imprimir_matriz</a>(FILE *fp, <span class="keywordtype">double</span> **matriz, <span class="keywordtype">int</span> n, <span class="keywordtype">int</span> m);
+<a name="l00337"></a>00337 
+<a name="l00338"></a>00338 <a class="code" href="structsp__coord.html" title="Estructura de matriz dispersa simple por coordenadas.">sp_coord</a>* <a class="code" href="bal_8c.html#03258fb282226ce95701827d775bb011" title="Genera la matriz dispersa equivalente a la matriz completa mat (n x m).">bal_mat2coord</a>(<span class="keywordtype">int</span> n, <span class="keywordtype">int</span> m, <span class="keywordtype">double</span> **mat);
+<a name="l00339"></a>00339 
+<a name="l00340"></a>00340 <a class="code" href="structsp__packcol.html" title="Estructura de matriz dispersa empaquetada por columna.">sp_packcol</a>* <a class="code" href="bal_8c.html#6ced93fa5fb8f0a5103d8ee2e2bb58c2" title="Genera una instancia de la matriz mat en formato empaquetado por columna.">bal_coord2packcol</a>(<a class="code" href="structsp__coord.html" title="Estructura de matriz dispersa simple por coordenadas.">sp_coord</a>* mat);
+<a name="l00341"></a>00341 
+<a name="l00342"></a>00342 <a class="code" href="structsp__packcol.html" title="Estructura de matriz dispersa empaquetada por columna.">sp_packcol</a>* <a class="code" href="bal_8c.html#069fc47d55dc12786bae9f18382344e5" title="Genera una instancia de la matriz mat en formato empaquetado por columna para matrices...">bal_coord2packcol_symmetric</a>(<a class="code" href="structsp__coord.html" title="Estructura de matriz dispersa simple por coordenadas.">sp_coord</a>* mat);
+<a name="l00343"></a>00343 
+<a name="l00344"></a>00344 <a class="code" href="structsp__cds.html" title="Estructura de matriz dispersa CDS.">sp_cds</a>* <a class="code" href="bal_8c.html#26024ae0fd4f685b495f1e33a6e65da8" title="Genera la matriz en formato CDS equivalente a la matriz mat en formato simple.">bal_coord2cds</a>(<a class="code" href="structsp__coord.html" title="Estructura de matriz dispersa simple por coordenadas.">sp_coord</a> *mat);
+<a name="l00345"></a>00345 
+<a name="l00346"></a>00346 <span class="keywordtype">void</span> <a class="code" href="bal_8c.html#fb2e0eb90b54ac0b083d42f1d38d45ac" title="Imprime la matriz guardada en formato simple por coordenadas en fp.">bal_imprimir_coord</a>(FILE *fp, <a class="code" href="structsp__coord.html" title="Estructura de matriz dispersa simple por coordenadas.">sp_coord</a> *mat);
+<a name="l00347"></a>00347 
+<a name="l00348"></a>00348 <span class="keywordtype">void</span> <a class="code" href="bal_8c.html#5c7bdb5d92a964b7e4cc66d8058e6fed" title="Imprime la matriz guardada en formato empaquetado por columna en fp.">bal_imprimir_packcol</a>(FILE *fp, <a class="code" href="structsp__packcol.html" title="Estructura de matriz dispersa empaquetada por columna.">sp_packcol</a> *mat);
+<a name="l00349"></a>00349 
+<a name="l00350"></a>00350 <span class="keywordtype">void</span> <a class="code" href="bal_8c.html#0098b5496a5f2131a34c197bbc9ba57a" title="Imprime la matriz guardada en formato simple por coordenadas en fp.">bal_imprimir_cds</a>(FILE *fp, <a class="code" href="structsp__cds.html" title="Estructura de matriz dispersa CDS.">sp_cds</a> *mat);
+<a name="l00351"></a>00351 
+<a name="l00352"></a>00352 <span class="keywordtype">void</span> <a class="code" href="bal_8c.html#413951b2a155feea5c67288a3ccb34bf" title="Multiplica una matriz empaquetada por columna por un vector.">bal_mult_vec_packcol</a>(<a class="code" href="structsp__packcol.html" title="Estructura de matriz dispersa empaquetada por columna.">sp_packcol</a> *A, <span class="keywordtype">double</span> *x, <span class="keywordtype">double</span> *y);
+<a name="l00353"></a>00353 
+<a name="l00354"></a>00354 <span class="keywordtype">void</span> <a class="code" href="bal_8c.html#dfee3769ca35f010759eddbf8e9cc476" title="Multiplica una matriz simétrica empaquetada por columna por un vector.">bal_mult_vec_packcol_symmetric</a>(<a class="code" href="structsp__packcol.html" title="Estructura de matriz dispersa empaquetada por columna.">sp_packcol</a> *A, <span class="keywordtype">double</span> *x, <span class="keywordtype">double</span> *y);
+<a name="l00355"></a>00355 
+<a name="l00356"></a>00356 <span class="keywordtype">int</span> <a class="code" href="bal_8c.html#27f481dd5d13dfab5b06bb95d5c5aa1b" title="Implementa un mecanismo eficiente para recorrer por filas una matriz dispersa empaquetada...">bal_row_traversal_packcol</a>(<a class="code" href="structsp__packcol.html" title="Estructura de matriz dispersa empaquetada por columna.">sp_packcol</a> *A, <span class="keywordtype">int</span> *i, <span class="keywordtype">int</span> *j, <span class="keywordtype">int</span> *posij);
+<a name="l00357"></a>00357 
+<a name="l00358"></a>00358 <a class="code" href="structsp__coord.html" title="Estructura de matriz dispersa simple por coordenadas.">sp_coord</a>* <a class="code" href="bal_8c.html#1e8a293081b94602060a2f757e92a8ce" title="Escribe en fp la matriz A en un formato entendible por load_coord().">bal_load_coord</a>(FILE *fp);
+<a name="l00359"></a>00359 
+<a name="l00360"></a>00360 <span class="keywordtype">void</span> <a class="code" href="bal_8c.html#abba0c987c1cd21f99ae3ef4a5fca7ac" title="Escribe en fp la matriz A en un formato entendible por load_coord().">bal_save_coord</a>(FILE *fp, <a class="code" href="structsp__coord.html" title="Estructura de matriz dispersa simple por coordenadas.">sp_coord</a> *A);
+<a name="l00361"></a>00361 
+<a name="l00362"></a>00362 <span class="keywordtype">void</span> <a class="code" href="bal_8c.html#5ae3c23f89da32858f1420e32d35ccdc" title="Imprime la matriz simétrica empaquetada por columna en formato matlab en el archivo...">bal_save_packcol_symmetric</a>(FILE *fp, <a class="code" href="structsp__packcol.html" title="Estructura de matriz dispersa empaquetada por columna.">sp_packcol</a> *A);
+<a name="l00363"></a>00363 
+<a name="l00364"></a>00364 <span class="keywordtype">void</span> <a class="code" href="bal_8c.html#23df03ad23589aefe5103d463d55ff8c" title="Imprime la matriz A en formato matlab en el archivo fp.">bal_save_packcol</a>(FILE *fp, <a class="code" href="structsp__packcol.html" title="Estructura de matriz dispersa empaquetada por columna.">sp_packcol</a> *A);
+<a name="l00365"></a>00365 
+<a name="l00366"></a>00366 <span class="keywordtype">void</span> <a class="code" href="bal_8c.html#5928b3ea635bf59c0a99e5c835c06668" title="Imprime la matriz A en formato matlab en el archivo fp.">bal_save_cds</a>(FILE *fp, <a class="code" href="structsp__cds.html" title="Estructura de matriz dispersa CDS.">sp_cds</a> *A);
+<a name="l00367"></a>00367 
+<a name="l00368"></a>00368 <span class="keywordtype">int</span> *<a class="code" href="bal_8c.html#e282c362416526cbcedf0c9c49f8a8d7" title="Calcula el árbol de eliminación de la matriz simétrica A.">bal_elimination_tree</a>(<a class="code" href="structsp__packcol.html" title="Estructura de matriz dispersa empaquetada por columna.">sp_packcol</a> *A, <span class="keywordtype">int</span> *nnz);
+<a name="l00369"></a>00369 
+<a name="l00370"></a>00370 <a class="code" href="structsp__packcol.html" title="Estructura de matriz dispersa empaquetada por columna.">sp_packcol</a> *<a class="code" href="bal_8c.html#5423521d4378c7a23082256da6b7eba9" title="Factorización simbólica de la matriz A.">bal_symbolic_factorization</a>(<a class="code" href="structsp__packcol.html" title="Estructura de matriz dispersa empaquetada por columna.">sp_packcol</a> *A);
+<a name="l00371"></a>00371 
+<a name="l00372"></a>00372 <span class="keywordtype">void</span> <a class="code" href="bal_8c.html#9bfee73c39b529b912b2f140e0ff1765" title="Sobreescribe L con la factorización de Cholesky de A.">bal_numerical_factorization</a>(<a class="code" href="structsp__packcol.html" title="Estructura de matriz dispersa empaquetada por columna.">sp_packcol</a> *A, <a class="code" href="structsp__packcol.html" title="Estructura de matriz dispersa empaquetada por columna.">sp_packcol</a> *L);
+<a name="l00373"></a>00373 
+<a name="l00374"></a>00374 <span class="keywordtype">void</span> <a class="code" href="bal_8c.html#1bb603f980bf7cd3476b13a2f61e9a87" title="Sobrescribe b con la solución del sistema .">bal_cholesky_Lsolver</a>(<a class="code" href="structsp__packcol.html" title="Estructura de matriz dispersa empaquetada por columna.">sp_packcol</a> *L, <span class="keywordtype">double</span> *b);
+<a name="l00375"></a>00375 
+<a name="l00376"></a>00376 <span class="keywordtype">void</span> <a class="code" href="bal_8c.html#00c65a19e4490139c1abe23a72a19c04" title="Sobreescribe b con la solución de .">bal_cholesky_LTsolver</a>(<a class="code" href="structsp__packcol.html" title="Estructura de matriz dispersa empaquetada por columna.">sp_packcol</a> *L, <span class="keywordtype">double</span> *b);
+<a name="l00377"></a>00377 
+<a name="l00378"></a>00378 <span class="keywordtype">void</span> <a class="code" href="bal_8c.html#c27eba96470b3ac5a5019230bd380a1a" title="Resuelve un sistema lineal mediante el algoritmo de Cholesky optimizado para matrices...">bal_cholesky_solver</a>(<a class="code" href="structsp__packcol.html" title="Estructura de matriz dispersa empaquetada por columna.">sp_packcol</a> *A, <span class="keywordtype">double</span> *b);
+<a name="l00379"></a>00379 
+<a name="l00380"></a>00380 <span class="keywordtype">void</span> <a class="code" href="bal_8c.html#73ce65d5fd284423c38517d6370f449e" title="Multiplica una matriz en formato CDS por un vector.">bal_mult_vec_cds</a>(<a class="code" href="structsp__cds.html" title="Estructura de matriz dispersa CDS.">sp_cds</a> *A, <span class="keywordtype">double</span> *x, <span class="keywordtype">double</span> *y);
+<a name="l00381"></a>00381 
+<a name="l00382"></a>00382 <a class="code" href="structsp__cds.html" title="Estructura de matriz dispersa CDS.">sp_cds</a>* <a class="code" href="bal_8c.html#1500ac2a006e9229a2a4fe810734367b" title="Multiplica dos matrices en formato CDS.">bal_mult_mat_cds</a>(<a class="code" href="structsp__cds.html" title="Estructura de matriz dispersa CDS.">sp_cds</a> *A, <a class="code" href="structsp__cds.html" title="Estructura de matriz dispersa CDS.">sp_cds</a> *B);
+<a name="l00383"></a>00383 
+<a name="l00384"></a>00384 <a class="code" href="structsp__packcol.html" title="Estructura de matriz dispersa empaquetada por columna.">sp_packcol</a>* <a class="code" href="bal_8c.html#cf73a00379402d81de059fe1af3c496a" title="Aplica una permutación de columnas sobre la matriz A.">bal_permutar_packcol</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> *p, <a class="code" href="structsp__packcol.html" title="Estructura de matriz dispersa empaquetada por columna.">sp_packcol</a> *A);
+<a name="l00385"></a>00385 
+<a name="l00386"></a>00386 <span class="keywordtype">void</span> <a class="code" href="bal_8c.html#b3ce8c7df5d3d2a8eb9cd70534f628ed" title="Libera la memoria reservada por la matriz A.">bal_free_coord</a>(<a class="code" href="structsp__coord.html" title="Estructura de matriz dispersa simple por coordenadas.">sp_coord</a> *A);
+<a name="l00387"></a>00387 
+<a name="l00388"></a>00388 <span class="keywordtype">void</span> <a class="code" href="bal_8c.html#ecd6ad512d46f1825e79eda4647eaf60" title="Libera la memoria reservada por la matriz A.">bal_free_packcol</a>(<a class="code" href="structsp__packcol.html" title="Estructura de matriz dispersa empaquetada por columna.">sp_packcol</a> *A);
+<a name="l00389"></a>00389 
+<a name="l00390"></a>00390 <span class="keywordtype">void</span> <a class="code" href="bal_8c.html#7eae9c8721058a53a00d0c0dad2551f2" title="Libera la memoria reservada por la matriz A.">bal_free_cds</a>(<a class="code" href="structsp__cds.html" title="Estructura de matriz dispersa CDS.">sp_cds</a> *A);
+<a name="l00391"></a>00391 
+<a name="l00392"></a>00392 <span class="preprocessor">#endif</span>
+<a name="l00393"></a>00393 <span class="preprocessor"></span>
+</pre></div></div>
+<hr size="1">
+<address style="text-align: right;">
+<small>BAL&nbsp;1.0.0<br>Generado el Wed Aug 27 19:54:18 2008.</small>
+</address>
+</body>
+</html>

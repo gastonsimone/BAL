@@ -1,0 +1,15 @@
+\form#0:$Ly=b$
+\form#1:$L^Tx=b$
+\form#2:$L^Ty=b$
+\form#3:$Ax=b$
+\form#4:$L^Tx=y$
+\form#5:$y = Ax$
+\form#6:$C = AB$
+\form#7:$a_{ij}$
+\form#8:$j-i$
+\form#9:\[ c_{ij} = \sum_{k=0}^n a_{ik}b_{kj} \]
+\form#10:$c_{ij}$
+\form#11:$a_{ik}b_{kj}$
+\form#12:$A_{ij}$
+\form#13:\[ A = \left( \begin{array}{ccccc} 1 & 2 & 0 & 0 & 0 \\ 3 & 4 & 5 & 0 & 0 \\ 0 & 6 & 7 & 8 & 0 \\ 0 & 0 & 9 & 10 & 11 \\ 0 & 0 & 0 & 12 & 13 \end{array}\right) \]
+\form#14:$A_{i,(dx[k]+i)}$

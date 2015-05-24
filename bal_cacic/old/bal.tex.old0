@@ -1,0 +1,237 @@
+\documentclass[a4paper,10pt]{article}
+
+\usepackage[spanish]{babel}
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc}
+\PrerenderUnicode{áéíóúñ}
+\usepackage[T1]{fontenc}
+\usepackage{charter}
+
+\addto\captionsspanish{\def\tablename{Tabla}}
+
+\usepackage[pdftex]{color,graphicx}
+\usepackage{wrapfig}
+\usepackage{fancyvrb}
+\DefineVerbatimEnvironment{SmallVerbatim}{Verbatim}{fontsize=\scriptsize, tabsize=4}
+\DefineVerbatimEnvironment{SmallVerbatimNum}{Verbatim}{numbers=left, fontsize=\scriptsize, tabsize=4}
+
+% Cabezal y pie de página
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+\fancyhf{}
+\fancyhead[L]{\rightmark}
+\fancyhead[R]{\thepage}
+\fancyfoot[L]{}
+\fancyfoot[R]{}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0pt}
+\addtolength{\headheight}{0.5pt} % Hacer espacio para la linea del cabezal
+\fancypagestyle{plain}{% Sacar cabezales en plain pages
+	\fancyhead{}
+	\renewcommand{\headrulewidth}{0pt}
+}
+
+\usepackage[pdftex]{hyperref}
+\hypersetup{colorlinks=true}
+\hypersetup{citecolor=blue}
+\hypersetup{filecolor=black}
+\hypersetup{linkcolor=blue}
+\hypersetup{urlcolor=blue}
+\hypersetup{pdfauthor={Gastón Simone}}
+\hypersetup{pdftitle={Una biblioteca para la enseñanza de álgebra lineal numérica}}
+
+\title{Una Biblioteca Para la Enseñanza de Álgebra Lineal Numérica}
+\author{Gastón Simone, Pablo Ezzatti\vspace{0.5cm} \\ Instituto de Computación\\ Facultad de Ingeniería, Universidad de la República\\ J. Herrera y Reissig 565, Montevideo, Uruguay\\ \url{gaston.simone@gmail.com}\\ \url{pezzatti@fing.edu.uy}}
+\date{Junio 2008}
+
+\begin{document}
+
+\maketitle
+
+\textbf{Palabras claves:} Álgebra, C, Algoritmos.
+
+\begin{abstract}
+Durante la edición 2008 del curso de Álgebra Lineal Numérica, dictado por el Instituto de Computación,
+se realizó la implementación de una biblioteca de utilidades para el trabajo con sistemas lineales dispersos,
+en calidad de proyecto de fin de curso.
+
+La implementación de la biblioteca se hizo pensando en todo momento en su uso didáctico. Por esta razón,
+la documentación es vasta y el código fue escrito pensando en su fácil lectura. Las rutinas implementadas son eficientes desde el punto de vista algorítmico. Pero determinadas mejoras de desempeño, propias de la implementación, fueron descartadas para mantener la legibilidad del código.
+
+Este documento describe el diseño, las funcionalidades y la implementación realizada.
+Se describe también la documentación técnica que acompaña a la imlementación, la cual es de utilidad para
+el estudio. Finalmente se mencionan conclusiones y se describen posibles trabajos futuros sobre la herramienta construida.
+\end{abstract}
+
+\newpage
+
+%\tableofcontents
+
+\section{Introducción}
+La aprobación del curso 2008 de la asignatura opcional \emph{Álgebra Lineal Numérica} del Instituto de Computación (InCo) constó de dos instancias.
+La primera fue la exposición de un tema por parte del estudiante, en una de las clases dictadas durante el curso.
+La segunda constó de la elaboración de un trabajo final, en el que se aplicara lo aprendido en el curso, o bien se profundizara el estudio en algún tema en particular. Los trabajos finales eran sugeridos por los docentes o propuestos por los alumnos.
+
+Uno de los trabajos sugeridos fue la elaboración de una biblioteca para matrices dispersas, en la que se puedieran manejar varios formatos y que además implementara distintos algoritmos, como factorización de matrices, aprovechando los beneficios de los formatos dispersos. Esta propuesta fue tomada por Gastón Simone, quien, bajo la tutoría del profesor Pablo Ezzatti del InCo, llevó a cabo el proyecto.
+
+La primer versión de la biblioteca, llamada \emph{BAL} (por \emph{Biblioteca de Álgebra Lineal}), es la que correspondió a la entrega final del curso y fue llamada \emph{BAL 2008}.
+Parte de este documento describe la primera versión de la biblioteca, junto con su posible uso en la enseñanza del Álgebra lineal.
+
+El documento está estructurado de la siguiente forma. La sección \ref{sec_funcionalidad} brinda un detalle de las funcionalidades actualmente disponibles en BAL. La sección \ref{sec_estructura} brinda una reseña de la estructura interna de BAL, cómo fueron agrupadas las distintas funcionalidades dentro de la biblioteca. En la sección \ref{sec_componentes} se describen componentes adicionales que acompañan la implementación de la biblioteca.
+La sección \ref{sec_uso} describe los pasos necesarios para utilizar BAL. Luego, la sección \ref{sec_ens} menciona algunas ideas para el uso de BAL como una herramienta didáctica. Finalmente, la sección \ref{sec_futuro} menciona las conclusiones sobre el trabajo realizado y describe el trabajo futuro a partir de la situación actual.
+
+\section{Funcionalidades actuales de la biblioteca}
+\label{sec_funcionalidad}
+A continuación se detallan las distintas funcionalidades disponibles actualmente en BAL.
+\begin{enumerate}
+ \item Cargas de datos desde archivo
+ \begin{enumerate}
+  \item Leer definiciones de matrices en el mismo formato utilizado por matlab.
+  \item \label{leer_simple} Leer definiciones de matrices en un formato para matrices dispersas por coordenadas\footnote{Vea el primer formato definido en la sección 5.1 de Stewart~\cite{stewart}}.
+ \end{enumerate}
+ \item Formatos de matrices dispersas
+ \begin{enumerate}
+  \item Simple por coordenadas.
+  \item Empaquetado por columnas (CP).
+  \item Comprimido por diagonales (CDS).
+ \end{enumerate}
+ \item Impresión de estructuras de datos
+ \begin{enumerate}
+  \item Impresión de detalle de estructuras en memoria, para todos los formatos de matrices dispersas soportados.
+  \item Impresión de matrices en memoria a formato matlab, para formatos CP y CDS.
+  \item Impresión de matrices en memoria en formato simple al mismo formato esperado en \ref{leer_simple}.
+ \end{enumerate}
+ \item Funciones de conversión entre formatos dispersos
+ \item Funciones de soporte
+ \begin{enumerate}
+  \item Liberación de memoria utilizada en estructuras creadas con BAL.
+ \end{enumerate}
+ \item Algoritmos
+ \begin{enumerate}
+  \item Recorrer por filas una matriz empaquetada por columnas en forma eficiente.
+  \item Producto matriz-vector optimizado para matrices simétricas en formato CP.
+  \item Producto matriz-vector optimizado para matrices en formato CDS.
+  \item Producto matriz-matriz optimizado para matrices en formato CDS.
+  \item Cálculo del árbol de liminación de una matriz en formato CP.
+  \item Factorización simbólica de una matriz en formato CP.
+  \item Factorización de Cholesky de una matriz en formato CP.
+  \item Resolución de un sistema lineal triangular, representado con una matriz en formato CP.
+ \end{enumerate}
+\end{enumerate}
+
+\section{Estructura}
+\label{sec_estructura}
+A continuación se menciona cómo están distribuidas las distintas funcionalidades de BAL dentro de sus archivos fuente. Conjuntamente se brindan algunos detalles técnicos de la implementación de las distintas funcionalidades.
+
+\begin{wrapfigure}{r}{0.25\textwidth}
+  \vspace{-20pt}
+  \begin{center}
+    \includegraphics[height=6cm]{img/estructura.png}
+  \end{center}
+  \vspace{-20pt}
+  \caption{Estructura de directorios de BAL}
+  \vspace{-60pt}
+\end{wrapfigure}
+El directorio raíz de BAL contiene (además de archivos de soporte como el \texttt{makefile} y el archivo de configuración de la documentación autogenerada) los módulos llamados \texttt{bal}, \texttt{oper} y \texttt{utils}. El módulo \texttt{bal} define un medio de acceso a todas las funcionalidades de BAL de forma homogénea. De este modo, un programa cliente que desee utilizar BAL solo debe agregar la instrucción de preprocesador
+\begin{SmallVerbatim}
+#include <bal.h>
+\end{SmallVerbatim}
+y ya estará en condiciones de utilizar todas las funcionalidades de BAL. Por otra parte, el módulo \texttt{utils} contiene funciones de utilidad general que son utilizadas a lo largo de todo el código de BAL. El módulo \texttt{oper} implementa los algoritmos de operaciones básicas, del tipo matriz-vector y matriz-matriz.
+
+El directorio \texttt{parser} de BAL contiene los la implementación del parser de definición de matrices en formato matlab~\cite{matlab}. Este parser es implementado mediante código autogenerado utilizando las herramientas \texttt{GNU bison}~\cite{bison} y \texttt{flex}~\cite{flex}. El archivo \texttt{matriz\_scanner.lex} contiene la definición del analizador lexicográfico generado por \texttt{flex}, mientras que el archivo \texttt{matriz\_parser.y} define una gramática libre de contexto, junto con el código necesario para que \texttt{bison} genere el parser buscado.
+
+El directorio \texttt{sparse} contiene las definiciones de las estructuras de datos para matrices dispersas, así como también la implementación de las funciones de conversión entre estas representaciones.
+El módulo \texttt{sp\_coord} define la estructura simple por coordenadas, así como también implementa las herramientas básicas para trabajar con la estructura. De la misma forma, los módulos \texttt{sp\_packcol} y \texttt{sp\_cds} lo hacen para los formatos CP y CDS.
+
+Finalmente, el directorio \texttt{cholesky} contiene la implementación de las distintas rutinas que permiten la resolución de un sistema de ecuaciones mediante la factorización de Cholesky~\cite{cholesky}. Esta resolución se entiende como la ejecución de las siguientes etapas:
+\begin{enumerate}
+ \item Reordenamiento.
+ \item Cálculo del árbol de eliminación.
+ \item Factorización simbólica.
+ \item Factorización numérica.
+ \item Resolución de sistemas triangulares.
+\end{enumerate}
+El módulo \texttt{cholesky} implementa todas las etapas de la resolución, menos la etapa de reordenamiento, para la cual aun no se cuenta con la implementación de un algoritmo. Pero la biblioteca ya dispone de la estructura necesaria como para agregar tal etapa fácilmente. Esto se hará mediante la extensión del módulo \texttt{reordenamiento}.
+
+La gran mayoría de la implementación de este método de resolución está basado en el paper de Stewart~\cite{stewart}. Durante su estudio e implementación se encontraron pequeños detalles en los pseudo-códigos presentados en el artículo, los cuales fueron corregidos en BAL. Tales cambios están bien señalados en el código y en la documentación técnica que acompaña a BAL. Esto hace que combinar la lectura del paper junto con el estudio y uso de BAL logre un valor agregado para el estudiante.
+
+\section{Componentes adicionales}
+\label{sec_componentes}
+\subsection{Documentación técnica}
+La biblioteca viene acompañada de un conjunto de documentación técnica que describe los detalles de las funcionalidades implementadas, decribe los algoritmos y explica las estructuras de datos definidas.
+
+Esta documentación fue creada con la herramienta Doxygen~\cite{doxygen}. La misma es generada en los formatos HTML y PDF, siendo el primero el recomendado. La misma documentación técnica explica cómo ésta es generada.
+
+\subsection{Juego de pruebas}
+Junto con la implementación de la biblioteca, se escribió un conjunto de programas que sirven no solo para verificar la correctitud de BAL, sino también como ejemplo de su uso.
+
+Estos tests se encuentran en el directorio \texttt{bal\_test}. Cada prueba es un programa \texttt{C} diferente que se limita a probar una funcionalidad particular de BAL. El nombre del archivo \texttt{.c} da idea de lo que se pretende probar.
+
+El juego de pruebas tiene su propio \texttt{makefile} para la fácil compilación. Pero más aun, el directorio de pruebas contiene un script llamado \texttt{run\_tests.sh} para la ejecución fácil de las pruebas. Este script, primero ejecuta el comando \texttt{make} para cerciorar que los tests han sido compilados. Luego busca aquellos tests que fueron compilados correctamente y los ejecuta. Para cada test ejecutado, redirecciona su salida estándar a un archivo de extensión \texttt{.out} y su salida de errores a una archivo de extensión \texttt{.error}. El prefijo de ambos archivos es el nombre del ejecutable del test\footnote{Nota: Para que este mecanismo funcione es importante que todos los ejecutables de las pruebas tengan sufijo \texttt{\_test}.}.
+
+Al finalizar, el script muestra en pantalla una lista de aquellos tests que generaron algún tipo de salida en la salida de errores. De este modo es fácil localizar cuáles tests fallaron.
+
+\section{Uso de la biblioteca}
+\label{sec_uso}
+La biblioteca fue construida y probada bajo un ambiente UNIX utilizando el lenguage \texttt{C}. Sin embargo, dada la portabilidad del lenguage, no debería ser difícil conseguir que la misma funcione en otras plataformas.
+
+La biblioteca se construye como un paquete precompilado. Una vez construida, un programa cliente puede utilizarla enlazando dicho paquete junto con su código, en tiempo de compilación.
+El archivo \texttt{makefile} principal contiene una secuencia de pasos para instalar la biblioteca de forma permanente en el sistema. De este modo se facilita su utilización. Este modo de instalación también genera una copia de la documentación técnica dentro del sistema, para que esté disponible para todo usuario del mismo junto con la biblioteca.
+
+La documentación técnica detalla todos los pasos necesarios para crear una aplicación que utilice la biblioteca, incluyendo compilación e instalación de la biblioteca, así como también compilación de un programa externo que haga uso de la misma.
+
+\section{Utilización en la enseñanza del Álgebra Lineal Numérica}
+\label{sec_ens}
+Como ya fue mencionado, uno de los objetivos de este trabajo fue construir una herramienta que sirva para el estudio del álgebra lineal numérica. La biblioteca construída es el primer paso en este cometido. Con la versión 2008 de BAL se cuenta con suficientes herramientas como para complementar el material teórico y práctico de algunos temas tratados durante el curso de ALN, como por ejemplo formatos de matrices dispersas, algoritmos eficientes con metrices dispersas, algoritmos de reordenamiento, factorización simbólica y factorización numérica.
+
+Se pueden construir aplicaciones basadas en BAL que permitan realizar ejemplos durante una clase. Se pueden realizar comparaciones de performance entre BAL y otras herramientas, como por ejemplo matlab. Los alumnos pueden hacer sus propias pruebas con la biblioteca e incluso extenderla. Otros alumnos pueden tomar la extensión de la biblioteca como su propio trabajo de fin de curso.
+
+La documentación técnica que acompaña la implementación aporta el soporte necesario para el estudio de los algoritmos implementados. La forma en la que es presentada la documentación junto con el código al que corresponde cada sección beneficia su lectura.
+
+\section{Conclusiones y trabajo futuro}
+\label{sec_futuro}
+La biblioteca es un trabajo en progreso. Esta versión fue un paso inicial en la construcción de una herramienta de enseñanza, de práctica y una fuente de conocimiento en la rama del álgebra lineal. La disponibilidad de un conjunto de implementaciones fuertemente documentadas de distintos algoritmos básicos y otros más complejos es de gran valor para toda persona relacionada con la materia.\\
+
+El trabajo futuro, en lo que refiere a la extensión de la biblioteca, tiene varios aspectos a ser considerados, a saber:
+\begin{itemize}
+ \item Se puede agregar soporte para más plataformas, en particular la plataforma Windows. Dado que gran parte de las instalaciones disponibles en facultad proveen esta plataforma, esto facilitaría el uso de la herramienta por parte de los alumnos.
+ \item La biblioteca puede ser extendida para que determinados algoritmos produzcan salida que muestre la evolución de la ejecución de los mismos. Esto puede ser de gran ayuda a la hora de estudiar un comprender como trabaja un algoritmo. Sin embargo, esto debe ser hecho con cuidado, pues agregar tal tipo de funcionalidad, puede perjudicar en la legibilidad del código.
+\item El manejo de errores dentro del código de la biblioteca puede ser mejorado. Algo de trabajo en este aspecto ya está hecho en el módulo de utilidades. Sin embargo, se puede mejorar la robustez de la biblioteca frente a errores graves, por ejemplo manejando señales del sistema. La biblioteca debería ser capaz de brindar información de utilidad frente a cualquier tipo de error, para el posible estudio posterior del problema.
+\item Para completar la secuencia de resolución eficiente de un sistema lineal basado en la factorización de Cholesky, es necesario contar con al menos la implementación de un algoritmo de reordenamiento. Como ya fue mencionado, la estructura necesaria para agregar este algoritmo en la biblioteca ya fue construida.
+\item Se puede extender el soporte a más formatos para matrices dispersas.
+\item Al soportar más formatos de matrices disperas, será necesario contar con más funciones de conversión entre formatos.
+\item Puede ser interesante extender el parser de definición de matrices en formato matlab para que cargue las matrices en memoria ya en un formato disperso, por ejemplo, simple por coordenadas.
+\item Agregar soporte para más algoritmos de factorización y factorización incompleta, como LU.
+\item Agregar soporte para técnicas de precondicionamiento de matrices.
+\item Agregar soporte para algoritmos iterativos.
+\end{itemize}
+
+Por supuesto, también es un trabajo futuro el estudiar y explorar los métodos para utilizar la nueva herramienta con el objetivo de mejorar la enseñanza de la materia y explotarla de la mejor forma posible.
+
+De más está mencionar que todo aquel que se sienta interesado en opinar, comentar, sugerir nuevas ideas e inclusive participar activamente en cualquier tarea relacionada con este pequeño proyecto, es bienvenido. Por favor comunicarse con el grupo de profesores de Álgebra Lineal Numérica en el Instituto de Computación.
+
+\appendix
+
+\begin{thebibliography}{99}
+\bibitem{stewart} G.W. Stewart. \textit{Building an Old-Fashioned Sparse Solver}.\\
+Univerity of Maryland, Institute of Advanced Computer Studies, Department of Computer Science.
+TR-2003-95, TR-4527. Agosto 2003.\\ Disponible en: \url{http://hdl.handle.net/1903/1312}
+
+\bibitem{matlab} Wikipedia Contributors. \textit{MATLAB} [Internet].\\
+Wikipedia, The Free Encyclopedia; 2008 Jun 16, 15:34 UTC [cited 2008 Jun 19]. Disponible en: \url{http://en.wikipedia.org/w/index.php?title=MATLAB&oldid=219716253}.
+
+\bibitem{bison} Wikipedia contributors. \textit{GNU bison} [Internet].\\
+Wikipedia, The Free Encyclopedia; 2008 Jun 15, 19:51 UTC [cited 2008 Jun 19]. Disponible en: \url{http://en.wikipedia.org/w/index.php?title=GNU_bison&oldid=219550426}.
+
+\bibitem{flex} Wikipedia contributors. \textit{Flex lexical analyser} [Internet].\\
+Wikipedia, The Free Encyclopedia; 2008 Jun 8, 15:51 UTC [cited 2008 Jun 19]. Disponible en: \url{http://en.wikipedia.org/w/index.php?title=Flex_lexical_analyser&oldid=217972361}.
+
+\bibitem{cholesky} Wikipedia contributors. \textit{Cholesky decomposition} [Internet].\\
+Wikipedia, The Free Encyclopedia; 2008 Jun 13, 05:50 UTC [cited 2008 Jun 19]. Disponible en: \url{http://en.wikipedia.org/w/index.php?title=Cholesky_decomposition&oldid=219021122}.
+
+\bibitem{doxygen} Wikipedia contributors. \textit{Doxygen} [Internet].\\
+Wikipedia, The Free Encyclopedia; 2008 Jun 11, 13:43 UTC [cited 2008 Jun 20]. Disponible en: \url{http://en.wikipedia.org/w/index.php?title=Doxygen&oldid=218625348}.
+\end{thebibliography}
+
+\end{document}

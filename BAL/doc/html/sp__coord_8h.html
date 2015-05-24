@@ -1,0 +1,467 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>BAL: Referencia del Archivo sparse/sp_coord.h</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Generado por Doxygen 1.5.5 -->
+<script type="text/javascript">
+<!--
+function changeDisplayState (e){
+  var num=this.id.replace(/[^[0-9]/g,'');
+  var button=this.firstChild;
+  var sectionDiv=document.getElementById('dynsection'+num);
+  if (sectionDiv.style.display=='none'||sectionDiv.style.display==''){
+    sectionDiv.style.display='block';
+    button.src='open.gif';
+  }else{
+    sectionDiv.style.display='none';
+    button.src='closed.gif';
+  }
+}
+function initDynSections(){
+  var divs=document.getElementsByTagName('div');
+  var sectionCounter=1;
+  for(var i=0;i<divs.length-1;i++){
+    if(divs[i].className=='dynheader'&&divs[i+1].className=='dynsection'){
+      var header=divs[i];
+      var section=divs[i+1];
+      var button=header.firstChild;
+      if (button!='IMG'){
+        divs[i].insertBefore(document.createTextNode(' '),divs[i].firstChild);
+        button=document.createElement('img');
+        divs[i].insertBefore(button,divs[i].firstChild);
+      }
+      header.style.cursor='pointer';
+      header.onclick=changeDisplayState;
+      header.id='dynheader'+sectionCounter;
+      button.src='closed.gif';
+      section.id='dynsection'+sectionCounter;
+      section.style.display='none';
+      section.style.marginLeft='14px';
+      sectionCounter++;
+    }
+  }
+}
+window.onload = initDynSections;
+-->
+</script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Página&nbsp;principal</span></a></li>
+      <li><a href="pages.html"><span>Páginas&nbsp;relacionadas</span></a></li>
+      <li><a href="annotated.html"><span>Estructuras&nbsp;de&nbsp;Datos</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+      <li><a href="dirs.html"><span>Directorios</span></a></li>
+    </ul>
+  </div>
+  <div class="navpath"><a class="el" href="dir_3d91f720ca7eb54995d7d6d716b4ce42.html">sparse</a>
+  </div>
+</div>
+<div class="contents">
+<h1>Referencia del Archivo sp_coord.h</h1>Archivo de cabecera para matriz dispersa, formato simple. <a href="#_details">Más...</a>
+<p>
+<code>#include &lt;stdio.h&gt;</code><br>
+
+<p>
+<a href="sp__coord_8h-source.html">Ir al código fuente de este archivo.</a><table border="0" cellpadding="0" cellspacing="0">
+<tr><td></td></tr>
+<tr><td colspan="2"><br><h2>Estructuras de datos</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsp__coord.html">sp_coord</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Estructura de matriz dispersa simple por coordenadas.  <a href="structsp__coord.html#_details">Más...</a><br></td></tr>
+<tr><td colspan="2"><br><h2>Funciones</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="structsp__coord.html">sp_coord</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="sp__coord_8h.html#39456c57f92a0782a466d9bbe39e20cd">mat2coord</a> (int n, int m, double **mat)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Genera la matriz dispersa equivalente a la matriz completa mat nxm.  <a href="#39456c57f92a0782a466d9bbe39e20cd"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="structsp__coord.html">sp_coord</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="sp__coord_8h.html#36f946a8c68e1161e9a8955177f69820">load_coord</a> (FILE *fp)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Lee una matriz en formato simple por coordenadas desde archivo.  <a href="#36f946a8c68e1161e9a8955177f69820"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="sp__coord_8h.html#65d8ffec5eb8263159ca9e6310c6e762">save_coord</a> (FILE *fp, <a class="el" href="structsp__coord.html">sp_coord</a> *A)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Escribe en <code>fp</code> la matriz <code>A</code> en un formato entendible por <a class="el" href="sp__coord_8c.html#d6a1042d41ff43da1f26396f5803daac" title="Lee una matriz en formato simple por coordenadas desde archivo.">load_coord()</a>.  <a href="#65d8ffec5eb8263159ca9e6310c6e762"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="sp__coord_8h.html#ff646304bb38349c4620069c73a35760">sp_imprimir_coord</a> (FILE *fp, <a class="el" href="structsp__coord.html">sp_coord</a> *mat)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Imprime la matriz guardada en formato simple por coordenadas en fp.  <a href="#ff646304bb38349c4620069c73a35760"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="sp__coord_8h.html#33dd472b98444c5d08c9099556226816">free_coord</a> (<a class="el" href="structsp__coord.html">sp_coord</a> *A)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Borra toda la memoria reservada por la matriz A.  <a href="#33dd472b98444c5d08c9099556226816"></a><br></td></tr>
+</table>
+<hr><a name="_details"></a><h2>Descripción detallada</h2>
+Archivo de cabecera para matriz dispersa, formato simple. 
+<p>
+Este archivo contiene la definición de la estructura de datos mediante la cual se almacena una matriz dispersa según el formato simple, representación por coordenadas. 
+<p>Definición en el archivo <a class="el" href="sp__coord_8h-source.html">sp_coord.h</a>.</p>
+<hr><h2>Documentación de las funciones</h2>
+<a class="anchor" name="33dd472b98444c5d08c9099556226816"></a><!-- doxytag: member="sp_coord.h::free_coord" ref="33dd472b98444c5d08c9099556226816" args="(sp_coord *A)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void free_coord           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsp__coord.html">sp_coord</a> *&nbsp;</td>
+          <td class="paramname"> <em>A</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Borra toda la memoria reservada por la matriz A. 
+<p>
+Esta función libera toda la memoria reservada por la estructura de datos <a class="el" href="structsp__coord.html" title="Estructura de matriz dispersa simple por coordenadas.">sp_coord</a>. 
+<p>Definición en la línea <a class="el" href="sp__coord_8c-source.html#l00206">206</a> del archivo <a class="el" href="sp__coord_8c-source.html">sp_coord.c</a>.</p>
+
+<p>Hace referencia a <a class="el" href="sp__coord_8h-source.html#l00026">sp_coord::cx</a>, <a class="el" href="sp__coord_8h-source.html#l00025">sp_coord::rx</a>, y <a class="el" href="sp__coord_8h-source.html#l00027">sp_coord::val</a>.</p>
+
+<p>Referenciado por <a class="el" href="bal_8c-source.html#l00312">bal_free_coord()</a>, y <a class="el" href="sp__coord_8c-source.html#l00084">load_coord()</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00207"></a>00207 {
+<a name="l00208"></a>00208     free(A-&gt;<a class="code" href="structsp__coord.html#a50e5d65cdb79f9a0f2b7d7505ce7c67" title="Arreglo de indices de fila.">rx</a>);
+<a name="l00209"></a>00209     free(A-&gt;<a class="code" href="structsp__coord.html#cdb4f5d3b6a4a24dfaf7aa94894d3c52" title="Arreglo de indices de columna.">cx</a>);
+<a name="l00210"></a>00210     free(A-&gt;<a class="code" href="structsp__coord.html#bf936aab79fa2aefba9c7d42e2ee401c" title="Arreglos de valores.">val</a>);
+<a name="l00211"></a>00211     free(A);
+<a name="l00212"></a>00212 }
+</pre></div>
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="36f946a8c68e1161e9a8955177f69820"></a><!-- doxytag: member="sp_coord.h::load_coord" ref="36f946a8c68e1161e9a8955177f69820" args="(FILE *fp)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structsp__coord.html">sp_coord</a>* load_coord           </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&nbsp;</td>
+          <td class="paramname"> <em>fp</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Lee una matriz en formato simple por coordenadas desde archivo. 
+<p>
+<dl compact><dt><b>Parámetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>fp</em>&nbsp;</td><td>Archivo del cual leer la matriz </td></tr>
+  </table>
+</dl>
+<dl class="return" compact><dt><b>Devuelve:</b></dt><dd>La matriz leída en formato simple por coordenadas</dd></dl>
+Lee el archivo <code>fp</code> en busca de una definición de matriz en formato simple por coordenadas. En caso de encontrarlo, construye la estructura en memoria y la devuelve al finalizar.<p>
+El formato buscado es el siguiente: <ol>
+<li>
+El primer número leído indica la cantidad de filas de la matriz (<code>nrow</code>) </li>
+<li>
+El segundo número leído indica la cantidad de columnas de la matriz (<code>ncol</code>) </li>
+<li>
+El tercer número leído indica la cantidad de entradas no cero de la matriz (<code>nnz</code>) </li>
+<li>
+Luego trata de leer <code>nnz</code> números enteros, que representan los índices de fila donde hay elementos no cero (<code>rx</code>) </li>
+<li>
+Luego trata de leer <code>nnz</code> números enteros, que representan los índices de columna donde hay elementos no cero (<code>cx</code>) </li>
+<li>
+Luego trata de leer <code>nnz</code> números reales, que representan los índices las entradas no cero de la matriz (<code>val</code>) </li>
+</ol>
+Todos los números pueden estar separados por cualquier cantidad de espacios, tabulaciones o fines de línea.<p>
+<dl class="note" compact><dt><b>Nota:</b></dt><dd>La función <a class="el" href="sp__coord_8c.html#65d8ffec5eb8263159ca9e6310c6e762" title="Escribe en fp la matriz A en un formato entendible por load_coord().">save_coord()</a> genera el formato esperado por esta función. </dd></dl>
+
+<p>Definición en la línea <a class="el" href="sp__coord_8c-source.html#l00084">84</a> del archivo <a class="el" href="sp__coord_8c-source.html">sp_coord.c</a>.</p>
+
+<p>Hace referencia a <a class="el" href="utils_8h-source.html#l00016">BAL_ERROR</a>, <a class="el" href="sp__coord_8h-source.html#l00026">sp_coord::cx</a>, <a class="el" href="sp__coord_8c-source.html#l00206">free_coord()</a>, <a class="el" href="sp__coord_8h-source.html#l00023">sp_coord::ncol</a>, <a class="el" href="sp__coord_8h-source.html#l00024">sp_coord::nnz</a>, <a class="el" href="sp__coord_8h-source.html#l00022">sp_coord::nrow</a>, <a class="el" href="sp__coord_8h-source.html#l00025">sp_coord::rx</a>, y <a class="el" href="sp__coord_8h-source.html#l00027">sp_coord::val</a>.</p>
+
+<p>Referenciado por <a class="el" href="bal_8c-source.html#l00152">bal_load_coord()</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00085"></a>00085 {
+<a name="l00086"></a>00086     <span class="keywordtype">int</span> x, i;
+<a name="l00087"></a>00087     <span class="keywordtype">float</span> y;
+<a name="l00088"></a>00088     <a class="code" href="structsp__coord.html" title="Estructura de matriz dispersa simple por coordenadas.">sp_coord</a> *m;
+<a name="l00089"></a>00089 
+<a name="l00090"></a>00090     m = (<a class="code" href="structsp__coord.html" title="Estructura de matriz dispersa simple por coordenadas.">sp_coord</a>*)malloc(<span class="keyword">sizeof</span>(<a class="code" href="structsp__coord.html" title="Estructura de matriz dispersa simple por coordenadas.">sp_coord</a>));
+<a name="l00091"></a>00091 
+<a name="l00092"></a>00092     <span class="keywordflow">if</span> (fscanf(fp, <span class="stringliteral">" %d"</span>, &amp;x) != 1) {
+<a name="l00093"></a>00093         <a class="code" href="utils_8h.html#f9a64ef5874a8560a9067ac3191cced4" title="Función para reportar errores detectados por código de BAL.">BAL_ERROR</a>(<span class="stringliteral">"No se pudo leer la cantidad de filas"</span>);
+<a name="l00094"></a>00094         free(m);
+<a name="l00095"></a>00095         <span class="keywordflow">return</span> NULL;
+<a name="l00096"></a>00096     }
+<a name="l00097"></a>00097     m-&gt;<a class="code" href="structsp__coord.html#adf22f93c8e3ce7303018ba9a01ea092" title="Cantidad de filas.">nrow</a> = x;
+<a name="l00098"></a>00098 
+<a name="l00099"></a>00099     <span class="keywordflow">if</span> (fscanf(fp, <span class="stringliteral">" %d"</span>, &amp;x) != 1) {
+<a name="l00100"></a>00100         <a class="code" href="utils_8h.html#f9a64ef5874a8560a9067ac3191cced4" title="Función para reportar errores detectados por código de BAL.">BAL_ERROR</a>(<span class="stringliteral">"No se pudo leer la cantidad de columnas"</span>);
+<a name="l00101"></a>00101         free(m);
+<a name="l00102"></a>00102         <span class="keywordflow">return</span> NULL;
+<a name="l00103"></a>00103     }
+<a name="l00104"></a>00104     m-&gt;<a class="code" href="structsp__coord.html#b962ad3a8f62df6906409d1392611c63" title="Cantidad de columnas.">ncol</a> = x;
+<a name="l00105"></a>00105 
+<a name="l00106"></a>00106     <span class="keywordflow">if</span> (fscanf(fp, <span class="stringliteral">" %d"</span>, &amp;x) != 1) {
+<a name="l00107"></a>00107         <a class="code" href="utils_8h.html#f9a64ef5874a8560a9067ac3191cced4" title="Función para reportar errores detectados por código de BAL.">BAL_ERROR</a>(<span class="stringliteral">"No se pudo leer la cantidad de elementos no cero"</span>);
+<a name="l00108"></a>00108         free(m);
+<a name="l00109"></a>00109         <span class="keywordflow">return</span> NULL;
+<a name="l00110"></a>00110     }
+<a name="l00111"></a>00111     m-&gt;<a class="code" href="structsp__coord.html#f36cd76459da9943ba491ee4a3b1f467" title="Cantidad de elementos no cero.">nnz</a> = x;
+<a name="l00112"></a>00112 
+<a name="l00113"></a>00113     m-&gt;<a class="code" href="structsp__coord.html#a50e5d65cdb79f9a0f2b7d7505ce7c67" title="Arreglo de indices de fila.">rx</a> = (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>*)malloc(<span class="keyword">sizeof</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>) * x);
+<a name="l00114"></a>00114     m-&gt;<a class="code" href="structsp__coord.html#cdb4f5d3b6a4a24dfaf7aa94894d3c52" title="Arreglo de indices de columna.">cx</a> = (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>*)malloc(<span class="keyword">sizeof</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>) * x);
+<a name="l00115"></a>00115     m-&gt;<a class="code" href="structsp__coord.html#bf936aab79fa2aefba9c7d42e2ee401c" title="Arreglos de valores.">val</a> = (<span class="keywordtype">double</span>*)malloc(<span class="keyword">sizeof</span>(<span class="keywordtype">double</span>) * x);
+<a name="l00116"></a>00116 
+<a name="l00117"></a>00117     <span class="comment">/* Lee los índices de fila */</span>
+<a name="l00118"></a>00118     <span class="keywordflow">for</span> (i=0; i &lt; m-&gt;<a class="code" href="structsp__coord.html#f36cd76459da9943ba491ee4a3b1f467" title="Cantidad de elementos no cero.">nnz</a>; ++i) {
+<a name="l00119"></a>00119         <span class="keywordflow">if</span> (fscanf(fp, <span class="stringliteral">" %d"</span>, &amp;x) != 1) {
+<a name="l00120"></a>00120             <a class="code" href="utils_8h.html#f9a64ef5874a8560a9067ac3191cced4" title="Función para reportar errores detectados por código de BAL.">BAL_ERROR</a>(<span class="stringliteral">"No se pudo leer uno de los índices de fila"</span>);
+<a name="l00121"></a>00121             <a class="code" href="sp__coord_8c.html#33dd472b98444c5d08c9099556226816" title="Borra toda la memoria reservada por la matriz A.">free_coord</a>(m);
+<a name="l00122"></a>00122             <span class="keywordflow">return</span> NULL;
+<a name="l00123"></a>00123         }
+<a name="l00124"></a>00124         m-&gt;<a class="code" href="structsp__coord.html#a50e5d65cdb79f9a0f2b7d7505ce7c67" title="Arreglo de indices de fila.">rx</a>[i] = (<span class="keywordtype">unsigned</span> int)x;
+<a name="l00125"></a>00125     }
+<a name="l00126"></a>00126 
+<a name="l00127"></a>00127     <span class="comment">/* Lee los índices de columna */</span>
+<a name="l00128"></a>00128     <span class="keywordflow">for</span> (i=0; i &lt; m-&gt;<a class="code" href="structsp__coord.html#f36cd76459da9943ba491ee4a3b1f467" title="Cantidad de elementos no cero.">nnz</a>; ++i) {
+<a name="l00129"></a>00129         <span class="keywordflow">if</span> (fscanf(fp, <span class="stringliteral">" %d"</span>, &amp;x) != 1) {
+<a name="l00130"></a>00130             <a class="code" href="utils_8h.html#f9a64ef5874a8560a9067ac3191cced4" title="Función para reportar errores detectados por código de BAL.">BAL_ERROR</a>(<span class="stringliteral">"No se pudo leer uno de los índices de columna"</span>);
+<a name="l00131"></a>00131             <a class="code" href="sp__coord_8c.html#33dd472b98444c5d08c9099556226816" title="Borra toda la memoria reservada por la matriz A.">free_coord</a>(m);
+<a name="l00132"></a>00132             <span class="keywordflow">return</span> NULL;
+<a name="l00133"></a>00133         }
+<a name="l00134"></a>00134         m-&gt;<a class="code" href="structsp__coord.html#cdb4f5d3b6a4a24dfaf7aa94894d3c52" title="Arreglo de indices de columna.">cx</a>[i] = (<span class="keywordtype">unsigned</span> int)x;
+<a name="l00135"></a>00135     }
+<a name="l00136"></a>00136 
+<a name="l00137"></a>00137     <span class="comment">/* Lee las entradas de la matriz */</span>
+<a name="l00138"></a>00138     <span class="keywordflow">for</span> (i=0; i &lt; m-&gt;<a class="code" href="structsp__coord.html#f36cd76459da9943ba491ee4a3b1f467" title="Cantidad de elementos no cero.">nnz</a>; ++i) {
+<a name="l00139"></a>00139         <span class="keywordflow">if</span> (fscanf(fp, <span class="stringliteral">" %f"</span>, &amp;y) != 1) {
+<a name="l00140"></a>00140             <a class="code" href="utils_8h.html#f9a64ef5874a8560a9067ac3191cced4" title="Función para reportar errores detectados por código de BAL.">BAL_ERROR</a>(<span class="stringliteral">"No se pudo leer una de las entradas de la matriz"</span>);
+<a name="l00141"></a>00141             <a class="code" href="sp__coord_8c.html#33dd472b98444c5d08c9099556226816" title="Borra toda la memoria reservada por la matriz A.">free_coord</a>(m);
+<a name="l00142"></a>00142             <span class="keywordflow">return</span> NULL;
+<a name="l00143"></a>00143         }
+<a name="l00144"></a>00144         m-&gt;<a class="code" href="structsp__coord.html#bf936aab79fa2aefba9c7d42e2ee401c" title="Arreglos de valores.">val</a>[i] = (double)y;
+<a name="l00145"></a>00145     }
+<a name="l00146"></a>00146 
+<a name="l00147"></a>00147     <span class="keywordflow">return</span> m;
+<a name="l00148"></a>00148 }
+</pre></div>
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="39456c57f92a0782a466d9bbe39e20cd"></a><!-- doxytag: member="sp_coord.h::mat2coord" ref="39456c57f92a0782a466d9bbe39e20cd" args="(int n, int m, double **mat)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structsp__coord.html">sp_coord</a>* mat2coord           </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double **&nbsp;</td>
+          <td class="paramname"> <em>mat</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Genera la matriz dispersa equivalente a la matriz completa mat nxm. 
+<p>
+<dl compact><dt><b>Parámetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>n</em>&nbsp;</td><td>Cantidad total de filas en mat </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>m</em>&nbsp;</td><td>Cantidad total de columnas en mat </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>mat</em>&nbsp;</td><td>Matriz completa en el formato clásico de C. </td></tr>
+  </table>
+</dl>
+
+<p>Definición en la línea <a class="el" href="sp__coord_8c-source.html#l00019">19</a> del archivo <a class="el" href="sp__coord_8c-source.html">sp_coord.c</a>.</p>
+
+<p>Hace referencia a <a class="el" href="sp__coord_8h-source.html#l00026">sp_coord::cx</a>, <a class="el" href="sp__coord_8h-source.html#l00023">sp_coord::ncol</a>, <a class="el" href="sp__coord_8h-source.html#l00024">sp_coord::nnz</a>, <a class="el" href="sp__coord_8h-source.html#l00022">sp_coord::nrow</a>, <a class="el" href="sp__coord_8h-source.html#l00025">sp_coord::rx</a>, y <a class="el" href="sp__coord_8h-source.html#l00027">sp_coord::val</a>.</p>
+
+<p>Referenciado por <a class="el" href="bal_8c-source.html#l00072">bal_mat2coord()</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00020"></a>00020 {
+<a name="l00021"></a>00021     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i, j, count;
+<a name="l00022"></a>00022     <a class="code" href="structsp__coord.html" title="Estructura de matriz dispersa simple por coordenadas.">sp_coord</a> *sp;
+<a name="l00023"></a>00023 
+<a name="l00024"></a>00024     count = 0;
+<a name="l00025"></a>00025     <span class="keywordflow">for</span>(i=0; i &lt; n; ++i) {
+<a name="l00026"></a>00026         <span class="keywordflow">for</span>(j=0; j &lt; m; ++j) {
+<a name="l00027"></a>00027             <span class="keywordflow">if</span> (mat[i][j] != 0)
+<a name="l00028"></a>00028                 ++count;
+<a name="l00029"></a>00029         }
+<a name="l00030"></a>00030     }
+<a name="l00031"></a>00031 
+<a name="l00032"></a>00032     sp = (<a class="code" href="structsp__coord.html" title="Estructura de matriz dispersa simple por coordenadas.">sp_coord</a>*)malloc(<span class="keyword">sizeof</span>(<a class="code" href="structsp__coord.html" title="Estructura de matriz dispersa simple por coordenadas.">sp_coord</a>));
+<a name="l00033"></a>00033     sp-&gt;<a class="code" href="structsp__coord.html#adf22f93c8e3ce7303018ba9a01ea092" title="Cantidad de filas.">nrow</a> = n;
+<a name="l00034"></a>00034     sp-&gt;<a class="code" href="structsp__coord.html#b962ad3a8f62df6906409d1392611c63" title="Cantidad de columnas.">ncol</a> = m;
+<a name="l00035"></a>00035     sp-&gt;<a class="code" href="structsp__coord.html#f36cd76459da9943ba491ee4a3b1f467" title="Cantidad de elementos no cero.">nnz</a> = count;
+<a name="l00036"></a>00036     sp-&gt;<a class="code" href="structsp__coord.html#a50e5d65cdb79f9a0f2b7d7505ce7c67" title="Arreglo de indices de fila.">rx</a> = NULL;
+<a name="l00037"></a>00037     sp-&gt;<a class="code" href="structsp__coord.html#cdb4f5d3b6a4a24dfaf7aa94894d3c52" title="Arreglo de indices de columna.">cx</a> = NULL;
+<a name="l00038"></a>00038     sp-&gt;<a class="code" href="structsp__coord.html#bf936aab79fa2aefba9c7d42e2ee401c" title="Arreglos de valores.">val</a> = NULL;
+<a name="l00039"></a>00039 
+<a name="l00040"></a>00040     <span class="keywordflow">if</span> (count &gt; 0) {
+<a name="l00041"></a>00041         sp-&gt;<a class="code" href="structsp__coord.html#a50e5d65cdb79f9a0f2b7d7505ce7c67" title="Arreglo de indices de fila.">rx</a> = (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>*)malloc(<span class="keyword">sizeof</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>) * count);
+<a name="l00042"></a>00042         sp-&gt;<a class="code" href="structsp__coord.html#cdb4f5d3b6a4a24dfaf7aa94894d3c52" title="Arreglo de indices de columna.">cx</a> = (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>*)malloc(<span class="keyword">sizeof</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>) * count);
+<a name="l00043"></a>00043         sp-&gt;<a class="code" href="structsp__coord.html#bf936aab79fa2aefba9c7d42e2ee401c" title="Arreglos de valores.">val</a> = (<span class="keywordtype">double</span>*)malloc(<span class="keyword">sizeof</span>(<span class="keywordtype">double</span>) * count);
+<a name="l00044"></a>00044 
+<a name="l00045"></a>00045         count = 0;
+<a name="l00046"></a>00046         <span class="keywordflow">for</span>(i=0; i &lt; n; ++i) {
+<a name="l00047"></a>00047             <span class="keywordflow">for</span>(j=0; j &lt; m; ++j) {
+<a name="l00048"></a>00048                 <span class="keywordflow">if</span> (mat[i][j] != 0) {
+<a name="l00049"></a>00049                     sp-&gt;<a class="code" href="structsp__coord.html#a50e5d65cdb79f9a0f2b7d7505ce7c67" title="Arreglo de indices de fila.">rx</a>[count] = i;
+<a name="l00050"></a>00050                     sp-&gt;<a class="code" href="structsp__coord.html#cdb4f5d3b6a4a24dfaf7aa94894d3c52" title="Arreglo de indices de columna.">cx</a>[count] = j;
+<a name="l00051"></a>00051                     sp-&gt;<a class="code" href="structsp__coord.html#bf936aab79fa2aefba9c7d42e2ee401c" title="Arreglos de valores.">val</a>[count] = mat[i][j];
+<a name="l00052"></a>00052                     ++count;
+<a name="l00053"></a>00053                 }
+<a name="l00054"></a>00054             }
+<a name="l00055"></a>00055         }
+<a name="l00056"></a>00056     }
+<a name="l00057"></a>00057 
+<a name="l00058"></a>00058     <span class="keywordflow">return</span> sp;
+<a name="l00059"></a>00059 }
+</pre></div>
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="65d8ffec5eb8263159ca9e6310c6e762"></a><!-- doxytag: member="sp_coord.h::save_coord" ref="65d8ffec5eb8263159ca9e6310c6e762" args="(FILE *fp, sp_coord *A)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void save_coord           </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&nbsp;</td>
+          <td class="paramname"> <em>fp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structsp__coord.html">sp_coord</a> *&nbsp;</td>
+          <td class="paramname"> <em>A</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Escribe en <code>fp</code> la matriz <code>A</code> en un formato entendible por <a class="el" href="sp__coord_8c.html#d6a1042d41ff43da1f26396f5803daac" title="Lee una matriz en formato simple por coordenadas desde archivo.">load_coord()</a>. 
+<p>
+Esta función es útil para respaldar matrices en formato simple por coordenadas. Una matriz guardada mediante esta función puede ser cargada nuevamente mediante <a class="el" href="sp__coord_8c.html#d6a1042d41ff43da1f26396f5803daac" title="Lee una matriz en formato simple por coordenadas desde archivo.">load_coord()</a>. 
+<p>Definición en la línea <a class="el" href="sp__coord_8c-source.html#l00156">156</a> del archivo <a class="el" href="sp__coord_8c-source.html">sp_coord.c</a>.</p>
+
+<p>Hace referencia a <a class="el" href="sp__coord_8h-source.html#l00026">sp_coord::cx</a>, <a class="el" href="sp__coord_8h-source.html#l00023">sp_coord::ncol</a>, <a class="el" href="sp__coord_8h-source.html#l00024">sp_coord::nnz</a>, <a class="el" href="sp__coord_8h-source.html#l00022">sp_coord::nrow</a>, <a class="el" href="sp__coord_8h-source.html#l00025">sp_coord::rx</a>, y <a class="el" href="sp__coord_8h-source.html#l00027">sp_coord::val</a>.</p>
+
+<p>Referenciado por <a class="el" href="bal_8c-source.html#l00162">bal_save_coord()</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00157"></a>00157 {
+<a name="l00158"></a>00158     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i;
+<a name="l00159"></a>00159 
+<a name="l00160"></a>00160     fprintf(fp, <span class="stringliteral">"%d\n"</span>, A-&gt;<a class="code" href="structsp__coord.html#adf22f93c8e3ce7303018ba9a01ea092" title="Cantidad de filas.">nrow</a>);
+<a name="l00161"></a>00161     fprintf(fp, <span class="stringliteral">"%d\n"</span>, A-&gt;<a class="code" href="structsp__coord.html#b962ad3a8f62df6906409d1392611c63" title="Cantidad de columnas.">ncol</a>);
+<a name="l00162"></a>00162     fprintf(fp, <span class="stringliteral">"%d\n"</span>, A-&gt;<a class="code" href="structsp__coord.html#f36cd76459da9943ba491ee4a3b1f467" title="Cantidad de elementos no cero.">nnz</a>);
+<a name="l00163"></a>00163 
+<a name="l00164"></a>00164     <span class="keywordflow">for</span> (i=0; i &lt; A-&gt;<a class="code" href="structsp__coord.html#f36cd76459da9943ba491ee4a3b1f467" title="Cantidad de elementos no cero.">nnz</a>; ++i)
+<a name="l00165"></a>00165         fprintf(fp, <span class="stringliteral">" %d"</span>, A-&gt;<a class="code" href="structsp__coord.html#a50e5d65cdb79f9a0f2b7d7505ce7c67" title="Arreglo de indices de fila.">rx</a>[i]);
+<a name="l00166"></a>00166     fprintf(fp, <span class="stringliteral">"\n"</span>);
+<a name="l00167"></a>00167 
+<a name="l00168"></a>00168     <span class="keywordflow">for</span> (i=0; i &lt; A-&gt;<a class="code" href="structsp__coord.html#f36cd76459da9943ba491ee4a3b1f467" title="Cantidad de elementos no cero.">nnz</a>; ++i)
+<a name="l00169"></a>00169         fprintf(fp, <span class="stringliteral">" %d"</span>, A-&gt;<a class="code" href="structsp__coord.html#cdb4f5d3b6a4a24dfaf7aa94894d3c52" title="Arreglo de indices de columna.">cx</a>[i]);
+<a name="l00170"></a>00170     fprintf(fp, <span class="stringliteral">"\n"</span>);
+<a name="l00171"></a>00171 
+<a name="l00172"></a>00172     <span class="keywordflow">for</span> (i=0; i &lt; A-&gt;<a class="code" href="structsp__coord.html#f36cd76459da9943ba491ee4a3b1f467" title="Cantidad de elementos no cero.">nnz</a>; ++i)
+<a name="l00173"></a>00173         fprintf(fp, <span class="stringliteral">" %g"</span>, A-&gt;<a class="code" href="structsp__coord.html#bf936aab79fa2aefba9c7d42e2ee401c" title="Arreglos de valores.">val</a>[i]);
+<a name="l00174"></a>00174     fprintf(fp, <span class="stringliteral">"\n"</span>);
+<a name="l00175"></a>00175 }
+</pre></div>
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="ff646304bb38349c4620069c73a35760"></a><!-- doxytag: member="sp_coord.h::sp_imprimir_coord" ref="ff646304bb38349c4620069c73a35760" args="(FILE *fp, sp_coord *mat)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void sp_imprimir_coord           </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&nbsp;</td>
+          <td class="paramname"> <em>fp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structsp__coord.html">sp_coord</a> *&nbsp;</td>
+          <td class="paramname"> <em>mat</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Imprime la matriz guardada en formato simple por coordenadas en fp. 
+<p>
+<dl compact><dt><b>Parámetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>fp</em>&nbsp;</td><td>Archivo en el cual se imprimirá la matriz </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>mat</em>&nbsp;</td><td>Matriz a imprimir en formato simple por coordenadas </td></tr>
+  </table>
+</dl>
+
+<p>Definición en la línea <a class="el" href="sp__coord_8c-source.html#l00183">183</a> del archivo <a class="el" href="sp__coord_8c-source.html">sp_coord.c</a>.</p>
+
+<p>Hace referencia a <a class="el" href="sp__coord_8h-source.html#l00026">sp_coord::cx</a>, <a class="el" href="sp__coord_8h-source.html#l00023">sp_coord::ncol</a>, <a class="el" href="sp__coord_8h-source.html#l00024">sp_coord::nnz</a>, <a class="el" href="sp__coord_8h-source.html#l00022">sp_coord::nrow</a>, <a class="el" href="sp__coord_8h-source.html#l00025">sp_coord::rx</a>, y <a class="el" href="sp__coord_8h-source.html#l00027">sp_coord::val</a>.</p>
+
+<p>Referenciado por <a class="el" href="bal_8c-source.html#l00102">bal_imprimir_coord()</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00184"></a>00184 {
+<a name="l00185"></a>00185     <span class="keywordtype">int</span> i;
+<a name="l00186"></a>00186 
+<a name="l00187"></a>00187     <span class="keywordflow">if</span> (mat == NULL) {
+<a name="l00188"></a>00188         fprintf(fp, <span class="stringliteral">"Matriz nula\n"</span>);
+<a name="l00189"></a>00189         <span class="keywordflow">return</span>;
+<a name="l00190"></a>00190     }
+<a name="l00191"></a>00191 
+<a name="l00192"></a>00192     fprintf(fp, <span class="stringliteral">"Cantidad de filas: %d\n"</span>, mat-&gt;<a class="code" href="structsp__coord.html#adf22f93c8e3ce7303018ba9a01ea092" title="Cantidad de filas.">nrow</a>);
+<a name="l00193"></a>00193     fprintf(fp, <span class="stringliteral">"Cantidad de columnas: %d\n"</span>, mat-&gt;<a class="code" href="structsp__coord.html#b962ad3a8f62df6906409d1392611c63" title="Cantidad de columnas.">ncol</a>);
+<a name="l00194"></a>00194     fprintf(fp, <span class="stringliteral">"Cantidad de elementos no cero: %d\n"</span>, mat-&gt;<a class="code" href="structsp__coord.html#f36cd76459da9943ba491ee4a3b1f467" title="Cantidad de elementos no cero.">nnz</a>);
+<a name="l00195"></a>00195 
+<a name="l00196"></a>00196     <span class="keywordflow">for</span>(i=0; i &lt; mat-&gt;<a class="code" href="structsp__coord.html#f36cd76459da9943ba491ee4a3b1f467" title="Cantidad de elementos no cero.">nnz</a>; ++i) {
+<a name="l00197"></a>00197         fprintf(fp, <span class="stringliteral">"(%d) [%d,%d] = %g\n"</span>, i, mat-&gt;<a class="code" href="structsp__coord.html#a50e5d65cdb79f9a0f2b7d7505ce7c67" title="Arreglo de indices de fila.">rx</a>[i], mat-&gt;<a class="code" href="structsp__coord.html#cdb4f5d3b6a4a24dfaf7aa94894d3c52" title="Arreglo de indices de columna.">cx</a>[i], mat-&gt;<a class="code" href="structsp__coord.html#bf936aab79fa2aefba9c7d42e2ee401c" title="Arreglos de valores.">val</a>[i]);
+<a name="l00198"></a>00198     }
+<a name="l00199"></a>00199 }
+</pre></div>
+<p>
+
+</div>
+</div><p>
+</div>
+<hr size="1">
+<address style="text-align: right;">
+<small>BAL&nbsp;1.0.0<br>Generado el Wed Aug 27 19:54:18 2008.</small>
+</address>
+</body>
+</html>

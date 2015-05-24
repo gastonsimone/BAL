@@ -1,0 +1,219 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>BAL: Referencia del Archivo utils.c</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Generado por Doxygen 1.5.5 -->
+<script type="text/javascript">
+<!--
+function changeDisplayState (e){
+  var num=this.id.replace(/[^[0-9]/g,'');
+  var button=this.firstChild;
+  var sectionDiv=document.getElementById('dynsection'+num);
+  if (sectionDiv.style.display=='none'||sectionDiv.style.display==''){
+    sectionDiv.style.display='block';
+    button.src='open.gif';
+  }else{
+    sectionDiv.style.display='none';
+    button.src='closed.gif';
+  }
+}
+function initDynSections(){
+  var divs=document.getElementsByTagName('div');
+  var sectionCounter=1;
+  for(var i=0;i<divs.length-1;i++){
+    if(divs[i].className=='dynheader'&&divs[i+1].className=='dynsection'){
+      var header=divs[i];
+      var section=divs[i+1];
+      var button=header.firstChild;
+      if (button!='IMG'){
+        divs[i].insertBefore(document.createTextNode(' '),divs[i].firstChild);
+        button=document.createElement('img');
+        divs[i].insertBefore(button,divs[i].firstChild);
+      }
+      header.style.cursor='pointer';
+      header.onclick=changeDisplayState;
+      header.id='dynheader'+sectionCounter;
+      button.src='closed.gif';
+      section.id='dynsection'+sectionCounter;
+      section.style.display='none';
+      section.style.marginLeft='14px';
+      sectionCounter++;
+    }
+  }
+}
+window.onload = initDynSections;
+-->
+</script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Página&nbsp;principal</span></a></li>
+      <li><a href="pages.html"><span>Páginas&nbsp;relacionadas</span></a></li>
+      <li><a href="annotated.html"><span>Estructuras&nbsp;de&nbsp;Datos</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+      <li><a href="dirs.html"><span>Directorios</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>Referencia del Archivo utils.c</h1>Implementación de utilidades generales. <a href="#_details">Más...</a>
+<p>
+<code>#include &quot;<a class="el" href="utils_8h-source.html">utils.h</a>&quot;</code><br>
+
+<p>
+<a href="utils_8c-source.html">Ir al código fuente de este archivo.</a><table border="0" cellpadding="0" cellspacing="0">
+<tr><td></td></tr>
+<tr><td colspan="2"><br><h2>Funciones</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8c.html#68d639af59cdb0c547839cb44aa06854">binary_search</a> (int *list, unsigned int size, int key)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Busca un elemento en el array mediante bipartición.  <a href="#68d639af59cdb0c547839cb44aa06854"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8c.html#e92b7a18bc3552887809bbac1b732152">insert_sorted</a> (int *list, int n, int key)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Inserta un elemento en un arreglo ordenado.  <a href="#e92b7a18bc3552887809bbac1b732152"></a><br></td></tr>
+</table>
+<hr><a name="_details"></a><h2>Descripción detallada</h2>
+Implementación de utilidades generales. 
+<p>
+
+<p>Definición en el archivo <a class="el" href="utils_8c-source.html">utils.c</a>.</p>
+<hr><h2>Documentación de las funciones</h2>
+<a class="anchor" name="68d639af59cdb0c547839cb44aa06854"></a><!-- doxytag: member="utils.c::binary_search" ref="68d639af59cdb0c547839cb44aa06854" args="(int *list, unsigned int size, int key)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int binary_search           </td>
+          <td>(</td>
+          <td class="paramtype">int *&nbsp;</td>
+          <td class="paramname"> <em>list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&nbsp;</td>
+          <td class="paramname"> <em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>key</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Busca un elemento en el array mediante bipartición. 
+<p>
+<dl compact><dt><b>Parámetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>list</em>&nbsp;</td><td>Arreglo de elementos </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>size</em>&nbsp;</td><td>Tamaño de la lista </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>key</em>&nbsp;</td><td>Elemento a buscar </td></tr>
+  </table>
+</dl>
+<dl class="return" compact><dt><b>Devuelve:</b></dt><dd>El índice en donde se ubica el elemento en el arreglo, -1 si no fue encontrado</dd></dl>
+Pos más información ver <a href="http://es.wikipedia.org/wiki/B%C3%BAsqueda_dicot%C3%B3mica">http://es.wikipedia.org/wiki/B%C3%BAsqueda_dicot%C3%B3mica</a> 
+<p>Definición en la línea <a class="el" href="utils_8c-source.html#l00018">18</a> del archivo <a class="el" href="utils_8c-source.html">utils.c</a>.</p>
+
+<p>Referenciado por <a class="el" href="sp__cds_8c-source.html#l00019">coord2cds()</a>, <a class="el" href="oper_8c-source.html#l00205">mult_mat_cds()</a>, y <a class="el" href="sp__cds_8c-source.html#l00104">save_cds()</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00019"></a>00019 {
+<a name="l00020"></a>00020     <span class="keywordtype">int</span> izq, der, medio;
+<a name="l00021"></a>00021 
+<a name="l00022"></a>00022     izq = 0;
+<a name="l00023"></a>00023     der = size - 1;
+<a name="l00024"></a>00024 
+<a name="l00025"></a>00025     <span class="keywordflow">while</span> (izq &lt;= der)
+<a name="l00026"></a>00026     {
+<a name="l00027"></a>00027         medio = (int)((izq + der) / 2);
+<a name="l00028"></a>00028         <span class="keywordflow">if</span> (key == list[medio])
+<a name="l00029"></a>00029             <span class="keywordflow">return</span> medio;
+<a name="l00030"></a>00030         <span class="keywordflow">else</span> <span class="keywordflow">if</span> (key &gt; list[medio])
+<a name="l00031"></a>00031             izq = medio + 1;
+<a name="l00032"></a>00032         <span class="keywordflow">else</span>
+<a name="l00033"></a>00033             der = medio - 1;
+<a name="l00034"></a>00034     }
+<a name="l00035"></a>00035 
+<a name="l00036"></a>00036     <span class="keywordflow">return</span> -1;
+<a name="l00037"></a>00037 }
+</pre></div>
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="e92b7a18bc3552887809bbac1b732152"></a><!-- doxytag: member="utils.c::insert_sorted" ref="e92b7a18bc3552887809bbac1b732152" args="(int *list, int n, int key)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void insert_sorted           </td>
+          <td>(</td>
+          <td class="paramtype">int *&nbsp;</td>
+          <td class="paramname"> <em>list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>key</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Inserta un elemento en un arreglo ordenado. 
+<p>
+<dl compact><dt><b>Parámetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>list</em>&nbsp;</td><td>Arreglo ordenado </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>n</em>&nbsp;</td><td>Posición del último elemento del arreglo </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>key</em>&nbsp;</td><td>elemento a insertar</td></tr>
+  </table>
+</dl>
+Inserta un elemento en un array ordenado preservando el orden. Esta función corresponde al loop interno de un <em>insertion sort</em>. Por más información ver <a href="http://es.wikipedia.org/wiki/Ordenamiento_por_inserci%C3%B3n">http://es.wikipedia.org/wiki/Ordenamiento_por_inserci%C3%B3n</a><p>
+<dl class="warning" compact><dt><b>Atención:</b></dt><dd>Esta función no solicita memoria. Se asume que la cantidad de memoria reservada es suficiente como para albergar al nuevo elemento. </dd></dl>
+
+<p>Definición en la línea <a class="el" href="utils_8c-source.html#l00055">55</a> del archivo <a class="el" href="utils_8c-source.html">utils.c</a>.</p>
+
+<p>Referenciado por <a class="el" href="sp__cds_8c-source.html#l00019">coord2cds()</a>, y <a class="el" href="oper_8c-source.html#l00205">mult_mat_cds()</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00056"></a>00056 {
+<a name="l00057"></a>00057     <span class="keywordtype">int</span> pos = n;
+<a name="l00058"></a>00058 
+<a name="l00059"></a>00059     <span class="keywordflow">while</span> (pos &gt;= 0 &amp;&amp; list[pos] &gt; key) {
+<a name="l00060"></a>00060         list[pos+1] = list[pos];
+<a name="l00061"></a>00061         --pos;
+<a name="l00062"></a>00062     }
+<a name="l00063"></a>00063     list[pos+1] = key;
+<a name="l00064"></a>00064 }
+</pre></div>
+<p>
+
+</div>
+</div><p>
+</div>
+<hr size="1">
+<address style="text-align: right;">
+<small>BAL&nbsp;1.0.0<br>Generado el Wed Aug 27 19:54:18 2008.</small>
+</address>
+</body>
+</html>

@@ -1,0 +1,116 @@
+\hypertarget{index_introsec}{}\subsection{Introducción}\label{index_introsec}
+BAL es una biblioteca que contiene un conjunto de utilidades e implementaciones de algoritmos esenciales para el estudio del álgebra lineal numérica. Está centrada en técnicas utilizadas para matrices dispersas, pero no necesariamente se limita a este campo.
+
+El objetivo principal de esta biblioteca es didáctico. Pretende servir como ejemplo de implementación acompañada de documentación de estructuras de datos y algoritmos para matrices dispersas.
+
+Es de destacar que esta documentación es totalmente generada a partir de los archivos fuentes de BAL (incluso esto que estás leyendo).\hypertarget{index_historysec}{}\subsection{Historia de BAL}\label{index_historysec}
+\begin{itemize}
+\item {\bf Versión:} 1.0.0 \item {\bf Cuándo:} Curso ALN 2008 \item {\bf Quién:} Gastón Simone (\href{mailto:gaston.simone@gmail.com}{\tt gaston.simone@gmail.com}) con la colaboración de Pablo Ezzatti (\href{mailto:pezzatti@fing.edu.uy}{\tt pezzatti@fing.edu.uy}) \item {\bf Descripción:} Implementación inicial \item {\bf Notas:} \hyperlink{notasver_notasver1_0_0}{Ver notas} \item {\bf Detalle:} \begin{itemize}
+\item Cargas de datos desde archivo \begin{itemize}
+\item Parser de definición de matrices en formato matlab leídas desde archivo (\hyperlink{bal_8c_5fa9afcb6f46fadec6d601f11592ebc9}{bal\_\-cargar\_\-matriz()}) \item Carga de matrices en formato simple por coordenadas desde archivo (\hyperlink{bal_8c_1e8a293081b94602060a2f757e92a8ce}{bal\_\-load\_\-coord()}) \end{itemize}
+\item Distintos formatos de matrices dispersas: \begin{itemize}
+\item Simple por coordenadas (\hyperlink{structsp__coord}{sp\_\-coord}) \item Empaquetado por columnas (\hyperlink{structsp__packcol}{sp\_\-packcol}) \item CDS o comprimido por diagonales (\hyperlink{structsp__cds}{sp\_\-cds}) \end{itemize}
+\item Funciones para imprimir estructuras de datos: \begin{itemize}
+\item Matriz completa (\hyperlink{bal_8c_001bc810dfe24d78c6ee465351471ca7}{bal\_\-imprimir\_\-matriz()}) \item Detalle para formato simple por coordenadas (\hyperlink{bal_8c_fb2e0eb90b54ac0b083d42f1d38d45ac}{bal\_\-imprimir\_\-coord()}) \item Detalle para formato empaquetado por columna (\hyperlink{bal_8c_5c7bdb5d92a964b7e4cc66d8058e6fed}{bal\_\-imprimir\_\-packcol()}) \item Detalle para formato CDS (\hyperlink{bal_8c_0098b5496a5f2131a34c197bbc9ba57a}{bal\_\-imprimir\_\-cds()}) \item De simple por coordenadas a formato texto específico (\hyperlink{bal_8c_abba0c987c1cd21f99ae3ef4a5fca7ac}{bal\_\-save\_\-coord()}) \item De empaquetado por columna a formato matlab (\hyperlink{bal_8c_23df03ad23589aefe5103d463d55ff8c}{bal\_\-save\_\-packcol()}, \hyperlink{bal_8c_5ae3c23f89da32858f1420e32d35ccdc}{bal\_\-save\_\-packcol\_\-symmetric()}) \item De CDS a formato matlab (\hyperlink{bal_8c_5928b3ea635bf59c0a99e5c835c06668}{bal\_\-save\_\-cds()}) \end{itemize}
+\item Conversiones entre formatos: \begin{itemize}
+\item De matriz completo a simple por coordenadas (\hyperlink{bal_8c_03258fb282226ce95701827d775bb011}{bal\_\-mat2coord()}) \item De simple por coordenadas a empaquetado por columnas (\hyperlink{bal_8c_6ced93fa5fb8f0a5103d8ee2e2bb58c2}{bal\_\-coord2packcol()}) \item De simple por coordenadas a empaquetado por columnas específico para matrices simétricas (\hyperlink{bal_8c_069fc47d55dc12786bae9f18382344e5}{bal\_\-coord2packcol\_\-symmetric()}) \item De simple por coordenadas a CDS (\hyperlink{bal_8c_26024ae0fd4f685b495f1e33a6e65da8}{bal\_\-coord2cds()}) \end{itemize}
+\item Funciones de soporte: \begin{itemize}
+\item Funciones de liberación de memoria reservada por estructuras de datos (\hyperlink{bal_8c_b3ce8c7df5d3d2a8eb9cd70534f628ed}{bal\_\-free\_\-coord()}, \hyperlink{bal_8c_ecd6ad512d46f1825e79eda4647eaf60}{bal\_\-free\_\-packcol()}, \hyperlink{bal_8c_7eae9c8721058a53a00d0c0dad2551f2}{bal\_\-free\_\-cds()}) \end{itemize}
+\item Operaciones básicas: \begin{itemize}
+\item Multiplicar una matriz empaquetada por columna por un vector (\hyperlink{bal_8c_413951b2a155feea5c67288a3ccb34bf}{bal\_\-mult\_\-vec\_\-packcol()}) \item Multiplicar una matriz simétrica empaquetada por columna por un vector (\hyperlink{bal_8c_dfee3769ca35f010759eddbf8e9cc476}{bal\_\-mult\_\-vec\_\-packcol\_\-symmetric()}) \item Multiplicar una matriz CDS por un vector (\hyperlink{bal_8c_73ce65d5fd284423c38517d6370f449e}{bal\_\-mult\_\-vec\_\-cds()}) \item Multiplicar dos matrices CDS (\hyperlink{bal_8c_1500ac2a006e9229a2a4fe810734367b}{bal\_\-mult\_\-mat\_\-cds()}) \item Permutar las columnas de una matriz empaquetada por columna (\hyperlink{bal_8c_cf73a00379402d81de059fe1af3c496a}{bal\_\-permutar\_\-packcol()}) \end{itemize}
+\item Factorización de Cholesky (\hyperlink{bal_8c_c27eba96470b3ac5a5019230bd380a1a}{bal\_\-cholesky\_\-solver()}) \begin{itemize}
+\item Funcionalidad para recorrer eficientemente por filas una matriz dispersa empaquetada por columnas (\hyperlink{bal_8c_27f481dd5d13dfab5b06bb95d5c5aa1b}{bal\_\-row\_\-traversal\_\-packcol()}) \item Funcionalidad para calcular el árbol de eliminación de una matriz empaquetada por columna (\hyperlink{bal_8c_e282c362416526cbcedf0c9c49f8a8d7}{bal\_\-elimination\_\-tree()}) \item Factorización simbólica para matrices simétricas empaquetadas por columna (\hyperlink{bal_8c_5423521d4378c7a23082256da6b7eba9}{bal\_\-symbolic\_\-factorization()}) \item Factorización numérica (algoritmo de Cholesky) para matrices simétricas empaquetadas por columna (\hyperlink{bal_8c_9bfee73c39b529b912b2f140e0ff1765}{bal\_\-numerical\_\-factorization()}) \item Resolución de sistemas con matrices triangulares empaquetadas por columna (\hyperlink{bal_8c_1bb603f980bf7cd3476b13a2f61e9a87}{bal\_\-cholesky\_\-Lsolver()}, \hyperlink{bal_8c_00c65a19e4490139c1abe23a72a19c04}{bal\_\-cholesky\_\-LTsolver()}) \end{itemize}
+\item Programas de prueba de todas las funcionalidades implementadas (ver la sección de \hyperlink{index_testsec}{Pruebas}) \end{itemize}
+\end{itemize}
+
+
+\begin{Desc}
+\item[\hyperlink{todo__todo000001}{Tareas Pendientes}]\end{Desc}
+A continuación se enumeran algunas de las características que por distintas razones no fueron implementadas en BAL 1.0.0, pero que destacamos como importantes. Algunas de las tareas ya se están abordando mientras que otras se preve atacarlas en un futuro cercano.
+
+Soporte para más estructuras de matrices dispersas.\par
+ Más conversiones entre estructuras de matrices dispersas.\par
+ Extender el parser para que cargue una matriz desde archivo directamente en un formato disperso.\par
+ Algoritmos de reordenamiento (ver \hyperlink{reordenamiento_8c}{reordenamiento.c}).\par
+ Más algoritmos de factorización simbólica.\par
+ Más algoritmos de factorización numérica (LU por ejemplo).\par
+ Métodos iterativos (Jacobi, Gauss-Seidel, Gradiente conjugado, etc).\par
+ Algoritmos de creación de precondicionadores (ILU por ejemplo).\par
+ Agregar salidas detalladas para cada uno de los algoritmos, en base a un parámetro, mediante el que se pueda controlar la información a mostrar. Por ejemplo: memoria utilizada, tiempos de ejecución, cantidad de operaciones.\par
+ Extender las funciones que corresponda (por ejemplo, \hyperlink{cholesky_8c_b61e2da86cddb63b2ef5d38b46a1d4ea}{cholesky\_\-solver()}) para que reciban un vector de parámetros, en el cual se indique la estrategia de ordenamiento, el método de factorización simbólica, etc.\par
+ Agregar soporte para paralelismo.\par
+ Agregar soporte para el uso de bibliotecas BLAS.\par
+ Agregar algoritmos que utilicen técnicas por bloques.\par
+ Rutinas de refinamiento iterativo.\par
+ Vectores y valores propios.\par
+ Escalado.\par
+ Agregar la posibilidad de compilar/instalar sin el parser (para sistemas que no cumplan con todas las dependencias necesarias).\par
+\hypertarget{index_howtosec}{}\subsection{Cómo usar BAL}\label{index_howtosec}
+En esta sección se describe información de utilidad para poder trabajar con BAL, ya sea extendiendo BAL o simplemente utilizándola.\hypertarget{index_reqsec}{}\subsubsection{Requisitos para compilar BAL}\label{index_reqsec}
+La biblioteca fue desarrollada y probada bajo la plataforma GNU/Linux (concretamente en Ubuntu 7.10). Sin embargo no hay razón para que BAL no funcione en otros sistemas, incluso con Windows y \href{http://es.wikipedia.org/wiki/Cygwin}{\tt Cygwin}.
+
+Todos los requisitos para ejecutar BAL deberían estar disponibles en las distribuciones más utilizadas de Linux (no quizás en la instalación por defecto, pero sí como paquetes fácilmente instalables), sin embargo se agregaron enlaces a la lista para que sea más fácil encontrar las dependencias en caso de ser necesario.
+
+BAL depende de los siguientes componentes para compilar correctamente: \begin{itemize}
+\item \href{http://es.wikipedia.org/wiki/GCC}{\tt GNU Compiler Collection (GCC)}. Concretamente el compilador de C (BAL fue probado con la versión 4.1.3). \item \href{http://www.gnu.org/software/make/}{\tt GNU Make} (BAL fue probado con la versión 3.81) \item \href{http://es.wikipedia.org/wiki/GLib}{\tt GLib} (BAL fue probado con la versión 2.0) \item \href{http://es.wikipedia.org/wiki/GNU_Bison}{\tt GNU Bison} (BAL fue probado con la versión 2.3) \item \href{http://en.wikipedia.org/wiki/Flex_lexical_analyser}{\tt Flex} (BAL fue probado con la versión 2.5.33) \end{itemize}
+
+
+Aunque no es estrictamente necesario, puede ser útil contar con los siguientes componentes adicionales: \begin{itemize}
+\item \href{http://es.wikipedia.org/wiki/Doxygen}{\tt Doxygen} (necesario para generar esta documentación, BAL fue probado con la versión 1.5.3) \item Una distribución del sistema \href{http://es.wikipedia.org/wiki/LaTeX}{\tt LaTeX} (necesario para generar la documentación, tanto en PDF como en HTML, BAL fue probado con \href{http://en.wikipedia.org/wiki/TeX_Live}{\tt TeX Live} 2007) \item \href{http://es.wikipedia.org/wiki/GNU_Debugger}{\tt GNU Debugger (gdb)} \item Alguna interfaz gráfica para gdb, como \href{http://es.wikipedia.org/wiki/Anjuta}{\tt Anjuta}, \href{http://sourceware.org/insight/}{\tt insight}, \href{http://es.wikipedia.org/wiki/Data_Display_Debugger}{\tt Data Display Debugger (ddd)} o \href{http://home.gna.org/nemiver/}{\tt Nemiver} \item Un generador de tablas de referencias al estilo \href{http://en.wikipedia.org/wiki/Ctags}{\tt CTags} (para el desarrollo de BAL se utilizó \href{http://ctags.sourceforge.net/}{\tt Exuberant CTags}) \end{itemize}
+\hypertarget{index_compilesec}{}\subsubsection{Cómo compilar e instalar BAL}\label{index_compilesec}
+BAL incluye un conjunto de {\tt makefiles} que automatizan el trabajo de compilación e instalación. A continuación se listan las distintas llamadas que se le pueden realizar al {\tt makefile} de BAL: \begin{itemize}
+\item {\tt make}: Este modo compila todo lo necesario para generar la biblioteca BAL. El resultado principal es el archivo {\tt libbal.a} \item {\tt make clean}: Borra todos los archivos intermedios generados, necesarios para construir BAL. \item {\tt make purge}: Igual que {\tt make clean}, pero también borra la biblioteca BAL generada. \item {\tt make tags}: Genera el archivo de etiquetas mediante una herramienta ctags. \item {\tt make doc}: Genera esta documentación a partir de los archivos fuente (se recomienda ejecutarlo dos veces). {\bf NOTA}: Se recomienda hacer un {\tt make clean} antes de generar la documentación. Si se genera la documentación con los fuentes generados para el parser, la misma contendrá una gran cantidad de referencia a código autogenerado (muy feo) y no propiamente documentado que hacen que la documentación no se vea bien. \item {\tt make cleandoc}: Borra la documentación generada. \item {\tt make install}: Instala BAL como una biblioteca más del sistema (para sistemas UNIX). Este comando debe ser ejecutado con permisos de administrador (root). \item {\tt make uninstall}: Deshace lo hecho con el comando {\tt make install}. También debe ser ejecutado como el usuario root. \end{itemize}
+
+
+Es importante aclarar que la compilación de BAL no produce ningún código directamente ejecutable. Solo produce un archivo ({\tt libbal.a}) ya compilado, pronto para ser enlazado ({\em linkeado\/}) con la aplicación que necesite utilizar las prestaciones de BAL. En la siguiente sección se da detalle de cómo utilizar BAL desde otros programas (ver \hyperlink{index_usesec}{Cómo usar BAL desde otro programa}).\hypertarget{index_installsec}{}\paragraph{Secuencia de instalación}\label{index_installsec}
+Si se tienen todas las dependencias necesarias y todo va bien, la siguiente secuencia de comandos compila, genera la documentación e instala BAL en el sistema:
+
+{\tt  make doc\par
+ make\par
+ sudo make install }
+
+El comando {\tt sudo} provoca que el comando a continuación se ejecute con permisos de root. Puede llegar a pedir una contraseña.\hypertarget{index_compilemodesec}{}\paragraph{Modos de compilación}\label{index_compilemodesec}
+Los archivos {\tt makefile} de BAL (el propio Makefile y los archivos $\ast$.mak) definen una variable llamada {\tt CFLAGS}, la cual indica algunos argumentos extra a utilizar a la hora de invocar al compilador de C. Los archivos contienen dos definiciones para esta variable, una específica para depuración de BAL y otra para generar código optimizado. Revise los archivos {\tt makefile} y utilice la definición que más se ajuste a sus necesidades.\hypertarget{index_usesec}{}\subsubsection{Cómo usar BAL desde otro programa}\label{index_usesec}
+En esta sección se muestra cómo escribir código que utilice las implementaciones de BAL y luego cómo compilarlo.\hypertarget{index_refusesec}{}\paragraph{Cómo referenciar a BAL desde código externo}\label{index_refusesec}
+Escribir código que utilice BAL es muy sencillo (la parte, un poco, más compleja es a la hora de compilar y es detalla en la siguiente sección). Simplemente se debe agregar la referencia a BAL
+
+{\tt  \#include $<$\hyperlink{bal_8h}{bal.h}$>$ }
+
+y luego utilizar las funciones descritas en este documento. Es importante recordar que el punto de entrada a BAL desde un programa externo es siempre y únicamente el archivo de cabecera {\tt \hyperlink{bal_8h}{bal.h}}. Toda la funcionalidad de BAL es expuesta mediante este archivo. Por lo tanto, es suficiente con incluir este archivo en el programa \char`\"{}cliente\char`\"{}.\hypertarget{index_compileusesec}{}\paragraph{Cómo compilar un programa que usa BAL}\label{index_compileusesec}
+La mejor forma de ver cómo utilizar BAL es viendo cómo se hizo un programa que la usa. Junto con BAL se distribuye un juego de programas de prueba que hacen justamente esto. Utilizan BAL para probarla. De todos modos, a continuación se describe cómo sería una llamada al compilador de C que enlace BAL con el programa cliente.
+
+Supongamos, para facilitar el ejemplo que nuestro programa cliente consta de un solo archivo {\tt miprog.c} y que este archivo lo precompilamos de la manera clásica produciendo el archivo {\tt miprog.o}. Esto lo obtenemos con un comando similar al siguiente:
+
+{\tt  gcc -c miprog.c -o miprog.o }
+
+Ahora lo que resta es la etapa de enlazado. Supongamos que tenemos BAL (particularmente, el archivo {\tt libbal.a} y los archivos de cabecera de BAL) compilada y pronta en el directorio {\tt /bal} (aunque podría ser cualquier directorio), pero no instalamos BAL con el comando {\tt make install}. El comando para enlazar es el siguiente:
+
+{\tt  gcc -I/bal miprog.o -o miprog -L/bal -lbal `pkg-config --cflags --libs glib-2.0` -lfl -lm }
+
+Esto generará un programa ejecutable llamado {\tt miprog}. Expliquemos ahora la composición de esa llamada a {\tt gcc}: \begin{itemize}
+\item El argumento {\tt -I/bal} le indica al compilador que debe agregar el directorio {\tt /bal} a su lista de directorios de búsqueda para la resolución de las instrucciones de precompilador tipo {\tt \#include}. \item El argumento {\tt -L/bal} le indica al compilador que debe agregar el directorio {\tt /bal} a su lista de directorios de búsqueda para la resolución de los comandos {\tt -l}. \item El argumento {\tt -lbal} le indica al compilador que debe enlazar la biblioteca {\tt libbal.a} al programa resultante. \item La ejecución embebida {\tt `pkg-config --cflags --libs glib-2.0`} genera las banderas necesarias para enlazar {\tt glib 2.0}, necesario por BAL. Se puede probar ejecutar solo esto para ver el resultado que produce. De no contar con la herramienta {\tt pkg-config}, se pueden agregar las referencias manualmente. Las mismas serían similares a: {\tt -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -lglib-2.0} \item Los argumentos {\tt -lfl} y {\tt -lm} enlazan las bibliotecas {\tt libfl.a} y {\tt libm.a} respectivamente, la primera necesaria por el uso de {\tt glib} y la segunda necesaria por BAL. \end{itemize}
+
+
+Si instalamos BAL con el comando {\tt make install}, podemos referenciar a BAL en el código cliente con la instrucción
+
+{\tt  \#include $<$\hyperlink{bal_8h}{BAL/bal.h}$>$ }
+
+y el comando de compilación sería el siguiente:
+
+{\tt  gcc miprog.o -o miprog -lbal `pkg-config --libs glib-2.0` -lfl -lm }\hypertarget{index_testsec}{}\subsection{El juego de pruebas de BAL}\label{index_testsec}
+BAL contiene un conjunto de programas que sirven, no solo para verificar la correctitud de BAL, sino también como ejemplo de su uso.
+
+Estos tests se encuentran en el directorio {\tt bal\_\-test}. Cada prueba es un programa C diferente y básicamente cada prueba se limita a probar una funcionalidad particular de BAL. El nombre del archivo {\tt .c} da idea de lo que se pretende probar.
+
+El juego de pruebas tiene su propio {\tt makefile} para la fácil compilación. Pero más aun, el directorio de pruebas contiene un script llamado {\tt run\_\-tests.sh} para la ejecución fácil de las pruebas. Este script, primero ejecuta {\tt make} para cerciorar que los tests han sido compilados. Luego busca aquellos tests que fueron compilados correctamente y los ejecuta. Para cada test ejecutado, redirecciona su salida estándar a un archivo de extensión {\tt .out} y su salida de errores a una archivo de extensión {\tt .error}. El prefijo de ambos archivos es el nombre del ejecutable del test.
+
+{\bf NOTA}: Para que este mecanismo funcione es importante que todos los ejecutables de las pruebas tengan sufijo {\tt \_\-test}.
+
+Al finalizar, el script muestra en pantalla una lista de aquellos tests que generaron algún tipo de salida en la salida de errores ({\em standard error\/}). De este modo es fácil localizar cuáles tests fallaron.\hypertarget{index_refsec}{}\subsection{Referencias}\label{index_refsec}
+La siguiente es una lista de documentos que fueron utilizados para la implementación de BAL: \begin{itemize}
+\item G. W. Stewart. {\em Building an Old-Fashioned Sparse Solver\/}. Agosto 2003.\par
+ Department of Computer Science and Institute for Advanced Computer Studies, University of Maryland\par
+ \href{http://hdl.handle.net/1903/1312}{\tt http://hdl.handle.net/1903/1312} \end{itemize}
+\hypertarget{index_licsec}{}\subsection{Licencia}\label{index_licsec}
+\begin{itemize}
+\item Está permitida toda copia (total o parcial, digital o impresa) y distribución de las copias, tanto de esta documentación como del código fuente que forma parte de BAL. Incluso está permitido modificar este trabajo. \item Está permitida la difusión de este trabajo, en cualquiera de las condiciones amparadas por el enunciado anterior y cualquier otra que se le ocurra al difusor. \item Está permitido cualquier tipo de uso de este material, ya sea personal, comercial o cualquier otro. \item Está permitido mentir acerca del origen de este trabajo, de todos modos nadie se va a enterar. Pero esta actitud pesará eternamente en la conciencia de la persona que lo haga y en la conciencia de sus hijos, y los hijos de sus hijos, etc. \item {\bf Este trabajo (software y documentación) se entrega \char`\"{}TAL CUAL\char`\"{} y se renuncia a toda responsabilidad por las garantías, implícitas o explícitas, incluidas, sin limitación. UTILÍCELO BAJO SU PROPIA RESPONSABILIDAD.} \end{itemize}

@@ -1,0 +1,134 @@
+\hypertarget{reordenamiento_8h}{
+\subsection{Referencia del Archivo cholesky/reordenamiento.h}
+\label{reordenamiento_8h}\index{cholesky/reordenamiento.h@{cholesky/reordenamiento.h}}
+}
+Archivo de cabecera para algoritmos de reordenamiento. 
+
+{\tt \#include \char`\"{}../sparse/sp\_\-packcol.h\char`\"{}}\par
+\subsubsection*{Funciones}
+\begin{CompactItemize}
+\item 
+unsigned int $\ast$ \hyperlink{reordenamiento_8h_545241be22914b1e52d464a2b3a8182a}{reordenar\_\-packcol} (\hyperlink{structsp__packcol}{sp\_\-packcol} $\ast$A)
+\begin{CompactList}\small\item\em Reordena las columnas de A para minimizar el {\em fill-in\/} producido por una etapa posterior de factorización. \item\end{CompactList}\item 
+\hyperlink{structsp__packcol}{sp\_\-packcol} $\ast$ \hyperlink{reordenamiento_8h_a05653b1fd91a61b360c18d3dac580fd}{permutar\_\-packcol} (unsigned int $\ast$p, \hyperlink{structsp__packcol}{sp\_\-packcol} $\ast$A)
+\begin{CompactList}\small\item\em Aplica una permutación de columnas sobre la matriz {\tt A}. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsubsection{Descripción detallada}
+Archivo de cabecera para algoritmos de reordenamiento. 
+
+Este archivo contiene (o contendrá) implementaciones de algoritmos de reordenamiento.
+
+El reordenamiento es el primer paso en la resolución eficiente de sistemas de ecuaciones representados mediante matrices dispersas. El reordenamiento previo de una matriz tiene como principal objetivo la minimización del {\em fill-in\/} producido por las etapas de factorización que lo suceden. 
+
+Definición en el archivo \hyperlink{reordenamiento_8h-source}{reordenamiento.h}.
+
+\subsubsection{Documentación de las funciones}
+\hypertarget{reordenamiento_8h_a05653b1fd91a61b360c18d3dac580fd}{
+\index{reordenamiento.h@{reordenamiento.h}!permutar\_\-packcol@{permutar\_\-packcol}}
+\index{permutar\_\-packcol@{permutar\_\-packcol}!reordenamiento.h@{reordenamiento.h}}
+\paragraph{\setlength{\rightskip}{0pt plus 5cm}{\bf sp\_\-packcol}$\ast$ permutar\_\-packcol (unsigned int $\ast$ {\em p}, \/  {\bf sp\_\-packcol} $\ast$ {\em A})}\hfill}
+\label{reordenamiento_8h_a05653b1fd91a61b360c18d3dac580fd}
+
+
+Aplica una permutación de columnas sobre la matriz {\tt A}. 
+
+\begin{Desc}
+\item[Parámetros:]
+\begin{description}
+\item[{\em p}]Permutación. {\tt p\mbox{[}i\mbox{]}} = La p\mbox{[}i\mbox{]}-ésima columna pasa a ser la columna i \item[{\em A}]Matriz a permutarle las columnas \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Devuelve:]La misma matriz {\tt A} pero con las matrices permutadas según {\tt p} \end{Desc}
+\begin{Desc}
+\item[Nota:]La matriz {\tt A} y el resultado no comparten memoria. \end{Desc}
+
+
+Definición en la línea 21 del archivo reordenamiento.c.
+
+Hace referencia a sp\_\-packcol::colp, sp\_\-packcol::ncol, sp\_\-packcol::nnz, sp\_\-packcol::nrow, sp\_\-packcol::rx, y sp\_\-packcol::val.
+
+Referenciado por bal\_\-permutar\_\-packcol().
+
+\begin{Code}\begin{verbatim}22 {
+23     unsigned int i, j, col;
+24     sp_packcol* B;
+25 
+26     B = (sp_packcol*)malloc(sizeof(sp_packcol));
+27     B->nrow = A->nrow;
+28     B->ncol = A->ncol;
+29     B->nnz = A->nnz;
+30 
+31     if (B->nnz == 0) {
+32         B->colp = NULL;
+33         B->rx = NULL;
+34         B->val = NULL;
+35     }
+36     else {
+37         B->colp = (unsigned int*)malloc(sizeof(unsigned int) * (B->ncol+1));
+38         B->rx = (unsigned int*)malloc(sizeof(unsigned int) * B->nnz);
+39         B->val = (double*)malloc(sizeof(double) * B->nnz);
+40 
+41         j = 0;
+42         for(col=0; col < B->ncol; ++col) {  /*< Para cada columna col en B */
+43             B->colp[col] = j;                   /*< Los elementos de la columna col comenzarán en la entrada j */
+44             for (i=A->colp[p[col]]; i < A->colp[p[col]+1]; ++i) {   /*< Recorre la columna p[col]-ésima de A */
+45                 B->rx[j] = A->rx[i];                                /*< y copia el contenido */
+46                 B->val[j] = A->val[i];
+47                 ++j;
+48             }
+49         }
+50         B->colp[col] = j;                   /*< Elemento extra para indicar el fin de la ultima columna */
+51     }
+52 
+53     return B;
+54 }
+\end{verbatim}
+\end{Code}
+
+
+\hypertarget{reordenamiento_8h_545241be22914b1e52d464a2b3a8182a}{
+\index{reordenamiento.h@{reordenamiento.h}!reordenar\_\-packcol@{reordenar\_\-packcol}}
+\index{reordenar\_\-packcol@{reordenar\_\-packcol}!reordenamiento.h@{reordenamiento.h}}
+\paragraph{\setlength{\rightskip}{0pt plus 5cm}unsigned int$\ast$ reordenar\_\-packcol ({\bf sp\_\-packcol} $\ast$ {\em A})}\hfill}
+\label{reordenamiento_8h_545241be22914b1e52d464a2b3a8182a}
+
+
+Reordena las columnas de A para minimizar el {\em fill-in\/} producido por una etapa posterior de factorización. 
+
+\begin{Desc}
+\item[Parámetros:]
+\begin{description}
+\item[{\em A}]Matriz a reordenar\end{description}
+\end{Desc}
+\begin{Desc}
+\item[\hyperlink{todo__todo000002}{Tareas Pendientes}]Implementar un algoritmo de reordenamiento\end{Desc}
+Actualmente esta función no implementa ningún algoritmo de reordenamiento. Simplemente retorna la permutación trivial para la cantidad de columnas de {\tt A}.
+
+Un algoritmo de reordenamiento básicamente calcula una permutación a ser aplicada en las filas/columnas de la matriz.
+
+Mientras que no se cuente con una implementación de un algoritmo de reordenamiento, se puede calcular una permutación mediante código externo y utilizar la función \hyperlink{reordenamiento_8c_05f0067f3214ea7f66d4519c09b5c5c2}{permutar\_\-packcol()}, que recibe una permutación como parámetro y realiza la permutación sobre una matriz empaquetada por columna.
+
+\begin{Desc}
+\item[Nota:]Para aquel que pretenda implementar un algoritmo de reordenamiento para BAL, una posibilidad es el algoritmo de Cuthill-McKee. Puede realizarse una implementación de cero, o tratar de reutilizar una existente, como la disponible en el siguiente sitio: \href{http://www.math.temple.edu/~daffi/software/rcm/}{\tt http://www.math.temple.edu/$\sim$daffi/software/rcm/} \end{Desc}
+
+
+Definición en la línea 79 del archivo reordenamiento.c.
+
+Hace referencia a sp\_\-packcol::ncol.
+
+\begin{Code}\begin{verbatim}80 {
+81     unsigned int *p;
+82     unsigned int i;
+83 
+84     p = (unsigned int*)malloc(sizeof(unsigned int) * A->ncol);
+85 
+86     for (i=0; i < A-> ncol; ++i)
+87         p[i] = i;
+88 
+89     return p;
+90 }
+\end{verbatim}
+\end{Code}
+
+

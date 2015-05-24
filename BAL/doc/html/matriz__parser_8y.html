@@ -1,0 +1,170 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>BAL: Referencia del Archivo parser/matriz_parser.y</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Generado por Doxygen 1.5.5 -->
+<script type="text/javascript">
+<!--
+function changeDisplayState (e){
+  var num=this.id.replace(/[^[0-9]/g,'');
+  var button=this.firstChild;
+  var sectionDiv=document.getElementById('dynsection'+num);
+  if (sectionDiv.style.display=='none'||sectionDiv.style.display==''){
+    sectionDiv.style.display='block';
+    button.src='open.gif';
+  }else{
+    sectionDiv.style.display='none';
+    button.src='closed.gif';
+  }
+}
+function initDynSections(){
+  var divs=document.getElementsByTagName('div');
+  var sectionCounter=1;
+  for(var i=0;i<divs.length-1;i++){
+    if(divs[i].className=='dynheader'&&divs[i+1].className=='dynsection'){
+      var header=divs[i];
+      var section=divs[i+1];
+      var button=header.firstChild;
+      if (button!='IMG'){
+        divs[i].insertBefore(document.createTextNode(' '),divs[i].firstChild);
+        button=document.createElement('img');
+        divs[i].insertBefore(button,divs[i].firstChild);
+      }
+      header.style.cursor='pointer';
+      header.onclick=changeDisplayState;
+      header.id='dynheader'+sectionCounter;
+      button.src='closed.gif';
+      section.id='dynsection'+sectionCounter;
+      section.style.display='none';
+      section.style.marginLeft='14px';
+      sectionCounter++;
+    }
+  }
+}
+window.onload = initDynSections;
+-->
+</script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Página&nbsp;principal</span></a></li>
+      <li><a href="pages.html"><span>Páginas&nbsp;relacionadas</span></a></li>
+      <li><a href="annotated.html"><span>Estructuras&nbsp;de&nbsp;Datos</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+      <li><a href="dirs.html"><span>Directorios</span></a></li>
+    </ul>
+  </div>
+  <div class="navpath"><a class="el" href="dir_3bd78b1cf2ba11d1b29359e945e12a42.html">parser</a>
+  </div>
+</div>
+<div class="contents">
+<h1>Referencia del Archivo matriz_parser.y</h1>Archivo de definición del parser generado por bison. <a href="#_details">Más...</a>
+<p>
+<code>#include &lt;stdio.h&gt;</code><br>
+<code>#include &lt;stdlib.h&gt;</code><br>
+<code>#include &lt;glib.h&gt;</code><br>
+<code>#include &lt;errno.h&gt;</code><br>
+<code>#include &lt;string.h&gt;</code><br>
+
+<p>
+<a href="matriz__parser_8y-source.html">Ir al código fuente de este archivo.</a><table border="0" cellpadding="0" cellspacing="0">
+<tr><td></td></tr>
+<tr><td colspan="2"><br><h2>Funciones</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="matriz__parser_8y.html#6bbce3a09233d68cbfb268cd87cdc360">yyerror</a> (const char *archivo, double ***matriz, int *n, int *m, const char *msg)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Función de manejo de errores para el parser generado por bison.  <a href="#6bbce3a09233d68cbfb268cd87cdc360"></a><br></td></tr>
+<tr><td colspan="2"><br><h2>Variables</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="e6408562f83e41989823b776a086dad3"></a><!-- doxytag: member="matriz_parser.y::__pad0__" ref="e6408562f83e41989823b776a086dad3" args="" -->
+filas&nbsp;</td><td class="memItemRight" valign="bottom"><b>__pad0__</b></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="7d6cc9f3ec2940d52e822f9170c9df76"></a><!-- doxytag: member="matriz_parser.y::gpointer" ref="7d6cc9f3ec2940d52e822f9170c9df76" args="" -->
+filas&nbsp;</td><td class="memItemRight" valign="bottom"><b>gpointer</b></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="c836204b2b0ad1198698f03c142496be"></a><!-- doxytag: member="matriz_parser.y::__pad1__" ref="c836204b2b0ad1198698f03c142496be" args="" -->
+fila&nbsp;</td><td class="memItemRight" valign="bottom"><b>__pad1__</b></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="005e10587e47d07d71f95ba4bc64e6fe"></a><!-- doxytag: member="matriz_parser.y::val" ref="005e10587e47d07d71f95ba4bc64e6fe" args="" -->
+*&nbsp;</td><td class="memItemRight" valign="bottom"><b>val</b> = $1</td></tr>
+
+</table>
+<hr><a name="_details"></a><h2>Descripción detallada</h2>
+Archivo de definición del parser generado por bison. 
+<p>
+Este archivo es la entrada de bison, mediante el cual se genera el código C que implementa el parser que lee definiciones de matrices en formato matlab, produciendo el archivo <code>matriz_parser.tab.c</code>.<p>
+El parser está definido de forma que cargue en memoria la matriz parseada en formato de matrices convencional del lenguaje C mediante el puntero <code>double ***matriz</code>. 
+<p>Definición en el archivo <a class="el" href="matriz__parser_8y-source.html">matriz_parser.y</a>.</p>
+<hr><h2>Documentación de las funciones</h2>
+<a class="anchor" name="6bbce3a09233d68cbfb268cd87cdc360"></a><!-- doxytag: member="matriz_parser.y::yyerror" ref="6bbce3a09233d68cbfb268cd87cdc360" args="(const char *archivo, double ***matriz, int *n, int *m, const char *msg)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void yyerror           </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>archivo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double ***&nbsp;</td>
+          <td class="paramname"> <em>matriz</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&nbsp;</td>
+          <td class="paramname"> <em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&nbsp;</td>
+          <td class="paramname"> <em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>msg</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Función de manejo de errores para el parser generado por bison. 
+<p>
+<dl compact><dt><b>Parámetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>archivo</em>&nbsp;</td><td>Camino al archivo donde esta definida la matriz </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>matriz</em>&nbsp;</td><td>Puntero en donde se va a devolver la matriz parseada (en caso de recuperarse del error) </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>n</em>&nbsp;</td><td>Cantidad de filas de la matriz leída </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>m</em>&nbsp;</td><td>Cantidad de columnas de la matriz leída </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>msg</em>&nbsp;</td><td>Mensaje de error devuelto por el parser generado por bison </td></tr>
+  </table>
+</dl>
+
+<p>Definición en la línea <a class="el" href="matriz__parser_8y-source.html#l00127">127</a> del archivo <a class="el" href="matriz__parser_8y-source.html">matriz_parser.y</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00128"></a>00128 {
+<a name="l00129"></a>00129     fprintf(stderr, <span class="stringliteral">"%s\n"</span>, msg);
+<a name="l00130"></a>00130 }
+</pre></div>
+<p>
+
+</div>
+</div><p>
+</div>
+<hr size="1">
+<address style="text-align: right;">
+<small>BAL&nbsp;1.0.0<br>Generado el Wed Aug 27 19:54:18 2008.</small>
+</address>
+</body>
+</html>

@@ -1,0 +1,477 @@
+\hypertarget{sp__packcol_8h}{
+\subsection{Referencia del Archivo sparse/sp\_\-packcol.h}
+\label{sp__packcol_8h}\index{sparse/sp\_\-packcol.h@{sparse/sp\_\-packcol.h}}
+}
+Archivo de cabecera para matriz dispersa, formato empaquetado por columna. 
+
+{\tt \#include $<$stdio.h$>$}\par
+{\tt \#include \char`\"{}sp\_\-coord.h\char`\"{}}\par
+\subsubsection*{Estructuras de datos}
+\begin{CompactItemize}
+\item 
+struct \hyperlink{structsp__packcol}{sp\_\-packcol}
+\begin{CompactList}\small\item\em Estructura de matriz dispersa empaquetada por columna. \item\end{CompactList}\end{CompactItemize}
+\subsubsection*{Funciones}
+\begin{CompactItemize}
+\item 
+\hyperlink{structsp__packcol}{sp\_\-packcol} $\ast$ \hyperlink{sp__packcol_8h_07754df03fbd64367b517a2b975a39d2}{coord2packcol} (\hyperlink{structsp__coord}{sp\_\-coord} $\ast$mat)
+\begin{CompactList}\small\item\em Genera una instancia de la matriz mat en formato empaquetado por columna. \item\end{CompactList}\item 
+\hyperlink{structsp__packcol}{sp\_\-packcol} $\ast$ \hyperlink{sp__packcol_8h_6ef9261480a9489716f1165cd759550d}{coord2packcol\_\-symmetric} (\hyperlink{structsp__coord}{sp\_\-coord} $\ast$mat)
+\begin{CompactList}\small\item\em Genera una instancia de la matriz mat en formato empaquetado por columna para matrices simétricas. \item\end{CompactList}\item 
+void \hyperlink{sp__packcol_8h_b4d4d490381b43a9628f2001bb6c99d6}{sp\_\-imprimir\_\-packcol} (FILE $\ast$fp, \hyperlink{structsp__packcol}{sp\_\-packcol} $\ast$mat)
+\begin{CompactList}\small\item\em Imprime la matriz guardada en formato empaquetado por columna en {\tt fp}. \item\end{CompactList}\item 
+int \hyperlink{sp__packcol_8h_49b361aae383b0fd323f5735f0ff01bc}{row\_\-traversal\_\-packcol} (\hyperlink{structsp__packcol}{sp\_\-packcol} $\ast$A, int $\ast$i, int $\ast$j, int $\ast$posij)
+\begin{CompactList}\small\item\em Implementa un mecanismo eficiente para recorrer por filas una matriz dispersa empaquetada por columnas. \item\end{CompactList}\item 
+void \hyperlink{sp__packcol_8h_25a252f919f868ce004aa25b45d44ff3}{save\_\-packcol\_\-symmetric} (FILE $\ast$fp, \hyperlink{structsp__packcol}{sp\_\-packcol} $\ast$A)
+\begin{CompactList}\small\item\em Imprime la matriz simétrica empaquetada por columna en formato matlab en el archivo fp. \item\end{CompactList}\item 
+void \hyperlink{sp__packcol_8h_45eba0df395fde4b428c76d4e688ed62}{save\_\-packcol} (FILE $\ast$fp, \hyperlink{structsp__packcol}{sp\_\-packcol} $\ast$A)
+\begin{CompactList}\small\item\em Imprime la matriz {\tt A} en formato matlab en el archivo {\tt fp}. \item\end{CompactList}\item 
+void \hyperlink{sp__packcol_8h_b9f6d408419504b0e7154b221bc0ca4b}{free\_\-packcol} (\hyperlink{structsp__packcol}{sp\_\-packcol} $\ast$A)
+\begin{CompactList}\small\item\em Borra toda la memoria reservada por la matriz A. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsubsection{Descripción detallada}
+Archivo de cabecera para matriz dispersa, formato empaquetado por columna. 
+
+Este archivo contiene la definición de la estructura de datos mediante la cual se almacena una matriz dispersa según el formato de empaquetado por columnas. 
+
+Definición en el archivo \hyperlink{sp__packcol_8h-source}{sp\_\-packcol.h}.
+
+\subsubsection{Documentación de las funciones}
+\hypertarget{sp__packcol_8h_07754df03fbd64367b517a2b975a39d2}{
+\index{sp\_\-packcol.h@{sp\_\-packcol.h}!coord2packcol@{coord2packcol}}
+\index{coord2packcol@{coord2packcol}!sp_packcol.h@{sp\_\-packcol.h}}
+\paragraph{\setlength{\rightskip}{0pt plus 5cm}{\bf sp\_\-packcol}$\ast$ coord2packcol ({\bf sp\_\-coord} $\ast$ {\em mat})}\hfill}
+\label{sp__packcol_8h_07754df03fbd64367b517a2b975a39d2}
+
+
+Genera una instancia de la matriz mat en formato empaquetado por columna. 
+
+\begin{Desc}
+\item[Parámetros:]
+\begin{description}
+\item[{\em mat}]Matriz dispersa en formato simple por coordenadas \end{description}
+\end{Desc}
+
+
+Definición en la línea 18 del archivo sp\_\-packcol.c.
+
+Hace referencia a sp\_\-packcol::colp, sp\_\-coord::cx, sp\_\-coord::ncol, sp\_\-packcol::ncol, sp\_\-coord::nnz, sp\_\-packcol::nnz, sp\_\-coord::nrow, sp\_\-packcol::nrow, sp\_\-coord::rx, sp\_\-packcol::rx, sp\_\-coord::val, y sp\_\-packcol::val.
+
+Referenciado por bal\_\-coord2packcol().
+
+\begin{Code}\begin{verbatim}19 {
+20     int i, j, col;
+21     sp_packcol* packcol = (sp_packcol*)malloc(sizeof(sp_packcol));
+22 
+23     packcol->nrow = mat->nrow;
+24     packcol->ncol = mat->ncol;
+25     packcol->nnz = mat->nnz;
+26 
+27     if (packcol->nnz == 0) {
+28         packcol->colp = NULL;
+29         packcol->rx = NULL;
+30         packcol->val = NULL;
+31     }
+32     else {
+33         packcol->colp = (unsigned int*)malloc(sizeof(unsigned int) * (packcol->ncol+1));
+34         packcol->rx = (unsigned int*)malloc(sizeof(unsigned int) * packcol->nnz);
+35         packcol->val = (double*)malloc(sizeof(double) * packcol->nnz);
+36 
+37         j = 0;
+38         for(col=0; col < packcol->ncol; ++col) {    /*< Para cada columna col */
+39             packcol->colp[col] = j;                 /*< El 1er elem de la columna col esta en la posicion j de val */
+40             for(i=0; i < mat->nnz; ++i) {           /*< Recorro los elementos no-cero de mat */
+41                 if (mat->cx[i] == col) {            /*< Si es un elemento de la columna col */
+42                     packcol->val[j] = mat->val[i];  /*< Guardo el valor */
+43                     packcol->rx[j] = mat->rx[i];    /*< Guardo el numero de fila */
+44                     ++j;
+45                 }
+46             }
+47         }
+48         packcol->colp[col] = j;                 /*< Elemento extra para indicar el fin de la ultima columna */
+49     }
+50 
+51     return packcol;
+52 }
+\end{verbatim}
+\end{Code}
+
+
+\hypertarget{sp__packcol_8h_6ef9261480a9489716f1165cd759550d}{
+\index{sp\_\-packcol.h@{sp\_\-packcol.h}!coord2packcol\_\-symmetric@{coord2packcol\_\-symmetric}}
+\index{coord2packcol\_\-symmetric@{coord2packcol\_\-symmetric}!sp_packcol.h@{sp\_\-packcol.h}}
+\paragraph{\setlength{\rightskip}{0pt plus 5cm}{\bf sp\_\-packcol}$\ast$ coord2packcol\_\-symmetric ({\bf sp\_\-coord} $\ast$ {\em mat})}\hfill}
+\label{sp__packcol_8h_6ef9261480a9489716f1165cd759550d}
+
+
+Genera una instancia de la matriz mat en formato empaquetado por columna para matrices simétricas. 
+
+\begin{Desc}
+\item[Parámetros:]
+\begin{description}
+\item[{\em mat}]Matriz dispersa en formato simple por coordenadas\end{description}
+\end{Desc}
+En el caso de que mat sea una matriz simétrica, no es necesario guardar todos los elementos no cero. Basta con guardar los elementos no cero de una de las triangulares.
+
+Esta función genera una representación de la matriz mat en formato empaquetado por columna, guardando en ella solo los elementos que están en la diagonal mayor y por debajo de ella, economizando memoria y sin perder información.
+
+Por supuesto, esta función debe ser utilizada solo cuando mat es simétrica y se desea tener la ganancia de memoria. Las rutinas que utilicen la estructura generada por esta función deberán tener en cuenta sus características para realizar las tareas de forma correcta. 
+
+Definición en la línea 69 del archivo sp\_\-packcol.c.
+
+Hace referencia a BAL\_\-ERROR, sp\_\-packcol::colp, sp\_\-coord::cx, sp\_\-packcol::ncol, sp\_\-coord::ncol, sp\_\-packcol::nnz, sp\_\-coord::nnz, sp\_\-packcol::nrow, sp\_\-coord::nrow, sp\_\-coord::rx, sp\_\-packcol::rx, sp\_\-coord::val, y sp\_\-packcol::val.
+
+Referenciado por bal\_\-coord2packcol\_\-symmetric().
+
+\begin{Code}\begin{verbatim}70 {
+71     int i, j, col, nnz;
+72     sp_packcol* packcol = (sp_packcol*)malloc(sizeof(sp_packcol));
+73 
+74     if (mat->nrow != mat->ncol) {
+75         BAL_ERROR("La matriz debe ser cuadrada para poder ser simetrica.");
+76         return NULL;
+77     }
+78 
+79     packcol->nrow = mat->nrow;
+80     packcol->ncol = mat->ncol;
+81 
+82     if (mat->nnz == 0) {
+83         packcol->colp = NULL;
+84         packcol->rx = NULL;
+85         packcol->val = NULL;
+86     }
+87     else {
+88         /* Calcula la cantidad de elementos no cero debajo y en la diagonal */
+89         nnz = 0;
+90         for(i=0; i < mat->nnz; ++i) {
+91             if (mat->rx[i] >= mat->cx[i])
+92                 ++nnz;
+93         }
+94 
+95         packcol->nnz = nnz;
+96         packcol->colp = (unsigned int*)malloc(sizeof(unsigned int) * (packcol->ncol+1));
+97         packcol->rx = (unsigned int*)malloc(sizeof(unsigned int) * nnz);
+98         packcol->val = (double*)malloc(sizeof(double) * nnz);
+99 
+100         j = 0;
+101         for(col=0; col < packcol->ncol; ++col) {                        /*< Para cada columna col */
+102             packcol->colp[col] = j;                                     /*< El 1er elem de la columna col esta en la posicion j de val */
+103             for(i=0; i < mat->nnz; ++i) {                               /*< Recorro los elementos no-cero de mat */
+104                 if (mat->rx[i] >= mat->cx[i] && mat->cx[i] == col) {    /*< Si es un elemento de la columna col */
+105                     packcol->val[j] = mat->val[i];                      /*< Guardo el valor */
+106                     packcol->rx[j] = mat->rx[i];                        /*< Guardo el numero de fila */
+107                     ++j;
+108                 }
+109             }
+110         }
+111         packcol->colp[col] = j;                 /*< Elemento extra para indicar el fin de la ultima columna */
+112     }
+113 
+114     return packcol;
+115 }
+\end{verbatim}
+\end{Code}
+
+
+\hypertarget{sp__packcol_8h_b9f6d408419504b0e7154b221bc0ca4b}{
+\index{sp\_\-packcol.h@{sp\_\-packcol.h}!free\_\-packcol@{free\_\-packcol}}
+\index{free\_\-packcol@{free\_\-packcol}!sp_packcol.h@{sp\_\-packcol.h}}
+\paragraph{\setlength{\rightskip}{0pt plus 5cm}void free\_\-packcol ({\bf sp\_\-packcol} $\ast$ {\em A})}\hfill}
+\label{sp__packcol_8h_b9f6d408419504b0e7154b221bc0ca4b}
+
+
+Borra toda la memoria reservada por la matriz A. 
+
+Esta función libera toda la memoria reservada por las estructura de datos \hyperlink{structsp__packcol}{sp\_\-packcol}. 
+
+Definición en la línea 348 del archivo sp\_\-packcol.c.
+
+Hace referencia a sp\_\-packcol::colp, sp\_\-packcol::rx, y sp\_\-packcol::val.
+
+Referenciado por bal\_\-free\_\-packcol().
+
+\begin{Code}\begin{verbatim}349 {
+350     free(A->colp);
+351     free(A->rx);
+352     free(A->val);
+353     free(A);
+354 }
+\end{verbatim}
+\end{Code}
+
+
+\hypertarget{sp__packcol_8h_49b361aae383b0fd323f5735f0ff01bc}{
+\index{sp\_\-packcol.h@{sp\_\-packcol.h}!row\_\-traversal\_\-packcol@{row\_\-traversal\_\-packcol}}
+\index{row\_\-traversal\_\-packcol@{row\_\-traversal\_\-packcol}!sp_packcol.h@{sp\_\-packcol.h}}
+\paragraph{\setlength{\rightskip}{0pt plus 5cm}int row\_\-traversal\_\-packcol ({\bf sp\_\-packcol} $\ast$ {\em A}, \/  int $\ast$ {\em i}, \/  int $\ast$ {\em j}, \/  int $\ast$ {\em posij})}\hfill}
+\label{sp__packcol_8h_49b361aae383b0fd323f5735f0ff01bc}
+
+
+Implementa un mecanismo eficiente para recorrer por filas una matriz dispersa empaquetada por columnas. 
+
+\begin{Desc}
+\item[Parámetros:]
+\begin{description}
+\item[{\em A}]ENTRADA: Matriz a recorrer por filas en formato empaquetado por columna con mejora por simetría. \item[{\em i}]ENTRADA/SALIDA: Si {\tt i = -2}, la rutina es inicializada. En otro caso, {\tt i} guarda el índice de la fila leída. \item[{\em j}]SALIDA: Guarda el índice de la columna leída. \item[{\em posij}]SALIDA: Indica la posición de {\tt A\mbox{[}i.j\mbox{]}} en {\tt A-$>$val}. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Devuelve:]-1 si se llegó al final de una línea, {\tt j} en caso contrario.\end{Desc}
+Dada la forma de guardar los datos en memoria de la estructura \hyperlink{structsp__packcol}{sp\_\-packcol}, no es trivial recorrer la matriz por filas de forma eficiente. Esta función implementa un mecanismo para ir obteniendo los valores de una \hyperlink{structsp__packcol}{sp\_\-packcol} por fila.
+
+\begin{Desc}
+\item[Atención:]Esté método solo es útil para matrices simétricas guardadas tal como lo hace \hyperlink{sp__packcol_8c_7d8ea564f906cc721e5de1c4a4f5844b}{coord2packcol\_\-symmetric()}.
+
+No se debe cambiar el valor de las variables {\tt i} y {\tt j} mientras se está recorriendo una matriz utilizando esta función.
+
+Esta función devuelve todos los elementos de una fila {\tt i} antes de devolver los elementos de la fila {\tt i+1}, pero los elementos de una misma fila no son devueltos en ningún orden en particular (por ejemplo, ordenados por columna, que sería lo más natural). Más precisamente, la rutina siempre devuelve primero el elemento de la diagonal mayor {\tt (i,i)}, (en caso que no sea cero), pero el resto de los elementos no tienen un orden particular definido.\end{Desc}
+\begin{Desc}
+\item[Nota:]Este algoritmo brinda un método de recorrido por fila que presenta un tiempo de ejecución de {\em O(A.nnz)\/} y conlleva un costo extra en memoria de {\em 2n\/} variables de tipo entero, siendo {\tt n} la cantidad de filas y columnas de {\tt A}.
+
+Esta función está basada en la descripción de la sección 5.3 del paper de Stewart (Ver las \hyperlink{index_refsec}{referencias}). Puede ver ese documento o el juego de rutinas de prueba de BAL por un ejemplo de cómo utilizar esta rutina.
+
+Esta rutina utiliza memoria dinámica para trabajar. Puede llamar a esta función con {\tt A = NULL} y {\tt i = -2} para liberar la memoria utilizada. Note que esto es diferente a llamar la rutina para que se inicialice, en la que la misma reserva memoria para trabajar. \end{Desc}
+
+
+Definición en la línea 203 del archivo sp\_\-packcol.c.
+
+Hace referencia a sp\_\-packcol::colp, sp\_\-packcol::ncol, y sp\_\-packcol::rx.
+
+Referenciado por bal\_\-row\_\-traversal\_\-packcol(), elimination\_\-tree(), numerical\_\-factorization(), y save\_\-packcol\_\-symmetric().
+
+\begin{Code}\begin{verbatim}204 {
+205     static int *link = NULL;
+206     static int *pos = NULL;
+207     static int nextj = -1;
+208     int x, nextdown, id;
+209 
+210     if (*i == -2) { /* Inicializacion */
+211         if (link != NULL)
+212             free(link);
+213 
+214         if (pos != NULL)
+215             free(pos);
+216 
+217         if (A == NULL) {
+218             link = pos = NULL;
+219             return -1;
+220         }
+221 
+222         link = (int*)malloc(sizeof(int) * A->ncol);
+223         pos = (int*)malloc(sizeof(int) * A->ncol);
+224         for (x = 0; x < A->ncol; ++x)
+225             link[x] = pos[x] = -1;
+226 
+227         *i = *j = -1;
+228         return -1;
+229     }
+230 
+231     if (*j == -1) { /* Preparamos la fila i */
+232         *i += 1;
+233         *j = *i;
+234         *posij = A->colp[*i];
+235     }
+236     else { /* Obtener el siguiente elemento de la fila i */
+237         *j = nextj;
+238 
+239         if (*j == -1)
+240             return *j;  /* Fin de fila */
+241 
+242         *posij = pos[*j];
+243     }
+244 
+245     nextj = link[*j];
+246     link[*j] = -1;
+247     nextdown = *posij + 1;
+248 
+249     if (nextdown < A->colp[*j + 1]) {   /* Hay un elemento en la columna j, recordarlo */
+250         pos[*j] = nextdown;
+251         id = A->rx[nextdown];
+252         link[*j] = link[id];
+253         link[id] = *j;
+254     }
+255 
+256     return *j;
+257 }
+\end{verbatim}
+\end{Code}
+
+
+\hypertarget{sp__packcol_8h_45eba0df395fde4b428c76d4e688ed62}{
+\index{sp\_\-packcol.h@{sp\_\-packcol.h}!save\_\-packcol@{save\_\-packcol}}
+\index{save\_\-packcol@{save\_\-packcol}!sp_packcol.h@{sp\_\-packcol.h}}
+\paragraph{\setlength{\rightskip}{0pt plus 5cm}void save\_\-packcol (FILE $\ast$ {\em fp}, \/  {\bf sp\_\-packcol} $\ast$ {\em A})}\hfill}
+\label{sp__packcol_8h_45eba0df395fde4b428c76d4e688ed62}
+
+
+Imprime la matriz {\tt A} en formato matlab en el archivo {\tt fp}. 
+
+\begin{Desc}
+\item[Parámetros:]
+\begin{description}
+\item[{\em fp}]Puntero a archivo donde imprimir la matriz A. \item[{\em A}]Matriz simétrica empaquetada por columna a imprimir en formato matlab.\end{description}
+\end{Desc}
+Esta función es útil para respaldar matrices. 
+
+Definición en la línea 316 del archivo sp\_\-packcol.c.
+
+Hace referencia a sp\_\-packcol::colp, sp\_\-packcol::ncol, sp\_\-packcol::nrow, sp\_\-packcol::rx, y sp\_\-packcol::val.
+
+Referenciado por bal\_\-save\_\-packcol().
+
+\begin{Code}\begin{verbatim}317 {
+318     unsigned int i, j, k, encontrado;
+319 
+320     fprintf(fp, "[\n");
+321     for (i=0; i < A->nrow; ++i) {           /* Por cada fila */
+322         for (j=0; j < A->ncol; ++j) {       /* Por cada columna */
+323             /* Busca la entrada (i,j) en la columna j de A */
+324             encontrado = 0;
+325             for (k=A->colp[j]; k < A->colp[j+1]; ++k) {
+326                 if (A->rx[k] == i) {
+327                     encontrado = 1;
+328                     fprintf(fp, " %g", A->val[k]);
+329                     break;
+330                 }
+331             }
+332             if (!encontrado)
+333                 fprintf(fp, " 0");
+334         }
+335         if (i+1 < A->nrow)
+336             fprintf(fp, ";\n");
+337         else
+338             fprintf(fp, "\n");
+339     }
+340     fprintf(fp, "]\n");
+341 }
+\end{verbatim}
+\end{Code}
+
+
+\hypertarget{sp__packcol_8h_25a252f919f868ce004aa25b45d44ff3}{
+\index{sp\_\-packcol.h@{sp\_\-packcol.h}!save\_\-packcol\_\-symmetric@{save\_\-packcol\_\-symmetric}}
+\index{save\_\-packcol\_\-symmetric@{save\_\-packcol\_\-symmetric}!sp_packcol.h@{sp\_\-packcol.h}}
+\paragraph{\setlength{\rightskip}{0pt plus 5cm}void save\_\-packcol\_\-symmetric (FILE $\ast$ {\em fp}, \/  {\bf sp\_\-packcol} $\ast$ {\em A})}\hfill}
+\label{sp__packcol_8h_25a252f919f868ce004aa25b45d44ff3}
+
+
+Imprime la matriz simétrica empaquetada por columna en formato matlab en el archivo fp. 
+
+\begin{Desc}
+\item[Parámetros:]
+\begin{description}
+\item[{\em fp}]Puntero a archivo donde imprimir la matriz A. \item[{\em A}]Matriz simétrica empaquetada por columna a imprimir en formato matlab.\end{description}
+\end{Desc}
+Esta función es útil para respaldar matrices.
+
+\begin{Desc}
+\item[Nota:]Esta función solo funciona para matrices empaquetadas por columna que fueron guardadas con la mejora para matrices simétricas, tal como lo hace la función coord2packcol\_\-symmetric.\end{Desc}
+\begin{Desc}
+\item[Atención:]La salida produce solo la triangular inferior de la matriz, para una salida completa, utilice \hyperlink{sp__packcol_8c_45eba0df395fde4b428c76d4e688ed62}{save\_\-packcol()}. \end{Desc}
+
+
+Definición en la línea 275 del archivo sp\_\-packcol.c.
+
+Hace referencia a sp\_\-packcol::ncol, sp\_\-packcol::nrow, row\_\-traversal\_\-packcol(), y sp\_\-packcol::val.
+
+Referenciado por bal\_\-save\_\-packcol\_\-symmetric().
+
+\begin{Code}\begin{verbatim}276 {
+277     int x, y, i, j, posij;
+278     double *fila;
+279 
+280     fila = (double*)malloc(sizeof(double) * A->ncol);
+281 
+282     fprintf(fp, "[\n");
+283 
+284     i = -2;
+285     row_traversal_packcol(A, &i, &j, &posij);
+286     for (x = 0; x < A->nrow; ++x) { /* Por cada fila */
+287 
+288         for (y=0; y < A->ncol; ++y)
+289             fila[y] = 0;
+290 
+291         while(row_traversal_packcol(A, &i, &j, &posij) != -1)
+292             fila[j] = A->val[posij];
+293 
+294         for (y=0; y < A->ncol; ++y)
+295             fprintf(fp, " %g", fila[y]);
+296 
+297         if (x+1 < A->nrow)
+298             fprintf(fp, ";\n");
+299         else
+300             fprintf(fp, "\n");
+301     }
+302 
+303     fprintf(fp, "]\n");
+304 
+305     free(fila);
+306 }
+\end{verbatim}
+\end{Code}
+
+
+\hypertarget{sp__packcol_8h_b4d4d490381b43a9628f2001bb6c99d6}{
+\index{sp\_\-packcol.h@{sp\_\-packcol.h}!sp\_\-imprimir\_\-packcol@{sp\_\-imprimir\_\-packcol}}
+\index{sp\_\-imprimir\_\-packcol@{sp\_\-imprimir\_\-packcol}!sp_packcol.h@{sp\_\-packcol.h}}
+\paragraph{\setlength{\rightskip}{0pt plus 5cm}void sp\_\-imprimir\_\-packcol (FILE $\ast$ {\em fp}, \/  {\bf sp\_\-packcol} $\ast$ {\em mat})}\hfill}
+\label{sp__packcol_8h_b4d4d490381b43a9628f2001bb6c99d6}
+
+
+Imprime la matriz guardada en formato empaquetado por columna en {\tt fp}. 
+
+\begin{Desc}
+\item[Parámetros:]
+\begin{description}
+\item[{\em fp}]Archivo en el cual se imprimirá la matriz \item[{\em mat}]Matriz a imprimir en formato empaquetado por columna\end{description}
+\end{Desc}
+{\bf NOTA:} Ver el código (5.4) en el paper de Stewart (vea las referencias). 
+
+Definición en la línea 125 del archivo sp\_\-packcol.c.
+
+Hace referencia a sp\_\-packcol::colp, sp\_\-packcol::ncol, sp\_\-packcol::nnz, sp\_\-packcol::nrow, sp\_\-packcol::rx, y sp\_\-packcol::val.
+
+Referenciado por bal\_\-imprimir\_\-packcol().
+
+\begin{Code}\begin{verbatim}126 {
+127     int i, j;
+128 
+129     if (mat == NULL) {
+130         fprintf(fp, "Matriz nula.\n");
+131         return;
+132     }
+133 
+134     fprintf(fp, "Cantidad de filas: %d\n", mat->nrow);
+135     fprintf(fp, "Cantidad de columnas: %d\n", mat->ncol);
+136     fprintf(fp, "Cantidad de elementos no cero: %d\n", mat->nnz);
+137 
+138     fprintf(fp, "Inicios de columnas:\n");
+139     for(i=0; i <= mat->ncol; ++i) {
+140         fprintf(fp, "%d ", mat->colp[i]);
+141     }
+142     fprintf(fp, "\n");
+143 
+144     fprintf(fp, "Indices de filas:\n");
+145     for(i=0; i < mat->nnz; ++i) {
+146         fprintf(fp, "%d ", mat->rx[i]);
+147     }
+148     fprintf(fp, "\n");
+149 
+150     fprintf(fp, "Valores:\n");
+151     for(i=0; i < mat->nnz; ++i) {
+152         fprintf(fp, "%g ", mat->val[i]);
+153     }
+154     fprintf(fp, "\n");
+155 
+156     fprintf(fp, "Salida indexada (por columna):\n");
+157     i=0;
+158     for(j=0; j < mat->ncol; ++j) {
+159         for (i = mat->colp[j]; i < mat->colp[j+1]; ++i) {
+160             fprintf(fp, "(%d) [%d,%d] = %g\n", i, mat->rx[i], j, mat->val[i]);
+161         }
+162     }
+163 }
+\end{verbatim}
+\end{Code}
+
+

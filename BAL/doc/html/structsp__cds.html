@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>BAL: Referencia de la Estructura sp_cds</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Generado por Doxygen 1.5.5 -->
+<script type="text/javascript">
+<!--
+function changeDisplayState (e){
+  var num=this.id.replace(/[^[0-9]/g,'');
+  var button=this.firstChild;
+  var sectionDiv=document.getElementById('dynsection'+num);
+  if (sectionDiv.style.display=='none'||sectionDiv.style.display==''){
+    sectionDiv.style.display='block';
+    button.src='open.gif';
+  }else{
+    sectionDiv.style.display='none';
+    button.src='closed.gif';
+  }
+}
+function initDynSections(){
+  var divs=document.getElementsByTagName('div');
+  var sectionCounter=1;
+  for(var i=0;i<divs.length-1;i++){
+    if(divs[i].className=='dynheader'&&divs[i+1].className=='dynsection'){
+      var header=divs[i];
+      var section=divs[i+1];
+      var button=header.firstChild;
+      if (button!='IMG'){
+        divs[i].insertBefore(document.createTextNode(' '),divs[i].firstChild);
+        button=document.createElement('img');
+        divs[i].insertBefore(button,divs[i].firstChild);
+      }
+      header.style.cursor='pointer';
+      header.onclick=changeDisplayState;
+      header.id='dynheader'+sectionCounter;
+      button.src='closed.gif';
+      section.id='dynsection'+sectionCounter;
+      section.style.display='none';
+      section.style.marginLeft='14px';
+      sectionCounter++;
+    }
+  }
+}
+window.onload = initDynSections;
+-->
+</script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Página&nbsp;principal</span></a></li>
+      <li><a href="pages.html"><span>Páginas&nbsp;relacionadas</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Estructuras&nbsp;de&nbsp;Datos</span></a></li>
+      <li><a href="files.html"><span>Archivos</span></a></li>
+      <li><a href="dirs.html"><span>Directorios</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>Estructura&nbsp;de&nbsp;datos</span></a></li>
+      <li><a href="functions.html"><span>Campos&nbsp;de&nbsp;datos</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>Referencia de la Estructura sp_cds</h1><!-- doxytag: class="sp_cds" -->Estructura de matriz dispersa CDS.  
+<a href="#_details">Más...</a>
+<p>
+<code>#include &lt;<a class="el" href="sp__cds_8h-source.html">sp_cds.h</a>&gt;</code>
+<p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td></td></tr>
+<tr><td colspan="2"><br><h2>Campos de datos</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="742f0fa7433a0985c236c0df1811513a"></a><!-- doxytag: member="sp_cds::nrow" ref="742f0fa7433a0985c236c0df1811513a" args="" -->
+unsigned int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsp__cds.html#742f0fa7433a0985c236c0df1811513a">nrow</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Cantidad de filas. <br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="683cb5023edac60bd4c25a1c2261f6b0"></a><!-- doxytag: member="sp_cds::ncol" ref="683cb5023edac60bd4c25a1c2261f6b0" args="" -->
+unsigned int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsp__cds.html#683cb5023edac60bd4c25a1c2261f6b0">ncol</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Cantidad de columnas. <br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="f2a5117c4b15e96598d0a75a645cdb3f"></a><!-- doxytag: member="sp_cds::ndiag" ref="f2a5117c4b15e96598d0a75a645cdb3f" args="" -->
+unsigned int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsp__cds.html#f2a5117c4b15e96598d0a75a645cdb3f">ndiag</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Cantidad de diagonales con al menos una entrada no cero. <br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="86bfcae3996588048cb6c973cd223b39"></a><!-- doxytag: member="sp_cds::maxdiaglength" ref="86bfcae3996588048cb6c973cd223b39" args="" -->
+unsigned int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsp__cds.html#86bfcae3996588048cb6c973cd223b39">maxdiaglength</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">El largo de la diagonal más larga. <br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="cb3c554898b39c854cc3d26f657ce0fd"></a><!-- doxytag: member="sp_cds::dx" ref="cb3c554898b39c854cc3d26f657ce0fd" args="" -->
+int *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsp__cds.html#cb3c554898b39c854cc3d26f657ce0fd">dx</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Arreglo de índices de diagonal. <br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="4a43be75b65bb01b343c8d3c144b7194"></a><!-- doxytag: member="sp_cds::val" ref="4a43be75b65bb01b343c8d3c144b7194" args="" -->
+double **&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsp__cds.html#4a43be75b65bb01b343c8d3c144b7194">val</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Matriz de valores. Cada fila es una diagonal. <br></td></tr>
+</table>
+<hr><a name="_details"></a><h2>Descripción detallada</h2>
+Estructura de matriz dispersa CDS. 
+<p>
+Almacena una matriz dispersa en memoria utilizando el formato CDS.<p>
+Los valores se almacenan de la siguiente forma. A cada diagonal se le asigna un índice que la identifica. La diagonal mayor es la diagonal 0. Las diagonales superiores a la mayor tienen índices positivos que se van incrementando a medida que nos alejamos de la diagonal mayor. Las diagonales inferiores a la mayor tienen índices negativos que se van decrementando a medida que nos alejamos de la diagonal mayor. Por ejemplo, las primeras subdiagonales superior e inferior les corresponden los índices 1 y -1 respectivamente.<p>
+De este modo, el elemento <img class="formulaInl" alt="$A_{ij}$" src="form_12.png"> de la matriz está ubicado en la diagonal <img class="formulaInl" alt="$j-i$" src="form_8.png">.<p>
+Solo se almacenan las diagonales con al menos un valor no cero. Cada fila en <code>val</code> es una diagonal de <code>A</code>. El arreglo <code>dx</code> indica a qué diagonal corresponde cada una de las filas de <code>val</code>. Es decir, si queremos obtener valores de la diagonal <code>i</code>, éstos están ubicados en la fila <code>j</code> de <code>val</code> tal que <code>i = dx[j]</code>.<p>
+Por otra parte, la ubicación de los valores de la diagonal en una fila de <code>val</code> está dada por el índice de fila en la matriz. Es decir <img class="formulaInl" alt="$A_{ij}$" src="form_12.png"> corresponde a la diagonal <img class="formulaInl" alt="$j-i$" src="form_8.png"> y su valor está en la columna <code>i</code> de <code>val</code>. Esto provoca que las diagonales inferiores estén alineadas a la derecha y las superiores alineadas a la izquierda.<p>
+Por ejemplo, sea la matriz <p class="formulaDsp">
+<img class="formulaDsp" alt="\[ A = \left( \begin{array}{ccccc} 1 &amp; 2 &amp; 0 &amp; 0 &amp; 0 \\ 3 &amp; 4 &amp; 5 &amp; 0 &amp; 0 \\ 0 &amp; 6 &amp; 7 &amp; 8 &amp; 0 \\ 0 &amp; 0 &amp; 9 &amp; 10 &amp; 11 \\ 0 &amp; 0 &amp; 0 &amp; 12 &amp; 13 \end{array}\right) \]" src="form_13.png">
+<p>
+ La estructura CDS para <code>A</code> es la siguiente. La diagonal de menor índice es la -1 y la de mayor índice es la +1.<p>
+<code> dx = [-1 0 1]<br>
+ val[0,0:4] = [0 3 6 9 12]<br>
+ val[1,0:4] = [1 4 7 10 13]<br>
+ val[2,0:4] = [2 5 8 11 0]<br>
+ </code><p>
+Resumiendo, podemos decir que el valor <img class="formulaInl" alt="$A_{ij}$" src="form_12.png"> se encuentra en <code>val[k,i]</code>, con <code>(dx[k] = j - i)</code>. Recíprocamente podemos decir que el elemento en <code>val[k,i]</code> corresponde al elemento <img class="formulaInl" alt="$A_{i,(dx[k]+i)}$" src="form_14.png">.<p>
+<dl class="note" compact><dt><b>Nota:</b></dt><dd>Observar que esta estructura guarda toda diagonal con al menos un elemento no cero de forma completa. Es decir, los ceros en una diagonal "no vacía" son guardados. </dd></dl>
+
+<p>Definición en la línea <a class="el" href="sp__cds_8h-source.html#l00068">68</a> del archivo <a class="el" href="sp__cds_8h-source.html">sp_cds.h</a>.</p>
+<hr>La documentación para esta estructura fue generada a partir del siguiente fichero:<ul>
+<li>sparse/<a class="el" href="sp__cds_8h-source.html">sp_cds.h</a></ul>
+</div>
+<hr size="1">
+<address style="text-align: right;">
+<small>BAL&nbsp;1.0.0<br>Generado el Wed Aug 27 19:54:18 2008.</small>
+</address>
+</body>
+</html>

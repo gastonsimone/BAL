@@ -1,0 +1,458 @@
+\begin{theindex}
+
+  \item {bal.c}, \hyperpage{12}
+    \subitem {bal\_\discretionary {-}{}{}cargar\_\discretionary {-}{}{}matriz}, 
+		\hyperpage{14}
+    \subitem {bal\_\discretionary {-}{}{}cholesky\_\discretionary {-}{}{}Lsolver}, 
+		\hyperpage{15}
+    \subitem {bal\_\discretionary {-}{}{}cholesky\_\discretionary {-}{}{}LTsolver}, 
+		\hyperpage{15}
+    \subitem {bal\_\discretionary {-}{}{}cholesky\_\discretionary {-}{}{}solver}, 
+		\hyperpage{15}
+    \subitem {bal\_\discretionary {-}{}{}coord2cds}, \hyperpage{15}
+    \subitem {bal\_\discretionary {-}{}{}coord2packcol}, \hyperpage{16}
+    \subitem {bal\_\discretionary {-}{}{}coord2packcol\_\discretionary {-}{}{}symmetric}, 
+		\hyperpage{16}
+    \subitem {bal\_\discretionary {-}{}{}elimination\_\discretionary {-}{}{}tree}, 
+		\hyperpage{16}
+    \subitem {bal\_\discretionary {-}{}{}free\_\discretionary {-}{}{}cds}, 
+		\hyperpage{16}
+    \subitem {bal\_\discretionary {-}{}{}free\_\discretionary {-}{}{}coord}, 
+		\hyperpage{17}
+    \subitem {bal\_\discretionary {-}{}{}free\_\discretionary {-}{}{}packcol}, 
+		\hyperpage{17}
+    \subitem {bal\_\discretionary {-}{}{}imprimir\_\discretionary {-}{}{}cds}, 
+		\hyperpage{17}
+    \subitem {bal\_\discretionary {-}{}{}imprimir\_\discretionary {-}{}{}coord}, 
+		\hyperpage{17}
+    \subitem {bal\_\discretionary {-}{}{}imprimir\_\discretionary {-}{}{}packcol}, 
+		\hyperpage{18}
+    \subitem {bal\_\discretionary {-}{}{}load\_\discretionary {-}{}{}coord}, 
+		\hyperpage{18}
+    \subitem {bal\_\discretionary {-}{}{}mat2coord}, \hyperpage{18}
+    \subitem {bal\_\discretionary {-}{}{}mult\_\discretionary {-}{}{}mat\_\discretionary {-}{}{}cds}, 
+		\hyperpage{18}
+    \subitem {bal\_\discretionary {-}{}{}mult\_\discretionary {-}{}{}vec\_\discretionary {-}{}{}cds}, 
+		\hyperpage{19}
+    \subitem {bal\_\discretionary {-}{}{}mult\_\discretionary {-}{}{}vec\_\discretionary {-}{}{}packcol}, 
+		\hyperpage{19}
+    \subitem {bal\_\discretionary {-}{}{}mult\_\discretionary {-}{}{}vec\_\discretionary {-}{}{}packcol\_\discretionary {-}{}{}symmetric}, 
+		\hyperpage{19}
+    \subitem {bal\_\discretionary {-}{}{}numerical\_\discretionary {-}{}{}factorization}, 
+		\hyperpage{19}
+    \subitem {bal\_\discretionary {-}{}{}permutar\_\discretionary {-}{}{}packcol}, 
+		\hyperpage{20}
+    \subitem {bal\_\discretionary {-}{}{}row\_\discretionary {-}{}{}traversal\_\discretionary {-}{}{}packcol}, 
+		\hyperpage{20}
+    \subitem {bal\_\discretionary {-}{}{}save\_\discretionary {-}{}{}cds}, 
+		\hyperpage{20}
+    \subitem {bal\_\discretionary {-}{}{}save\_\discretionary {-}{}{}coord}, 
+		\hyperpage{20}
+    \subitem {bal\_\discretionary {-}{}{}save\_\discretionary {-}{}{}packcol}, 
+		\hyperpage{21}
+    \subitem {bal\_\discretionary {-}{}{}save\_\discretionary {-}{}{}packcol\_\discretionary {-}{}{}symmetric}, 
+		\hyperpage{21}
+    \subitem {bal\_\discretionary {-}{}{}symbolic\_\discretionary {-}{}{}factorization}, 
+		\hyperpage{21}
+    \subitem {yyparse}, \hyperpage{21}
+  \item {bal.h}, \hyperpage{22}
+    \subitem {bal\_\discretionary {-}{}{}cargar\_\discretionary {-}{}{}matriz}, 
+		\hyperpage{24}
+    \subitem {bal\_\discretionary {-}{}{}cholesky\_\discretionary {-}{}{}Lsolver}, 
+		\hyperpage{24}
+    \subitem {bal\_\discretionary {-}{}{}cholesky\_\discretionary {-}{}{}LTsolver}, 
+		\hyperpage{25}
+    \subitem {bal\_\discretionary {-}{}{}cholesky\_\discretionary {-}{}{}solver}, 
+		\hyperpage{25}
+    \subitem {bal\_\discretionary {-}{}{}coord2cds}, \hyperpage{25}
+    \subitem {bal\_\discretionary {-}{}{}coord2packcol}, \hyperpage{25}
+    \subitem {bal\_\discretionary {-}{}{}coord2packcol\_\discretionary {-}{}{}symmetric}, 
+		\hyperpage{26}
+    \subitem {bal\_\discretionary {-}{}{}elimination\_\discretionary {-}{}{}tree}, 
+		\hyperpage{26}
+    \subitem {bal\_\discretionary {-}{}{}free\_\discretionary {-}{}{}cds}, 
+		\hyperpage{26}
+    \subitem {bal\_\discretionary {-}{}{}free\_\discretionary {-}{}{}coord}, 
+		\hyperpage{26}
+    \subitem {bal\_\discretionary {-}{}{}free\_\discretionary {-}{}{}packcol}, 
+		\hyperpage{27}
+    \subitem {bal\_\discretionary {-}{}{}imprimir\_\discretionary {-}{}{}cds}, 
+		\hyperpage{27}
+    \subitem {bal\_\discretionary {-}{}{}imprimir\_\discretionary {-}{}{}coord}, 
+		\hyperpage{27}
+    \subitem {bal\_\discretionary {-}{}{}imprimir\_\discretionary {-}{}{}packcol}, 
+		\hyperpage{27}
+    \subitem {bal\_\discretionary {-}{}{}load\_\discretionary {-}{}{}coord}, 
+		\hyperpage{28}
+    \subitem {bal\_\discretionary {-}{}{}mat2coord}, \hyperpage{28}
+    \subitem {bal\_\discretionary {-}{}{}mult\_\discretionary {-}{}{}mat\_\discretionary {-}{}{}cds}, 
+		\hyperpage{28}
+    \subitem {bal\_\discretionary {-}{}{}mult\_\discretionary {-}{}{}vec\_\discretionary {-}{}{}cds}, 
+		\hyperpage{28}
+    \subitem {bal\_\discretionary {-}{}{}mult\_\discretionary {-}{}{}vec\_\discretionary {-}{}{}packcol}, 
+		\hyperpage{29}
+    \subitem {bal\_\discretionary {-}{}{}mult\_\discretionary {-}{}{}vec\_\discretionary {-}{}{}packcol\_\discretionary {-}{}{}symmetric}, 
+		\hyperpage{29}
+    \subitem {bal\_\discretionary {-}{}{}numerical\_\discretionary {-}{}{}factorization}, 
+		\hyperpage{29}
+    \subitem {bal\_\discretionary {-}{}{}permutar\_\discretionary {-}{}{}packcol}, 
+		\hyperpage{29}
+    \subitem {bal\_\discretionary {-}{}{}row\_\discretionary {-}{}{}traversal\_\discretionary {-}{}{}packcol}, 
+		\hyperpage{30}
+    \subitem {bal\_\discretionary {-}{}{}save\_\discretionary {-}{}{}cds}, 
+		\hyperpage{30}
+    \subitem {bal\_\discretionary {-}{}{}save\_\discretionary {-}{}{}coord}, 
+		\hyperpage{30}
+    \subitem {bal\_\discretionary {-}{}{}save\_\discretionary {-}{}{}packcol}, 
+		\hyperpage{30}
+    \subitem {bal\_\discretionary {-}{}{}save\_\discretionary {-}{}{}packcol\_\discretionary {-}{}{}symmetric}, 
+		\hyperpage{31}
+    \subitem {bal\_\discretionary {-}{}{}symbolic\_\discretionary {-}{}{}factorization}, 
+		\hyperpage{31}
+  \item {bal\_\discretionary {-}{}{}cargar\_\discretionary {-}{}{}matriz}
+    \subitem {bal.c}, \hyperpage{14}
+    \subitem {bal.h}, \hyperpage{24}
+  \item {bal\_\discretionary {-}{}{}cholesky\_\discretionary {-}{}{}Lsolver}
+    \subitem {bal.c}, \hyperpage{15}
+    \subitem {bal.h}, \hyperpage{24}
+  \item {bal\_\discretionary {-}{}{}cholesky\_\discretionary {-}{}{}LTsolver}
+    \subitem {bal.c}, \hyperpage{15}
+    \subitem {bal.h}, \hyperpage{25}
+  \item {bal\_\discretionary {-}{}{}cholesky\_\discretionary {-}{}{}solver}
+    \subitem {bal.c}, \hyperpage{15}
+    \subitem {bal.h}, \hyperpage{25}
+  \item {bal\_\discretionary {-}{}{}coord2cds}
+    \subitem {bal.c}, \hyperpage{15}
+    \subitem {bal.h}, \hyperpage{25}
+  \item {bal\_\discretionary {-}{}{}coord2packcol}
+    \subitem {bal.c}, \hyperpage{16}
+    \subitem {bal.h}, \hyperpage{25}
+  \item {bal\_\discretionary {-}{}{}coord2packcol\_\discretionary {-}{}{}symmetric}
+    \subitem {bal.c}, \hyperpage{16}
+    \subitem {bal.h}, \hyperpage{26}
+  \item {bal\_\discretionary {-}{}{}elimination\_\discretionary {-}{}{}tree}
+    \subitem {bal.c}, \hyperpage{16}
+    \subitem {bal.h}, \hyperpage{26}
+  \item {BAL\_\discretionary {-}{}{}ERROR}
+    \subitem {utils.h}, \hyperpage{98}
+  \item {bal\_\discretionary {-}{}{}free\_\discretionary {-}{}{}cds}
+    \subitem {bal.c}, \hyperpage{16}
+    \subitem {bal.h}, \hyperpage{26}
+  \item {bal\_\discretionary {-}{}{}free\_\discretionary {-}{}{}coord}
+    \subitem {bal.c}, \hyperpage{17}
+    \subitem {bal.h}, \hyperpage{26}
+  \item {bal\_\discretionary {-}{}{}free\_\discretionary {-}{}{}packcol}
+    \subitem {bal.c}, \hyperpage{17}
+    \subitem {bal.h}, \hyperpage{27}
+  \item {bal\_\discretionary {-}{}{}imprimir\_\discretionary {-}{}{}cds}
+    \subitem {bal.c}, \hyperpage{17}
+    \subitem {bal.h}, \hyperpage{27}
+  \item {bal\_\discretionary {-}{}{}imprimir\_\discretionary {-}{}{}coord}
+    \subitem {bal.c}, \hyperpage{17}
+    \subitem {bal.h}, \hyperpage{27}
+  \item {bal\_\discretionary {-}{}{}imprimir\_\discretionary {-}{}{}packcol}
+    \subitem {bal.c}, \hyperpage{18}
+    \subitem {bal.h}, \hyperpage{27}
+  \item {bal\_\discretionary {-}{}{}load\_\discretionary {-}{}{}coord}
+    \subitem {bal.c}, \hyperpage{18}
+    \subitem {bal.h}, \hyperpage{28}
+  \item {bal\_\discretionary {-}{}{}mat2coord}
+    \subitem {bal.c}, \hyperpage{18}
+    \subitem {bal.h}, \hyperpage{28}
+  \item {bal\_\discretionary {-}{}{}mult\_\discretionary {-}{}{}mat\_\discretionary {-}{}{}cds}
+    \subitem {bal.c}, \hyperpage{18}
+    \subitem {bal.h}, \hyperpage{28}
+  \item {bal\_\discretionary {-}{}{}mult\_\discretionary {-}{}{}vec\_\discretionary {-}{}{}cds}
+    \subitem {bal.c}, \hyperpage{19}
+    \subitem {bal.h}, \hyperpage{28}
+  \item {bal\_\discretionary {-}{}{}mult\_\discretionary {-}{}{}vec\_\discretionary {-}{}{}packcol}
+    \subitem {bal.c}, \hyperpage{19}
+    \subitem {bal.h}, \hyperpage{29}
+  \item {bal\_\discretionary {-}{}{}mult\_\discretionary {-}{}{}vec\_\discretionary {-}{}{}packcol\_\discretionary {-}{}{}symmetric}
+    \subitem {bal.c}, \hyperpage{19}
+    \subitem {bal.h}, \hyperpage{29}
+  \item {bal\_\discretionary {-}{}{}numerical\_\discretionary {-}{}{}factorization}
+    \subitem {bal.c}, \hyperpage{19}
+    \subitem {bal.h}, \hyperpage{29}
+  \item {bal\_\discretionary {-}{}{}permutar\_\discretionary {-}{}{}packcol}
+    \subitem {bal.c}, \hyperpage{20}
+    \subitem {bal.h}, \hyperpage{29}
+  \item {bal\_\discretionary {-}{}{}row\_\discretionary {-}{}{}traversal\_\discretionary {-}{}{}packcol}
+    \subitem {bal.c}, \hyperpage{20}
+    \subitem {bal.h}, \hyperpage{30}
+  \item {bal\_\discretionary {-}{}{}save\_\discretionary {-}{}{}cds}
+    \subitem {bal.c}, \hyperpage{20}
+    \subitem {bal.h}, \hyperpage{30}
+  \item {bal\_\discretionary {-}{}{}save\_\discretionary {-}{}{}coord}
+    \subitem {bal.c}, \hyperpage{20}
+    \subitem {bal.h}, \hyperpage{30}
+  \item {bal\_\discretionary {-}{}{}save\_\discretionary {-}{}{}packcol}
+    \subitem {bal.c}, \hyperpage{21}
+    \subitem {bal.h}, \hyperpage{30}
+  \item {bal\_\discretionary {-}{}{}save\_\discretionary {-}{}{}packcol\_\discretionary {-}{}{}symmetric}
+    \subitem {bal.c}, \hyperpage{21}
+    \subitem {bal.h}, \hyperpage{31}
+  \item {bal\_\discretionary {-}{}{}symbolic\_\discretionary {-}{}{}factorization}
+    \subitem {bal.c}, \hyperpage{21}
+    \subitem {bal.h}, \hyperpage{31}
+  \item {binary\_\discretionary {-}{}{}search}
+    \subitem {utils.c}, \hyperpage{96}
+    \subitem {utils.h}, \hyperpage{98}
+
+  \indexspace
+
+  \item {cholesky.c}
+    \subitem {cholesky\_\discretionary {-}{}{}Lsolver}, \hyperpage{32}
+    \subitem {cholesky\_\discretionary {-}{}{}LTsolver}, \hyperpage{33}
+    \subitem {cholesky\_\discretionary {-}{}{}solver}, \hyperpage{33}
+    \subitem {elimination\_\discretionary {-}{}{}tree}, \hyperpage{34}
+    \subitem {make\_\discretionary {-}{}{}column}, \hyperpage{35}
+    \subitem {merge}, \hyperpage{36}
+    \subitem {numerical\_\discretionary {-}{}{}factorization}, 
+		\hyperpage{37}
+    \subitem {symbolic\_\discretionary {-}{}{}factorization}, 
+		\hyperpage{38}
+  \item {cholesky.h}
+    \subitem {cholesky\_\discretionary {-}{}{}Lsolver}, \hyperpage{40}
+    \subitem {cholesky\_\discretionary {-}{}{}LTsolver}, \hyperpage{41}
+    \subitem {cholesky\_\discretionary {-}{}{}solver}, \hyperpage{41}
+    \subitem {elimination\_\discretionary {-}{}{}tree}, \hyperpage{42}
+    \subitem {numerical\_\discretionary {-}{}{}factorization}, 
+		\hyperpage{43}
+    \subitem {symbolic\_\discretionary {-}{}{}factorization}, 
+		\hyperpage{44}
+  \item {cholesky/cholesky.c}, \hyperpage{31}
+  \item {cholesky/cholesky.h}, \hyperpage{40}
+  \item {cholesky/reordenamiento.c}, \hyperpage{46}
+  \item {cholesky/reordenamiento.h}, \hyperpage{48}
+  \item {cholesky\_\discretionary {-}{}{}Lsolver}
+    \subitem {cholesky.c}, \hyperpage{32}
+    \subitem {cholesky.h}, \hyperpage{40}
+  \item {cholesky\_\discretionary {-}{}{}LTsolver}
+    \subitem {cholesky.c}, \hyperpage{33}
+    \subitem {cholesky.h}, \hyperpage{41}
+  \item {cholesky\_\discretionary {-}{}{}solver}
+    \subitem {cholesky.c}, \hyperpage{33}
+    \subitem {cholesky.h}, \hyperpage{41}
+  \item {coord2cds}
+    \subitem {sp\_\discretionary {-}{}{}cds.c}, \hyperpage{65}
+    \subitem {sp\_\discretionary {-}{}{}cds.h}, \hyperpage{68}
+  \item {coord2packcol}
+    \subitem {sp\_\discretionary {-}{}{}packcol.c}, \hyperpage{81}
+    \subitem {sp\_\discretionary {-}{}{}packcol.h}, \hyperpage{89}
+  \item {coord2packcol\_\discretionary {-}{}{}symmetric}
+    \subitem {sp\_\discretionary {-}{}{}packcol.c}, \hyperpage{82}
+    \subitem {sp\_\discretionary {-}{}{}packcol.h}, \hyperpage{90}
+
+  \indexspace
+
+  \item {elimination\_\discretionary {-}{}{}tree}
+    \subitem {cholesky.c}, \hyperpage{34}
+    \subitem {cholesky.h}, \hyperpage{42}
+
+  \indexspace
+
+  \item {free\_\discretionary {-}{}{}cds}
+    \subitem {sp\_\discretionary {-}{}{}cds.c}, \hyperpage{66}
+    \subitem {sp\_\discretionary {-}{}{}cds.h}, \hyperpage{69}
+  \item {free\_\discretionary {-}{}{}coord}
+    \subitem {sp\_\discretionary {-}{}{}coord.c}, \hyperpage{72}
+    \subitem {sp\_\discretionary {-}{}{}coord.h}, \hyperpage{76}
+  \item {free\_\discretionary {-}{}{}packcol}
+    \subitem {sp\_\discretionary {-}{}{}packcol.c}, \hyperpage{83}
+    \subitem {sp\_\discretionary {-}{}{}packcol.h}, \hyperpage{91}
+
+  \indexspace
+
+  \item {insert\_\discretionary {-}{}{}sorted}
+    \subitem {utils.c}, \hyperpage{97}
+    \subitem {utils.h}, \hyperpage{99}
+
+  \indexspace
+
+  \item {load\_\discretionary {-}{}{}coord}
+    \subitem {sp\_\discretionary {-}{}{}coord.c}, \hyperpage{72}
+    \subitem {sp\_\discretionary {-}{}{}coord.h}, \hyperpage{77}
+
+  \indexspace
+
+  \item {make\_\discretionary {-}{}{}column}
+    \subitem {cholesky.c}, \hyperpage{35}
+  \item {mat2coord}
+    \subitem {sp\_\discretionary {-}{}{}coord.c}, \hyperpage{74}
+    \subitem {sp\_\discretionary {-}{}{}coord.h}, \hyperpage{78}
+  \item {matriz\_\discretionary {-}{}{}parser.y}
+    \subitem {yyerror}, \hyperpage{63}
+  \item {merge}
+    \subitem {cholesky.c}, \hyperpage{36}
+  \item {mult\_\discretionary {-}{}{}mat\_\discretionary {-}{}{}cds}
+    \subitem {oper.c}, \hyperpage{51}
+    \subitem {oper.h}, \hyperpage{57}
+  \item {mult\_\discretionary {-}{}{}vec\_\discretionary {-}{}{}cds}
+    \subitem {oper.c}, \hyperpage{54}
+    \subitem {oper.h}, \hyperpage{59}
+  \item {mult\_\discretionary {-}{}{}vec\_\discretionary {-}{}{}packcol}
+    \subitem {oper.c}, \hyperpage{55}
+    \subitem {oper.h}, \hyperpage{60}
+  \item {mult\_\discretionary {-}{}{}vec\_\discretionary {-}{}{}packcol\_\discretionary {-}{}{}symmetric}
+    \subitem {oper.c}, \hyperpage{55}
+    \subitem {oper.h}, \hyperpage{61}
+
+  \indexspace
+
+  \item {numerical\_\discretionary {-}{}{}factorization}
+    \subitem {cholesky.c}, \hyperpage{37}
+    \subitem {cholesky.h}, \hyperpage{43}
+
+  \indexspace
+
+  \item {oper.c}, \hyperpage{51}
+    \subitem {mult\_\discretionary {-}{}{}mat\_\discretionary {-}{}{}cds}, 
+		\hyperpage{51}
+    \subitem {mult\_\discretionary {-}{}{}vec\_\discretionary {-}{}{}cds}, 
+		\hyperpage{54}
+    \subitem {mult\_\discretionary {-}{}{}vec\_\discretionary {-}{}{}packcol}, 
+		\hyperpage{55}
+    \subitem {mult\_\discretionary {-}{}{}vec\_\discretionary {-}{}{}packcol\_\discretionary {-}{}{}symmetric}, 
+		\hyperpage{55}
+  \item {oper.h}, \hyperpage{57}
+    \subitem {mult\_\discretionary {-}{}{}mat\_\discretionary {-}{}{}cds}, 
+		\hyperpage{57}
+    \subitem {mult\_\discretionary {-}{}{}vec\_\discretionary {-}{}{}cds}, 
+		\hyperpage{59}
+    \subitem {mult\_\discretionary {-}{}{}vec\_\discretionary {-}{}{}packcol}, 
+		\hyperpage{60}
+    \subitem {mult\_\discretionary {-}{}{}vec\_\discretionary {-}{}{}packcol\_\discretionary {-}{}{}symmetric}, 
+		\hyperpage{61}
+
+  \indexspace
+
+  \item {parser/matriz\_\discretionary {-}{}{}parser.y}, \hyperpage{62}
+  \item {parser/matriz\_\discretionary {-}{}{}scanner.lex}, 
+		\hyperpage{63}
+  \item {permutar\_\discretionary {-}{}{}packcol}
+    \subitem {reordenamiento.c}, \hyperpage{47}
+    \subitem {reordenamiento.h}, \hyperpage{49}
+
+  \indexspace
+
+  \item {Referencia del Directorio cholesky/}, \hyperpage{7}
+  \item {Referencia del Directorio parser/}, \hyperpage{8}
+  \item {Referencia del Directorio sparse/}, \hyperpage{8}
+  \item {reordenamiento.c}
+    \subitem {permutar\_\discretionary {-}{}{}packcol}, \hyperpage{47}
+    \subitem {reordenar\_\discretionary {-}{}{}packcol}, \hyperpage{48}
+  \item {reordenamiento.h}
+    \subitem {permutar\_\discretionary {-}{}{}packcol}, \hyperpage{49}
+    \subitem {reordenar\_\discretionary {-}{}{}packcol}, \hyperpage{50}
+  \item {reordenar\_\discretionary {-}{}{}packcol}
+    \subitem {reordenamiento.c}, \hyperpage{48}
+    \subitem {reordenamiento.h}, \hyperpage{50}
+  \item {row\_\discretionary {-}{}{}traversal\_\discretionary {-}{}{}packcol}
+    \subitem {sp\_\discretionary {-}{}{}packcol.c}, \hyperpage{84}
+    \subitem {sp\_\discretionary {-}{}{}packcol.h}, \hyperpage{91}
+
+  \indexspace
+
+  \item {save\_\discretionary {-}{}{}cds}
+    \subitem {sp\_\discretionary {-}{}{}cds.c}, \hyperpage{66}
+    \subitem {sp\_\discretionary {-}{}{}cds.h}, \hyperpage{69}
+  \item {save\_\discretionary {-}{}{}coord}
+    \subitem {sp\_\discretionary {-}{}{}coord.c}, \hyperpage{74}
+    \subitem {sp\_\discretionary {-}{}{}coord.h}, \hyperpage{79}
+  \item {save\_\discretionary {-}{}{}packcol}
+    \subitem {sp\_\discretionary {-}{}{}packcol.c}, \hyperpage{85}
+    \subitem {sp\_\discretionary {-}{}{}packcol.h}, \hyperpage{93}
+  \item {save\_\discretionary {-}{}{}packcol\_\discretionary {-}{}{}symmetric}
+    \subitem {sp\_\discretionary {-}{}{}packcol.c}, \hyperpage{86}
+    \subitem {sp\_\discretionary {-}{}{}packcol.h}, \hyperpage{94}
+  \item {sp\_\discretionary {-}{}{}cds}, \hyperpage{9}
+  \item {sp\_\discretionary {-}{}{}cds.c}
+    \subitem {coord2cds}, \hyperpage{65}
+    \subitem {free\_\discretionary {-}{}{}cds}, \hyperpage{66}
+    \subitem {save\_\discretionary {-}{}{}cds}, \hyperpage{66}
+    \subitem {sp\_\discretionary {-}{}{}imprimir\_\discretionary {-}{}{}cds}, 
+		\hyperpage{67}
+  \item {sp\_\discretionary {-}{}{}cds.h}
+    \subitem {coord2cds}, \hyperpage{68}
+    \subitem {free\_\discretionary {-}{}{}cds}, \hyperpage{69}
+    \subitem {save\_\discretionary {-}{}{}cds}, \hyperpage{69}
+    \subitem {sp\_\discretionary {-}{}{}imprimir\_\discretionary {-}{}{}cds}, 
+		\hyperpage{70}
+  \item {sp\_\discretionary {-}{}{}coord}, \hyperpage{10}
+  \item {sp\_\discretionary {-}{}{}coord.c}
+    \subitem {free\_\discretionary {-}{}{}coord}, \hyperpage{72}
+    \subitem {load\_\discretionary {-}{}{}coord}, \hyperpage{72}
+    \subitem {mat2coord}, \hyperpage{74}
+    \subitem {save\_\discretionary {-}{}{}coord}, \hyperpage{74}
+    \subitem {sp\_\discretionary {-}{}{}imprimir\_\discretionary {-}{}{}coord}, 
+		\hyperpage{75}
+  \item {sp\_\discretionary {-}{}{}coord.h}
+    \subitem {free\_\discretionary {-}{}{}coord}, \hyperpage{76}
+    \subitem {load\_\discretionary {-}{}{}coord}, \hyperpage{77}
+    \subitem {mat2coord}, \hyperpage{78}
+    \subitem {save\_\discretionary {-}{}{}coord}, \hyperpage{79}
+    \subitem {sp\_\discretionary {-}{}{}imprimir\_\discretionary {-}{}{}coord}, 
+		\hyperpage{80}
+  \item {sp\_\discretionary {-}{}{}imprimir\_\discretionary {-}{}{}cds}
+    \subitem {sp\_\discretionary {-}{}{}cds.c}, \hyperpage{67}
+    \subitem {sp\_\discretionary {-}{}{}cds.h}, \hyperpage{70}
+  \item {sp\_\discretionary {-}{}{}imprimir\_\discretionary {-}{}{}coord}
+    \subitem {sp\_\discretionary {-}{}{}coord.c}, \hyperpage{75}
+    \subitem {sp\_\discretionary {-}{}{}coord.h}, \hyperpage{80}
+  \item {sp\_\discretionary {-}{}{}imprimir\_\discretionary {-}{}{}packcol}
+    \subitem {sp\_\discretionary {-}{}{}packcol.c}, \hyperpage{87}
+    \subitem {sp\_\discretionary {-}{}{}packcol.h}, \hyperpage{95}
+  \item {sp\_\discretionary {-}{}{}packcol}, \hyperpage{11}
+  \item {sp\_\discretionary {-}{}{}packcol.c}
+    \subitem {coord2packcol}, \hyperpage{81}
+    \subitem {coord2packcol\_\discretionary {-}{}{}symmetric}, 
+		\hyperpage{82}
+    \subitem {free\_\discretionary {-}{}{}packcol}, \hyperpage{83}
+    \subitem {row\_\discretionary {-}{}{}traversal\_\discretionary {-}{}{}packcol}, 
+		\hyperpage{84}
+    \subitem {save\_\discretionary {-}{}{}packcol}, \hyperpage{85}
+    \subitem {save\_\discretionary {-}{}{}packcol\_\discretionary {-}{}{}symmetric}, 
+		\hyperpage{86}
+    \subitem {sp\_\discretionary {-}{}{}imprimir\_\discretionary {-}{}{}packcol}, 
+		\hyperpage{87}
+  \item {sp\_\discretionary {-}{}{}packcol.h}
+    \subitem {coord2packcol}, \hyperpage{89}
+    \subitem {coord2packcol\_\discretionary {-}{}{}symmetric}, 
+		\hyperpage{90}
+    \subitem {free\_\discretionary {-}{}{}packcol}, \hyperpage{91}
+    \subitem {row\_\discretionary {-}{}{}traversal\_\discretionary {-}{}{}packcol}, 
+		\hyperpage{91}
+    \subitem {save\_\discretionary {-}{}{}packcol}, \hyperpage{93}
+    \subitem {save\_\discretionary {-}{}{}packcol\_\discretionary {-}{}{}symmetric}, 
+		\hyperpage{94}
+    \subitem {sp\_\discretionary {-}{}{}imprimir\_\discretionary {-}{}{}packcol}, 
+		\hyperpage{95}
+  \item {sparse/sp\_\discretionary {-}{}{}cds.c}, \hyperpage{64}
+  \item {sparse/sp\_\discretionary {-}{}{}cds.h}, \hyperpage{67}
+  \item {sparse/sp\_\discretionary {-}{}{}coord.c}, \hyperpage{71}
+  \item {sparse/sp\_\discretionary {-}{}{}coord.h}, \hyperpage{76}
+  \item {sparse/sp\_\discretionary {-}{}{}packcol.c}, \hyperpage{81}
+  \item {sparse/sp\_\discretionary {-}{}{}packcol.h}, \hyperpage{88}
+  \item {symbolic\_\discretionary {-}{}{}factorization}
+    \subitem {cholesky.c}, \hyperpage{38}
+    \subitem {cholesky.h}, \hyperpage{44}
+
+  \indexspace
+
+  \item {utils.c}, \hyperpage{96}
+    \subitem {binary\_\discretionary {-}{}{}search}, \hyperpage{96}
+    \subitem {insert\_\discretionary {-}{}{}sorted}, \hyperpage{97}
+  \item {utils.h}, \hyperpage{97}
+    \subitem {BAL\_\discretionary {-}{}{}ERROR}, \hyperpage{98}
+    \subitem {binary\_\discretionary {-}{}{}search}, \hyperpage{98}
+    \subitem {insert\_\discretionary {-}{}{}sorted}, \hyperpage{99}
+
+  \indexspace
+
+  \item {yyerror}
+    \subitem {matriz\_\discretionary {-}{}{}parser.y}, \hyperpage{63}
+  \item {yyparse}
+    \subitem {bal.c}, \hyperpage{21}
+
+\end{theindex}

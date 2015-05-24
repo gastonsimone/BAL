@@ -1,0 +1,76 @@
+\hypertarget{matriz__parser_8y}{
+\subsection{Referencia del Archivo parser/matriz\_\-parser.y}
+\label{matriz__parser_8y}\index{parser/matriz\_\-parser.y@{parser/matriz\_\-parser.y}}
+}
+Archivo de definición del parser generado por bison. 
+
+{\tt \#include $<$stdio.h$>$}\par
+{\tt \#include $<$stdlib.h$>$}\par
+{\tt \#include $<$glib.h$>$}\par
+{\tt \#include $<$errno.h$>$}\par
+{\tt \#include $<$string.h$>$}\par
+\subsubsection*{Funciones}
+\begin{CompactItemize}
+\item 
+void \hyperlink{matriz__parser_8y_6bbce3a09233d68cbfb268cd87cdc360}{yyerror} (const char $\ast$archivo, double $\ast$$\ast$$\ast$matriz, int $\ast$n, int $\ast$m, const char $\ast$msg)
+\begin{CompactList}\small\item\em Función de manejo de errores para el parser generado por bison. \item\end{CompactList}\end{CompactItemize}
+\subsubsection*{Variables}
+\begin{CompactItemize}
+\item 
+\hypertarget{matriz__parser_8y_e6408562f83e41989823b776a086dad3}{
+filas \textbf{\_\-\_\-pad0\_\-\_\-}}
+\label{matriz__parser_8y_e6408562f83e41989823b776a086dad3}
+
+\item 
+\hypertarget{matriz__parser_8y_7d6cc9f3ec2940d52e822f9170c9df76}{
+filas \textbf{gpointer}}
+\label{matriz__parser_8y_7d6cc9f3ec2940d52e822f9170c9df76}
+
+\item 
+\hypertarget{matriz__parser_8y_c836204b2b0ad1198698f03c142496be}{
+fila \textbf{\_\-\_\-pad1\_\-\_\-}}
+\label{matriz__parser_8y_c836204b2b0ad1198698f03c142496be}
+
+\item 
+\hypertarget{matriz__parser_8y_005e10587e47d07d71f95ba4bc64e6fe}{
+$\ast$ \textbf{val} = \$1}
+\label{matriz__parser_8y_005e10587e47d07d71f95ba4bc64e6fe}
+
+\end{CompactItemize}
+
+
+\subsubsection{Descripción detallada}
+Archivo de definición del parser generado por bison. 
+
+Este archivo es la entrada de bison, mediante el cual se genera el código C que implementa el parser que lee definiciones de matrices en formato matlab, produciendo el archivo {\tt matriz\_\-parser.tab.c}.
+
+El parser está definido de forma que cargue en memoria la matriz parseada en formato de matrices convencional del lenguaje C mediante el puntero {\tt double $\ast$$\ast$$\ast$matriz}. 
+
+Definición en el archivo \hyperlink{matriz__parser_8y-source}{matriz\_\-parser.y}.
+
+\subsubsection{Documentación de las funciones}
+\hypertarget{matriz__parser_8y_6bbce3a09233d68cbfb268cd87cdc360}{
+\index{matriz\_\-parser.y@{matriz\_\-parser.y}!yyerror@{yyerror}}
+\index{yyerror@{yyerror}!matriz_parser.y@{matriz\_\-parser.y}}
+\paragraph{\setlength{\rightskip}{0pt plus 5cm}void yyerror (const char $\ast$ {\em archivo}, \/  double $\ast$$\ast$$\ast$ {\em matriz}, \/  int $\ast$ {\em n}, \/  int $\ast$ {\em m}, \/  const char $\ast$ {\em msg})}\hfill}
+\label{matriz__parser_8y_6bbce3a09233d68cbfb268cd87cdc360}
+
+
+Función de manejo de errores para el parser generado por bison. 
+
+\begin{Desc}
+\item[Parámetros:]
+\begin{description}
+\item[{\em archivo}]Camino al archivo donde esta definida la matriz \item[{\em matriz}]Puntero en donde se va a devolver la matriz parseada (en caso de recuperarse del error) \item[{\em n}]Cantidad de filas de la matriz leída \item[{\em m}]Cantidad de columnas de la matriz leída \item[{\em msg}]Mensaje de error devuelto por el parser generado por bison \end{description}
+\end{Desc}
+
+
+Definición en la línea 127 del archivo matriz\_\-parser.y.
+
+\begin{Code}\begin{verbatim}128 {
+129     fprintf(stderr, "%s\n", msg);
+130 }
+\end{verbatim}
+\end{Code}
+
+

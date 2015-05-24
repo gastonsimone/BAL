@@ -1,0 +1,1341 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>BAL: Referencia del Archivo bal.c</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Generado por Doxygen 1.5.5 -->
+<script type="text/javascript">
+<!--
+function changeDisplayState (e){
+  var num=this.id.replace(/[^[0-9]/g,'');
+  var button=this.firstChild;
+  var sectionDiv=document.getElementById('dynsection'+num);
+  if (sectionDiv.style.display=='none'||sectionDiv.style.display==''){
+    sectionDiv.style.display='block';
+    button.src='open.gif';
+  }else{
+    sectionDiv.style.display='none';
+    button.src='closed.gif';
+  }
+}
+function initDynSections(){
+  var divs=document.getElementsByTagName('div');
+  var sectionCounter=1;
+  for(var i=0;i<divs.length-1;i++){
+    if(divs[i].className=='dynheader'&&divs[i+1].className=='dynsection'){
+      var header=divs[i];
+      var section=divs[i+1];
+      var button=header.firstChild;
+      if (button!='IMG'){
+        divs[i].insertBefore(document.createTextNode(' '),divs[i].firstChild);
+        button=document.createElement('img');
+        divs[i].insertBefore(button,divs[i].firstChild);
+      }
+      header.style.cursor='pointer';
+      header.onclick=changeDisplayState;
+      header.id='dynheader'+sectionCounter;
+      button.src='closed.gif';
+      section.id='dynsection'+sectionCounter;
+      section.style.display='none';
+      section.style.marginLeft='14px';
+      sectionCounter++;
+    }
+  }
+}
+window.onload = initDynSections;
+-->
+</script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Página&nbsp;principal</span></a></li>
+      <li><a href="pages.html"><span>Páginas&nbsp;relacionadas</span></a></li>
+      <li><a href="annotated.html"><span>Estructuras&nbsp;de&nbsp;Datos</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+      <li><a href="dirs.html"><span>Directorios</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>Referencia del Archivo bal.c</h1>Biblioteca de Algebra Lineal, archivo principal. <a href="#_details">Más...</a>
+<p>
+<code>#include &lt;glib.h&gt;</code><br>
+<code>#include &lt;stdio.h&gt;</code><br>
+<code>#include &quot;<a class="el" href="bal_8h-source.html">bal.h</a>&quot;</code><br>
+<code>#include &quot;<a class="el" href="oper_8h-source.html">oper.h</a>&quot;</code><br>
+<code>#include &quot;<a class="el" href="sp__coord_8h-source.html">sparse/sp_coord.h</a>&quot;</code><br>
+<code>#include &quot;<a class="el" href="sp__packcol_8h-source.html">sparse/sp_packcol.h</a>&quot;</code><br>
+<code>#include &quot;<a class="el" href="sp__cds_8h-source.html">sparse/sp_cds.h</a>&quot;</code><br>
+<code>#include &quot;<a class="el" href="cholesky_8h-source.html">cholesky/cholesky.h</a>&quot;</code><br>
+<code>#include &quot;<a class="el" href="reordenamiento_8h-source.html">cholesky/reordenamiento.h</a>&quot;</code><br>
+
+<p>
+<a href="bal_8c-source.html">Ir al código fuente de este archivo.</a><table border="0" cellpadding="0" cellspacing="0">
+<tr><td></td></tr>
+<tr><td colspan="2"><br><h2>Funciones</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="bal_8c.html#0611775fcb04cf55d38106686c13e33e">yyparse</a> (const char *archivo, double ***matriz, int *n, int *m)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Parser de matrices en formato matlab generado con bison y flex.  <a href="#0611775fcb04cf55d38106686c13e33e"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="bal_8c.html#5fa9afcb6f46fadec6d601f11592ebc9">bal_cargar_matriz</a> (const char *archivo, double ***matriz, int *n, int *m)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Carga una matriz en memoria desde un archivo.  <a href="#5fa9afcb6f46fadec6d601f11592ebc9"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="001bc810dfe24d78c6ee465351471ca7"></a><!-- doxytag: member="bal.c::bal_imprimir_matriz" ref="001bc810dfe24d78c6ee465351471ca7" args="(FILE *fp, double **matriz, int n, int m)" -->
+void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="bal_8c.html#001bc810dfe24d78c6ee465351471ca7">bal_imprimir_matriz</a> (FILE *fp, double **matriz, int n, int m)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Imprime la matriz en el archivo <code>fp</code>. <br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="structsp__coord.html">sp_coord</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="bal_8c.html#03258fb282226ce95701827d775bb011">bal_mat2coord</a> (int n, int m, double **mat)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Genera la matriz dispersa equivalente a la matriz completa mat (n x m).  <a href="#03258fb282226ce95701827d775bb011"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="structsp__packcol.html">sp_packcol</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="bal_8c.html#6ced93fa5fb8f0a5103d8ee2e2bb58c2">bal_coord2packcol</a> (<a class="el" href="structsp__coord.html">sp_coord</a> *mat)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Genera una instancia de la matriz mat en formato empaquetado por columna.  <a href="#6ced93fa5fb8f0a5103d8ee2e2bb58c2"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="structsp__packcol.html">sp_packcol</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="bal_8c.html#069fc47d55dc12786bae9f18382344e5">bal_coord2packcol_symmetric</a> (<a class="el" href="structsp__coord.html">sp_coord</a> *mat)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Genera una instancia de la matriz mat en formato empaquetado por columna para matrices simétricas.  <a href="#069fc47d55dc12786bae9f18382344e5"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="bal_8c.html#fb2e0eb90b54ac0b083d42f1d38d45ac">bal_imprimir_coord</a> (FILE *fp, <a class="el" href="structsp__coord.html">sp_coord</a> *mat)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Imprime la matriz guardada en formato simple por coordenadas en fp.  <a href="#fb2e0eb90b54ac0b083d42f1d38d45ac"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="bal_8c.html#5c7bdb5d92a964b7e4cc66d8058e6fed">bal_imprimir_packcol</a> (FILE *fp, <a class="el" href="structsp__packcol.html">sp_packcol</a> *mat)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Imprime la matriz guardada en formato empaquetado por columna en fp.  <a href="#5c7bdb5d92a964b7e4cc66d8058e6fed"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="bal_8c.html#dfee3769ca35f010759eddbf8e9cc476">bal_mult_vec_packcol_symmetric</a> (<a class="el" href="structsp__packcol.html">sp_packcol</a> *A, double *x, double *y)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Multiplica una matriz simétrica empaquetada por columna por un vector.  <a href="#dfee3769ca35f010759eddbf8e9cc476"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="bal_8c.html#413951b2a155feea5c67288a3ccb34bf">bal_mult_vec_packcol</a> (<a class="el" href="structsp__packcol.html">sp_packcol</a> *A, double *x, double *y)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Multiplica una matriz empaquetada por columna por un vector.  <a href="#413951b2a155feea5c67288a3ccb34bf"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="bal_8c.html#27f481dd5d13dfab5b06bb95d5c5aa1b">bal_row_traversal_packcol</a> (<a class="el" href="structsp__packcol.html">sp_packcol</a> *A, int *i, int *j, int *posij)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Implementa un mecanismo eficiente para recorrer por filas una matriz dispersa empaquetada por columnas.  <a href="#27f481dd5d13dfab5b06bb95d5c5aa1b"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="structsp__coord.html">sp_coord</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="bal_8c.html#1e8a293081b94602060a2f757e92a8ce">bal_load_coord</a> (FILE *fp)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Escribe en <code>fp</code> la matriz <code>A</code> en un formato entendible por <a class="el" href="sp__coord_8c.html#d6a1042d41ff43da1f26396f5803daac" title="Lee una matriz en formato simple por coordenadas desde archivo.">load_coord()</a>.  <a href="#1e8a293081b94602060a2f757e92a8ce"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="bal_8c.html#abba0c987c1cd21f99ae3ef4a5fca7ac">bal_save_coord</a> (FILE *fp, <a class="el" href="structsp__coord.html">sp_coord</a> *A)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Escribe en <code>fp</code> la matriz <code>A</code> en un formato entendible por <a class="el" href="sp__coord_8c.html#d6a1042d41ff43da1f26396f5803daac" title="Lee una matriz en formato simple por coordenadas desde archivo.">load_coord()</a>.  <a href="#abba0c987c1cd21f99ae3ef4a5fca7ac"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="bal_8c.html#5ae3c23f89da32858f1420e32d35ccdc">bal_save_packcol_symmetric</a> (FILE *fp, <a class="el" href="structsp__packcol.html">sp_packcol</a> *A)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Imprime la matriz simétrica empaquetada por columna en formato matlab en el archivo fp.  <a href="#5ae3c23f89da32858f1420e32d35ccdc"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="bal_8c.html#23df03ad23589aefe5103d463d55ff8c">bal_save_packcol</a> (FILE *fp, <a class="el" href="structsp__packcol.html">sp_packcol</a> *A)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Imprime la matriz <code>A</code> en formato matlab en el archivo <code>fp</code>.  <a href="#23df03ad23589aefe5103d463d55ff8c"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">int *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="bal_8c.html#e282c362416526cbcedf0c9c49f8a8d7">bal_elimination_tree</a> (<a class="el" href="structsp__packcol.html">sp_packcol</a> *A, int *nnz)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Calcula el árbol de eliminación de la matriz simétrica A.  <a href="#e282c362416526cbcedf0c9c49f8a8d7"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="structsp__packcol.html">sp_packcol</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="bal_8c.html#5423521d4378c7a23082256da6b7eba9">bal_symbolic_factorization</a> (<a class="el" href="structsp__packcol.html">sp_packcol</a> *A)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Factorización simbólica de la matriz A.  <a href="#5423521d4378c7a23082256da6b7eba9"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="bal_8c.html#9bfee73c39b529b912b2f140e0ff1765">bal_numerical_factorization</a> (<a class="el" href="structsp__packcol.html">sp_packcol</a> *A, <a class="el" href="structsp__packcol.html">sp_packcol</a> *L)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sobreescribe <code>L</code> con la factorización de Cholesky de A.  <a href="#9bfee73c39b529b912b2f140e0ff1765"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="bal_8c.html#1bb603f980bf7cd3476b13a2f61e9a87">bal_cholesky_Lsolver</a> (<a class="el" href="structsp__packcol.html">sp_packcol</a> *L, double *b)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sobrescribe <code>b</code> con la solución del sistema <img class="formulaInl" alt="$Ly=b$" src="form_0.png">.  <a href="#1bb603f980bf7cd3476b13a2f61e9a87"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="bal_8c.html#00c65a19e4490139c1abe23a72a19c04">bal_cholesky_LTsolver</a> (<a class="el" href="structsp__packcol.html">sp_packcol</a> *L, double *b)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sobreescribe <code>b</code> con la solución de <img class="formulaInl" alt="$L^Tx=b$" src="form_1.png">.  <a href="#00c65a19e4490139c1abe23a72a19c04"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="bal_8c.html#c27eba96470b3ac5a5019230bd380a1a">bal_cholesky_solver</a> (<a class="el" href="structsp__packcol.html">sp_packcol</a> *A, double *b)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Resuelve un sistema lineal mediante el algoritmo de Cholesky optimizado para matrices dispersas.  <a href="#c27eba96470b3ac5a5019230bd380a1a"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="structsp__cds.html">sp_cds</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="bal_8c.html#26024ae0fd4f685b495f1e33a6e65da8">bal_coord2cds</a> (<a class="el" href="structsp__coord.html">sp_coord</a> *mat)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Genera la matriz en formato CDS equivalente a la matriz mat en formato simple.  <a href="#26024ae0fd4f685b495f1e33a6e65da8"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="bal_8c.html#0098b5496a5f2131a34c197bbc9ba57a">bal_imprimir_cds</a> (FILE *fp, <a class="el" href="structsp__cds.html">sp_cds</a> *mat)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Imprime la matriz guardada en formato simple por coordenadas en fp.  <a href="#0098b5496a5f2131a34c197bbc9ba57a"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="bal_8c.html#73ce65d5fd284423c38517d6370f449e">bal_mult_vec_cds</a> (<a class="el" href="structsp__cds.html">sp_cds</a> *A, double *x, double *y)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Multiplica una matriz en formato CDS por un vector.  <a href="#73ce65d5fd284423c38517d6370f449e"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="structsp__cds.html">sp_cds</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="bal_8c.html#1500ac2a006e9229a2a4fe810734367b">bal_mult_mat_cds</a> (<a class="el" href="structsp__cds.html">sp_cds</a> *A, <a class="el" href="structsp__cds.html">sp_cds</a> *B)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Multiplica dos matrices en formato CDS.  <a href="#1500ac2a006e9229a2a4fe810734367b"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="bal_8c.html#5928b3ea635bf59c0a99e5c835c06668">bal_save_cds</a> (FILE *fp, <a class="el" href="structsp__cds.html">sp_cds</a> *A)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Imprime la matriz <code>A</code> en formato matlab en el archivo <code>fp</code>.  <a href="#5928b3ea635bf59c0a99e5c835c06668"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="structsp__packcol.html">sp_packcol</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="bal_8c.html#cf73a00379402d81de059fe1af3c496a">bal_permutar_packcol</a> (unsigned int *p, <a class="el" href="structsp__packcol.html">sp_packcol</a> *A)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Aplica una permutación de columnas sobre la matriz <code>A</code>.  <a href="#cf73a00379402d81de059fe1af3c496a"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="bal_8c.html#b3ce8c7df5d3d2a8eb9cd70534f628ed">bal_free_coord</a> (<a class="el" href="structsp__coord.html">sp_coord</a> *A)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Libera la memoria reservada por la matriz <code>A</code>.  <a href="#b3ce8c7df5d3d2a8eb9cd70534f628ed"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="bal_8c.html#ecd6ad512d46f1825e79eda4647eaf60">bal_free_packcol</a> (<a class="el" href="structsp__packcol.html">sp_packcol</a> *A)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Libera la memoria reservada por la matriz <code>A</code>.  <a href="#ecd6ad512d46f1825e79eda4647eaf60"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="bal_8c.html#7eae9c8721058a53a00d0c0dad2551f2">bal_free_cds</a> (<a class="el" href="structsp__cds.html">sp_cds</a> *A)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Libera la memoria reservada por la matriz <code>A</code>.  <a href="#7eae9c8721058a53a00d0c0dad2551f2"></a><br></td></tr>
+</table>
+<hr><a name="_details"></a><h2>Descripción detallada</h2>
+Biblioteca de Algebra Lineal, archivo principal. 
+<p>
+Este archivo implementa las funciones disponibles mediante BAL. 
+<p>Definición en el archivo <a class="el" href="bal_8c-source.html">bal.c</a>.</p>
+<hr><h2>Documentación de las funciones</h2>
+<a class="anchor" name="5fa9afcb6f46fadec6d601f11592ebc9"></a><!-- doxytag: member="bal.c::bal_cargar_matriz" ref="5fa9afcb6f46fadec6d601f11592ebc9" args="(const char *archivo, double ***matriz, int *n, int *m)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int bal_cargar_matriz           </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>archivo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double ***&nbsp;</td>
+          <td class="paramname"> <em>matriz</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&nbsp;</td>
+          <td class="paramname"> <em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&nbsp;</td>
+          <td class="paramname"> <em>m</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Carga una matriz en memoria desde un archivo. 
+<p>
+<dl compact><dt><b>Parámetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>archivo</em>&nbsp;</td><td>ENTRADA: El camino al archivo en el que esta definida la matriz </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>matriz</em>&nbsp;</td><td>SALIDA: Puntero a la estructura de memoria donde fue alocada la matriz </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>n</em>&nbsp;</td><td>SALIDA: Cantidad de filas </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>m</em>&nbsp;</td><td>SALIDA: Cantidad de columnas</td></tr>
+  </table>
+</dl>
+La matriz es cargada en memoria de forma "convencional". El formato esperado es el mismo formato usado por matlab para definir matrices. El parser fue implementado utilizando las herramientas bison y flex de forma combinada. La función retorna 0 si todo funciono correctamente y otro valor en caso contrario. 
+<p>Definición en la línea <a class="el" href="bal_8c-source.html#l00043">43</a> del archivo <a class="el" href="bal_8c-source.html">bal.c</a>.</p>
+
+<p>Hace referencia a <a class="el" href="bal_8c.html#0611775fcb04cf55d38106686c13e33e">yyparse()</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00044"></a>00044 {
+<a name="l00045"></a>00045     <span class="keywordflow">if</span> (<a class="code" href="bal_8c.html#0611775fcb04cf55d38106686c13e33e" title="Parser de matrices en formato matlab generado con bison y flex.">yyparse</a>(archivo, matriz, n, m) != 0)
+<a name="l00046"></a>00046         <span class="keywordflow">return</span> -1;
+<a name="l00047"></a>00047 
+<a name="l00048"></a>00048     <span class="keywordflow">return</span> 0;
+<a name="l00049"></a>00049 }
+</pre></div>
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="1bb603f980bf7cd3476b13a2f61e9a87"></a><!-- doxytag: member="bal.c::bal_cholesky_Lsolver" ref="1bb603f980bf7cd3476b13a2f61e9a87" args="(sp_packcol *L, double *b)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bal_cholesky_Lsolver           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsp__packcol.html">sp_packcol</a> *&nbsp;</td>
+          <td class="paramname"> <em>L</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&nbsp;</td>
+          <td class="paramname"> <em>b</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Sobrescribe <code>b</code> con la solución del sistema <img class="formulaInl" alt="$Ly=b$" src="form_0.png">. 
+<p>
+Por más información vea <a class="el" href="cholesky_8c.html#700b53e08123405fc54742fb52098588" title="Sobrescribe b con la solución del sistema .">cholesky_Lsolver()</a>. 
+<p>Definición en la línea <a class="el" href="bal_8c-source.html#l00222">222</a> del archivo <a class="el" href="bal_8c-source.html">bal.c</a>.</p>
+
+<p>Hace referencia a <a class="el" href="cholesky_8c-source.html#l00329">cholesky_Lsolver()</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00223"></a>00223 {
+<a name="l00224"></a>00224     <a class="code" href="cholesky_8c.html#700b53e08123405fc54742fb52098588" title="Sobrescribe b con la solución del sistema .">cholesky_Lsolver</a>(L, b);
+<a name="l00225"></a>00225 }
+</pre></div>
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="00c65a19e4490139c1abe23a72a19c04"></a><!-- doxytag: member="bal.c::bal_cholesky_LTsolver" ref="00c65a19e4490139c1abe23a72a19c04" args="(sp_packcol *L, double *b)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bal_cholesky_LTsolver           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsp__packcol.html">sp_packcol</a> *&nbsp;</td>
+          <td class="paramname"> <em>L</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&nbsp;</td>
+          <td class="paramname"> <em>b</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Sobreescribe <code>b</code> con la solución de <img class="formulaInl" alt="$L^Tx=b$" src="form_1.png">. 
+<p>
+Por más información vea <a class="el" href="cholesky_8c.html#afba46e6cb519f5b021129cf06ece41e" title="Sobreescribe b con la solución de .">cholesky_LTsolver()</a>. 
+<p>Definición en la línea <a class="el" href="bal_8c-source.html#l00232">232</a> del archivo <a class="el" href="bal_8c-source.html">bal.c</a>.</p>
+
+<p>Hace referencia a <a class="el" href="cholesky_8c-source.html#l00354">cholesky_LTsolver()</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00233"></a>00233 {
+<a name="l00234"></a>00234     <a class="code" href="cholesky_8c.html#afba46e6cb519f5b021129cf06ece41e" title="Sobreescribe b con la solución de .">cholesky_LTsolver</a>(L, b);
+<a name="l00235"></a>00235 }
+</pre></div>
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="c27eba96470b3ac5a5019230bd380a1a"></a><!-- doxytag: member="bal.c::bal_cholesky_solver" ref="c27eba96470b3ac5a5019230bd380a1a" args="(sp_packcol *A, double *b)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bal_cholesky_solver           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsp__packcol.html">sp_packcol</a> *&nbsp;</td>
+          <td class="paramname"> <em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&nbsp;</td>
+          <td class="paramname"> <em>b</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Resuelve un sistema lineal mediante el algoritmo de Cholesky optimizado para matrices dispersas. 
+<p>
+Por más información vea <a class="el" href="cholesky_8c.html#b61e2da86cddb63b2ef5d38b46a1d4ea" title="Resuelve un sistema lineal mediante el algoritmo de Cholesky optimizado para matrices...">cholesky_solver()</a>. 
+<p>Definición en la línea <a class="el" href="bal_8c-source.html#l00242">242</a> del archivo <a class="el" href="bal_8c-source.html">bal.c</a>.</p>
+
+<p>Hace referencia a <a class="el" href="cholesky_8c-source.html#l00384">cholesky_solver()</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00243"></a>00243 {
+<a name="l00244"></a>00244     <a class="code" href="cholesky_8c.html#b61e2da86cddb63b2ef5d38b46a1d4ea" title="Resuelve un sistema lineal mediante el algoritmo de Cholesky optimizado para matrices...">cholesky_solver</a>(A, b);
+<a name="l00245"></a>00245 }
+</pre></div>
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="26024ae0fd4f685b495f1e33a6e65da8"></a><!-- doxytag: member="bal.c::bal_coord2cds" ref="26024ae0fd4f685b495f1e33a6e65da8" args="(sp_coord *mat)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structsp__cds.html">sp_cds</a> * bal_coord2cds           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsp__coord.html">sp_coord</a> *&nbsp;</td>
+          <td class="paramname"> <em>mat</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Genera la matriz en formato CDS equivalente a la matriz mat en formato simple. 
+<p>
+Por más información vea <a class="el" href="sp__cds_8c.html#00ca63cd94cc53957997b1c6fe79b721" title="Genera la matriz en formato CDS equivalente a la matriz mat en formato simple.">coord2cds()</a>. 
+<p>Definición en la línea <a class="el" href="bal_8c-source.html#l00252">252</a> del archivo <a class="el" href="bal_8c-source.html">bal.c</a>.</p>
+
+<p>Hace referencia a <a class="el" href="sp__cds_8c-source.html#l00019">coord2cds()</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00253"></a>00253 {
+<a name="l00254"></a>00254     <span class="keywordflow">return</span> <a class="code" href="sp__cds_8c.html#00ca63cd94cc53957997b1c6fe79b721" title="Genera la matriz en formato CDS equivalente a la matriz mat en formato simple.">coord2cds</a>(mat);
+<a name="l00255"></a>00255 }
+</pre></div>
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="6ced93fa5fb8f0a5103d8ee2e2bb58c2"></a><!-- doxytag: member="bal.c::bal_coord2packcol" ref="6ced93fa5fb8f0a5103d8ee2e2bb58c2" args="(sp_coord *mat)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structsp__packcol.html">sp_packcol</a> * bal_coord2packcol           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsp__coord.html">sp_coord</a> *&nbsp;</td>
+          <td class="paramname"> <em>mat</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Genera una instancia de la matriz mat en formato empaquetado por columna. 
+<p>
+Por más información vea <a class="el" href="sp__packcol_8c.html#729d10ec6867249f9b58ceb2683a3318" title="Genera una instancia de la matriz mat en formato empaquetado por columna.">coord2packcol()</a>. 
+<p>Definición en la línea <a class="el" href="bal_8c-source.html#l00082">82</a> del archivo <a class="el" href="bal_8c-source.html">bal.c</a>.</p>
+
+<p>Hace referencia a <a class="el" href="sp__packcol_8c-source.html#l00018">coord2packcol()</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00083"></a>00083 {
+<a name="l00084"></a>00084     <span class="keywordflow">return</span> <a class="code" href="sp__packcol_8c.html#729d10ec6867249f9b58ceb2683a3318" title="Genera una instancia de la matriz mat en formato empaquetado por columna.">coord2packcol</a>(mat);
+<a name="l00085"></a>00085 }
+</pre></div>
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="069fc47d55dc12786bae9f18382344e5"></a><!-- doxytag: member="bal.c::bal_coord2packcol_symmetric" ref="069fc47d55dc12786bae9f18382344e5" args="(sp_coord *mat)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structsp__packcol.html">sp_packcol</a> * bal_coord2packcol_symmetric           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsp__coord.html">sp_coord</a> *&nbsp;</td>
+          <td class="paramname"> <em>mat</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Genera una instancia de la matriz mat en formato empaquetado por columna para matrices simétricas. 
+<p>
+Por más información vea <a class="el" href="sp__packcol_8c.html#7d8ea564f906cc721e5de1c4a4f5844b" title="Genera una instancia de la matriz mat en formato empaquetado por columna para matrices...">coord2packcol_symmetric()</a>. 
+<p>Definición en la línea <a class="el" href="bal_8c-source.html#l00092">92</a> del archivo <a class="el" href="bal_8c-source.html">bal.c</a>.</p>
+
+<p>Hace referencia a <a class="el" href="sp__packcol_8c-source.html#l00069">coord2packcol_symmetric()</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00093"></a>00093 {
+<a name="l00094"></a>00094     <span class="keywordflow">return</span> <a class="code" href="sp__packcol_8c.html#7d8ea564f906cc721e5de1c4a4f5844b" title="Genera una instancia de la matriz mat en formato empaquetado por columna para matrices...">coord2packcol_symmetric</a>(mat);
+<a name="l00095"></a>00095 }
+</pre></div>
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="e282c362416526cbcedf0c9c49f8a8d7"></a><!-- doxytag: member="bal.c::bal_elimination_tree" ref="e282c362416526cbcedf0c9c49f8a8d7" args="(sp_packcol *A, int *nnz)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int * bal_elimination_tree           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsp__packcol.html">sp_packcol</a> *&nbsp;</td>
+          <td class="paramname"> <em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&nbsp;</td>
+          <td class="paramname"> <em>nnz</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Calcula el árbol de eliminación de la matriz simétrica A. 
+<p>
+Por más información vea <a class="el" href="cholesky_8c.html#c247ab532a0c89efa5fc80ccd1de6315" title="Calcula el árbol de eliminación de la matriz simétrica A.">elimination_tree()</a>. 
+<p>Definición en la línea <a class="el" href="bal_8c-source.html#l00192">192</a> del archivo <a class="el" href="bal_8c-source.html">bal.c</a>.</p>
+
+<p>Hace referencia a <a class="el" href="cholesky_8c-source.html#l00042">elimination_tree()</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00193"></a>00193 {
+<a name="l00194"></a>00194     <span class="keywordflow">return</span> <a class="code" href="cholesky_8c.html#c247ab532a0c89efa5fc80ccd1de6315" title="Calcula el árbol de eliminación de la matriz simétrica A.">elimination_tree</a>(A, nnz);
+<a name="l00195"></a>00195 }
+</pre></div>
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="7eae9c8721058a53a00d0c0dad2551f2"></a><!-- doxytag: member="bal.c::bal_free_cds" ref="7eae9c8721058a53a00d0c0dad2551f2" args="(sp_cds *A)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bal_free_cds           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsp__cds.html">sp_cds</a> *&nbsp;</td>
+          <td class="paramname"> <em>A</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Libera la memoria reservada por la matriz <code>A</code>. 
+<p>
+Por más información ver <a class="el" href="sp__cds_8c.html#6b5d5549f99d990b9a259d982e3e4485" title="Borra toda la memoria reservada por la matriz A.">free_cds()</a> 
+<p>Definición en la línea <a class="el" href="bal_8c-source.html#l00332">332</a> del archivo <a class="el" href="bal_8c-source.html">bal.c</a>.</p>
+
+<p>Hace referencia a <a class="el" href="sp__cds_8c-source.html#l00134">free_cds()</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00333"></a>00333 {
+<a name="l00334"></a>00334     <a class="code" href="sp__cds_8c.html#6b5d5549f99d990b9a259d982e3e4485" title="Borra toda la memoria reservada por la matriz A.">free_cds</a>(A);
+<a name="l00335"></a>00335 }
+</pre></div>
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="b3ce8c7df5d3d2a8eb9cd70534f628ed"></a><!-- doxytag: member="bal.c::bal_free_coord" ref="b3ce8c7df5d3d2a8eb9cd70534f628ed" args="(sp_coord *A)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bal_free_coord           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsp__coord.html">sp_coord</a> *&nbsp;</td>
+          <td class="paramname"> <em>A</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Libera la memoria reservada por la matriz <code>A</code>. 
+<p>
+Por más información ver <a class="el" href="sp__coord_8c.html#33dd472b98444c5d08c9099556226816" title="Borra toda la memoria reservada por la matriz A.">free_coord()</a> 
+<p>Definición en la línea <a class="el" href="bal_8c-source.html#l00312">312</a> del archivo <a class="el" href="bal_8c-source.html">bal.c</a>.</p>
+
+<p>Hace referencia a <a class="el" href="sp__coord_8c-source.html#l00206">free_coord()</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00313"></a>00313 {
+<a name="l00314"></a>00314     <a class="code" href="sp__coord_8c.html#33dd472b98444c5d08c9099556226816" title="Borra toda la memoria reservada por la matriz A.">free_coord</a>(A);
+<a name="l00315"></a>00315 }
+</pre></div>
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="ecd6ad512d46f1825e79eda4647eaf60"></a><!-- doxytag: member="bal.c::bal_free_packcol" ref="ecd6ad512d46f1825e79eda4647eaf60" args="(sp_packcol *A)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bal_free_packcol           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsp__packcol.html">sp_packcol</a> *&nbsp;</td>
+          <td class="paramname"> <em>A</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Libera la memoria reservada por la matriz <code>A</code>. 
+<p>
+Por más información ver <a class="el" href="sp__packcol_8c.html#b9f6d408419504b0e7154b221bc0ca4b" title="Borra toda la memoria reservada por la matriz A.">free_packcol()</a> 
+<p>Definición en la línea <a class="el" href="bal_8c-source.html#l00322">322</a> del archivo <a class="el" href="bal_8c-source.html">bal.c</a>.</p>
+
+<p>Hace referencia a <a class="el" href="sp__packcol_8c-source.html#l00348">free_packcol()</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00323"></a>00323 {
+<a name="l00324"></a>00324     <a class="code" href="sp__packcol_8c.html#b9f6d408419504b0e7154b221bc0ca4b" title="Borra toda la memoria reservada por la matriz A.">free_packcol</a>(A);
+<a name="l00325"></a>00325 }
+</pre></div>
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="0098b5496a5f2131a34c197bbc9ba57a"></a><!-- doxytag: member="bal.c::bal_imprimir_cds" ref="0098b5496a5f2131a34c197bbc9ba57a" args="(FILE *fp, sp_cds *mat)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bal_imprimir_cds           </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&nbsp;</td>
+          <td class="paramname"> <em>fp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structsp__cds.html">sp_cds</a> *&nbsp;</td>
+          <td class="paramname"> <em>mat</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Imprime la matriz guardada en formato simple por coordenadas en fp. 
+<p>
+Por más información vea <a class="el" href="sp__cds_8c.html#1f5bfb80b511e70892a29e07d4769e98" title="Imprime la matriz guardada en formato simple por coordenadas en fp.">sp_imprimir_cds()</a>. 
+<p>Definición en la línea <a class="el" href="bal_8c-source.html#l00262">262</a> del archivo <a class="el" href="bal_8c-source.html">bal.c</a>.</p>
+
+<p>Hace referencia a <a class="el" href="sp__cds_8c-source.html#l00074">sp_imprimir_cds()</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00263"></a>00263 {
+<a name="l00264"></a>00264     <a class="code" href="sp__cds_8c.html#1f5bfb80b511e70892a29e07d4769e98" title="Imprime la matriz guardada en formato simple por coordenadas en fp.">sp_imprimir_cds</a>(fp, mat);
+<a name="l00265"></a>00265 }
+</pre></div>
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="fb2e0eb90b54ac0b083d42f1d38d45ac"></a><!-- doxytag: member="bal.c::bal_imprimir_coord" ref="fb2e0eb90b54ac0b083d42f1d38d45ac" args="(FILE *fp, sp_coord *mat)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bal_imprimir_coord           </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&nbsp;</td>
+          <td class="paramname"> <em>fp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structsp__coord.html">sp_coord</a> *&nbsp;</td>
+          <td class="paramname"> <em>mat</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Imprime la matriz guardada en formato simple por coordenadas en fp. 
+<p>
+Por más información vea <a class="el" href="sp__coord_8c.html#ff646304bb38349c4620069c73a35760" title="Imprime la matriz guardada en formato simple por coordenadas en fp.">sp_imprimir_coord()</a>. 
+<p>Definición en la línea <a class="el" href="bal_8c-source.html#l00102">102</a> del archivo <a class="el" href="bal_8c-source.html">bal.c</a>.</p>
+
+<p>Hace referencia a <a class="el" href="sp__coord_8c-source.html#l00183">sp_imprimir_coord()</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00103"></a>00103 {
+<a name="l00104"></a>00104     <a class="code" href="sp__coord_8c.html#ff646304bb38349c4620069c73a35760" title="Imprime la matriz guardada en formato simple por coordenadas en fp.">sp_imprimir_coord</a>(fp, mat);
+<a name="l00105"></a>00105 }
+</pre></div>
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="5c7bdb5d92a964b7e4cc66d8058e6fed"></a><!-- doxytag: member="bal.c::bal_imprimir_packcol" ref="5c7bdb5d92a964b7e4cc66d8058e6fed" args="(FILE *fp, sp_packcol *mat)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bal_imprimir_packcol           </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&nbsp;</td>
+          <td class="paramname"> <em>fp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structsp__packcol.html">sp_packcol</a> *&nbsp;</td>
+          <td class="paramname"> <em>mat</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Imprime la matriz guardada en formato empaquetado por columna en fp. 
+<p>
+Por más información vea <a class="el" href="sp__packcol_8c.html#b4d4d490381b43a9628f2001bb6c99d6" title="Imprime la matriz guardada en formato empaquetado por columna en fp.">sp_imprimir_packcol()</a>. 
+<p>Definición en la línea <a class="el" href="bal_8c-source.html#l00112">112</a> del archivo <a class="el" href="bal_8c-source.html">bal.c</a>.</p>
+
+<p>Hace referencia a <a class="el" href="sp__packcol_8c-source.html#l00125">sp_imprimir_packcol()</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00113"></a>00113 {
+<a name="l00114"></a>00114     <a class="code" href="sp__packcol_8c.html#b4d4d490381b43a9628f2001bb6c99d6" title="Imprime la matriz guardada en formato empaquetado por columna en fp.">sp_imprimir_packcol</a>(fp, mat);
+<a name="l00115"></a>00115 }
+</pre></div>
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="1e8a293081b94602060a2f757e92a8ce"></a><!-- doxytag: member="bal.c::bal_load_coord" ref="1e8a293081b94602060a2f757e92a8ce" args="(FILE *fp)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structsp__coord.html">sp_coord</a> * bal_load_coord           </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&nbsp;</td>
+          <td class="paramname"> <em>fp</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Escribe en <code>fp</code> la matriz <code>A</code> en un formato entendible por <a class="el" href="sp__coord_8c.html#d6a1042d41ff43da1f26396f5803daac" title="Lee una matriz en formato simple por coordenadas desde archivo.">load_coord()</a>. 
+<p>
+Por más información vea <a class="el" href="sp__coord_8c.html#d6a1042d41ff43da1f26396f5803daac" title="Lee una matriz en formato simple por coordenadas desde archivo.">load_coord()</a>. 
+<p>Definición en la línea <a class="el" href="bal_8c-source.html#l00152">152</a> del archivo <a class="el" href="bal_8c-source.html">bal.c</a>.</p>
+
+<p>Hace referencia a <a class="el" href="sp__coord_8c-source.html#l00084">load_coord()</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00153"></a>00153 {
+<a name="l00154"></a>00154     <span class="keywordflow">return</span> <a class="code" href="sp__coord_8c.html#d6a1042d41ff43da1f26396f5803daac" title="Lee una matriz en formato simple por coordenadas desde archivo.">load_coord</a>(fp);
+<a name="l00155"></a>00155 }
+</pre></div>
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="03258fb282226ce95701827d775bb011"></a><!-- doxytag: member="bal.c::bal_mat2coord" ref="03258fb282226ce95701827d775bb011" args="(int n, int m, double **mat)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structsp__coord.html">sp_coord</a> * bal_mat2coord           </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double **&nbsp;</td>
+          <td class="paramname"> <em>mat</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Genera la matriz dispersa equivalente a la matriz completa mat (n x m). 
+<p>
+Por más información, vea <a class="el" href="sp__coord_8c.html#627349c38a6e7dc3792abd416651fb83" title="Genera la matriz dispersa equivalente a la matriz completa mat nxm.">mat2coord()</a>. 
+<p>Definición en la línea <a class="el" href="bal_8c-source.html#l00072">72</a> del archivo <a class="el" href="bal_8c-source.html">bal.c</a>.</p>
+
+<p>Hace referencia a <a class="el" href="sp__coord_8c-source.html#l00019">mat2coord()</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00073"></a>00073 {
+<a name="l00074"></a>00074     <span class="keywordflow">return</span> <a class="code" href="sp__coord_8c.html#627349c38a6e7dc3792abd416651fb83" title="Genera la matriz dispersa equivalente a la matriz completa mat nxm.">mat2coord</a>(n, m, mat);
+<a name="l00075"></a>00075 }
+</pre></div>
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="1500ac2a006e9229a2a4fe810734367b"></a><!-- doxytag: member="bal.c::bal_mult_mat_cds" ref="1500ac2a006e9229a2a4fe810734367b" args="(sp_cds *A, sp_cds *B)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structsp__cds.html">sp_cds</a> * bal_mult_mat_cds           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsp__cds.html">sp_cds</a> *&nbsp;</td>
+          <td class="paramname"> <em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structsp__cds.html">sp_cds</a> *&nbsp;</td>
+          <td class="paramname"> <em>B</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Multiplica dos matrices en formato CDS. 
+<p>
+Por más información ver <a class="el" href="oper_8c.html#6ea0383a6eb9a67301225f5f2fee87b4" title="Multiplica dos matrices en formato CDS.">mult_mat_cds()</a>. 
+<p>Definición en la línea <a class="el" href="bal_8c-source.html#l00282">282</a> del archivo <a class="el" href="bal_8c-source.html">bal.c</a>.</p>
+
+<p>Hace referencia a <a class="el" href="oper_8c-source.html#l00205">mult_mat_cds()</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00283"></a>00283 {
+<a name="l00284"></a>00284     <span class="keywordflow">return</span> <a class="code" href="oper_8c.html#6ea0383a6eb9a67301225f5f2fee87b4" title="Multiplica dos matrices en formato CDS.">mult_mat_cds</a>(A, B);
+<a name="l00285"></a>00285 }
+</pre></div>
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="73ce65d5fd284423c38517d6370f449e"></a><!-- doxytag: member="bal.c::bal_mult_vec_cds" ref="73ce65d5fd284423c38517d6370f449e" args="(sp_cds *A, double *x, double *y)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bal_mult_vec_cds           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsp__cds.html">sp_cds</a> *&nbsp;</td>
+          <td class="paramname"> <em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&nbsp;</td>
+          <td class="paramname"> <em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&nbsp;</td>
+          <td class="paramname"> <em>y</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Multiplica una matriz en formato CDS por un vector. 
+<p>
+Por más información ver <a class="el" href="oper_8c.html#695a940f46d1c589bfcf8758f7a87f15" title="Multiplica una matriz en formato CDS por un vector.">mult_vec_cds()</a>. 
+<p>Definición en la línea <a class="el" href="bal_8c-source.html#l00272">272</a> del archivo <a class="el" href="bal_8c-source.html">bal.c</a>.</p>
+
+<p>Hace referencia a <a class="el" href="oper_8c-source.html#l00130">mult_vec_cds()</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00273"></a>00273 {
+<a name="l00274"></a>00274     <a class="code" href="oper_8c.html#695a940f46d1c589bfcf8758f7a87f15" title="Multiplica una matriz en formato CDS por un vector.">mult_vec_cds</a>(A, x, y);
+<a name="l00275"></a>00275 }
+</pre></div>
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="413951b2a155feea5c67288a3ccb34bf"></a><!-- doxytag: member="bal.c::bal_mult_vec_packcol" ref="413951b2a155feea5c67288a3ccb34bf" args="(sp_packcol *A, double *x, double *y)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bal_mult_vec_packcol           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsp__packcol.html">sp_packcol</a> *&nbsp;</td>
+          <td class="paramname"> <em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&nbsp;</td>
+          <td class="paramname"> <em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&nbsp;</td>
+          <td class="paramname"> <em>y</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Multiplica una matriz empaquetada por columna por un vector. 
+<p>
+Por más información vea <a class="el" href="oper_8c.html#8bdc34ab9889aa1cad64fcc44dd7a2ec" title="Multiplica una matriz empaquetada por columna por un vector.">mult_vec_packcol()</a>. 
+<p>Definición en la línea <a class="el" href="bal_8c-source.html#l00132">132</a> del archivo <a class="el" href="bal_8c-source.html">bal.c</a>.</p>
+
+<p>Hace referencia a <a class="el" href="oper_8c-source.html#l00032">mult_vec_packcol()</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00133"></a>00133 {
+<a name="l00134"></a>00134     <a class="code" href="oper_8c.html#8bdc34ab9889aa1cad64fcc44dd7a2ec" title="Multiplica una matriz empaquetada por columna por un vector.">mult_vec_packcol</a>(A, x, y);
+<a name="l00135"></a>00135 }
+</pre></div>
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="dfee3769ca35f010759eddbf8e9cc476"></a><!-- doxytag: member="bal.c::bal_mult_vec_packcol_symmetric" ref="dfee3769ca35f010759eddbf8e9cc476" args="(sp_packcol *A, double *x, double *y)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bal_mult_vec_packcol_symmetric           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsp__packcol.html">sp_packcol</a> *&nbsp;</td>
+          <td class="paramname"> <em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&nbsp;</td>
+          <td class="paramname"> <em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&nbsp;</td>
+          <td class="paramname"> <em>y</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Multiplica una matriz simétrica empaquetada por columna por un vector. 
+<p>
+Por más información vea <a class="el" href="oper_8c.html#0f9cb665556ffdd8bdb5dfbe861e0d28" title="Multiplica una matriz simétrica empaquetada por columna por un vector.">mult_vec_packcol_symmetric()</a>. 
+<p>Definición en la línea <a class="el" href="bal_8c-source.html#l00122">122</a> del archivo <a class="el" href="bal_8c-source.html">bal.c</a>.</p>
+
+<p>Hace referencia a <a class="el" href="oper_8c-source.html#l00070">mult_vec_packcol_symmetric()</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00123"></a>00123 {
+<a name="l00124"></a>00124     <a class="code" href="oper_8c.html#0f9cb665556ffdd8bdb5dfbe861e0d28" title="Multiplica una matriz simétrica empaquetada por columna por un vector.">mult_vec_packcol_symmetric</a>(A, x, y);
+<a name="l00125"></a>00125 }
+</pre></div>
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="9bfee73c39b529b912b2f140e0ff1765"></a><!-- doxytag: member="bal.c::bal_numerical_factorization" ref="9bfee73c39b529b912b2f140e0ff1765" args="(sp_packcol *A, sp_packcol *L)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bal_numerical_factorization           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsp__packcol.html">sp_packcol</a> *&nbsp;</td>
+          <td class="paramname"> <em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structsp__packcol.html">sp_packcol</a> *&nbsp;</td>
+          <td class="paramname"> <em>L</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Sobreescribe <code>L</code> con la factorización de Cholesky de A. 
+<p>
+Por más información vea <a class="el" href="cholesky_8c.html#2dd1cb8f4a30d7950399b658862a2180" title="Sobreescribe L con la factorización de Cholesky de A.">numerical_factorization()</a>. 
+<p>Definición en la línea <a class="el" href="bal_8c-source.html#l00212">212</a> del archivo <a class="el" href="bal_8c-source.html">bal.c</a>.</p>
+
+<p>Hace referencia a <a class="el" href="cholesky_8c-source.html#l00274">numerical_factorization()</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00213"></a>00213 {
+<a name="l00214"></a>00214     <a class="code" href="cholesky_8c.html#2dd1cb8f4a30d7950399b658862a2180" title="Sobreescribe L con la factorización de Cholesky de A.">numerical_factorization</a>(A, L);
+<a name="l00215"></a>00215 }
+</pre></div>
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="cf73a00379402d81de059fe1af3c496a"></a><!-- doxytag: member="bal.c::bal_permutar_packcol" ref="cf73a00379402d81de059fe1af3c496a" args="(unsigned int *p, sp_packcol *A)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structsp__packcol.html">sp_packcol</a> * bal_permutar_packcol           </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int *&nbsp;</td>
+          <td class="paramname"> <em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structsp__packcol.html">sp_packcol</a> *&nbsp;</td>
+          <td class="paramname"> <em>A</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Aplica una permutación de columnas sobre la matriz <code>A</code>. 
+<p>
+Por más información vea <a class="el" href="reordenamiento_8c.html#05f0067f3214ea7f66d4519c09b5c5c2" title="Aplica una permutación de columnas sobre la matriz A.">permutar_packcol()</a>. 
+<p>Definición en la línea <a class="el" href="bal_8c-source.html#l00302">302</a> del archivo <a class="el" href="bal_8c-source.html">bal.c</a>.</p>
+
+<p>Hace referencia a <a class="el" href="reordenamiento_8c-source.html#l00021">permutar_packcol()</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00303"></a>00303 {
+<a name="l00304"></a>00304     <span class="keywordflow">return</span> <a class="code" href="reordenamiento_8c.html#05f0067f3214ea7f66d4519c09b5c5c2" title="Aplica una permutación de columnas sobre la matriz A.">permutar_packcol</a>(p, A);
+<a name="l00305"></a>00305 }
+</pre></div>
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="27f481dd5d13dfab5b06bb95d5c5aa1b"></a><!-- doxytag: member="bal.c::bal_row_traversal_packcol" ref="27f481dd5d13dfab5b06bb95d5c5aa1b" args="(sp_packcol *A, int *i, int *j, int *posij)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int bal_row_traversal_packcol           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsp__packcol.html">sp_packcol</a> *&nbsp;</td>
+          <td class="paramname"> <em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&nbsp;</td>
+          <td class="paramname"> <em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&nbsp;</td>
+          <td class="paramname"> <em>j</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&nbsp;</td>
+          <td class="paramname"> <em>posij</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Implementa un mecanismo eficiente para recorrer por filas una matriz dispersa empaquetada por columnas. 
+<p>
+Por más información vea <a class="el" href="sp__packcol_8c.html#49b361aae383b0fd323f5735f0ff01bc" title="Implementa un mecanismo eficiente para recorrer por filas una matriz dispersa empaquetada...">row_traversal_packcol()</a>. 
+<p>Definición en la línea <a class="el" href="bal_8c-source.html#l00142">142</a> del archivo <a class="el" href="bal_8c-source.html">bal.c</a>.</p>
+
+<p>Hace referencia a <a class="el" href="sp__packcol_8c-source.html#l00203">row_traversal_packcol()</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00143"></a>00143 {
+<a name="l00144"></a>00144     <span class="keywordflow">return</span> <a class="code" href="sp__packcol_8c.html#49b361aae383b0fd323f5735f0ff01bc" title="Implementa un mecanismo eficiente para recorrer por filas una matriz dispersa empaquetada...">row_traversal_packcol</a>(A, i, j, posij);
+<a name="l00145"></a>00145 }
+</pre></div>
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="5928b3ea635bf59c0a99e5c835c06668"></a><!-- doxytag: member="bal.c::bal_save_cds" ref="5928b3ea635bf59c0a99e5c835c06668" args="(FILE *fp, sp_cds *A)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bal_save_cds           </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&nbsp;</td>
+          <td class="paramname"> <em>fp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structsp__cds.html">sp_cds</a> *&nbsp;</td>
+          <td class="paramname"> <em>A</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Imprime la matriz <code>A</code> en formato matlab en el archivo <code>fp</code>. 
+<p>
+Por más información vea <a class="el" href="sp__cds_8c.html#dbc8b3571c8ace5419d2e02318988388" title="Imprime la matriz A en formato matlab en el archivo fp.">save_cds()</a>. 
+<p>Definición en la línea <a class="el" href="bal_8c-source.html#l00292">292</a> del archivo <a class="el" href="bal_8c-source.html">bal.c</a>.</p>
+
+<p>Hace referencia a <a class="el" href="sp__cds_8c-source.html#l00104">save_cds()</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00293"></a>00293 {
+<a name="l00294"></a>00294     <a class="code" href="sp__cds_8c.html#dbc8b3571c8ace5419d2e02318988388" title="Imprime la matriz A en formato matlab en el archivo fp.">save_cds</a>(fp, A);
+<a name="l00295"></a>00295 }
+</pre></div>
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="abba0c987c1cd21f99ae3ef4a5fca7ac"></a><!-- doxytag: member="bal.c::bal_save_coord" ref="abba0c987c1cd21f99ae3ef4a5fca7ac" args="(FILE *fp, sp_coord *A)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bal_save_coord           </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&nbsp;</td>
+          <td class="paramname"> <em>fp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structsp__coord.html">sp_coord</a> *&nbsp;</td>
+          <td class="paramname"> <em>A</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Escribe en <code>fp</code> la matriz <code>A</code> en un formato entendible por <a class="el" href="sp__coord_8c.html#d6a1042d41ff43da1f26396f5803daac" title="Lee una matriz en formato simple por coordenadas desde archivo.">load_coord()</a>. 
+<p>
+Por más información vea <a class="el" href="sp__coord_8c.html#65d8ffec5eb8263159ca9e6310c6e762" title="Escribe en fp la matriz A en un formato entendible por load_coord().">save_coord()</a>. 
+<p>Definición en la línea <a class="el" href="bal_8c-source.html#l00162">162</a> del archivo <a class="el" href="bal_8c-source.html">bal.c</a>.</p>
+
+<p>Hace referencia a <a class="el" href="sp__coord_8c-source.html#l00156">save_coord()</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00163"></a>00163 {
+<a name="l00164"></a>00164     <a class="code" href="sp__coord_8c.html#65d8ffec5eb8263159ca9e6310c6e762" title="Escribe en fp la matriz A en un formato entendible por load_coord().">save_coord</a>(fp, A);
+<a name="l00165"></a>00165 }
+</pre></div>
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="23df03ad23589aefe5103d463d55ff8c"></a><!-- doxytag: member="bal.c::bal_save_packcol" ref="23df03ad23589aefe5103d463d55ff8c" args="(FILE *fp, sp_packcol *A)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bal_save_packcol           </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&nbsp;</td>
+          <td class="paramname"> <em>fp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structsp__packcol.html">sp_packcol</a> *&nbsp;</td>
+          <td class="paramname"> <em>A</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Imprime la matriz <code>A</code> en formato matlab en el archivo <code>fp</code>. 
+<p>
+Por más información vea <a class="el" href="sp__packcol_8c.html#45eba0df395fde4b428c76d4e688ed62" title="Imprime la matriz A en formato matlab en el archivo fp.">save_packcol()</a>. 
+<p>Definición en la línea <a class="el" href="bal_8c-source.html#l00182">182</a> del archivo <a class="el" href="bal_8c-source.html">bal.c</a>.</p>
+
+<p>Hace referencia a <a class="el" href="sp__packcol_8c-source.html#l00316">save_packcol()</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00183"></a>00183 {
+<a name="l00184"></a>00184     <a class="code" href="sp__packcol_8c.html#45eba0df395fde4b428c76d4e688ed62" title="Imprime la matriz A en formato matlab en el archivo fp.">save_packcol</a>(fp, A);
+<a name="l00185"></a>00185 }
+</pre></div>
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="5ae3c23f89da32858f1420e32d35ccdc"></a><!-- doxytag: member="bal.c::bal_save_packcol_symmetric" ref="5ae3c23f89da32858f1420e32d35ccdc" args="(FILE *fp, sp_packcol *A)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bal_save_packcol_symmetric           </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&nbsp;</td>
+          <td class="paramname"> <em>fp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structsp__packcol.html">sp_packcol</a> *&nbsp;</td>
+          <td class="paramname"> <em>A</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Imprime la matriz simétrica empaquetada por columna en formato matlab en el archivo fp. 
+<p>
+Por más información vea <a class="el" href="sp__packcol_8c.html#25a252f919f868ce004aa25b45d44ff3" title="Imprime la matriz simétrica empaquetada por columna en formato matlab en el archivo...">save_packcol_symmetric()</a>. 
+<p>Definición en la línea <a class="el" href="bal_8c-source.html#l00172">172</a> del archivo <a class="el" href="bal_8c-source.html">bal.c</a>.</p>
+
+<p>Hace referencia a <a class="el" href="sp__packcol_8c-source.html#l00275">save_packcol_symmetric()</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00173"></a>00173 {
+<a name="l00174"></a>00174     <a class="code" href="sp__packcol_8c.html#25a252f919f868ce004aa25b45d44ff3" title="Imprime la matriz simétrica empaquetada por columna en formato matlab en el archivo...">save_packcol_symmetric</a>(fp, A);
+<a name="l00175"></a>00175 }
+</pre></div>
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="5423521d4378c7a23082256da6b7eba9"></a><!-- doxytag: member="bal.c::bal_symbolic_factorization" ref="5423521d4378c7a23082256da6b7eba9" args="(sp_packcol *A)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structsp__packcol.html">sp_packcol</a> * bal_symbolic_factorization           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsp__packcol.html">sp_packcol</a> *&nbsp;</td>
+          <td class="paramname"> <em>A</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Factorización simbólica de la matriz A. 
+<p>
+Por más información vea <a class="el" href="cholesky_8c.html#372ebd05f16cc5771aacf2d9e2497119" title="Factorización simbólica de la matriz A.">symbolic_factorization()</a>. 
+<p>Definición en la línea <a class="el" href="bal_8c-source.html#l00202">202</a> del archivo <a class="el" href="bal_8c-source.html">bal.c</a>.</p>
+
+<p>Hace referencia a <a class="el" href="cholesky_8c-source.html#l00188">symbolic_factorization()</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00203"></a>00203 {
+<a name="l00204"></a>00204     <span class="keywordflow">return</span> <a class="code" href="cholesky_8c.html#372ebd05f16cc5771aacf2d9e2497119" title="Factorización simbólica de la matriz A.">symbolic_factorization</a>(A);
+<a name="l00205"></a>00205 }
+</pre></div>
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="0611775fcb04cf55d38106686c13e33e"></a><!-- doxytag: member="bal.c::yyparse" ref="0611775fcb04cf55d38106686c13e33e" args="(const char *archivo, double ***matriz, int *n, int *m)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int yyparse           </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>archivo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double ***&nbsp;</td>
+          <td class="paramname"> <em>matriz</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&nbsp;</td>
+          <td class="paramname"> <em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&nbsp;</td>
+          <td class="paramname"> <em>m</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Parser de matrices en formato matlab generado con bison y flex. 
+<p>
+<dl compact><dt><b>Parámetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>archivo</em>&nbsp;</td><td>ENTRADA: Camino al archivo donde esta definida la matriz </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>matriz</em>&nbsp;</td><td>SALIDA: Matriz leída como lista de filas. Cada fila es una lista de valores. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>n</em>&nbsp;</td><td>SALIDA: Cantidad de filas de la matriz leída. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>m</em>&nbsp;</td><td>SALIDA: Cantidad de columnas de la matriz leída.</td></tr>
+  </table>
+</dl>
+<b>NOTA:</b> Esta función es de uso interno de BAL. No debería ser necesario su uso externo. Vea la función bal_cargar_matriz. 
+<p>Referenciado por <a class="el" href="bal_8c-source.html#l00043">bal_cargar_matriz()</a>.</p>
+
+</div>
+</div><p>
+</div>
+<hr size="1">
+<address style="text-align: right;">
+<small>BAL&nbsp;1.0.0<br>Generado el Wed Aug 27 19:54:18 2008.</small>
+</address>
+</body>
+</html>

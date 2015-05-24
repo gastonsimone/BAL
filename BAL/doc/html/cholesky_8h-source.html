@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>BAL: Fichero Fuente cholesky/cholesky.h</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Generado por Doxygen 1.5.5 -->
+<script type="text/javascript">
+<!--
+function changeDisplayState (e){
+  var num=this.id.replace(/[^[0-9]/g,'');
+  var button=this.firstChild;
+  var sectionDiv=document.getElementById('dynsection'+num);
+  if (sectionDiv.style.display=='none'||sectionDiv.style.display==''){
+    sectionDiv.style.display='block';
+    button.src='open.gif';
+  }else{
+    sectionDiv.style.display='none';
+    button.src='closed.gif';
+  }
+}
+function initDynSections(){
+  var divs=document.getElementsByTagName('div');
+  var sectionCounter=1;
+  for(var i=0;i<divs.length-1;i++){
+    if(divs[i].className=='dynheader'&&divs[i+1].className=='dynsection'){
+      var header=divs[i];
+      var section=divs[i+1];
+      var button=header.firstChild;
+      if (button!='IMG'){
+        divs[i].insertBefore(document.createTextNode(' '),divs[i].firstChild);
+        button=document.createElement('img');
+        divs[i].insertBefore(button,divs[i].firstChild);
+      }
+      header.style.cursor='pointer';
+      header.onclick=changeDisplayState;
+      header.id='dynheader'+sectionCounter;
+      button.src='closed.gif';
+      section.id='dynsection'+sectionCounter;
+      section.style.display='none';
+      section.style.marginLeft='14px';
+      sectionCounter++;
+    }
+  }
+}
+window.onload = initDynSections;
+-->
+</script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Página&nbsp;principal</span></a></li>
+      <li><a href="pages.html"><span>Páginas&nbsp;relacionadas</span></a></li>
+      <li><a href="annotated.html"><span>Estructuras&nbsp;de&nbsp;Datos</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+      <li><a href="dirs.html"><span>Directorios</span></a></li>
+    </ul>
+  </div>
+  <div class="navpath"><a class="el" href="dir_bb398cc77ed595ce1f1ecb5a9326a9c0.html">cholesky</a>
+  </div>
+</div>
+</div>
+<h1>cholesky.h</h1><a href="cholesky_8h.html">Ir a la documentación de este archivo.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef __CHOLESKY_H__</span>
+<a name="l00002"></a>00002 <span class="preprocessor"></span><span class="preprocessor">#define __CHOLESKY_H__</span>
+<a name="l00003"></a>00003 <span class="preprocessor"></span>
+<a name="l00004"></a>00004 <span class="preprocessor">#include "../sparse/sp_packcol.h"</span>
+<a name="l00005"></a>00005 
+<a name="l00014"></a>00014 <span class="keywordtype">int</span> *<a class="code" href="cholesky_8c.html#c247ab532a0c89efa5fc80ccd1de6315" title="Calcula el árbol de eliminación de la matriz simétrica A.">elimination_tree</a>(<a class="code" href="structsp__packcol.html" title="Estructura de matriz dispersa empaquetada por columna.">sp_packcol</a> *A, <span class="keywordtype">int</span> *nnz);
+<a name="l00015"></a>00015 
+<a name="l00016"></a>00016 <a class="code" href="structsp__packcol.html" title="Estructura de matriz dispersa empaquetada por columna.">sp_packcol</a> *<a class="code" href="cholesky_8c.html#372ebd05f16cc5771aacf2d9e2497119" title="Factorización simbólica de la matriz A.">symbolic_factorization</a>(<a class="code" href="structsp__packcol.html" title="Estructura de matriz dispersa empaquetada por columna.">sp_packcol</a> *A);
+<a name="l00017"></a>00017 
+<a name="l00018"></a>00018 <span class="keywordtype">void</span> <a class="code" href="cholesky_8c.html#2dd1cb8f4a30d7950399b658862a2180" title="Sobreescribe L con la factorización de Cholesky de A.">numerical_factorization</a>(<a class="code" href="structsp__packcol.html" title="Estructura de matriz dispersa empaquetada por columna.">sp_packcol</a> *A, <a class="code" href="structsp__packcol.html" title="Estructura de matriz dispersa empaquetada por columna.">sp_packcol</a> *L);
+<a name="l00019"></a>00019 
+<a name="l00020"></a>00020 <span class="keywordtype">void</span> <a class="code" href="cholesky_8c.html#700b53e08123405fc54742fb52098588" title="Sobrescribe b con la solución del sistema .">cholesky_Lsolver</a>(<a class="code" href="structsp__packcol.html" title="Estructura de matriz dispersa empaquetada por columna.">sp_packcol</a> *L, <span class="keywordtype">double</span> *b);
+<a name="l00021"></a>00021 
+<a name="l00022"></a>00022 <span class="keywordtype">void</span> <a class="code" href="cholesky_8c.html#afba46e6cb519f5b021129cf06ece41e" title="Sobreescribe b con la solución de .">cholesky_LTsolver</a>(<a class="code" href="structsp__packcol.html" title="Estructura de matriz dispersa empaquetada por columna.">sp_packcol</a> *L, <span class="keywordtype">double</span> *b);
+<a name="l00023"></a>00023 
+<a name="l00024"></a>00024 <span class="keywordtype">void</span> <a class="code" href="cholesky_8c.html#b61e2da86cddb63b2ef5d38b46a1d4ea" title="Resuelve un sistema lineal mediante el algoritmo de Cholesky optimizado para matrices...">cholesky_solver</a>(<a class="code" href="structsp__packcol.html" title="Estructura de matriz dispersa empaquetada por columna.">sp_packcol</a> *A, <span class="keywordtype">double</span> *b);
+<a name="l00025"></a>00025 
+<a name="l00026"></a>00026 <span class="preprocessor">#endif</span>
+<a name="l00027"></a>00027 <span class="preprocessor"></span>
+</pre></div></div>
+<hr size="1">
+<address style="text-align: right;">
+<small>BAL&nbsp;1.0.0<br>Generado el Wed Aug 27 19:54:18 2008.</small>
+</address>
+</body>
+</html>

@@ -1,0 +1,588 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>BAL: Referencia del Archivo cholesky/cholesky.h</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Generado por Doxygen 1.5.5 -->
+<script type="text/javascript">
+<!--
+function changeDisplayState (e){
+  var num=this.id.replace(/[^[0-9]/g,'');
+  var button=this.firstChild;
+  var sectionDiv=document.getElementById('dynsection'+num);
+  if (sectionDiv.style.display=='none'||sectionDiv.style.display==''){
+    sectionDiv.style.display='block';
+    button.src='open.gif';
+  }else{
+    sectionDiv.style.display='none';
+    button.src='closed.gif';
+  }
+}
+function initDynSections(){
+  var divs=document.getElementsByTagName('div');
+  var sectionCounter=1;
+  for(var i=0;i<divs.length-1;i++){
+    if(divs[i].className=='dynheader'&&divs[i+1].className=='dynsection'){
+      var header=divs[i];
+      var section=divs[i+1];
+      var button=header.firstChild;
+      if (button!='IMG'){
+        divs[i].insertBefore(document.createTextNode(' '),divs[i].firstChild);
+        button=document.createElement('img');
+        divs[i].insertBefore(button,divs[i].firstChild);
+      }
+      header.style.cursor='pointer';
+      header.onclick=changeDisplayState;
+      header.id='dynheader'+sectionCounter;
+      button.src='closed.gif';
+      section.id='dynsection'+sectionCounter;
+      section.style.display='none';
+      section.style.marginLeft='14px';
+      sectionCounter++;
+    }
+  }
+}
+window.onload = initDynSections;
+-->
+</script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Página&nbsp;principal</span></a></li>
+      <li><a href="pages.html"><span>Páginas&nbsp;relacionadas</span></a></li>
+      <li><a href="annotated.html"><span>Estructuras&nbsp;de&nbsp;Datos</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+      <li><a href="dirs.html"><span>Directorios</span></a></li>
+    </ul>
+  </div>
+  <div class="navpath"><a class="el" href="dir_bb398cc77ed595ce1f1ecb5a9326a9c0.html">cholesky</a>
+  </div>
+</div>
+<div class="contents">
+<h1>Referencia del Archivo cholesky.h</h1>Archivo de cabecera para la factorización de Cholesky. <a href="#_details">Más...</a>
+<p>
+<code>#include &quot;<a class="el" href="sp__packcol_8h-source.html">../sparse/sp_packcol.h</a>&quot;</code><br>
+
+<p>
+<a href="cholesky_8h-source.html">Ir al código fuente de este archivo.</a><table border="0" cellpadding="0" cellspacing="0">
+<tr><td></td></tr>
+<tr><td colspan="2"><br><h2>Funciones</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">int *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="cholesky_8h.html#561de3be7ec3e6b00963f57f9c5ee5d5">elimination_tree</a> (<a class="el" href="structsp__packcol.html">sp_packcol</a> *A, int *nnz)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Calcula el árbol de eliminación de la matriz simétrica A.  <a href="#561de3be7ec3e6b00963f57f9c5ee5d5"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="structsp__packcol.html">sp_packcol</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="cholesky_8h.html#0a79571a9a53e0dc2e4c90140e493108">symbolic_factorization</a> (<a class="el" href="structsp__packcol.html">sp_packcol</a> *A)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Factorización simbólica de la matriz A.  <a href="#0a79571a9a53e0dc2e4c90140e493108"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="cholesky_8h.html#2dd1cb8f4a30d7950399b658862a2180">numerical_factorization</a> (<a class="el" href="structsp__packcol.html">sp_packcol</a> *A, <a class="el" href="structsp__packcol.html">sp_packcol</a> *L)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sobreescribe <code>L</code> con la factorización de Cholesky de A.  <a href="#2dd1cb8f4a30d7950399b658862a2180"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="cholesky_8h.html#700b53e08123405fc54742fb52098588">cholesky_Lsolver</a> (<a class="el" href="structsp__packcol.html">sp_packcol</a> *L, double *b)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sobrescribe <code>b</code> con la solución del sistema <img class="formulaInl" alt="$Ly=b$" src="form_0.png">.  <a href="#700b53e08123405fc54742fb52098588"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="cholesky_8h.html#afba46e6cb519f5b021129cf06ece41e">cholesky_LTsolver</a> (<a class="el" href="structsp__packcol.html">sp_packcol</a> *L, double *b)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sobreescribe <code>b</code> con la solución de <img class="formulaInl" alt="$L^Tx=b$" src="form_1.png">.  <a href="#afba46e6cb519f5b021129cf06ece41e"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="cholesky_8h.html#b61e2da86cddb63b2ef5d38b46a1d4ea">cholesky_solver</a> (<a class="el" href="structsp__packcol.html">sp_packcol</a> *A, double *b)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Resuelve un sistema lineal mediante el algoritmo de Cholesky optimizado para matrices dispersas.  <a href="#b61e2da86cddb63b2ef5d38b46a1d4ea"></a><br></td></tr>
+</table>
+<hr><a name="_details"></a><h2>Descripción detallada</h2>
+Archivo de cabecera para la factorización de Cholesky. 
+<p>
+Este archivo define las funciones que implementan la factorización de Cholesky para matrices dispersas. Por más detalles acerca de la implementación, vea la documentación del archivo <a class="el" href="cholesky_8c.html" title="Implementación de la factorización de Cholesky para matrices dispersas.">cholesky.c</a> 
+<p>Definición en el archivo <a class="el" href="cholesky_8h-source.html">cholesky.h</a>.</p>
+<hr><h2>Documentación de las funciones</h2>
+<a class="anchor" name="700b53e08123405fc54742fb52098588"></a><!-- doxytag: member="cholesky.h::cholesky_Lsolver" ref="700b53e08123405fc54742fb52098588" args="(sp_packcol *L, double *b)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cholesky_Lsolver           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsp__packcol.html">sp_packcol</a> *&nbsp;</td>
+          <td class="paramname"> <em>L</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&nbsp;</td>
+          <td class="paramname"> <em>b</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Sobrescribe <code>b</code> con la solución del sistema <img class="formulaInl" alt="$Ly=b$" src="form_0.png">. 
+<p>
+<dl compact><dt><b>Parámetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>L</em>&nbsp;</td><td>Matriz <code>nxn</code> triangular inferior, factorización de Cholesky </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>b</em>&nbsp;</td><td>Vector de largo <code>n</code> </td></tr>
+  </table>
+</dl>
+Al final de la ejecución el vector <code>b</code> es igual al vector <code>y</code> tal que <img class="formulaInl" alt="$Ly=b$" src="form_0.png"><p>
+<dl class="note" compact><dt><b>Nota:</b></dt><dd>Ver el algoritmo 9.2 descrito en la sección 9.2 del paper de Stewart (ver las <a class="el" href="index.html#refsec">referencias</a>) </dd></dl>
+
+<p>Definición en la línea <a class="el" href="cholesky_8c-source.html#l00329">329</a> del archivo <a class="el" href="cholesky_8c-source.html">cholesky.c</a>.</p>
+
+<p>Hace referencia a <a class="el" href="sp__packcol_8h-source.html#l00026">sp_packcol::colp</a>, <a class="el" href="sp__packcol_8h-source.html#l00024">sp_packcol::ncol</a>, <a class="el" href="sp__packcol_8h-source.html#l00027">sp_packcol::rx</a>, y <a class="el" href="sp__packcol_8h-source.html#l00028">sp_packcol::val</a>.</p>
+
+<p>Referenciado por <a class="el" href="bal_8c-source.html#l00222">bal_cholesky_Lsolver()</a>, y <a class="el" href="cholesky_8c-source.html#l00384">cholesky_solver()</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00330"></a>00330 {
+<a name="l00331"></a>00331     <span class="keywordtype">int</span> ii, i, j;
+<a name="l00332"></a>00332 
+<a name="l00333"></a>00333     <span class="keywordflow">for</span> (j = 0; j &lt; L-&gt;<a class="code" href="structsp__packcol.html#2cc24559101ca3783f1949c8eebacd7c" title="Cantidad de columnas de la matriz.">ncol</a>; ++j) {
+<a name="l00334"></a>00334         b[j] /= L-&gt;<a class="code" href="structsp__packcol.html#6315b3a8ee78ac66aaae5ba79bda252e" title="Arreglo de valores por debajo de la diagonal.">val</a>[L-&gt;<a class="code" href="structsp__packcol.html#c9a9e31c6b9c1416fff29944568ea18f" title="Arreglo de punteros a los inicios de las columnas.">colp</a>[j]];
+<a name="l00335"></a>00335 
+<a name="l00336"></a>00336         <span class="keywordflow">for</span> (ii = L-&gt;<a class="code" href="structsp__packcol.html#c9a9e31c6b9c1416fff29944568ea18f" title="Arreglo de punteros a los inicios de las columnas.">colp</a>[j]+1; ii &lt; L-&gt;colp[j+1]; ++ii) {
+<a name="l00337"></a>00337             i = L-&gt;<a class="code" href="structsp__packcol.html#536659b700c3b21fd5d6cf8538c82b6f" title="Arreglo de indices de fila.">rx</a>[ii];
+<a name="l00338"></a>00338             b[i] -= ( b[j] * L-&gt;<a class="code" href="structsp__packcol.html#6315b3a8ee78ac66aaae5ba79bda252e" title="Arreglo de valores por debajo de la diagonal.">val</a>[ii] );
+<a name="l00339"></a>00339         }
+<a name="l00340"></a>00340     }
+<a name="l00341"></a>00341 }
+</pre></div>
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="afba46e6cb519f5b021129cf06ece41e"></a><!-- doxytag: member="cholesky.h::cholesky_LTsolver" ref="afba46e6cb519f5b021129cf06ece41e" args="(sp_packcol *L, double *b)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cholesky_LTsolver           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsp__packcol.html">sp_packcol</a> *&nbsp;</td>
+          <td class="paramname"> <em>L</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&nbsp;</td>
+          <td class="paramname"> <em>b</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Sobreescribe <code>b</code> con la solución de <img class="formulaInl" alt="$L^Tx=b$" src="form_1.png">. 
+<p>
+<dl compact><dt><b>Parámetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>L</em>&nbsp;</td><td>Matriz <code>nxn</code>triangular inferior, factorización de Cholesky </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>b</em>&nbsp;</td><td>Vector de largo <code>n</code> </td></tr>
+  </table>
+</dl>
+Al final de la ejecución el vector <code>b</code> es igual al vector <code>y</code> tal que <img class="formulaInl" alt="$L^Ty=b$" src="form_2.png"><p>
+<dl class="note" compact><dt><b>Nota:</b></dt><dd>Ver el algoritmo 9.3 descrito en la sección 9.2 del paper de Stewart (ver las <a class="el" href="index.html#refsec">referencias</a>) </dd></dl>
+
+<p>Definición en la línea <a class="el" href="cholesky_8c-source.html#l00354">354</a> del archivo <a class="el" href="cholesky_8c-source.html">cholesky.c</a>.</p>
+
+<p>Hace referencia a <a class="el" href="sp__packcol_8h-source.html#l00026">sp_packcol::colp</a>, <a class="el" href="sp__packcol_8h-source.html#l00024">sp_packcol::ncol</a>, <a class="el" href="sp__packcol_8h-source.html#l00027">sp_packcol::rx</a>, y <a class="el" href="sp__packcol_8h-source.html#l00028">sp_packcol::val</a>.</p>
+
+<p>Referenciado por <a class="el" href="bal_8c-source.html#l00232">bal_cholesky_LTsolver()</a>, y <a class="el" href="cholesky_8c-source.html#l00384">cholesky_solver()</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00355"></a>00355 {
+<a name="l00356"></a>00356     <span class="keywordtype">int</span> ii, i, j;
+<a name="l00357"></a>00357 
+<a name="l00358"></a>00358     <span class="keywordflow">for</span> (j = L-&gt;<a class="code" href="structsp__packcol.html#2cc24559101ca3783f1949c8eebacd7c" title="Cantidad de columnas de la matriz.">ncol</a>-1; j &gt;= 0; --j) {
+<a name="l00359"></a>00359         <span class="keywordflow">for</span> (ii = L-&gt;<a class="code" href="structsp__packcol.html#c9a9e31c6b9c1416fff29944568ea18f" title="Arreglo de punteros a los inicios de las columnas.">colp</a>[j]+1; ii &lt; L-&gt;colp[j+1]; ++ii) {
+<a name="l00360"></a>00360             i = L-&gt;<a class="code" href="structsp__packcol.html#536659b700c3b21fd5d6cf8538c82b6f" title="Arreglo de indices de fila.">rx</a>[ii];
+<a name="l00361"></a>00361             b[j] -= ( b[i] * L-&gt;<a class="code" href="structsp__packcol.html#6315b3a8ee78ac66aaae5ba79bda252e" title="Arreglo de valores por debajo de la diagonal.">val</a>[ii] );
+<a name="l00362"></a>00362         }
+<a name="l00363"></a>00363         b[j] /= L-&gt;<a class="code" href="structsp__packcol.html#6315b3a8ee78ac66aaae5ba79bda252e" title="Arreglo de valores por debajo de la diagonal.">val</a>[L-&gt;<a class="code" href="structsp__packcol.html#c9a9e31c6b9c1416fff29944568ea18f" title="Arreglo de punteros a los inicios de las columnas.">colp</a>[j]];
+<a name="l00364"></a>00364     }
+<a name="l00365"></a>00365 }
+</pre></div>
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="b61e2da86cddb63b2ef5d38b46a1d4ea"></a><!-- doxytag: member="cholesky.h::cholesky_solver" ref="b61e2da86cddb63b2ef5d38b46a1d4ea" args="(sp_packcol *A, double *b)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cholesky_solver           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsp__packcol.html">sp_packcol</a> *&nbsp;</td>
+          <td class="paramname"> <em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&nbsp;</td>
+          <td class="paramname"> <em>b</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Resuelve un sistema lineal mediante el algoritmo de Cholesky optimizado para matrices dispersas. 
+<p>
+<dl compact><dt><b>Parámetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>A</em>&nbsp;</td><td>Matriz del sistema lineal, simétrica definida positiva, dispersa empaquetada por columna. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>b</em>&nbsp;</td><td>ENTRADA/SALIDA: Vector a igualar mediante <code>Ax</code></td></tr>
+  </table>
+</dl>
+Esta función calcula un vetor <code>x</code> tal que <img class="formulaInl" alt="$Ax=b$" src="form_3.png"> y lo guarda en el mismo vector <code>b</code>. Esta implementación está completamente basada en el formato de matriz dispersa empaquetado por columna, para mejorar el desempeño de la aplicación.<p>
+La forma de proceder del algoritmo es la siguiente: <ol>
+<li>
+Se realiza la factorización simbólica de <code>A</code> </li>
+<li>
+Se realiza la factorización numérica de <code>A</code> </li>
+<li>
+Se resuelven los sistemas triangulares <img class="formulaInl" alt="$Ly=b$" src="form_0.png"> y luego <img class="formulaInl" alt="$L^Tx=y$" src="form_4.png"> </li>
+</ol>
+
+<p>Definición en la línea <a class="el" href="cholesky_8c-source.html#l00384">384</a> del archivo <a class="el" href="cholesky_8c-source.html">cholesky.c</a>.</p>
+
+<p>Hace referencia a <a class="el" href="utils_8h-source.html#l00016">BAL_ERROR</a>, <a class="el" href="cholesky_8c-source.html#l00329">cholesky_Lsolver()</a>, <a class="el" href="cholesky_8c-source.html#l00354">cholesky_LTsolver()</a>, <a class="el" href="sp__packcol_8h-source.html#l00024">sp_packcol::ncol</a>, <a class="el" href="sp__packcol_8h-source.html#l00023">sp_packcol::nrow</a>, <a class="el" href="cholesky_8c-source.html#l00274">numerical_factorization()</a>, y <a class="el" href="cholesky_8c-source.html#l00188">symbolic_factorization()</a>.</p>
+
+<p>Referenciado por <a class="el" href="bal_8c-source.html#l00242">bal_cholesky_solver()</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00385"></a>00385 {
+<a name="l00386"></a>00386     <a class="code" href="structsp__packcol.html" title="Estructura de matriz dispersa empaquetada por columna.">sp_packcol</a> *L;
+<a name="l00387"></a>00387 
+<a name="l00388"></a>00388     <span class="keywordflow">if</span> (A-&gt;<a class="code" href="structsp__packcol.html#2e12b2881843b0ff8191f0654570a748" title="Cantidad de filas de la matriz.">nrow</a> != A-&gt;<a class="code" href="structsp__packcol.html#2cc24559101ca3783f1949c8eebacd7c" title="Cantidad de columnas de la matriz.">ncol</a>) {
+<a name="l00389"></a>00389         <span class="comment">/* Habría que verificar además que es simétrica y definida positiva */</span>
+<a name="l00390"></a>00390         <a class="code" href="utils_8h.html#f9a64ef5874a8560a9067ac3191cced4" title="Función para reportar errores detectados por código de BAL.">BAL_ERROR</a>(<span class="stringliteral">"La matriz no es cuadrada"</span>);
+<a name="l00391"></a>00391         <span class="keywordflow">return</span>;
+<a name="l00392"></a>00392     }
+<a name="l00393"></a>00393 
+<a name="l00394"></a>00394     L = <a class="code" href="cholesky_8c.html#372ebd05f16cc5771aacf2d9e2497119" title="Factorización simbólica de la matriz A.">symbolic_factorization</a>(A);
+<a name="l00395"></a>00395     <a class="code" href="cholesky_8c.html#2dd1cb8f4a30d7950399b658862a2180" title="Sobreescribe L con la factorización de Cholesky de A.">numerical_factorization</a>(A, L);
+<a name="l00396"></a>00396     <a class="code" href="cholesky_8c.html#700b53e08123405fc54742fb52098588" title="Sobrescribe b con la solución del sistema .">cholesky_Lsolver</a>(L, b);
+<a name="l00397"></a>00397     <a class="code" href="cholesky_8c.html#afba46e6cb519f5b021129cf06ece41e" title="Sobreescribe b con la solución de .">cholesky_LTsolver</a>(L, b);
+<a name="l00398"></a>00398 }
+</pre></div>
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="561de3be7ec3e6b00963f57f9c5ee5d5"></a><!-- doxytag: member="cholesky.h::elimination_tree" ref="561de3be7ec3e6b00963f57f9c5ee5d5" args="(sp_packcol *A, int *nnz)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int* elimination_tree           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsp__packcol.html">sp_packcol</a> *&nbsp;</td>
+          <td class="paramname"> <em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&nbsp;</td>
+          <td class="paramname"> <em>nnz</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Calcula el árbol de eliminación de la matriz simétrica A. 
+<p>
+<dl compact><dt><b>Parámetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>A</em>&nbsp;</td><td>ENTRADA: Matriz simétrica dispersa empaquetada por columna a procesar </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>nnz</em>&nbsp;</td><td>SALIDA: Cantidad de elementos no cero en la factorización de Cholesky </td></tr>
+  </table>
+</dl>
+<dl class="return" compact><dt><b>Devuelve:</b></dt><dd>Estructura de padres del árbol de eliminación</dd></dl>
+Esta función calcula el árbol de eliminación de la matriz A, devuelve la estructura de padres del árbol y la cantidad de elementos no cero de la factorización de Cholesky.<p>
+<dl class="note" compact><dt><b>Nota:</b></dt><dd>Este paso es un paso previo a la factorización simbólica.<p>
+Esta implementación está basada en el algoritmo descrito en la sección 7.2 del paper de Stewart (ver las <a class="el" href="index.html#refsec">referencias</a>). </dd></dl>
+
+<p>Definición en la línea <a class="el" href="cholesky_8c-source.html#l00042">42</a> del archivo <a class="el" href="cholesky_8c-source.html">cholesky.c</a>.</p>
+
+<p>Hace referencia a <a class="el" href="utils_8h-source.html#l00016">BAL_ERROR</a>, <a class="el" href="sp__packcol_8h-source.html#l00024">sp_packcol::ncol</a>, <a class="el" href="sp__packcol_8h-source.html#l00023">sp_packcol::nrow</a>, y <a class="el" href="sp__packcol_8c-source.html#l00203">row_traversal_packcol()</a>.</p>
+
+<p>Referenciado por <a class="el" href="bal_8c-source.html#l00192">bal_elimination_tree()</a>, y <a class="el" href="cholesky_8c-source.html#l00188">symbolic_factorization()</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00043"></a>00043 {
+<a name="l00044"></a>00044     <span class="keywordtype">int</span> *touched, *parent;
+<a name="l00045"></a>00045     <span class="keywordtype">int</span> ix, i, j, posij, js;
+<a name="l00046"></a>00046 
+<a name="l00047"></a>00047     <span class="comment">/* Inicialización */</span>
+<a name="l00048"></a>00048     *nnz = 0;
+<a name="l00049"></a>00049 
+<a name="l00050"></a>00050     <span class="keywordflow">if</span> (A-&gt;<a class="code" href="structsp__packcol.html#2e12b2881843b0ff8191f0654570a748" title="Cantidad de filas de la matriz.">nrow</a> != A-&gt;<a class="code" href="structsp__packcol.html#2cc24559101ca3783f1949c8eebacd7c" title="Cantidad de columnas de la matriz.">ncol</a>) {
+<a name="l00051"></a>00051         <a class="code" href="utils_8h.html#f9a64ef5874a8560a9067ac3191cced4" title="Función para reportar errores detectados por código de BAL.">BAL_ERROR</a>(<span class="stringliteral">"La matriz debe ser cuadrada"</span>);
+<a name="l00052"></a>00052         <span class="keywordflow">return</span> NULL;
+<a name="l00053"></a>00053     }
+<a name="l00054"></a>00054 
+<a name="l00055"></a>00055     <span class="comment">/* Inicializa estructuras */</span>
+<a name="l00056"></a>00056     touched = (<span class="keywordtype">int</span>*)malloc(<span class="keyword">sizeof</span>(<span class="keywordtype">int</span>) * A-&gt;<a class="code" href="structsp__packcol.html#2cc24559101ca3783f1949c8eebacd7c" title="Cantidad de columnas de la matriz.">ncol</a>);
+<a name="l00057"></a>00057     parent = (<span class="keywordtype">int</span>*)malloc(<span class="keyword">sizeof</span>(<span class="keywordtype">int</span>) * A-&gt;<a class="code" href="structsp__packcol.html#2cc24559101ca3783f1949c8eebacd7c" title="Cantidad de columnas de la matriz.">ncol</a>);
+<a name="l00058"></a>00058     <span class="keywordflow">for</span> (ix = 0; ix &lt; A-&gt;<a class="code" href="structsp__packcol.html#2cc24559101ca3783f1949c8eebacd7c" title="Cantidad de columnas de la matriz.">ncol</a>; ++ix)
+<a name="l00059"></a>00059         touched[ix] = parent[ix] = -1;
+<a name="l00060"></a>00060 
+<a name="l00061"></a>00061     <span class="comment">/* Recorre las filas de A */</span>
+<a name="l00062"></a>00062     i = -2;
+<a name="l00063"></a>00063     <a class="code" href="sp__packcol_8c.html#49b361aae383b0fd323f5735f0ff01bc" title="Implementa un mecanismo eficiente para recorrer por filas una matriz dispersa empaquetada...">row_traversal_packcol</a>(A, &amp;i, &amp;j, &amp;posij);
+<a name="l00064"></a>00064     <span class="keywordflow">for</span> (ix = 0; ix &lt; A-&gt;<a class="code" href="structsp__packcol.html#2e12b2881843b0ff8191f0654570a748" title="Cantidad de filas de la matriz.">nrow</a>; ++ix) {
+<a name="l00065"></a>00065         <span class="keywordflow">while</span> (<a class="code" href="sp__packcol_8c.html#49b361aae383b0fd323f5735f0ff01bc" title="Implementa un mecanismo eficiente para recorrer por filas una matriz dispersa empaquetada...">row_traversal_packcol</a>(A, &amp;i, &amp;j, &amp;posij) != -1) {
+<a name="l00066"></a>00066             <span class="keywordflow">if</span> (i == j) {
+<a name="l00067"></a>00067                 <span class="comment">/* Procesar elemento de la diagonal */</span>
+<a name="l00068"></a>00068                 *nnz += 1;
+<a name="l00069"></a>00069                 touched[j] = i;
+<a name="l00070"></a>00070             }
+<a name="l00071"></a>00071             <span class="keywordflow">else</span> {
+<a name="l00072"></a>00072                 <span class="comment">/* Elemento no en la diagonal. Buscar el arbol */</span>
+<a name="l00073"></a>00073                 js = j;
+<a name="l00074"></a>00074                 <span class="keywordflow">while</span> (touched[js] != i) {
+<a name="l00075"></a>00075                     touched[js] = i;
+<a name="l00076"></a>00076                     *nnz += 1;
+<a name="l00077"></a>00077 
+<a name="l00078"></a>00078                     <span class="keywordflow">if</span> (parent[js] == -1) {
+<a name="l00079"></a>00079                         parent[js] = i;
+<a name="l00080"></a>00080                         <span class="keywordflow">break</span>;
+<a name="l00081"></a>00081                     }
+<a name="l00082"></a>00082                     
+<a name="l00083"></a>00083                     js = parent[js];
+<a name="l00084"></a>00084                 }
+<a name="l00085"></a>00085             }
+<a name="l00086"></a>00086         }
+<a name="l00087"></a>00087     }
+<a name="l00088"></a>00088 
+<a name="l00089"></a>00089     <span class="comment">/* Liberamos la memoria utilizada */</span>
+<a name="l00090"></a>00090     i = -2;
+<a name="l00091"></a>00091     <a class="code" href="sp__packcol_8c.html#49b361aae383b0fd323f5735f0ff01bc" title="Implementa un mecanismo eficiente para recorrer por filas una matriz dispersa empaquetada...">row_traversal_packcol</a>(NULL, &amp;i, &amp;j, &amp;posij);
+<a name="l00092"></a>00092     free(touched);
+<a name="l00093"></a>00093 
+<a name="l00094"></a>00094     <span class="keywordflow">return</span> parent;
+<a name="l00095"></a>00095 }
+</pre></div>
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="2dd1cb8f4a30d7950399b658862a2180"></a><!-- doxytag: member="cholesky.h::numerical_factorization" ref="2dd1cb8f4a30d7950399b658862a2180" args="(sp_packcol *A, sp_packcol *L)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void numerical_factorization           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsp__packcol.html">sp_packcol</a> *&nbsp;</td>
+          <td class="paramname"> <em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structsp__packcol.html">sp_packcol</a> *&nbsp;</td>
+          <td class="paramname"> <em>L</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Sobreescribe <code>L</code> con la factorización de Cholesky de A. 
+<p>
+<dl compact><dt><b>Parámetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>A</em>&nbsp;</td><td>Matriz a factorizar con el algoritmo de Cholesky </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>L</em>&nbsp;</td><td>Matriz pre inicializada donde guardar la factorización</td></tr>
+  </table>
+</dl>
+<dl class="note" compact><dt><b>Nota:</b></dt><dd>La pre inicialización de la matriz <code>L</code> se realiza con la función <a class="el" href="cholesky_8c.html#372ebd05f16cc5771aacf2d9e2497119" title="Factorización simbólica de la matriz A.">symbolic_factorization()</a>.<p>
+Ver el algoritmo 9.1 descrito en la sección 9.1 del paper de Stewart (ver las <a class="el" href="index.html#refsec">referencias</a>). </dd></dl>
+
+<p>Definición en la línea <a class="el" href="cholesky_8c-source.html#l00274">274</a> del archivo <a class="el" href="cholesky_8c-source.html">cholesky.c</a>.</p>
+
+<p>Hace referencia a <a class="el" href="sp__packcol_8h-source.html#l00026">sp_packcol::colp</a>, <a class="el" href="sp__packcol_8h-source.html#l00024">sp_packcol::ncol</a>, <a class="el" href="sp__packcol_8c-source.html#l00203">row_traversal_packcol()</a>, <a class="el" href="sp__packcol_8h-source.html#l00027">sp_packcol::rx</a>, y <a class="el" href="sp__packcol_8h-source.html#l00028">sp_packcol::val</a>.</p>
+
+<p>Referenciado por <a class="el" href="bal_8c-source.html#l00212">bal_numerical_factorization()</a>, y <a class="el" href="cholesky_8c-source.html#l00384">cholesky_solver()</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00275"></a>00275 {
+<a name="l00276"></a>00276     <span class="keywordtype">int</span> ii, i, j, poskj, kx, k;
+<a name="l00277"></a>00277     <span class="keywordtype">double</span> *accum, Lkj, Lkkinv;
+<a name="l00278"></a>00278 
+<a name="l00279"></a>00279     accum = (<span class="keywordtype">double</span>*)malloc(<span class="keyword">sizeof</span>(<span class="keywordtype">double</span>) * L-&gt;<a class="code" href="structsp__packcol.html#2cc24559101ca3783f1949c8eebacd7c" title="Cantidad de columnas de la matriz.">ncol</a>);
+<a name="l00280"></a>00280 
+<a name="l00281"></a>00281     k = -2;
+<a name="l00282"></a>00282     <a class="code" href="sp__packcol_8c.html#49b361aae383b0fd323f5735f0ff01bc" title="Implementa un mecanismo eficiente para recorrer por filas una matriz dispersa empaquetada...">row_traversal_packcol</a>(L, &amp;k, &amp;j, &amp;poskj);
+<a name="l00283"></a>00283     <span class="keywordflow">for</span> (kx = 0; kx &lt; L-&gt;<a class="code" href="structsp__packcol.html#2cc24559101ca3783f1949c8eebacd7c" title="Cantidad de columnas de la matriz.">ncol</a>; ++kx) {  <span class="comment">/* Procesa la columna k */</span>
+<a name="l00284"></a>00284         <span class="keywordflow">while</span> (<a class="code" href="sp__packcol_8c.html#49b361aae383b0fd323f5735f0ff01bc" title="Implementa un mecanismo eficiente para recorrer por filas una matriz dispersa empaquetada...">row_traversal_packcol</a>(L, &amp;k, &amp;j, &amp;poskj) != -1) {
+<a name="l00285"></a>00285             <span class="keywordflow">if</span> (j == k) { <span class="comment">/* Inicializar accum */</span>
+<a name="l00286"></a>00286                 <span class="keywordflow">for</span> (ii = L-&gt;<a class="code" href="structsp__packcol.html#c9a9e31c6b9c1416fff29944568ea18f" title="Arreglo de punteros a los inicios de las columnas.">colp</a>[k]; ii &lt; L-&gt;colp[k+1]; ++ii)
+<a name="l00287"></a>00287                     accum[L-&gt;<a class="code" href="structsp__packcol.html#536659b700c3b21fd5d6cf8538c82b6f" title="Arreglo de indices de fila.">rx</a>[ii]] = 0;
+<a name="l00288"></a>00288                 <span class="keywordflow">for</span> (ii = A-&gt;<a class="code" href="structsp__packcol.html#c9a9e31c6b9c1416fff29944568ea18f" title="Arreglo de punteros a los inicios de las columnas.">colp</a>[k]; ii &lt; A-&gt;colp[k+1]; ++ii)
+<a name="l00289"></a>00289                     accum[A-&gt;<a class="code" href="structsp__packcol.html#536659b700c3b21fd5d6cf8538c82b6f" title="Arreglo de indices de fila.">rx</a>[ii]] = A-&gt;<a class="code" href="structsp__packcol.html#6315b3a8ee78ac66aaae5ba79bda252e" title="Arreglo de valores por debajo de la diagonal.">val</a>[ii];
+<a name="l00290"></a>00290             }
+<a name="l00291"></a>00291             <span class="keywordflow">else</span> { <span class="comment">/* Restar L[k:n,j] de L[k:n,k] */</span>
+<a name="l00292"></a>00292                 Lkj = L-&gt;<a class="code" href="structsp__packcol.html#6315b3a8ee78ac66aaae5ba79bda252e" title="Arreglo de valores por debajo de la diagonal.">val</a>[poskj];
+<a name="l00293"></a>00293                 <span class="keywordflow">for</span> (ii = poskj; ii &lt; L-&gt;<a class="code" href="structsp__packcol.html#c9a9e31c6b9c1416fff29944568ea18f" title="Arreglo de punteros a los inicios de las columnas.">colp</a>[j+1]; ++ii) {
+<a name="l00294"></a>00294                     i = L-&gt;<a class="code" href="structsp__packcol.html#536659b700c3b21fd5d6cf8538c82b6f" title="Arreglo de indices de fila.">rx</a>[ii];
+<a name="l00295"></a>00295                     accum[i] -= ( Lkj * L-&gt;<a class="code" href="structsp__packcol.html#6315b3a8ee78ac66aaae5ba79bda252e" title="Arreglo de valores por debajo de la diagonal.">val</a>[ii] );
+<a name="l00296"></a>00296                 }
+<a name="l00297"></a>00297             }
+<a name="l00298"></a>00298         }
+<a name="l00299"></a>00299 
+<a name="l00300"></a>00300         <span class="comment">/* Mueve L[k:n,k] de accum a L, ajustando sus componentes */</span>
+<a name="l00301"></a>00301         <span class="keywordflow">for</span> (ii = L-&gt;<a class="code" href="structsp__packcol.html#c9a9e31c6b9c1416fff29944568ea18f" title="Arreglo de punteros a los inicios de las columnas.">colp</a>[k]; ii &lt; L-&gt;colp[k+1]; ++ii) { <span class="comment">/* Corrección al algoritmo de Stewart */</span>
+<a name="l00302"></a>00302             i = L-&gt;<a class="code" href="structsp__packcol.html#536659b700c3b21fd5d6cf8538c82b6f" title="Arreglo de indices de fila.">rx</a>[ii];
+<a name="l00303"></a>00303             <span class="keywordflow">if</span> (i == k) {
+<a name="l00304"></a>00304                 L-&gt;<a class="code" href="structsp__packcol.html#6315b3a8ee78ac66aaae5ba79bda252e" title="Arreglo de valores por debajo de la diagonal.">val</a>[ii] = sqrt(accum[i]);
+<a name="l00305"></a>00305                 Lkkinv = 1 / L-&gt;<a class="code" href="structsp__packcol.html#6315b3a8ee78ac66aaae5ba79bda252e" title="Arreglo de valores por debajo de la diagonal.">val</a>[ii];
+<a name="l00306"></a>00306             }
+<a name="l00307"></a>00307             <span class="keywordflow">else</span>
+<a name="l00308"></a>00308                 L-&gt;<a class="code" href="structsp__packcol.html#6315b3a8ee78ac66aaae5ba79bda252e" title="Arreglo de valores por debajo de la diagonal.">val</a>[ii] = Lkkinv * accum[i];
+<a name="l00309"></a>00309         }
+<a name="l00310"></a>00310     }
+<a name="l00311"></a>00311 
+<a name="l00312"></a>00312     <span class="comment">/* Libera memoria auxiliar */</span>
+<a name="l00313"></a>00313     k = -2;
+<a name="l00314"></a>00314     <a class="code" href="sp__packcol_8c.html#49b361aae383b0fd323f5735f0ff01bc" title="Implementa un mecanismo eficiente para recorrer por filas una matriz dispersa empaquetada...">row_traversal_packcol</a>(NULL, &amp;k, &amp;j, &amp;poskj);
+<a name="l00315"></a>00315     free(accum);
+<a name="l00316"></a>00316 }
+</pre></div>
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="0a79571a9a53e0dc2e4c90140e493108"></a><!-- doxytag: member="cholesky.h::symbolic_factorization" ref="0a79571a9a53e0dc2e4c90140e493108" args="(sp_packcol *A)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structsp__packcol.html">sp_packcol</a>* symbolic_factorization           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsp__packcol.html">sp_packcol</a> *&nbsp;</td>
+          <td class="paramname"> <em>A</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Factorización simbólica de la matriz A. 
+<p>
+<dl compact><dt><b>Parámetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>A</em>&nbsp;</td><td>Matriz a factorizar </td></tr>
+  </table>
+</dl>
+<dl class="return" compact><dt><b>Devuelve:</b></dt><dd>La factorización simbólica de la matriz A</dd></dl>
+<dl class="note" compact><dt><b>Nota:</b></dt><dd>Ver el algoritmo 8.1 descrito en la sección 8.2 del paper de Stewart (ver las <a class="el" href="index.html#refsec">referencias</a>).</dd></dl>
+<dl class="warning" compact><dt><b>Atención:</b></dt><dd>El pseudo-código mostrado en el paper de Stewart contiene errores. Se recomienda fuertemente comparar esta implementación (buscando los lugares marcados como corrección) con el pseudo-código de Stewart y ver las diferencias. </dd></dl>
+
+<p>Definición en la línea <a class="el" href="cholesky_8c-source.html#l00188">188</a> del archivo <a class="el" href="cholesky_8c-source.html">cholesky.c</a>.</p>
+
+<p>Hace referencia a <a class="el" href="utils_8h-source.html#l00016">BAL_ERROR</a>, <a class="el" href="sp__packcol_8h-source.html#l00026">sp_packcol::colp</a>, <a class="el" href="cholesky_8c-source.html#l00042">elimination_tree()</a>, <a class="el" href="cholesky_8c-source.html#l00153">make_column()</a>, <a class="el" href="cholesky_8c-source.html#l00108">merge()</a>, <a class="el" href="sp__packcol_8h-source.html#l00024">sp_packcol::ncol</a>, <a class="el" href="sp__packcol_8h-source.html#l00025">sp_packcol::nnz</a>, <a class="el" href="sp__packcol_8h-source.html#l00023">sp_packcol::nrow</a>, <a class="el" href="sp__packcol_8h-source.html#l00027">sp_packcol::rx</a>, y <a class="el" href="sp__packcol_8h-source.html#l00028">sp_packcol::val</a>.</p>
+
+<p>Referenciado por <a class="el" href="bal_8c-source.html#l00202">bal_symbolic_factorization()</a>, y <a class="el" href="cholesky_8c-source.html#l00384">cholesky_solver()</a>.</p>
+<div class="fragment"><pre class="fragment"><a name="l00189"></a>00189 {
+<a name="l00190"></a>00190     <span class="keywordtype">int</span> nnz;                <span class="comment">/* Cantidad de elementos no cero */</span>
+<a name="l00191"></a>00191     <span class="keywordtype">int</span> *parents;           <span class="comment">/* Arbol de eliminacion */</span>
+<a name="l00192"></a>00192     <span class="keywordtype">int</span> *bs;                <span class="comment">/* Hijos por nodo ("Baby Sitter") */</span>
+<a name="l00193"></a>00193     <span class="keywordtype">int</span> *ma;                <span class="comment">/* "Merge array" */</span>
+<a name="l00194"></a>00194     <a class="code" href="structsp__packcol.html" title="Estructura de matriz dispersa empaquetada por columna.">sp_packcol</a> *L;          <span class="comment">/* Resultado de la factorizacion simbolica */</span>
+<a name="l00195"></a>00195     <span class="keywordtype">int</span> i, j, k, jt;
+<a name="l00196"></a>00196 
+<a name="l00197"></a>00197     <span class="keywordflow">if</span> (A-&gt;<a class="code" href="structsp__packcol.html#2e12b2881843b0ff8191f0654570a748" title="Cantidad de filas de la matriz.">nrow</a> != A-&gt;<a class="code" href="structsp__packcol.html#2cc24559101ca3783f1949c8eebacd7c" title="Cantidad de columnas de la matriz.">ncol</a>) {
+<a name="l00198"></a>00198         <a class="code" href="utils_8h.html#f9a64ef5874a8560a9067ac3191cced4" title="Función para reportar errores detectados por código de BAL.">BAL_ERROR</a>(<span class="stringliteral">"La matriz debe ser cuadrada"</span>);
+<a name="l00199"></a>00199         <span class="keywordflow">return</span> NULL;
+<a name="l00200"></a>00200     }
+<a name="l00201"></a>00201 
+<a name="l00202"></a>00202     <span class="comment">/* Calcula la cantidad de elementos no cero */</span>
+<a name="l00203"></a>00203     parents = <a class="code" href="cholesky_8c.html#c247ab532a0c89efa5fc80ccd1de6315" title="Calcula el árbol de eliminación de la matriz simétrica A.">elimination_tree</a>(A, &amp;nnz);
+<a name="l00204"></a>00204     free(parents);
+<a name="l00205"></a>00205 
+<a name="l00206"></a>00206     <span class="comment">/* Inicializacion */</span>
+<a name="l00207"></a>00207     L = (<a class="code" href="structsp__packcol.html" title="Estructura de matriz dispersa empaquetada por columna.">sp_packcol</a>*)malloc(<span class="keyword">sizeof</span>(<a class="code" href="structsp__packcol.html" title="Estructura de matriz dispersa empaquetada por columna.">sp_packcol</a>));
+<a name="l00208"></a>00208     L-&gt;<a class="code" href="structsp__packcol.html#2e12b2881843b0ff8191f0654570a748" title="Cantidad de filas de la matriz.">nrow</a> = A-&gt;<a class="code" href="structsp__packcol.html#2e12b2881843b0ff8191f0654570a748" title="Cantidad de filas de la matriz.">nrow</a>;
+<a name="l00209"></a>00209     L-&gt;<a class="code" href="structsp__packcol.html#2cc24559101ca3783f1949c8eebacd7c" title="Cantidad de columnas de la matriz.">ncol</a> = A-&gt;<a class="code" href="structsp__packcol.html#2cc24559101ca3783f1949c8eebacd7c" title="Cantidad de columnas de la matriz.">ncol</a>;
+<a name="l00210"></a>00210     L-&gt;<a class="code" href="structsp__packcol.html#667202fa30dd3d49982e3b0c8148bde4" title="Cantidad de elementos no cero.">nnz</a> = (unsigned)nnz;
+<a name="l00211"></a>00211     L-&gt;<a class="code" href="structsp__packcol.html#c9a9e31c6b9c1416fff29944568ea18f" title="Arreglo de punteros a los inicios de las columnas.">colp</a> = (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>*)malloc(<span class="keyword">sizeof</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>) * (A-&gt;<a class="code" href="structsp__packcol.html#2cc24559101ca3783f1949c8eebacd7c" title="Cantidad de columnas de la matriz.">ncol</a>+1));
+<a name="l00212"></a>00212     L-&gt;<a class="code" href="structsp__packcol.html#536659b700c3b21fd5d6cf8538c82b6f" title="Arreglo de indices de fila.">rx</a> = (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>*)malloc(<span class="keyword">sizeof</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>) * nnz);
+<a name="l00213"></a>00213     L-&gt;<a class="code" href="structsp__packcol.html#6315b3a8ee78ac66aaae5ba79bda252e" title="Arreglo de valores por debajo de la diagonal.">val</a> = (<span class="keywordtype">double</span>*)malloc(<span class="keyword">sizeof</span>(<span class="keywordtype">double</span>) * nnz);
+<a name="l00214"></a>00214     <span class="keywordflow">for</span> (i = 0; i &lt;= A-&gt;<a class="code" href="structsp__packcol.html#2cc24559101ca3783f1949c8eebacd7c" title="Cantidad de columnas de la matriz.">ncol</a>; ++i)
+<a name="l00215"></a>00215         L-&gt;<a class="code" href="structsp__packcol.html#c9a9e31c6b9c1416fff29944568ea18f" title="Arreglo de punteros a los inicios de las columnas.">colp</a>[i] = 0;
+<a name="l00216"></a>00216     for (i = 0; i &lt; nnz; ++i) {
+<a name="l00217"></a>00217         L-&gt;<a class="code" href="structsp__packcol.html#536659b700c3b21fd5d6cf8538c82b6f" title="Arreglo de indices de fila.">rx</a>[i] = 0;
+<a name="l00218"></a>00218         L-&gt;<a class="code" href="structsp__packcol.html#6315b3a8ee78ac66aaae5ba79bda252e" title="Arreglo de valores por debajo de la diagonal.">val</a>[i] = 0;
+<a name="l00219"></a>00219     }
+<a name="l00220"></a>00220 
+<a name="l00221"></a>00221     bs = (<span class="keywordtype">int</span>*)malloc(<span class="keyword">sizeof</span>(<span class="keywordtype">int</span>) * A-&gt;<a class="code" href="structsp__packcol.html#2cc24559101ca3783f1949c8eebacd7c" title="Cantidad de columnas de la matriz.">ncol</a>);
+<a name="l00222"></a>00222     ma = (<span class="keywordtype">int</span>*)malloc(<span class="keyword">sizeof</span>(<span class="keywordtype">int</span>) * A-&gt;<a class="code" href="structsp__packcol.html#2cc24559101ca3783f1949c8eebacd7c" title="Cantidad de columnas de la matriz.">ncol</a>);
+<a name="l00223"></a>00223     <span class="keywordflow">for</span> (i = 0; i &lt; A-&gt;<a class="code" href="structsp__packcol.html#2cc24559101ca3783f1949c8eebacd7c" title="Cantidad de columnas de la matriz.">ncol</a>; ++i) {
+<a name="l00224"></a>00224         bs[i] = -1;
+<a name="l00225"></a>00225         ma[i] = A-&gt;<a class="code" href="structsp__packcol.html#2cc24559101ca3783f1949c8eebacd7c" title="Cantidad de columnas de la matriz.">ncol</a>;
+<a name="l00226"></a>00226     }
+<a name="l00227"></a>00227 
+<a name="l00228"></a>00228     <span class="comment">/* Itera en las columnas de A */</span>
+<a name="l00229"></a>00229     <span class="keywordflow">for</span> (k = 0; k &lt; A-&gt;<a class="code" href="structsp__packcol.html#2cc24559101ca3783f1949c8eebacd7c" title="Cantidad de columnas de la matriz.">ncol</a>; ++k) {
+<a name="l00230"></a>00230         <span class="comment">/* Computar la estructura de la k-esima columna */</span>
+<a name="l00231"></a>00231         <a class="code" href="cholesky_8c.html#f5426a49171155c992db45789ea227ec" title="Fusiona la estructura de la columna j de B en la estructura actual de la columna...">merge</a>(A, k, k, ma);
+<a name="l00232"></a>00232         j = bs[k];
+<a name="l00233"></a>00233         bs[k] = -1; <span class="comment">/* Corrección al algoritmo de Stewart */</span>
+<a name="l00234"></a>00234         <span class="keywordflow">while</span> (j != -1) {
+<a name="l00235"></a>00235             <a class="code" href="cholesky_8c.html#f5426a49171155c992db45789ea227ec" title="Fusiona la estructura de la columna j de B en la estructura actual de la columna...">merge</a>(L, j, k, ma);
+<a name="l00236"></a>00236             jt = bs[j];
+<a name="l00237"></a>00237             bs[j] = -1;
+<a name="l00238"></a>00238             j = jt;
+<a name="l00239"></a>00239         }
+<a name="l00240"></a>00240 
+<a name="l00241"></a>00241         <span class="comment">/* Establecer la k-esima columna en L */</span>
+<a name="l00242"></a>00242         <a class="code" href="cholesky_8c.html#51fcae4cf668a09cf02210ef0b8d76d6" title="Arma la k-esima columna de L.">make_column</a>(k, ma, L);
+<a name="l00243"></a>00243 
+<a name="l00244"></a>00244         <span class="comment">/* Actualizar bs */</span>
+<a name="l00245"></a>00245         <span class="keywordflow">if</span> (k != j) {
+<a name="l00246"></a>00246             j = L-&gt;<a class="code" href="structsp__packcol.html#536659b700c3b21fd5d6cf8538c82b6f" title="Arreglo de indices de fila.">rx</a>[L-&gt;<a class="code" href="structsp__packcol.html#c9a9e31c6b9c1416fff29944568ea18f" title="Arreglo de punteros a los inicios de las columnas.">colp</a>[k] + 1];      <span class="comment">/* j es el padre de k */</span>
+<a name="l00247"></a>00247             <span class="keywordflow">while</span> (j != -1) {
+<a name="l00248"></a>00248                 jt = j;
+<a name="l00249"></a>00249                 j = bs[j];
+<a name="l00250"></a>00250             }
+<a name="l00251"></a>00251             bs[jt] = k;
+<a name="l00252"></a>00252         }
+<a name="l00253"></a>00253     }
+<a name="l00254"></a>00254 
+<a name="l00255"></a>00255     <span class="comment">/* Libera memoria auxiliar */</span>
+<a name="l00256"></a>00256     free(bs);
+<a name="l00257"></a>00257     free(ma);
+<a name="l00258"></a>00258 
+<a name="l00259"></a>00259     <span class="keywordflow">return</span> L;
+<a name="l00260"></a>00260 }
+</pre></div>
+<p>
+
+</div>
+</div><p>
+</div>
+<hr size="1">
+<address style="text-align: right;">
+<small>BAL&nbsp;1.0.0<br>Generado el Wed Aug 27 19:54:18 2008.</small>
+</address>
+</body>
+</html>

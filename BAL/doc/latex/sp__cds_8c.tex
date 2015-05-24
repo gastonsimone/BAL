@@ -1,0 +1,233 @@
+\hypertarget{sp__cds_8c}{
+\subsection{Referencia del Archivo sparse/sp\_\-cds.c}
+\label{sp__cds_8c}\index{sparse/sp\_\-cds.c@{sparse/sp\_\-cds.c}}
+}
+Archivo de implementación para matriz dispersa, formato simple. 
+
+{\tt \#include $<$stdlib.h$>$}\par
+{\tt \#include $<$stdio.h$>$}\par
+{\tt \#include $<$glib.h$>$}\par
+{\tt \#include \char`\"{}sp\_\-cds.h\char`\"{}}\par
+{\tt \#include \char`\"{}../utils.h\char`\"{}}\par
+\subsubsection*{Funciones}
+\begin{CompactItemize}
+\item 
+\hyperlink{structsp__cds}{sp\_\-cds} $\ast$ \hyperlink{sp__cds_8c_00ca63cd94cc53957997b1c6fe79b721}{coord2cds} (\hyperlink{structsp__coord}{sp\_\-coord} $\ast$mat)
+\begin{CompactList}\small\item\em Genera la matriz en formato CDS equivalente a la matriz mat en formato simple. \item\end{CompactList}\item 
+void \hyperlink{sp__cds_8c_1f5bfb80b511e70892a29e07d4769e98}{sp\_\-imprimir\_\-cds} (FILE $\ast$fp, \hyperlink{structsp__cds}{sp\_\-cds} $\ast$mat)
+\begin{CompactList}\small\item\em Imprime la matriz guardada en formato simple por coordenadas en fp. \item\end{CompactList}\item 
+void \hyperlink{sp__cds_8c_dbc8b3571c8ace5419d2e02318988388}{save\_\-cds} (FILE $\ast$fp, \hyperlink{structsp__cds}{sp\_\-cds} $\ast$A)
+\begin{CompactList}\small\item\em Imprime la matriz {\tt A} en formato matlab en el archivo {\tt fp}. \item\end{CompactList}\item 
+void \hyperlink{sp__cds_8c_6b5d5549f99d990b9a259d982e3e4485}{free\_\-cds} (\hyperlink{structsp__cds}{sp\_\-cds} $\ast$A)
+\begin{CompactList}\small\item\em Borra toda la memoria reservada por la matriz A. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsubsection{Descripción detallada}
+Archivo de implementación para matriz dispersa, formato simple. 
+
+Este archivo contiene la implementación de las funciones de utilidad para el formato de matriz dispersa simple. 
+
+Definición en el archivo \hyperlink{sp__cds_8c-source}{sp\_\-cds.c}.
+
+\subsubsection{Documentación de las funciones}
+\hypertarget{sp__cds_8c_00ca63cd94cc53957997b1c6fe79b721}{
+\index{sp\_\-cds.c@{sp\_\-cds.c}!coord2cds@{coord2cds}}
+\index{coord2cds@{coord2cds}!sp_cds.c@{sp\_\-cds.c}}
+\paragraph{\setlength{\rightskip}{0pt plus 5cm}{\bf sp\_\-cds} $\ast$ coord2cds ({\bf sp\_\-coord} $\ast$ {\em mat})}\hfill}
+\label{sp__cds_8c_00ca63cd94cc53957997b1c6fe79b721}
+
+
+Genera la matriz en formato CDS equivalente a la matriz mat en formato simple. 
+
+\begin{Desc}
+\item[Parámetros:]
+\begin{description}
+\item[{\em mat}]Matriz dispersa en formato simple. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Devuelve:]Matriz equivalente en formato CDS. \end{Desc}
+
+
+Definición en la línea 19 del archivo sp\_\-cds.c.
+
+Hace referencia a binary\_\-search(), sp\_\-coord::cx, sp\_\-cds::dx, insert\_\-sorted(), sp\_\-cds::maxdiaglength, sp\_\-coord::ncol, sp\_\-cds::ncol, sp\_\-cds::ndiag, sp\_\-coord::nnz, sp\_\-coord::nrow, sp\_\-cds::nrow, sp\_\-coord::rx, sp\_\-coord::val, y sp\_\-cds::val.
+
+Referenciado por bal\_\-coord2cds().
+
+\begin{Code}\begin{verbatim}20 {
+21     unsigned int n, m, tope, ii, i, j, dxl;
+22     int diag, k;
+23     sp_cds *cds;
+24 
+25     cds = (sp_cds*)malloc(sizeof(sp_cds));
+26 
+27     cds->nrow = n = mat->nrow;
+28     cds->ncol = m = mat->ncol;
+29     cds->maxdiaglength = MIN(n, m);
+30     tope = m + n - 1; /* Cantidad máxima de diagonales */
+31     cds->dx = (int*)malloc(sizeof(int) * tope);
+32 
+33     /* Busca diagonales con datos */
+34     dxl = 0;
+35     for (ii=0; ii < mat->nnz; ++ii) {
+36         i = mat->rx[ii];
+37         j = mat->cx[ii];
+38         diag = j - i;
+39 
+40         if (binary_search(cds->dx, dxl, diag) == -1) {
+41             insert_sorted(cds->dx, dxl - 1, diag);
+42             ++dxl;
+43         }
+44     }
+45 
+46     /* Inicializa cds->val */
+47     cds->ndiag = dxl;
+48     cds->val = (double**)malloc(sizeof(double*) * dxl);
+49     for (i=0; i < dxl; ++i) {
+50         cds->val[i] = (double*)malloc(sizeof(double) * cds->maxdiaglength);
+51         for (j=0; j < cds->maxdiaglength; ++j)
+52             cds->val[i][j] = 0;
+53     }
+54 
+55     /* Carga los valores */
+56     for (ii=0; ii < mat->nnz; ++ii) {
+57         i = mat->rx[ii];
+58         j = mat->cx[ii];
+59         diag = j - i;
+60 
+61         k = binary_search(cds->dx, dxl, diag);
+62         cds->val[k][i] = mat->val[ii];
+63     }
+64 
+65     return cds;
+66 }
+\end{verbatim}
+\end{Code}
+
+
+\hypertarget{sp__cds_8c_6b5d5549f99d990b9a259d982e3e4485}{
+\index{sp\_\-cds.c@{sp\_\-cds.c}!free\_\-cds@{free\_\-cds}}
+\index{free\_\-cds@{free\_\-cds}!sp_cds.c@{sp\_\-cds.c}}
+\paragraph{\setlength{\rightskip}{0pt plus 5cm}void free\_\-cds ({\bf sp\_\-cds} $\ast$ {\em A})}\hfill}
+\label{sp__cds_8c_6b5d5549f99d990b9a259d982e3e4485}
+
+
+Borra toda la memoria reservada por la matriz A. 
+
+Libera la memoria reservada por la estructura de datos \hyperlink{structsp__cds}{sp\_\-cds}. 
+
+Definición en la línea 134 del archivo sp\_\-cds.c.
+
+Hace referencia a sp\_\-cds::dx, sp\_\-cds::ndiag, y sp\_\-cds::val.
+
+Referenciado por bal\_\-free\_\-cds().
+
+\begin{Code}\begin{verbatim}135 {
+136     unsigned int d;
+137 
+138     for (d=0; d < A->ndiag; ++d)
+139         free(A->val[d]);
+140 
+141     free(A->val);
+142     free(A->dx);
+143     free(A);
+144 }
+\end{verbatim}
+\end{Code}
+
+
+\hypertarget{sp__cds_8c_dbc8b3571c8ace5419d2e02318988388}{
+\index{sp\_\-cds.c@{sp\_\-cds.c}!save\_\-cds@{save\_\-cds}}
+\index{save\_\-cds@{save\_\-cds}!sp_cds.c@{sp\_\-cds.c}}
+\paragraph{\setlength{\rightskip}{0pt plus 5cm}void save\_\-cds (FILE $\ast$ {\em fp}, \/  {\bf sp\_\-cds} $\ast$ {\em A})}\hfill}
+\label{sp__cds_8c_dbc8b3571c8ace5419d2e02318988388}
+
+
+Imprime la matriz {\tt A} en formato matlab en el archivo {\tt fp}. 
+
+\begin{Desc}
+\item[Parámetros:]
+\begin{description}
+\item[{\em fp}]Archivo en donde imprimir \item[{\em A}]Matriz a imprimir, en formato CDS\end{description}
+\end{Desc}
+Esta función es útil para respaldar matrices. 
+
+Definición en la línea 104 del archivo sp\_\-cds.c.
+
+Hace referencia a binary\_\-search(), sp\_\-cds::dx, sp\_\-cds::ncol, sp\_\-cds::ndiag, sp\_\-cds::nrow, y sp\_\-cds::val.
+
+Referenciado por bal\_\-save\_\-cds().
+
+\begin{Code}\begin{verbatim}105 {
+106     unsigned int i, j;
+107     int diag, k;
+108 
+109     fprintf(fp, "[\n");
+110 
+111     for (i=0; i < A->nrow; ++i) {
+112         for (j=0; j < A->ncol; ++j) {
+113             diag = j - i;
+114             k = binary_search(A->dx, A->ndiag, diag);
+115             if (k != -1)
+116                 fprintf(fp, " %g", A->val[k][i]);
+117             else
+118                 fprintf(fp, " 0");
+119         }
+120         if (i+1 < A->nrow)
+121             fprintf(fp, ";\n");
+122         else
+123             fprintf(fp, "\n");
+124     }
+125 
+126     fprintf(fp, "]\n");
+127 }
+\end{verbatim}
+\end{Code}
+
+
+\hypertarget{sp__cds_8c_1f5bfb80b511e70892a29e07d4769e98}{
+\index{sp\_\-cds.c@{sp\_\-cds.c}!sp\_\-imprimir\_\-cds@{sp\_\-imprimir\_\-cds}}
+\index{sp\_\-imprimir\_\-cds@{sp\_\-imprimir\_\-cds}!sp_cds.c@{sp\_\-cds.c}}
+\paragraph{\setlength{\rightskip}{0pt plus 5cm}void sp\_\-imprimir\_\-cds (FILE $\ast$ {\em fp}, \/  {\bf sp\_\-cds} $\ast$ {\em mat})}\hfill}
+\label{sp__cds_8c_1f5bfb80b511e70892a29e07d4769e98}
+
+
+Imprime la matriz guardada en formato simple por coordenadas en fp. 
+
+\begin{Desc}
+\item[Parámetros:]
+\begin{description}
+\item[{\em fp}]Archivo en el cual se imprimirá la matriz \item[{\em mat}]Matriz a imprimir en formato CDS \end{description}
+\end{Desc}
+
+
+Definición en la línea 74 del archivo sp\_\-cds.c.
+
+Hace referencia a sp\_\-cds::dx, sp\_\-cds::maxdiaglength, sp\_\-cds::ncol, sp\_\-cds::ndiag, sp\_\-cds::nrow, y sp\_\-cds::val.
+
+Referenciado por bal\_\-imprimir\_\-cds().
+
+\begin{Code}\begin{verbatim}75 {
+76     unsigned int i, j;
+77 
+78     fprintf(fp, "Cantidad de filas: %d\n", mat->nrow);
+79     fprintf(fp, "Cantidad de columnas: %d\n", mat->ncol);
+80     fprintf(fp, "Cantidad de diagonales no-cero: %d\n", mat->ndiag);
+81     fprintf(fp, "Largo maximo de diagonal: %d\n", mat->maxdiaglength);
+82 
+83     fprintf(fp, "Mapeo de diagonales:");
+84     for (i=0; i < mat->ndiag; ++i)
+85         fprintf(fp, " %d", mat->dx[i]);
+86 
+87     fprintf(fp, "\nValores:\n");
+88     for (i=0; i < mat->ndiag; ++i) {
+89         fprintf(fp, "val[%d,0:%d] =", i, mat->maxdiaglength-1);
+90         for (j=0; j < mat->maxdiaglength; ++j)
+91             fprintf(fp, " %g", mat->val[i][j]);
+92         fprintf(fp, "\n");
+93     }
+94 }
+\end{verbatim}
+\end{Code}
+
+

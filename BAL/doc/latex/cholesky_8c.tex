@@ -1,0 +1,539 @@
+\hypertarget{cholesky_8c}{
+\subsection{Referencia del Archivo cholesky/cholesky.c}
+\label{cholesky_8c}\index{cholesky/cholesky.c@{cholesky/cholesky.c}}
+}
+Implementación de la factorización de Cholesky para matrices dispersas. 
+
+{\tt \#include $<$stdlib.h$>$}\par
+{\tt \#include $<$math.h$>$}\par
+{\tt \#include \char`\"{}cholesky.h\char`\"{}}\par
+{\tt \#include \char`\"{}../sparse/sp\_\-packcol.h\char`\"{}}\par
+{\tt \#include \char`\"{}../utils.h\char`\"{}}\par
+\subsubsection*{Funciones}
+\begin{CompactItemize}
+\item 
+int $\ast$ \hyperlink{cholesky_8c_c247ab532a0c89efa5fc80ccd1de6315}{elimination\_\-tree} (\hyperlink{structsp__packcol}{sp\_\-packcol} $\ast$A, int $\ast$nnz)
+\begin{CompactList}\small\item\em Calcula el árbol de eliminación de la matriz simétrica A. \item\end{CompactList}\item 
+void \hyperlink{cholesky_8c_f5426a49171155c992db45789ea227ec}{merge} (\hyperlink{structsp__packcol}{sp\_\-packcol} $\ast$B, int j, int k, int $\ast$ma)
+\begin{CompactList}\small\item\em Fusiona la estructura de la columna j de B en la estructura actual de la columna k, representada por ma. \item\end{CompactList}\item 
+void \hyperlink{cholesky_8c_51fcae4cf668a09cf02210ef0b8d76d6}{make\_\-column} (int k, int $\ast$ma, \hyperlink{structsp__packcol}{sp\_\-packcol} $\ast$L)
+\begin{CompactList}\small\item\em Arma la k-esima columna de L. \item\end{CompactList}\item 
+\hyperlink{structsp__packcol}{sp\_\-packcol} $\ast$ \hyperlink{cholesky_8c_372ebd05f16cc5771aacf2d9e2497119}{symbolic\_\-factorization} (\hyperlink{structsp__packcol}{sp\_\-packcol} $\ast$A)
+\begin{CompactList}\small\item\em Factorización simbólica de la matriz A. \item\end{CompactList}\item 
+void \hyperlink{cholesky_8c_2dd1cb8f4a30d7950399b658862a2180}{numerical\_\-factorization} (\hyperlink{structsp__packcol}{sp\_\-packcol} $\ast$A, \hyperlink{structsp__packcol}{sp\_\-packcol} $\ast$L)
+\begin{CompactList}\small\item\em Sobreescribe {\tt L} con la factorización de Cholesky de A. \item\end{CompactList}\item 
+void \hyperlink{cholesky_8c_700b53e08123405fc54742fb52098588}{cholesky\_\-Lsolver} (\hyperlink{structsp__packcol}{sp\_\-packcol} $\ast$L, double $\ast$b)
+\begin{CompactList}\small\item\em Sobrescribe {\tt b} con la solución del sistema $Ly=b$. \item\end{CompactList}\item 
+void \hyperlink{cholesky_8c_afba46e6cb519f5b021129cf06ece41e}{cholesky\_\-LTsolver} (\hyperlink{structsp__packcol}{sp\_\-packcol} $\ast$L, double $\ast$b)
+\begin{CompactList}\small\item\em Sobreescribe {\tt b} con la solución de $L^Tx=b$. \item\end{CompactList}\item 
+void \hyperlink{cholesky_8c_b61e2da86cddb63b2ef5d38b46a1d4ea}{cholesky\_\-solver} (\hyperlink{structsp__packcol}{sp\_\-packcol} $\ast$A, double $\ast$b)
+\begin{CompactList}\small\item\em Resuelve un sistema lineal mediante el algoritmo de Cholesky optimizado para matrices dispersas. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsubsection{Descripción detallada}
+Implementación de la factorización de Cholesky para matrices dispersas. 
+
+Este archivo contiene la implementación de la factorización de Cholesky, optimizado para la estructura de matrices dispersas empaquetadas por columna.
+
+Esta implementación realiza los siguientes pasos: \begin{itemize}
+\item Construcción de árbol de eliminación (cálculo del número máximo de elementos no cero de la factorización) \item Factorización simbólica \item Factorización numérica \end{itemize}
+
+
+Para obtener el mejor rendimiento de este algoritmo, se recomienda preprocesar la matriz a factorizar con algún algoritmo de reordenamiento, para así reducir el {\em fill-in\/} producido. 
+
+Definición en el archivo \hyperlink{cholesky_8c-source}{cholesky.c}.
+
+\subsubsection{Documentación de las funciones}
+\hypertarget{cholesky_8c_700b53e08123405fc54742fb52098588}{
+\index{cholesky.c@{cholesky.c}!cholesky\_\-Lsolver@{cholesky\_\-Lsolver}}
+\index{cholesky\_\-Lsolver@{cholesky\_\-Lsolver}!cholesky.c@{cholesky.c}}
+\paragraph{\setlength{\rightskip}{0pt plus 5cm}void cholesky\_\-Lsolver ({\bf sp\_\-packcol} $\ast$ {\em L}, \/  double $\ast$ {\em b})}\hfill}
+\label{cholesky_8c_700b53e08123405fc54742fb52098588}
+
+
+Sobrescribe {\tt b} con la solución del sistema $Ly=b$. 
+
+\begin{Desc}
+\item[Parámetros:]
+\begin{description}
+\item[{\em L}]Matriz {\tt nxn} triangular inferior, factorización de Cholesky \item[{\em b}]Vector de largo {\tt n} \end{description}
+\end{Desc}
+Al final de la ejecución el vector {\tt b} es igual al vector {\tt y} tal que $Ly=b$
+
+\begin{Desc}
+\item[Nota:]Ver el algoritmo 9.2 descrito en la sección 9.2 del paper de Stewart (ver las \hyperlink{index_refsec}{referencias}) \end{Desc}
+
+
+Definición en la línea 329 del archivo cholesky.c.
+
+Hace referencia a sp\_\-packcol::colp, sp\_\-packcol::ncol, sp\_\-packcol::rx, y sp\_\-packcol::val.
+
+Referenciado por bal\_\-cholesky\_\-Lsolver(), y cholesky\_\-solver().
+
+\begin{Code}\begin{verbatim}330 {
+331     int ii, i, j;
+332 
+333     for (j = 0; j < L->ncol; ++j) {
+334         b[j] /= L->val[L->colp[j]];
+335 
+336         for (ii = L->colp[j]+1; ii < L->colp[j+1]; ++ii) {
+337             i = L->rx[ii];
+338             b[i] -= ( b[j] * L->val[ii] );
+339         }
+340     }
+341 }
+\end{verbatim}
+\end{Code}
+
+
+\hypertarget{cholesky_8c_afba46e6cb519f5b021129cf06ece41e}{
+\index{cholesky.c@{cholesky.c}!cholesky\_\-LTsolver@{cholesky\_\-LTsolver}}
+\index{cholesky\_\-LTsolver@{cholesky\_\-LTsolver}!cholesky.c@{cholesky.c}}
+\paragraph{\setlength{\rightskip}{0pt plus 5cm}void cholesky\_\-LTsolver ({\bf sp\_\-packcol} $\ast$ {\em L}, \/  double $\ast$ {\em b})}\hfill}
+\label{cholesky_8c_afba46e6cb519f5b021129cf06ece41e}
+
+
+Sobreescribe {\tt b} con la solución de $L^Tx=b$. 
+
+\begin{Desc}
+\item[Parámetros:]
+\begin{description}
+\item[{\em L}]Matriz {\tt nxn}triangular inferior, factorización de Cholesky \item[{\em b}]Vector de largo {\tt n} \end{description}
+\end{Desc}
+Al final de la ejecución el vector {\tt b} es igual al vector {\tt y} tal que $L^Ty=b$
+
+\begin{Desc}
+\item[Nota:]Ver el algoritmo 9.3 descrito en la sección 9.2 del paper de Stewart (ver las \hyperlink{index_refsec}{referencias}) \end{Desc}
+
+
+Definición en la línea 354 del archivo cholesky.c.
+
+Hace referencia a sp\_\-packcol::colp, sp\_\-packcol::ncol, sp\_\-packcol::rx, y sp\_\-packcol::val.
+
+Referenciado por bal\_\-cholesky\_\-LTsolver(), y cholesky\_\-solver().
+
+\begin{Code}\begin{verbatim}355 {
+356     int ii, i, j;
+357 
+358     for (j = L->ncol-1; j >= 0; --j) {
+359         for (ii = L->colp[j]+1; ii < L->colp[j+1]; ++ii) {
+360             i = L->rx[ii];
+361             b[j] -= ( b[i] * L->val[ii] );
+362         }
+363         b[j] /= L->val[L->colp[j]];
+364     }
+365 }
+\end{verbatim}
+\end{Code}
+
+
+\hypertarget{cholesky_8c_b61e2da86cddb63b2ef5d38b46a1d4ea}{
+\index{cholesky.c@{cholesky.c}!cholesky\_\-solver@{cholesky\_\-solver}}
+\index{cholesky\_\-solver@{cholesky\_\-solver}!cholesky.c@{cholesky.c}}
+\paragraph{\setlength{\rightskip}{0pt plus 5cm}void cholesky\_\-solver ({\bf sp\_\-packcol} $\ast$ {\em A}, \/  double $\ast$ {\em b})}\hfill}
+\label{cholesky_8c_b61e2da86cddb63b2ef5d38b46a1d4ea}
+
+
+Resuelve un sistema lineal mediante el algoritmo de Cholesky optimizado para matrices dispersas. 
+
+\begin{Desc}
+\item[Parámetros:]
+\begin{description}
+\item[{\em A}]Matriz del sistema lineal, simétrica definida positiva, dispersa empaquetada por columna. \item[{\em b}]ENTRADA/SALIDA: Vector a igualar mediante {\tt Ax}\end{description}
+\end{Desc}
+Esta función calcula un vetor {\tt x} tal que $Ax=b$ y lo guarda en el mismo vector {\tt b}. Esta implementación está completamente basada en el formato de matriz dispersa empaquetado por columna, para mejorar el desempeño de la aplicación.
+
+La forma de proceder del algoritmo es la siguiente: \begin{enumerate}
+\item Se realiza la factorización simbólica de {\tt A} \item Se realiza la factorización numérica de {\tt A} \item Se resuelven los sistemas triangulares $Ly=b$ y luego $L^Tx=y$ \end{enumerate}
+
+
+Definición en la línea 384 del archivo cholesky.c.
+
+Hace referencia a BAL\_\-ERROR, cholesky\_\-Lsolver(), cholesky\_\-LTsolver(), sp\_\-packcol::ncol, sp\_\-packcol::nrow, numerical\_\-factorization(), y symbolic\_\-factorization().
+
+Referenciado por bal\_\-cholesky\_\-solver().
+
+\begin{Code}\begin{verbatim}385 {
+386     sp_packcol *L;
+387 
+388     if (A->nrow != A->ncol) {
+389         /* Habría que verificar además que es simétrica y definida positiva */
+390         BAL_ERROR("La matriz no es cuadrada");
+391         return;
+392     }
+393 
+394     L = symbolic_factorization(A);
+395     numerical_factorization(A, L);
+396     cholesky_Lsolver(L, b);
+397     cholesky_LTsolver(L, b);
+398 }
+\end{verbatim}
+\end{Code}
+
+
+\hypertarget{cholesky_8c_c247ab532a0c89efa5fc80ccd1de6315}{
+\index{cholesky.c@{cholesky.c}!elimination\_\-tree@{elimination\_\-tree}}
+\index{elimination\_\-tree@{elimination\_\-tree}!cholesky.c@{cholesky.c}}
+\paragraph{\setlength{\rightskip}{0pt plus 5cm}int $\ast$ elimination\_\-tree ({\bf sp\_\-packcol} $\ast$ {\em A}, \/  int $\ast$ {\em nnz})}\hfill}
+\label{cholesky_8c_c247ab532a0c89efa5fc80ccd1de6315}
+
+
+Calcula el árbol de eliminación de la matriz simétrica A. 
+
+\begin{Desc}
+\item[Parámetros:]
+\begin{description}
+\item[{\em A}]ENTRADA: Matriz simétrica dispersa empaquetada por columna a procesar \item[{\em nnz}]SALIDA: Cantidad de elementos no cero en la factorización de Cholesky \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Devuelve:]Estructura de padres del árbol de eliminación\end{Desc}
+Esta función calcula el árbol de eliminación de la matriz A, devuelve la estructura de padres del árbol y la cantidad de elementos no cero de la factorización de Cholesky.
+
+\begin{Desc}
+\item[Nota:]Este paso es un paso previo a la factorización simbólica.
+
+Esta implementación está basada en el algoritmo descrito en la sección 7.2 del paper de Stewart (ver las \hyperlink{index_refsec}{referencias}). \end{Desc}
+
+
+Definición en la línea 42 del archivo cholesky.c.
+
+Hace referencia a BAL\_\-ERROR, sp\_\-packcol::ncol, sp\_\-packcol::nrow, y row\_\-traversal\_\-packcol().
+
+Referenciado por bal\_\-elimination\_\-tree(), y symbolic\_\-factorization().
+
+\begin{Code}\begin{verbatim}43 {
+44     int *touched, *parent;
+45     int ix, i, j, posij, js;
+46 
+47     /* Inicialización */
+48     *nnz = 0;
+49 
+50     if (A->nrow != A->ncol) {
+51         BAL_ERROR("La matriz debe ser cuadrada");
+52         return NULL;
+53     }
+54 
+55     /* Inicializa estructuras */
+56     touched = (int*)malloc(sizeof(int) * A->ncol);
+57     parent = (int*)malloc(sizeof(int) * A->ncol);
+58     for (ix = 0; ix < A->ncol; ++ix)
+59         touched[ix] = parent[ix] = -1;
+60 
+61     /* Recorre las filas de A */
+62     i = -2;
+63     row_traversal_packcol(A, &i, &j, &posij);
+64     for (ix = 0; ix < A->nrow; ++ix) {
+65         while (row_traversal_packcol(A, &i, &j, &posij) != -1) {
+66             if (i == j) {
+67                 /* Procesar elemento de la diagonal */
+68                 *nnz += 1;
+69                 touched[j] = i;
+70             }
+71             else {
+72                 /* Elemento no en la diagonal. Buscar el arbol */
+73                 js = j;
+74                 while (touched[js] != i) {
+75                     touched[js] = i;
+76                     *nnz += 1;
+77 
+78                     if (parent[js] == -1) {
+79                         parent[js] = i;
+80                         break;
+81                     }
+82                     
+83                     js = parent[js];
+84                 }
+85             }
+86         }
+87     }
+88 
+89     /* Liberamos la memoria utilizada */
+90     i = -2;
+91     row_traversal_packcol(NULL, &i, &j, &posij);
+92     free(touched);
+93 
+94     return parent;
+95 }
+\end{verbatim}
+\end{Code}
+
+
+\hypertarget{cholesky_8c_51fcae4cf668a09cf02210ef0b8d76d6}{
+\index{cholesky.c@{cholesky.c}!make\_\-column@{make\_\-column}}
+\index{make\_\-column@{make\_\-column}!cholesky.c@{cholesky.c}}
+\paragraph{\setlength{\rightskip}{0pt plus 5cm}void make\_\-column (int {\em k}, \/  int $\ast$ {\em ma}, \/  {\bf sp\_\-packcol} $\ast$ {\em L})}\hfill}
+\label{cholesky_8c_51fcae4cf668a09cf02210ef0b8d76d6}
+
+
+Arma la k-esima columna de L. 
+
+\begin{Desc}
+\item[Parámetros:]
+\begin{description}
+\item[{\em k}]Columna a contruir \item[{\em ma}]Estructura de la columna a contruir \item[{\em L}]Matriz dispersa donde construir la columna\end{description}
+\end{Desc}
+Esta función toma la estructura de la columna k, contenida en ma y la transfiere a la k-esima columna de L. Además reinicializa ma.
+
+\begin{Desc}
+\item[Nota:]Ver el algoritmo 8.3 descrito en la sección 8.2 del paper de Stewart (ver las \hyperlink{index_refsec}{referencias}). \end{Desc}
+
+
+Definición en la línea 153 del archivo cholesky.c.
+
+Hace referencia a sp\_\-packcol::colp, sp\_\-packcol::ncol, y sp\_\-packcol::rx.
+
+Referenciado por symbolic\_\-factorization().
+
+\begin{Code}\begin{verbatim}154 {
+155     int ii, m, mt;
+156 
+157     if (k == 0)
+158         L->colp[0] = 0;
+159 
+160     ii = L->colp[k];
+161     m = k;
+162 
+163     while (m < L->ncol) {
+164         L->rx[ii] = m;
+165         ++ii;
+166         mt = ma[m];
+167         ma[m] = L->ncol;
+168         m = mt;
+169     }
+170 
+171     L->colp[k+1] = ii;
+172 }
+\end{verbatim}
+\end{Code}
+
+
+\hypertarget{cholesky_8c_f5426a49171155c992db45789ea227ec}{
+\index{cholesky.c@{cholesky.c}!merge@{merge}}
+\index{merge@{merge}!cholesky.c@{cholesky.c}}
+\paragraph{\setlength{\rightskip}{0pt plus 5cm}void merge ({\bf sp\_\-packcol} $\ast$ {\em B}, \/  int {\em j}, \/  int {\em k}, \/  int $\ast$ {\em ma})}\hfill}
+\label{cholesky_8c_f5426a49171155c992db45789ea227ec}
+
+
+Fusiona la estructura de la columna j de B en la estructura actual de la columna k, representada por ma. 
+
+\begin{Desc}
+\item[Nota:]Ver el algoritmo 8.2 descrito en la sección 8.2 del paper de Stewart (ver las \hyperlink{index_refsec}{referencias}).\end{Desc}
+\begin{Desc}
+\item[Atención:]El pseudo-código mostrado en el paper de Stewart contiene errores. Se recomienda fuertemente comparar esta implementación (buscando los lugares marcados como corrección) con el pseudo-código de Stewart y ver las diferencias. \end{Desc}
+
+
+Definición en la línea 108 del archivo cholesky.c.
+
+Hace referencia a sp\_\-packcol::colp, y sp\_\-packcol::rx.
+
+Referenciado por symbolic\_\-factorization().
+
+\begin{Code}\begin{verbatim}109 {
+110     int m, m1, i, ii;
+111 
+112     m = k;
+113 
+114     /* Itera en los elementos de la columna j de B */
+115     for (ii = B->colp[j]; ii < B->colp[j+1]; ++ii) { /* Corrección al algoritmo de Stewart */
+116         i = B->rx[ii];
+117 
+118         /* Corrección al algoritmo de Stewart */
+119         if (i-j < 1)
+120             continue;
+121 
+122         /* Busca m y m1 con m < i <= m1 */
+123         m1 = m;
+124         while (i > m1) {
+125             m = m1;
+126             m1 = ma[m];
+127         }
+128 
+129         if (i != m1) {
+130             /* Insertar i en ma */
+131             ma[m] = i;
+132             ma[i] = m1;
+133         }
+134 
+135         m = i;
+136     }
+137 }
+\end{verbatim}
+\end{Code}
+
+
+\hypertarget{cholesky_8c_2dd1cb8f4a30d7950399b658862a2180}{
+\index{cholesky.c@{cholesky.c}!numerical\_\-factorization@{numerical\_\-factorization}}
+\index{numerical\_\-factorization@{numerical\_\-factorization}!cholesky.c@{cholesky.c}}
+\paragraph{\setlength{\rightskip}{0pt plus 5cm}void numerical\_\-factorization ({\bf sp\_\-packcol} $\ast$ {\em A}, \/  {\bf sp\_\-packcol} $\ast$ {\em L})}\hfill}
+\label{cholesky_8c_2dd1cb8f4a30d7950399b658862a2180}
+
+
+Sobreescribe {\tt L} con la factorización de Cholesky de A. 
+
+\begin{Desc}
+\item[Parámetros:]
+\begin{description}
+\item[{\em A}]Matriz a factorizar con el algoritmo de Cholesky \item[{\em L}]Matriz pre inicializada donde guardar la factorización\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Nota:]La pre inicialización de la matriz {\tt L} se realiza con la función \hyperlink{cholesky_8c_372ebd05f16cc5771aacf2d9e2497119}{symbolic\_\-factorization()}.
+
+Ver el algoritmo 9.1 descrito en la sección 9.1 del paper de Stewart (ver las \hyperlink{index_refsec}{referencias}). \end{Desc}
+
+
+Definición en la línea 274 del archivo cholesky.c.
+
+Hace referencia a sp\_\-packcol::colp, sp\_\-packcol::ncol, row\_\-traversal\_\-packcol(), sp\_\-packcol::rx, y sp\_\-packcol::val.
+
+Referenciado por bal\_\-numerical\_\-factorization(), y cholesky\_\-solver().
+
+\begin{Code}\begin{verbatim}275 {
+276     int ii, i, j, poskj, kx, k;
+277     double *accum, Lkj, Lkkinv;
+278 
+279     accum = (double*)malloc(sizeof(double) * L->ncol);
+280 
+281     k = -2;
+282     row_traversal_packcol(L, &k, &j, &poskj);
+283     for (kx = 0; kx < L->ncol; ++kx) {  /* Procesa la columna k */
+284         while (row_traversal_packcol(L, &k, &j, &poskj) != -1) {
+285             if (j == k) { /* Inicializar accum */
+286                 for (ii = L->colp[k]; ii < L->colp[k+1]; ++ii)
+287                     accum[L->rx[ii]] = 0;
+288                 for (ii = A->colp[k]; ii < A->colp[k+1]; ++ii)
+289                     accum[A->rx[ii]] = A->val[ii];
+290             }
+291             else { /* Restar L[k:n,j] de L[k:n,k] */
+292                 Lkj = L->val[poskj];
+293                 for (ii = poskj; ii < L->colp[j+1]; ++ii) {
+294                     i = L->rx[ii];
+295                     accum[i] -= ( Lkj * L->val[ii] );
+296                 }
+297             }
+298         }
+299 
+300         /* Mueve L[k:n,k] de accum a L, ajustando sus componentes */
+301         for (ii = L->colp[k]; ii < L->colp[k+1]; ++ii) { /* Corrección al algoritmo de Stewart */
+302             i = L->rx[ii];
+303             if (i == k) {
+304                 L->val[ii] = sqrt(accum[i]);
+305                 Lkkinv = 1 / L->val[ii];
+306             }
+307             else
+308                 L->val[ii] = Lkkinv * accum[i];
+309         }
+310     }
+311 
+312     /* Libera memoria auxiliar */
+313     k = -2;
+314     row_traversal_packcol(NULL, &k, &j, &poskj);
+315     free(accum);
+316 }
+\end{verbatim}
+\end{Code}
+
+
+\hypertarget{cholesky_8c_372ebd05f16cc5771aacf2d9e2497119}{
+\index{cholesky.c@{cholesky.c}!symbolic\_\-factorization@{symbolic\_\-factorization}}
+\index{symbolic\_\-factorization@{symbolic\_\-factorization}!cholesky.c@{cholesky.c}}
+\paragraph{\setlength{\rightskip}{0pt plus 5cm}{\bf sp\_\-packcol} $\ast$ symbolic\_\-factorization ({\bf sp\_\-packcol} $\ast$ {\em A})}\hfill}
+\label{cholesky_8c_372ebd05f16cc5771aacf2d9e2497119}
+
+
+Factorización simbólica de la matriz A. 
+
+\begin{Desc}
+\item[Parámetros:]
+\begin{description}
+\item[{\em A}]Matriz a factorizar \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Devuelve:]La factorización simbólica de la matriz A\end{Desc}
+\begin{Desc}
+\item[Nota:]Ver el algoritmo 8.1 descrito en la sección 8.2 del paper de Stewart (ver las \hyperlink{index_refsec}{referencias}).\end{Desc}
+\begin{Desc}
+\item[Atención:]El pseudo-código mostrado en el paper de Stewart contiene errores. Se recomienda fuertemente comparar esta implementación (buscando los lugares marcados como corrección) con el pseudo-código de Stewart y ver las diferencias. \end{Desc}
+
+
+Definición en la línea 188 del archivo cholesky.c.
+
+Hace referencia a BAL\_\-ERROR, sp\_\-packcol::colp, elimination\_\-tree(), make\_\-column(), merge(), sp\_\-packcol::ncol, sp\_\-packcol::nnz, sp\_\-packcol::nrow, sp\_\-packcol::rx, y sp\_\-packcol::val.
+
+Referenciado por bal\_\-symbolic\_\-factorization(), y cholesky\_\-solver().
+
+\begin{Code}\begin{verbatim}189 {
+190     int nnz;                /* Cantidad de elementos no cero */
+191     int *parents;           /* Arbol de eliminacion */
+192     int *bs;                /* Hijos por nodo ("Baby Sitter") */
+193     int *ma;                /* "Merge array" */
+194     sp_packcol *L;          /* Resultado de la factorizacion simbolica */
+195     int i, j, k, jt;
+196 
+197     if (A->nrow != A->ncol) {
+198         BAL_ERROR("La matriz debe ser cuadrada");
+199         return NULL;
+200     }
+201 
+202     /* Calcula la cantidad de elementos no cero */
+203     parents = elimination_tree(A, &nnz);
+204     free(parents);
+205 
+206     /* Inicializacion */
+207     L = (sp_packcol*)malloc(sizeof(sp_packcol));
+208     L->nrow = A->nrow;
+209     L->ncol = A->ncol;
+210     L->nnz = (unsigned)nnz;
+211     L->colp = (unsigned int*)malloc(sizeof(unsigned int) * (A->ncol+1));
+212     L->rx = (unsigned int*)malloc(sizeof(unsigned int) * nnz);
+213     L->val = (double*)malloc(sizeof(double) * nnz);
+214     for (i = 0; i <= A->ncol; ++i)
+215         L->colp[i] = 0;
+216     for (i = 0; i < nnz; ++i) {
+217         L->rx[i] = 0;
+218         L->val[i] = 0;
+219     }
+220 
+221     bs = (int*)malloc(sizeof(int) * A->ncol);
+222     ma = (int*)malloc(sizeof(int) * A->ncol);
+223     for (i = 0; i < A->ncol; ++i) {
+224         bs[i] = -1;
+225         ma[i] = A->ncol;
+226     }
+227 
+228     /* Itera en las columnas de A */
+229     for (k = 0; k < A->ncol; ++k) {
+230         /* Computar la estructura de la k-esima columna */
+231         merge(A, k, k, ma);
+232         j = bs[k];
+233         bs[k] = -1; /* Corrección al algoritmo de Stewart */
+234         while (j != -1) {
+235             merge(L, j, k, ma);
+236             jt = bs[j];
+237             bs[j] = -1;
+238             j = jt;
+239         }
+240 
+241         /* Establecer la k-esima columna en L */
+242         make_column(k, ma, L);
+243 
+244         /* Actualizar bs */
+245         if (k != j) {
+246             j = L->rx[L->colp[k] + 1];      /* j es el padre de k */
+247             while (j != -1) {
+248                 jt = j;
+249                 j = bs[j];
+250             }
+251             bs[jt] = k;
+252         }
+253     }
+254 
+255     /* Libera memoria auxiliar */
+256     free(bs);
+257     free(ma);
+258 
+259     return L;
+260 }
+\end{verbatim}
+\end{Code}
+
+

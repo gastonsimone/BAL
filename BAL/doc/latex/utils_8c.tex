@@ -1,0 +1,106 @@
+\hypertarget{utils_8c}{
+\subsection{Referencia del Archivo utils.c}
+\label{utils_8c}\index{utils.c@{utils.c}}
+}
+Implementación de utilidades generales. 
+
+{\tt \#include \char`\"{}utils.h\char`\"{}}\par
+\subsubsection*{Funciones}
+\begin{CompactItemize}
+\item 
+int \hyperlink{utils_8c_68d639af59cdb0c547839cb44aa06854}{binary\_\-search} (int $\ast$list, unsigned int size, int key)
+\begin{CompactList}\small\item\em Busca un elemento en el array mediante bipartición. \item\end{CompactList}\item 
+void \hyperlink{utils_8c_e92b7a18bc3552887809bbac1b732152}{insert\_\-sorted} (int $\ast$list, int n, int key)
+\begin{CompactList}\small\item\em Inserta un elemento en un arreglo ordenado. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsubsection{Descripción detallada}
+Implementación de utilidades generales. 
+
+
+
+Definición en el archivo \hyperlink{utils_8c-source}{utils.c}.
+
+\subsubsection{Documentación de las funciones}
+\hypertarget{utils_8c_68d639af59cdb0c547839cb44aa06854}{
+\index{utils.c@{utils.c}!binary\_\-search@{binary\_\-search}}
+\index{binary\_\-search@{binary\_\-search}!utils.c@{utils.c}}
+\paragraph{\setlength{\rightskip}{0pt plus 5cm}int binary\_\-search (int $\ast$ {\em list}, \/  unsigned int {\em size}, \/  int {\em key})}\hfill}
+\label{utils_8c_68d639af59cdb0c547839cb44aa06854}
+
+
+Busca un elemento en el array mediante bipartición. 
+
+\begin{Desc}
+\item[Parámetros:]
+\begin{description}
+\item[{\em list}]Arreglo de elementos \item[{\em size}]Tamaño de la lista \item[{\em key}]Elemento a buscar \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Devuelve:]El índice en donde se ubica el elemento en el arreglo, -1 si no fue encontrado\end{Desc}
+Pos más información ver \href{http://es.wikipedia.org/wiki/B%C3%BAsqueda_dicot%C3%B3mica}{\tt http://es.wikipedia.org/wiki/B\%C3\%BAsqueda\_\-dicot\%C3\%B3mica} 
+
+Definición en la línea 18 del archivo utils.c.
+
+Referenciado por coord2cds(), mult\_\-mat\_\-cds(), y save\_\-cds().
+
+\begin{Code}\begin{verbatim}19 {
+20     int izq, der, medio;
+21 
+22     izq = 0;
+23     der = size - 1;
+24 
+25     while (izq <= der)
+26     {
+27         medio = (int)((izq + der) / 2);
+28         if (key == list[medio])
+29             return medio;
+30         else if (key > list[medio])
+31             izq = medio + 1;
+32         else
+33             der = medio - 1;
+34     }
+35 
+36     return -1;
+37 }
+\end{verbatim}
+\end{Code}
+
+
+\hypertarget{utils_8c_e92b7a18bc3552887809bbac1b732152}{
+\index{utils.c@{utils.c}!insert\_\-sorted@{insert\_\-sorted}}
+\index{insert\_\-sorted@{insert\_\-sorted}!utils.c@{utils.c}}
+\paragraph{\setlength{\rightskip}{0pt plus 5cm}void insert\_\-sorted (int $\ast$ {\em list}, \/  int {\em n}, \/  int {\em key})}\hfill}
+\label{utils_8c_e92b7a18bc3552887809bbac1b732152}
+
+
+Inserta un elemento en un arreglo ordenado. 
+
+\begin{Desc}
+\item[Parámetros:]
+\begin{description}
+\item[{\em list}]Arreglo ordenado \item[{\em n}]Posición del último elemento del arreglo \item[{\em key}]elemento a insertar\end{description}
+\end{Desc}
+Inserta un elemento en un array ordenado preservando el orden. Esta función corresponde al loop interno de un {\em insertion sort\/}. Por más información ver \href{http://es.wikipedia.org/wiki/Ordenamiento_por_inserci%C3%B3n}{\tt http://es.wikipedia.org/wiki/Ordenamiento\_\-por\_\-inserci\%C3\%B3n}
+
+\begin{Desc}
+\item[Atención:]Esta función no solicita memoria. Se asume que la cantidad de memoria reservada es suficiente como para albergar al nuevo elemento. \end{Desc}
+
+
+Definición en la línea 55 del archivo utils.c.
+
+Referenciado por coord2cds(), y mult\_\-mat\_\-cds().
+
+\begin{Code}\begin{verbatim}56 {
+57     int pos = n;
+58 
+59     while (pos >= 0 && list[pos] > key) {
+60         list[pos+1] = list[pos];
+61         --pos;
+62     }
+63     list[pos+1] = key;
+64 }
+\end{verbatim}
+\end{Code}
+
+
